@@ -1,0 +1,77 @@
+{
+  "status": "recorded-and-decoded",
+  "path": "recordings/sentinelflow-final-demo.mp4",
+  "created_at": "2026-09-27T23:34:29.951Z",
+  "duration_seconds": 357.08,
+  "bytes": 9734780,
+  "sha256": "37c6d9e2085c6754d9f861c0da3e82ee27f982fd697ffcf8c18464672332fe72",
+  "browser": "140.0.7339.16",
+  "capture": "Continuous real Chromium browser-context video",
+  "resolution": {
+    "width": 1440,
+    "height": 1000
+  },
+  "audio": "Silent walkthrough; chapter guide in docs/demo.md",
+  "source_fingerprint": "dcc803add464dbb29f111a235610ecd459bbfbe3bca7a6747c42b88f4d599fce",
+  "ffmpeg_version": "ffmpeg version 6.0 Copyright (c) 2000-2023 the FFmpeg developers",
+  "ffmpeg_sha256": "a90e3db6a3fd35f6074b013f948b1aa45b31c6375489d39e572bea3f18336584",
+  "decoded_successfully": true,
+  "page_errors": [],
+  "chapters": [
+    {
+      "title": "Dashboard: real event and detection statistics",
+      "at_seconds": 0
+    },
+    {
+      "title": "Event explorer and original raw evidence",
+      "at_seconds": 30.003
+    },
+    {
+      "title": "Brute-force replay: real-time arrival of 25 events",
+      "at_seconds": 52.002
+    },
+    {
+      "title": "AUTH-001 fired",
+      "at_seconds": 77.255,
+      "run_id": "53f2104780cf49a5a22e2adff38f2dda",
+      "events": 25,
+      "alerts": 1
+    },
+    {
+      "title": "Alert investigation: source, user, UTC time, MITRE and 25 evidence records",
+      "at_seconds": 89.198,
+      "alert_id": "7519f61c3c8c59507bbc47dc9446d24f"
+    },
+    {
+      "title": "Detection testing: exact positive and benign assertions",
+      "at_seconds": 128.001
+    },
+    {
+      "title": "PowerShell indicators, not proof of compromise",
+      "at_seconds": 160.003
+    },
+    {
+      "title": "DNS anomaly: actual long-label evidence",
+      "at_seconds": 189.001
+    },
+    {
+      "title": "Sigma: unchanged upstream source, compilation, import and real tests",
+      "at_seconds": 218.002
+    },
+    {
+      "title": "Execute make validate and show its real output",
+      "at_seconds": 277.004
+    },
+    {
+      "title": "Actual validation completed",
+      "at_seconds": 322.102,
+      "backend_tests": 260,
+      "frontend_tests": 93,
+      "detection_scenarios": 50
+    },
+    {
+      "title": "Included test data, tests, scripts and documentation",
+      "at_seconds": 322.102
+    }
+  ]
+}

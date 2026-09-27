@@ -1,0 +1,44 @@
+id: PROC-001
+name: Suspicious PowerShell indicators
+description: >-
+  PowerShell command-line indicators include encoding, download, or dynamic
+  execution. These can occur in legitimate administration and are not proof
+  of compromise; review the original command and its context.
+severity: high
+conditions:
+  all:
+    - field: event.category
+      operator: equals
+      value: process
+    - any:
+        - field: process.name
+          operator: equals
+          value: powershell.exe
+        - field: process.name
+          operator: equals
+          value: pwsh.exe
+        - field: process.name
+          operator: equals
+          value: pwsh
+    - any:
+        - field: process.command_line
+          operator: contains
+          value: EncodedCommand
+        - field: process.command_line
+          operator: contains
+          value: DownloadString
+        - field: process.command_line
+          operator: regex
+          value: '\bIEX\b'
+        - field: process.command_line
+          operator: contains
+          value: Invoke-WebRequest
+        - field: process.command_line
+          operator: contains
+          value: FromBase64String
+group_by: [host.name, user.name]
+suppression_seconds: 300
+mitre_attack: [T1059.001]
+false_positives:
+  - Legitimate software installers and scripted administration may use these indicators.
+provenance: {kind: bundled, author: SentinelFlow contributors, license: MIT}

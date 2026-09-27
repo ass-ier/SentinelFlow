@@ -1,0 +1,18 @@
+services:
+  sentinelflow:
+    build: .
+    ports:
+      - "127.0.0.1:${SENTINEL_BACKEND_PORT:-8765}:8765"
+    environment:
+      SENTINEL_API_TOKEN: "${SENTINEL_API_TOKEN:?Set a local API token before running Docker}"
+      SENTINEL_DATABASE_URL: sqlite:////srv/sentinelflow/data/sentinelflow-demo.sqlite3
+    volumes:
+      - sentinel-demo:/srv/sentinelflow/data
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    init: true
+
+volumes:
+  sentinel-demo:

@@ -1,0 +1,28 @@
+{
+  "dataset": "OTRF Security Datasets: cmd_sharpview_pcre_net",
+  "source_url": "https://github.com/OTRF/Security-Datasets/blob/d9d40ef123d2c87d5d3df28c96bcab4f0faccc87/datasets/atomic/windows/execution/host/cmd_sharpview_pcre_net.zip",
+  "download_url": "https://raw.githubusercontent.com/OTRF/Security-Datasets/d9d40ef123d2c87d5d3df28c96bcab4f0faccc87/datasets/atomic/windows/execution/host/cmd_sharpview_pcre_net.zip",
+  "revision": "d9d40ef123d2c87d5d3df28c96bcab4f0faccc87",
+  "obtained": "2026-09-27",
+  "license": "MIT at the pinned root LICENSE",
+  "license_url": "https://raw.githubusercontent.com/OTRF/Security-Datasets/d9d40ef123d2c87d5d3df28c96bcab4f0faccc87/LICENSE",
+  "license_caveat": "The root LICENSE and README badge identify MIT. The same README has an older GPL-3.0 footer. This small sample relies on the explicit root MIT license at the recorded revision; the discrepancy is disclosed, not erased.",
+  "source_archive_sha256": "314b1d08b9038dd327c8769c82564a44fd26fa1ba17ffa79e52b4683e2821dac",
+  "source_archive_bytes": 28626,
+  "source_member": "cmd_sharpview_pcre_net_2020-10-2920232423.json",
+  "source_records": 267,
+  "included_records": 6,
+  "included_sha256": "6c0f5cc5d9ecc36b51b0208424a9566a9731ddab236900e06141b6c286a7a070",
+  "source_context": "Public controlled attack-simulation lab, not benign enterprise traffic.",
+  "preprocessing": [
+    "Select EventID 1, 3, 22 and 4688 only; discard unsupported event categories.",
+    "Wrap flat SourceName, EventID and TimeCreated into explicit Windows provider envelopes.",
+    "Retain source row index, EventID, TimeCreated, process basenames, ports and protocol.",
+    "Use TimeCreated with explicit Z, not the source's discrepant timezone-naive UtcTime.",
+    "Replace hosts and users; map IPs to TEST-NET-1 and DNS names to .test consistently.",
+    "Replace path prefixes with C:\\Lab; retain process/parent basenames.",
+    "Omit Message, command-line arguments, SID/GUID/hash/domain fields and every unlisted field.",
+    "Raw evidence in SentinelFlow is this adapted export, NOT untouched upstream evidence."
+  ],
+  "validation_scope": "Parser interoperability and evidence preservation after explicit adaptation only. Zero included-rule matches are expected and do not establish benignness, attack detection success, or a false-positive rate."
+}

@@ -1,0 +1,5 @@
+Jan 15 09:00:00 gateway-01 sshd[120]: Failed password for operator01 from 192.0.2.10 port 51000 ssh2
+2026-01-15T12:00:01+03:00 gateway-01 sshd[120]: Accepted publickey for operator01 from 192.0.2.10 port 51001 ssh2
+Jan 15 09:00:02 gateway-01 sshd[120]: pam_unix(sshd:session): session closed for user operator01
+Jan 15 09:00:03 gateway-01 auth[121]: account operator01 locked from 192.0.2.10
+Jan 15 09:00:04 gateway-01 passwd[122]: password changed for operator01

@@ -1,0 +1,45 @@
+id: IAM-001
+name: Privileged identity modification
+description: >-
+  Privileged group membership or privilege assignment outside the configured
+  maintenance context. The maintenance exception requires the service identity,
+  administration host, and a change-ticket marker together; it is a tunable
+  telemetry policy, not an authorization guarantee.
+severity: high
+conditions:
+  all:
+    - field: event.category
+      operator: equals
+      value: identity
+    - any:
+        - all:
+            - field: event.action
+              operator: in
+              value: [group_member_added, group_member_removed]
+            - field: metadata.group_name
+              operator: in
+              value: [Administrators, Domain Admins, Enterprise Admins, sudo]
+        - all:
+            - field: event.action
+              operator: in
+              value: [account_created, privilege_assigned, privilege_escalation]
+            - field: metadata.privileged
+              operator: equals
+              value: true
+    - not:
+        all:
+          - field: user.name
+            operator: equals
+            value: svc_identity
+          - field: host.name
+            operator: equals
+            value: id-admin-01
+          - field: metadata.change_ticket
+            operator: regex
+            value: '^CHG-[0-9]{4,10}$'
+group_by: [host.name, user.name]
+suppression_seconds: 300
+mitre_attack: [T1098]
+false_positives:
+  - Legitimate changes outside the narrow documented maintenance context still alert.
+provenance: {kind: bundled, author: SentinelFlow contributors, license: MIT}

@@ -1,0 +1,39 @@
+id: PROC-002
+name: Suspicious process execution
+description: >-
+  Office processes spawning command interpreters, or configured unusual
+  command-line combinations. Parent/child context and command text are
+  indicators for analyst review rather than proof of execution intent.
+severity: high
+conditions:
+  all:
+    - field: event.category
+      operator: equals
+      value: process
+    - any:
+        - all:
+            - field: process.parent.name
+              operator: in
+              value: [winword.exe, excel.exe, powerpnt.exe, outlook.exe]
+            - field: process.name
+              operator: in
+              value: [cmd.exe, powershell.exe, pwsh.exe, mshta.exe, wscript.exe]
+        - all:
+            - field: process.name
+              operator: equals
+              value: certutil.exe
+            - field: process.command_line
+              operator: contains
+              value: -urlcache
+        - all:
+            - field: process.name
+              operator: equals
+              value: rundll32.exe
+            - field: process.command_line
+              operator: contains
+              value: 'javascript:'
+group_by: [host.name, user.name]
+suppression_seconds: 300
+mitre_attack: [T1059.003, T1204.002]
+false_positives: [Office automation and approved administrative scripts.]
+provenance: {kind: bundled, author: SentinelFlow contributors, license: MIT}

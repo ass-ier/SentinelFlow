@@ -1,0 +1,28 @@
+[
+  {
+    "path": "rules/proc_creation_win_powershell_download_iex.yml",
+    "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+    "download_url": "https://raw.githubusercontent.com/SigmaHQ/sigma/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+    "revision": "07ec293a51695cb1131a2e05260247872b31e1e1",
+    "obtained": "2026-09-27",
+    "license": "DRL-1.1",
+    "license_url": "https://github.com/SigmaHQ/Detection-Rule-License/blob/bcbdc605172d00390572cd774ba395ec9e975dfc/LICENSE.Detection.Rules.md",
+    "author": "Florian Roth (Nextron Systems)",
+    "sha256": "dcfb0a19e7a46a3fe9db13e95770d4c97e4d0ce409f5a51938b93625150338d9",
+    "preprocessing": "None; upstream rule bytes are preserved unchanged.",
+    "dataset_id": "sigma-download"
+  },
+  {
+    "path": "rules/proc_creation_win_powershell_encode.yml",
+    "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+    "download_url": "https://raw.githubusercontent.com/SigmaHQ/sigma/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+    "revision": "07ec293a51695cb1131a2e05260247872b31e1e1",
+    "obtained": "2026-09-27",
+    "license": "DRL-1.1",
+    "license_url": "https://github.com/SigmaHQ/Detection-Rule-License/blob/bcbdc605172d00390572cd774ba395ec9e975dfc/LICENSE.Detection.Rules.md",
+    "author": "frack113",
+    "sha256": "4074e3395e9ac63db901d77d1e83e8b0ef395c9ae25a8267a82ab24c6f97ce01",
+    "preprocessing": "None; upstream rule bytes are preserved unchanged.",
+    "dataset_id": "sigma-encoded"
+  }
+]

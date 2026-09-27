@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentinelflow"
+version = "0.1.0"
+description = "Local, evidence-first security analytics and detection engineering"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi==0.116.1",
+  "uvicorn==0.35.0",
+  "pydantic==2.11.7",
+  "SQLAlchemy==2.0.43",
+  "PyYAML==6.0.2",
+  "regex==2025.7.34",
+  "python-multipart==0.0.20",
+  "python-dotenv==1.1.1",
+  "swagger-ui-bundle==1.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx==0.28.1",
+  "pytest==8.4.1",
+  "pytest-cov==6.2.1",
+  "ruff==0.12.10",
+  "mypy==1.17.1",
+  "types-PyYAML==6.0.12.20250822",
+  "types-regex==2025.7.34.20250809",
+  "pip-tools==7.5.0",
+  "pip==25.2",
+  "setuptools==80.9.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["backend"]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["backend/tests"]
+pythonpath = ["backend"]
+addopts = "-ra --strict-markers"
+markers = [
+  "parser: exact normalization contracts",
+  "detection: positive detection scenarios",
+  "negative: controlled benign scenarios",
+  "replay: chronological replay contracts",
+  "sigma: licensed Sigma compatibility",
+  "security: untrusted input and access boundaries",
+  "regression: behavioral regression contracts",
+  "integration: API and persistence integration",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["backend"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "S"]
+ignore = ["S101", "S311"]
+
+[tool.ruff.lint.per-file-ignores]
+"backend/tests/**" = ["S105", "S106"]
+"scripts/**" = ["S603", "S607"]
+"scripts/generate_test_data.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["backend/app"]
+strict = true
+plugins = ["pydantic.mypy"]
+
+[tool.coverage.run]
+source = ["backend/app"]
+branch = true

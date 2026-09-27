@@ -1,0 +1,141 @@
+[
+  {
+    "System": {
+      "EventID": 4688,
+      "Provider": {
+        "Name": "Microsoft-Windows-Security-Auditing"
+      },
+      "TimeCreated": {
+        "SystemTime": "2020-10-29T08:23:20.533Z"
+      },
+      "Computer": "public-lab-01",
+      "EventRecordID": 1
+    },
+    "EventData": {
+      "NewProcessName": "C:\\Lab\\SharpView.exe",
+      "ParentProcessName": "C:\\Lab\\cmd.exe",
+      "User": "PUBLICLAB\\operator01"
+    },
+    "PublicAdapter": {
+      "source_row": 1,
+      "modified": true,
+      "scope": "privacy-reduced export; not byte-for-byte upstream evidence"
+    }
+  },
+  {
+    "System": {
+      "EventID": 1,
+      "Provider": {
+        "Name": "Microsoft-Windows-Sysmon"
+      },
+      "TimeCreated": {
+        "SystemTime": "2020-10-29T08:23:20.534Z"
+      },
+      "Computer": "public-lab-01",
+      "EventRecordID": 120
+    },
+    "EventData": {
+      "Image": "C:\\Lab\\SharpView.exe",
+      "ParentImage": "C:\\Lab\\cmd.exe",
+      "User": "PUBLICLAB\\operator01"
+    },
+    "PublicAdapter": {
+      "source_row": 120,
+      "modified": true,
+      "scope": "privacy-reduced export; not byte-for-byte upstream evidence"
+    }
+  },
+  {
+    "System": {
+      "EventID": 22,
+      "Provider": {
+        "Name": "Microsoft-Windows-Sysmon"
+      },
+      "TimeCreated": {
+        "SystemTime": "2020-10-29T08:23:22.558Z"
+      },
+      "Computer": "public-lab-01",
+      "EventRecordID": 259
+    },
+    "EventData": {
+      "Image": "C:\\Lab\\SharpView.exe",
+      "QueryName": "service1.example.test"
+    },
+    "PublicAdapter": {
+      "source_row": 259,
+      "modified": true,
+      "scope": "privacy-reduced export; not byte-for-byte upstream evidence"
+    }
+  },
+  {
+    "System": {
+      "EventID": 22,
+      "Provider": {
+        "Name": "Microsoft-Windows-Sysmon"
+      },
+      "TimeCreated": {
+        "SystemTime": "2020-10-29T08:23:22.558Z"
+      },
+      "Computer": "public-lab-01",
+      "EventRecordID": 260
+    },
+    "EventData": {
+      "Image": "C:\\Lab\\SharpView.exe",
+      "QueryName": "service2.example.test"
+    },
+    "PublicAdapter": {
+      "source_row": 260,
+      "modified": true,
+      "scope": "privacy-reduced export; not byte-for-byte upstream evidence"
+    }
+  },
+  {
+    "System": {
+      "EventID": 3,
+      "Provider": {
+        "Name": "Microsoft-Windows-Sysmon"
+      },
+      "TimeCreated": {
+        "SystemTime": "2020-10-29T08:23:22.683Z"
+      },
+      "Computer": "public-lab-01",
+      "EventRecordID": 261
+    },
+    "EventData": {
+      "Image": "C:\\Lab\\SharpView.exe",
+      "User": "PUBLICLAB\\operator01",
+      "SourceIp": "192.0.2.10",
+      "DestinationIp": "192.0.2.11",
+      "SourcePort": "50450",
+      "DestinationPort": "389",
+      "Protocol": "tcp"
+    },
+    "PublicAdapter": {
+      "source_row": 261,
+      "modified": true,
+      "scope": "privacy-reduced export; not byte-for-byte upstream evidence"
+    }
+  },
+  {
+    "System": {
+      "EventID": 22,
+      "Provider": {
+        "Name": "Microsoft-Windows-Sysmon"
+      },
+      "TimeCreated": {
+        "SystemTime": "2020-10-29T08:23:23.558Z"
+      },
+      "Computer": "public-lab-01",
+      "EventRecordID": 266
+    },
+    "EventData": {
+      "Image": "C:\\Lab\\SharpView.exe",
+      "QueryName": "service3.example.test"
+    },
+    "PublicAdapter": {
+      "source_row": 266,
+      "modified": true,
+      "scope": "privacy-reduced export; not byte-for-byte upstream evidence"
+    }
+  }
+]

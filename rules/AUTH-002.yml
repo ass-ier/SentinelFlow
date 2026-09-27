@@ -1,0 +1,19 @@
+id: AUTH-002
+name: Account lockout spike
+description: >-
+  Three or more account lockouts on one host within five minutes.
+  Correlate with authentication history before attributing intent.
+severity: medium
+conditions:
+  - field: event.category
+    operator: equals
+    value: authentication
+  - field: event.action
+    operator: equals
+    value: account_lockout
+threshold: {count: 3, window_seconds: 300}
+group_by: [host.name]
+suppression_seconds: 600
+mitre_attack: [T1110]
+false_positives: [Expired service credentials or a widespread password rotation.]
+provenance: {kind: bundled, author: SentinelFlow contributors, license: MIT}

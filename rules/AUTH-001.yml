@@ -1,0 +1,29 @@
+id: AUTH-001
+name: Brute force authentication
+description: >-
+  Repeated failed logins from one source address, against one or multiple users.
+  This is a threshold indicator, not evidence that an account was compromised.
+severity: high
+enabled: true
+conditions:
+  - field: event.category
+    operator: equals
+    value: authentication
+  - field: event.action
+    operator: equals
+    value: login
+  - field: event.outcome
+    operator: equals
+    value: failure
+threshold:
+  count: 10
+  window_seconds: 300
+group_by: [source.ip]
+suppression_seconds: 600
+mitre_attack: [T1110]
+false_positives:
+  - Misconfigured applications or users repeatedly entering an outdated password.
+provenance:
+  kind: bundled
+  author: SentinelFlow contributors
+  license: MIT
