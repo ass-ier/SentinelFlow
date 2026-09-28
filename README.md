@@ -139,14 +139,20 @@ and the measured benchmark. **Any failed phase makes the command fail.**
 Parser/replay/negative/security categories must have executed tests; empty or
 skipped suites cannot produce a validated receipt.
 
-The included execution evidence records **260 backend tests and 93 frontend
+The included execution evidence records **268 backend tests and 93 frontend
 tests passed**, **50 exact detection scenarios**, **14/14 controlled benign
 scenarios**, **4 Sigma compatibility cases**, and **33 live browser checks**.
-The latter groups are reported separately, not added to the 353 unique unit /
+The latter groups are reported separately, not added to the 361 unique unit /
 integration test cases. Every measured benchmark iteration processed 5,600
 events, evaluated 39,200 event-rule pairs, and produced exactly 700 alerts.
 See [executed results](docs/results/README.md) for measured timings, coverage,
 environment, raw receipts, and their limitations.
+
+A clean installation exposed npm advisories in the original dependency pins.
+The affected packages were upgraded, eight offline regression guards were
+added, and the subsequent npm audit reported zero known advisories. This is a
+dated registry result, not a guarantee of vulnerability-free software; see
+[dependency maintenance](docs/dependency-maintenance.md).
 
 Current run output is under `artifacts/`. Committed, actual execution receipts
 and measurements are under [docs/results](docs/results). Receipts contain a
@@ -156,7 +162,8 @@ isolated validation pass.
 
 [Testing methodology and commands](docs/testing.md) ·
 [Saved dataset manifest](test-data/README.md) ·
-[Source and license provenance](docs/data-provenance.md)
+[Source and license provenance](docs/data-provenance.md) ·
+[Fresh-clone and custom-port verification](docs/fresh-clone.md)
 
 ## Reproduce a detection
 

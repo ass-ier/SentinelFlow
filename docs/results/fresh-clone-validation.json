@@ -1,6 +1,6 @@
 {
   "status": "validated",
-  "started_at": "2026-09-28T00:03:56.232413+00:00",
+  "started_at": "2026-09-27T23:54:14.985086+00:00",
   "steps": [
     {
       "name": "Environment",
@@ -11,24 +11,24 @@
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.04681904206518084
+      "duration_seconds": 0.027418041019700468
     },
     {
       "name": "Pinned Python dependency consistency",
       "command": [
-        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python",
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python",
         "-m",
         "pip",
         "check"
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.27252708293963224
+      "duration_seconds": 0.27212337497621775
     },
     {
       "name": "Backend static checks",
       "command": [
-        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python",
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python",
         "-m",
         "ruff",
         "check",
@@ -37,12 +37,12 @@
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.07539420900866389
+      "duration_seconds": 1.2140268749790266
     },
     {
       "name": "Backend formatting",
       "command": [
-        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python",
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python",
         "-m",
         "ruff",
         "format",
@@ -52,19 +52,19 @@
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.03468433395028114
+      "duration_seconds": 0.048666417016647756
     },
     {
       "name": "Backend strict types",
       "command": [
-        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python",
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python",
         "-m",
         "mypy",
         "backend/app"
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.47827087505720556
+      "duration_seconds": 76.21522541705053
     },
     {
       "name": "Frontend lint",
@@ -77,7 +77,7 @@
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 1.2835292080417275
+      "duration_seconds": 1.6556901660514995
     },
     {
       "name": "Frontend formatting",
@@ -90,7 +90,7 @@
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.8580514999339357
+      "duration_seconds": 1.2590466249966994
     },
     {
       "name": "Frontend types and production build",
@@ -103,7 +103,7 @@
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 3.556695834035054
+      "duration_seconds": 5.508242957992479
     },
     {
       "name": "Browser workflow syntax",
@@ -114,7 +114,7 @@
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.02410862490069121
+      "duration_seconds": 0.024490333045832813
     },
     {
       "name": "Live verification syntax",
@@ -125,7 +125,7 @@
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.022861666977405548
+      "duration_seconds": 0.023883750080130994
     },
     {
       "name": "Recording workflow syntax",
@@ -136,34 +136,34 @@
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.02285187505185604
+      "duration_seconds": 0.02346945903263986
     },
     {
       "name": "Saved fixture reproducibility",
       "command": [
-        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python",
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python",
         "scripts/generate_test_data.py",
         "--check"
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.24735137494280934
+      "duration_seconds": 0.2489081670064479
     },
     {
       "name": "All backend tests",
       "command": [
-        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python",
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python",
         "-m",
         "pytest",
         "-q",
         "--tb=short",
-        "--junitxml=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/backend-junit.xml",
+        "--junitxml=/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/artifacts/backend-junit.xml",
         "--cov=app",
-        "--cov-report=json:/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/coverage.json"
+        "--cov-report=json:/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/artifacts/coverage.json"
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 19.767930374946445
+      "duration_seconds": 23.96407004201319
     },
     {
       "name": "All frontend tests",
@@ -174,41 +174,41 @@
         "test",
         "--",
         "--reporter=json",
-        "--outputFile=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/frontend-tests.json"
+        "--outputFile=/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/artifacts/frontend-tests.json"
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 4.355327124940231
+      "duration_seconds": 4.692147749941796
     },
     {
       "name": "Exact detection validation",
       "command": [
-        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python",
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python",
         "scripts/validate_detections.py"
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.42844050005078316
+      "duration_seconds": 0.40872083394788206
     },
     {
       "name": "Licensed Sigma compatibility",
       "command": [
-        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python",
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python",
         "scripts/validate_sigma.py"
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 0.14822345797438174
+      "duration_seconds": 0.1479688750114292
     },
     {
       "name": "Measured detection benchmark",
       "command": [
-        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python",
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python",
         "scripts/benchmark_detection.py"
       ],
       "exit_code": 0,
       "status": "passed",
-      "duration_seconds": 1.9759262090083212
+      "duration_seconds": 1.9271713750204071
     }
   ],
   "source_fingerprint": "f4f27c57afbd72864a29557fec670a2cb2865ff6f2bfe95a3e8af03808aeae5e",
@@ -345,7 +345,7 @@
     ]
   },
   "benchmark": {
-    "measured_at": "2026-09-28T00:04:29.782643+00:00",
+    "measured_at": "2026-09-27T23:56:12.606448+00:00",
     "source_fingerprint": "f4f27c57afbd72864a29557fec670a2cb2865ff6f2bfe95a3e8af03808aeae5e",
     "scope": "Single-process engine-only; parsing/storage excluded. Not a production capacity claim.",
     "python": "3.13.7",
@@ -354,12 +354,12 @@
     "dataset_sha256": "b99174b1ee5f7cc972fe14d9a3baf1081270129bab22d6f5b44a3c22d01e6a12",
     "iterations": 3,
     "events_processed": 5600,
-    "events_per_second": 12675.722380851706,
-    "detection_seconds": 0.4417894169455394,
+    "events_per_second": 12940.508034386656,
+    "detection_seconds": 0.43274962506257,
     "sample_seconds": [
-      0.4522057910216972,
-      0.44097116601187736,
-      0.4417894169455394
+      0.438131415983662,
+      0.43274962506257,
+      0.4321047909324989
     ],
     "alerts_generated": 700,
     "rules_evaluated": 39200,
@@ -377,6 +377,6 @@
     "status": "passed"
   },
   "total_tests_passed": 361,
-  "completed_at": "2026-09-28T00:04:29.868774+00:00",
-  "duration_seconds": 33.636312749935314
+  "completed_at": "2026-09-27T23:56:12.694599+00:00",
+  "duration_seconds": 117.7104417080991
 }

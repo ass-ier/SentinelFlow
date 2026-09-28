@@ -73,6 +73,13 @@ single-line technique identifiers, keyboard skip navigation, and unexpected
 HTTP/page errors. These 33 checks supplement, rather than inflate, unit-test
 counts. Media is captured only after the full validation receipt is current.
 
+The fresh-install npm advisory report also produced eight initially failing
+lockfile regression checks. After upgrading React Router, Vite, Vitest and
+Playwright, all eight pass and `npm audit --json` reports zero known advisories.
+The offline guards cover the documented known version floors, not future
+advisories. The live registry query is deliberately separate from offline
+`make validate`; see [dependency maintenance](dependency-maintenance.md).
+
 ## Isolation and scope
 
 Tests use temporary SQLite databases, not the live demo database.

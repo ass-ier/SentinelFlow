@@ -32,7 +32,8 @@ attack detection.
   network. Normal operation and validation after installation do not.
 - Actual execution evidence is from macOS arm64. Linux/Docker configuration is
   supplied, but no container build/run or cross-platform test matrix was executed.
-  Security tests are not an independent penetration test or dependency audit.
+  Security tests are not an independent penetration test. The npm advisory
+  report is a dated registry check; no Python advisory database scan was run.
 
 The committed execution receipts state what actually ran. Re-run validation
 after any rule, dependency, fixture, or code change. A stale receipt is not

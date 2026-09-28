@@ -1,18 +1,18 @@
 {
   "status": "recorded-and-decoded",
   "path": "recordings/sentinelflow-final-demo.mp4",
-  "created_at": "2026-09-27T23:34:29.951Z",
-  "duration_seconds": 357.08,
-  "bytes": 9734780,
-  "sha256": "37c6d9e2085c6754d9f861c0da3e82ee27f982fd697ffcf8c18464672332fe72",
-  "browser": "140.0.7339.16",
+  "created_at": "2026-09-28T00:05:36.389Z",
+  "duration_seconds": 356.15999999999997,
+  "bytes": 9730783,
+  "sha256": "aa444d5de6e407cd1977cd41690fc972e3e92f6fa13ec854942f91af01366df5",
+  "browser": "153.0.8010.12",
   "capture": "Continuous real Chromium browser-context video",
   "resolution": {
     "width": 1440,
     "height": 1000
   },
   "audio": "Silent walkthrough; chapter guide in docs/demo.md",
-  "source_fingerprint": "dcc803add464dbb29f111a235610ecd459bbfbe3bca7a6747c42b88f4d599fce",
+  "source_fingerprint": "f4f27c57afbd72864a29557fec670a2cb2865ff6f2bfe95a3e8af03808aeae5e",
   "ffmpeg_version": "ffmpeg version 6.0 Copyright (c) 2000-2023 the FFmpeg developers",
   "ffmpeg_sha256": "a90e3db6a3fd35f6074b013f948b1aa45b31c6375489d39e572bea3f18336584",
   "decoded_successfully": true,
@@ -24,54 +24,54 @@
     },
     {
       "title": "Event explorer and original raw evidence",
-      "at_seconds": 30.003
+      "at_seconds": 30.005
     },
     {
       "title": "Brute-force replay: real-time arrival of 25 events",
-      "at_seconds": 52.002
+      "at_seconds": 52.004
     },
     {
       "title": "AUTH-001 fired",
-      "at_seconds": 77.255,
-      "run_id": "53f2104780cf49a5a22e2adff38f2dda",
+      "at_seconds": 77.216,
+      "run_id": "3ed79a991f8a4d18866f501dee06ead3",
       "events": 25,
       "alerts": 1
     },
     {
       "title": "Alert investigation: source, user, UTC time, MITRE and 25 evidence records",
-      "at_seconds": 89.198,
-      "alert_id": "7519f61c3c8c59507bbc47dc9446d24f"
+      "at_seconds": 89.152,
+      "alert_id": "bae8f02552617ff6f9537b93b5464475"
     },
     {
       "title": "Detection testing: exact positive and benign assertions",
-      "at_seconds": 128.001
+      "at_seconds": 128
     },
     {
       "title": "PowerShell indicators, not proof of compromise",
-      "at_seconds": 160.003
+      "at_seconds": 160.002
     },
     {
       "title": "DNS anomaly: actual long-label evidence",
-      "at_seconds": 189.001
+      "at_seconds": 189.002
     },
     {
       "title": "Sigma: unchanged upstream source, compilation, import and real tests",
-      "at_seconds": 218.002
+      "at_seconds": 218.004
     },
     {
       "title": "Execute make validate and show its real output",
-      "at_seconds": 277.004
+      "at_seconds": 277.003
     },
     {
       "title": "Actual validation completed",
-      "at_seconds": 322.102,
-      "backend_tests": 260,
+      "at_seconds": 322.103,
+      "backend_tests": 268,
       "frontend_tests": 93,
       "detection_scenarios": 50
     },
     {
       "title": "Included test data, tests, scripts and documentation",
-      "at_seconds": 322.102
+      "at_seconds": 322.103
     }
   ]
 }

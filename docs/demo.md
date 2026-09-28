@@ -60,9 +60,9 @@ composite invented evidence into the image.
 ## Recording
 
 The included [final recording](../recordings/sentinelflow-final-demo.mp4) is
-**5 minutes 57.08 seconds**, 1440x1000 at 25 fps, silent H.264 MP4. It was
+**5 minutes 56.16 seconds**, 1440x1000 at 25 fps, silent H.264 MP4. It was
 recorded from the verified live app and fully decoded successfully. Its
-measured size is 9,734,780 bytes; exact metadata is saved alongside it.
+measured size is 9,730,783 bytes; exact metadata is saved alongside it.
 
 The reproducible recording script uses a separate local Chromium browser
 context, records its real rendered frames continuously, and transcodes the

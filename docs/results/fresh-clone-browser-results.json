@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "started_at": "2026-09-27T23:54:03.440Z",
+  "started_at": "2026-09-27T23:58:10.008Z",
   "source_fingerprint": "f4f27c57afbd72864a29557fec670a2cb2865ff6f2bfe95a3e8af03808aeae5e",
   "browser": "153.0.8010.12",
   "checks": [
@@ -28,12 +28,12 @@
     {
       "name": "Chronological 10x replay reaches actual 25-event completion",
       "status": "passed",
-      "run_id": "7a7d20e83c1e4f72a3bc6ab47b4d0ae8"
+      "run_id": "d313ff9fd4c747a1a7dcdc7af9153e2d"
     },
     {
       "name": "Alert status, 25 linked events, raw evidence, MITRE and rule snapshot work",
       "status": "passed",
-      "alert_id": "89b824993ad6d167e7e6f31bf7cb564e"
+      "alert_id": "e04827780fcf98642247f12577992eb2"
     },
     {
       "name": "Rule toggle and explicit disabled-definition testing work without hidden enablement",
@@ -222,41 +222,8 @@
       "status": "passed"
     }
   ],
-  "screenshots": [
-    {
-      "path": "screenshots/dashboard.png",
-      "bytes": 266989
-    },
-    {
-      "path": "screenshots/events.png",
-      "bytes": 176811
-    },
-    {
-      "path": "screenshots/alert-details.png",
-      "bytes": 590839
-    },
-    {
-      "path": "screenshots/detection-rules.png",
-      "bytes": 160125
-    },
-    {
-      "path": "screenshots/detection-validation.png",
-      "bytes": 188451
-    },
-    {
-      "path": "screenshots/replay.png",
-      "bytes": 461488
-    },
-    {
-      "path": "screenshots/sigma-validation.png",
-      "bytes": 432713
-    },
-    {
-      "path": "screenshots/mobile-dashboard.png",
-      "bytes": 183213
-    }
-  ],
-  "completed_at": "2026-09-27T23:54:20.126Z",
+  "screenshots": [],
+  "completed_at": "2026-09-27T23:58:22.342Z",
   "page_errors": [],
   "server_errors": []
 }

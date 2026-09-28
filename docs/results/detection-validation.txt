@@ -55,5 +55,5 @@ PASSED   public-otrf-adapted                  events=   6 alerts= 0 duplicates=0
 
 Scenarios: 50 passed, 0 failed, 50 total
 Controlled benign scenarios: 14 / 14 passed
-Duration: 0.263772s
+Duration: 0.247600s
 STATUS: PASSED

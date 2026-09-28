@@ -7,25 +7,25 @@ v20.19.2
 
 ========================================================================
 Pinned Python dependency consistency
-$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python -m pip check
+$ /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python -m pip check
 ========================================================================
 No broken requirements found.
 
 ========================================================================
 Backend static checks
-$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python -m ruff check backend scripts
+$ /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python -m ruff check backend scripts
 ========================================================================
 All checks passed!
 
 ========================================================================
 Backend formatting
-$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python -m ruff format --check backend scripts
+$ /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python -m ruff format --check backend scripts
 ========================================================================
 55 files already formatted
 
 ========================================================================
 Backend strict types
-$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python -m mypy backend/app
+$ /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python -m mypy backend/app
 ========================================================================
 Success: no issues found in 29 source files
 
@@ -65,7 +65,7 @@ computing gzip size...
 dist/index.html                   1.44 kB │ gzip:   0.82 kB
 dist/assets/index-C71NGMZe.css   37.32 kB │ gzip:   8.43 kB
 dist/assets/index-tdwb53NO.js   335.38 kB │ gzip: 102.74 kB
-✓ built in 1.18s
+✓ built in 1.17s
 
 ========================================================================
 Browser workflow syntax
@@ -84,13 +84,13 @@ $ /Users/triplea/.nvm/versions/node/v20.19.2/bin/node --check scripts/record_dem
 
 ========================================================================
 Saved fixture reproducibility
-$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python scripts/generate_test_data.py --check
+$ /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python scripts/generate_test_data.py --check
 ========================================================================
 Reproduced 56 generated files byte-for-byte in isolated storage.
 
 ========================================================================
 All backend tests
-$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python -m pytest -q --tb=short --junitxml=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/backend-junit.xml --cov=app --cov-report=json:/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/coverage.json
+$ /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python -m pytest -q --tb=short --junitxml=/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/artifacts/backend-junit.xml --cov=app --cov-report=json:/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/artifacts/coverage.json
 ========================================================================
 ........................................................................ [ 26%]
 ........................................................................ [ 53%]
@@ -98,30 +98,30 @@ $ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-u
 ....................................................                     [100%]
 =============================== warnings summary ===============================
 .venv/lib/python3.13/site-packages/starlette/testclient.py:51
-  /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/lib/python3.13/site-packages/starlette/testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+  /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/lib/python3.13/site-packages/starlette/testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
     _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-- generated xml file: /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/backend-junit.xml -
+- generated xml file: /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/artifacts/backend-junit.xml -
 ================================ tests coverage ================================
 _______________ coverage: platform darwin, python 3.13.7-final-0 _______________
 
-Coverage JSON written to file /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/coverage.json
-268 passed, 1 warning in 18.57s
+Coverage JSON written to file /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/artifacts/coverage.json
+268 passed, 1 warning in 18.58s
 
 ========================================================================
 All frontend tests
-$ /Users/triplea/.nvm/versions/node/v20.19.2/bin/npm --prefix frontend test -- --reporter=json --outputFile=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/frontend-tests.json
+$ /Users/triplea/.nvm/versions/node/v20.19.2/bin/npm --prefix frontend test -- --reporter=json --outputFile=/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/artifacts/frontend-tests.json
 ========================================================================
 
 > sentinelflow-frontend@0.1.0 test
-> vitest run --reporter=json --outputFile=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/frontend-tests.json
+> vitest run --reporter=json --outputFile=/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/artifacts/frontend-tests.json
 
-JSON report written to /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/frontend-tests.json
+JSON report written to /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/artifacts/frontend-tests.json
 
 ========================================================================
 Exact detection validation
-$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python scripts/validate_detections.py
+$ /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python scripts/validate_detections.py
 ========================================================================
 SENTINELFLOW DETECTION VALIDATION
 Scope: bundled
@@ -180,12 +180,12 @@ PASSED   public-otrf-adapted                  events=   6 alerts= 0 duplicates=0
 
 Scenarios: 50 passed, 0 failed, 50 total
 Controlled benign scenarios: 14 / 14 passed
-Duration: 0.247600s
+Duration: 0.238527s
 STATUS: PASSED
 
 ========================================================================
 Licensed Sigma compatibility
-$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python scripts/validate_sigma.py
+$ /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python scripts/validate_sigma.py
 ========================================================================
 {
   "rules_imported": 2,
@@ -245,10 +245,10 @@ $ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-u
 
 ========================================================================
 Measured detection benchmark
-$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python scripts/benchmark_detection.py
+$ /Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv/bin/python scripts/benchmark_detection.py
 ========================================================================
 {
-  "measured_at": "2026-09-28T00:04:29.782643+00:00",
+  "measured_at": "2026-09-27T23:56:12.606448+00:00",
   "source_fingerprint": "f4f27c57afbd72864a29557fec670a2cb2865ff6f2bfe95a3e8af03808aeae5e",
   "scope": "Single-process engine-only; parsing/storage excluded. Not a production capacity claim.",
   "python": "3.13.7",
@@ -257,12 +257,12 @@ $ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-u
   "dataset_sha256": "b99174b1ee5f7cc972fe14d9a3baf1081270129bab22d6f5b44a3c22d01e6a12",
   "iterations": 3,
   "events_processed": 5600,
-  "events_per_second": 12675.722380851706,
-  "detection_seconds": 0.4417894169455394,
+  "events_per_second": 12940.508034386656,
+  "detection_seconds": 0.43274962506257,
   "sample_seconds": [
-    0.4522057910216972,
-    0.44097116601187736,
-    0.4417894169455394
+    0.438131415983662,
+    0.43274962506257,
+    0.4321047909324989
   ],
   "alerts_generated": 700,
   "rules_evaluated": 39200,

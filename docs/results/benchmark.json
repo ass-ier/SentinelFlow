@@ -1,6 +1,6 @@
 {
-  "measured_at": "2026-09-27T23:33:24.540738+00:00",
-  "source_fingerprint": "dcc803add464dbb29f111a235610ecd459bbfbe3bca7a6747c42b88f4d599fce",
+  "measured_at": "2026-09-28T00:04:29.782643+00:00",
+  "source_fingerprint": "f4f27c57afbd72864a29557fec670a2cb2865ff6f2bfe95a3e8af03808aeae5e",
   "scope": "Single-process engine-only; parsing/storage excluded. Not a production capacity claim.",
   "python": "3.13.7",
   "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
@@ -8,12 +8,12 @@
   "dataset_sha256": "b99174b1ee5f7cc972fe14d9a3baf1081270129bab22d6f5b44a3c22d01e6a12",
   "iterations": 3,
   "events_processed": 5600,
-  "events_per_second": 12654.336526477946,
-  "detection_seconds": 0.4425360419554636,
+  "events_per_second": 12675.722380851706,
+  "detection_seconds": 0.4417894169455394,
   "sample_seconds": [
-    0.4425360419554636,
-    0.4530442920513451,
-    0.43501945794560015
+    0.4522057910216972,
+    0.44097116601187736,
+    0.4417894169455394
   ],
   "alerts_generated": 700,
   "rules_evaluated": 39200,
