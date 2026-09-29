@@ -1,0 +1,190 @@
+{
+  "status": "passed",
+  "started_at": "2026-09-28T23:54:04.751081+00:00",
+  "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+  "engine": "docker",
+  "ui": "http://127.0.0.1:57082",
+  "api": "http://127.0.0.1:57081",
+  "checks": [
+    {
+      "name": "Production frontend built with an explicit independent API origin",
+      "status": "passed"
+    },
+    {
+      "name": "Validated immutable backend image selected",
+      "status": "passed",
+      "image_id": "sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9",
+      "platform": "linux/amd64"
+    },
+    {
+      "name": "Production backend starts on PORT with a credential-free health endpoint",
+      "status": "passed",
+      "health": {
+        "status": "ok",
+        "version": "0.1.0",
+        "auth_required": false,
+        "public_demo": true,
+        "public_demo_run_limit": 20
+      }
+    },
+    {
+      "name": "Runtime schema initialization and exact deterministic seed",
+      "status": "passed",
+      "events": 56,
+      "alerts": 7
+    },
+    {
+      "name": "Backend-only Swagger, OpenAPI, and favicon respond",
+      "status": "passed"
+    },
+    {
+      "name": "Explicit cross-origin preflight succeeds; wrong origins and hosts are rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Public validation executes every synthetic scenario in isolation",
+      "status": "passed",
+      "scenarios": 49,
+      "benign": 14
+    },
+    {
+      "name": "Real production-build desktop/mobile browser workflows",
+      "status": "passed",
+      "checks": 27
+    },
+    {
+      "name": "Restart preserves events, alerts, run IDs, and exact evidence",
+      "status": "passed",
+      "events": 89,
+      "alerts": 10,
+      "runs": 4
+    },
+    {
+      "name": "Visitor reset denied; operator reset restores the known demo state",
+      "status": "passed",
+      "events": 56,
+      "alerts": 7
+    },
+    {
+      "name": "Container enforces read-only root, dropped capabilities and resource bounds",
+      "status": "passed",
+      "host_config": {
+        "Binds": [
+          "sentinelflow-check-d477574f8e2f-data:/srv/sentinelflow/data"
+        ],
+        "ContainerIDFile": "",
+        "LogConfig": {
+          "Type": "json-file",
+          "Config": {}
+        },
+        "NetworkMode": "bridge",
+        "PortBindings": {
+          "57081/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "57081"
+            }
+          ]
+        },
+        "RestartPolicy": {
+          "Name": "no",
+          "MaximumRetryCount": 0
+        },
+        "AutoRemove": true,
+        "VolumeDriver": "",
+        "VolumesFrom": null,
+        "ConsoleSize": [
+          0,
+          0
+        ],
+        "CapAdd": null,
+        "CapDrop": [
+          "ALL"
+        ],
+        "CgroupnsMode": "private",
+        "Dns": [],
+        "DnsOptions": [],
+        "DnsSearch": [],
+        "ExtraHosts": null,
+        "GroupAdd": null,
+        "IpcMode": "private",
+        "Cgroup": "",
+        "Links": null,
+        "OomScoreAdj": 0,
+        "PidMode": "",
+        "Privileged": false,
+        "PublishAllPorts": false,
+        "ReadonlyRootfs": true,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "Tmpfs": {
+          "/srv/sentinelflow/artifacts": "rw,noexec,nosuid,uid=10001,gid=10001,size=32m",
+          "/tmp": "rw,noexec,nosuid,size=64m"
+        },
+        "UTSMode": "",
+        "UsernsMode": "",
+        "ShmSize": 67108864,
+        "Runtime": "runc",
+        "Isolation": "",
+        "CpuShares": 0,
+        "Memory": 805306368,
+        "NanoCpus": 2000000000,
+        "CgroupParent": "",
+        "BlkioWeight": 0,
+        "BlkioWeightDevice": [],
+        "BlkioDeviceReadBps": [],
+        "BlkioDeviceWriteBps": [],
+        "BlkioDeviceReadIOps": [],
+        "BlkioDeviceWriteIOps": [],
+        "CpuPeriod": 0,
+        "CpuQuota": 0,
+        "CpuRealtimePeriod": 0,
+        "CpuRealtimeRuntime": 0,
+        "CpusetCpus": "",
+        "CpusetMems": "",
+        "Devices": [],
+        "DeviceCgroupRules": null,
+        "DeviceRequests": null,
+        "MemoryReservation": 0,
+        "MemorySwap": 1610612736,
+        "MemorySwappiness": null,
+        "OomKillDisable": null,
+        "PidsLimit": 128,
+        "Ulimits": [],
+        "CpuCount": 0,
+        "CpuPercent": 0,
+        "IOMaximumIOps": 0,
+        "IOMaximumBandwidth": 0,
+        "MaskedPaths": [
+          "/proc/asound",
+          "/proc/acpi",
+          "/proc/kcore",
+          "/proc/keys",
+          "/proc/latency_stats",
+          "/proc/timer_list",
+          "/proc/timer_stats",
+          "/proc/sched_debug",
+          "/proc/scsi",
+          "/sys/firmware",
+          "/sys/devices/virtual/powercap"
+        ],
+        "ReadonlyPaths": [
+          "/proc/bus",
+          "/proc/fs",
+          "/proc/irq",
+          "/proc/sys",
+          "/proc/sysrq-trigger"
+        ]
+      }
+    },
+    {
+      "name": "Container runs non-root and passes its actual Docker healthcheck",
+      "status": "passed",
+      "uid": "10001"
+    }
+  ],
+  "external_deployment": "Not attempted or verified",
+  "image_id": "sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9",
+  "completed_at": "2026-09-28T23:54:29.274539+00:00"
+}

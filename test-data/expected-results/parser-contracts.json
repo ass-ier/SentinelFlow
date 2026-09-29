@@ -1,0 +1,1739 @@
+[
+  {
+    "path": "parsers/normalized.json",
+    "format": "json",
+    "expected": [
+      {
+        "event": {
+          "id": "auth-success-0",
+          "timestamp": "2026-01-15T09:00:00Z",
+          "source": "synthetic.telemetry",
+          "category": "authentication",
+          "type": "info",
+          "action": "login",
+          "outcome": "success",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "workstation-01",
+          "ip": "10.10.1.10"
+        },
+        "user": {
+          "name": "analyst01"
+        },
+        "source": {
+          "ip": "10.10.20.15",
+          "port": 51000
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "metadata": {
+          "synthetic": true,
+          "product": "linux"
+        },
+        "raw_event": {
+          "event": {
+            "id": "auth-success-0",
+            "timestamp": "2026-01-15T09:00:00+00:00",
+            "source": "synthetic.telemetry",
+            "category": "authentication",
+            "type": "info",
+            "action": "login",
+            "outcome": "success",
+            "severity": "informational"
+          },
+          "host": {
+            "name": "workstation-01",
+            "ip": "10.10.1.10"
+          },
+          "user": {
+            "name": "analyst01"
+          },
+          "source": {
+            "ip": "10.10.20.15",
+            "port": 51000
+          },
+          "destination": {
+            "ip": null,
+            "port": null
+          },
+          "process": {
+            "name": null,
+            "executable": null,
+            "command_line": null,
+            "pid": null,
+            "parent": {
+              "name": null,
+              "executable": null,
+              "pid": null
+            }
+          },
+          "network": {
+            "protocol": null
+          },
+          "dns": {
+            "query": null
+          },
+          "file": {
+            "path": null
+          },
+          "metadata": {
+            "synthetic": true,
+            "product": "linux"
+          }
+        }
+      },
+      {
+        "event": {
+          "id": "auth-success-1",
+          "timestamp": "2026-01-15T09:00:30Z",
+          "source": "synthetic.telemetry",
+          "category": "authentication",
+          "type": "info",
+          "action": "login",
+          "outcome": "success",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "workstation-01",
+          "ip": "10.10.1.10"
+        },
+        "user": {
+          "name": "analyst01"
+        },
+        "source": {
+          "ip": "10.10.20.15",
+          "port": 51000
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "metadata": {
+          "synthetic": true,
+          "product": "linux"
+        },
+        "raw_event": {
+          "event": {
+            "id": "auth-success-1",
+            "timestamp": "2026-01-15T09:00:30+00:00",
+            "source": "synthetic.telemetry",
+            "category": "authentication",
+            "type": "info",
+            "action": "login",
+            "outcome": "success",
+            "severity": "informational"
+          },
+          "host": {
+            "name": "workstation-01",
+            "ip": "10.10.1.10"
+          },
+          "user": {
+            "name": "analyst01"
+          },
+          "source": {
+            "ip": "10.10.20.15",
+            "port": 51000
+          },
+          "destination": {
+            "ip": null,
+            "port": null
+          },
+          "process": {
+            "name": null,
+            "executable": null,
+            "command_line": null,
+            "pid": null,
+            "parent": {
+              "name": null,
+              "executable": null,
+              "pid": null
+            }
+          },
+          "network": {
+            "protocol": null
+          },
+          "dns": {
+            "query": null
+          },
+          "file": {
+            "path": null
+          },
+          "metadata": {
+            "synthetic": true,
+            "product": "linux"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "path": "authentication/normal_login.jsonl",
+    "format": "jsonl",
+    "expected": [
+      {
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "dns": {
+          "query": null
+        },
+        "event": {
+          "action": "login",
+          "category": "authentication",
+          "id": "auth-success-0",
+          "outcome": "success",
+          "severity": "informational",
+          "source": "synthetic.telemetry",
+          "timestamp": "2026-01-15T09:00:00Z",
+          "type": "info"
+        },
+        "file": {
+          "path": null
+        },
+        "host": {
+          "ip": "10.10.1.10",
+          "name": "workstation-01"
+        },
+        "metadata": {
+          "product": "linux",
+          "synthetic": true
+        },
+        "network": {
+          "protocol": null
+        },
+        "process": {
+          "command_line": null,
+          "executable": null,
+          "name": null,
+          "parent": {
+            "executable": null,
+            "name": null,
+            "pid": null
+          },
+          "pid": null
+        },
+        "source": {
+          "ip": "10.10.20.15",
+          "port": 51000
+        },
+        "user": {
+          "name": "analyst01"
+        },
+        "raw_event": {
+          "destination": {
+            "ip": null,
+            "port": null
+          },
+          "dns": {
+            "query": null
+          },
+          "event": {
+            "action": "login",
+            "category": "authentication",
+            "id": "auth-success-0",
+            "outcome": "success",
+            "severity": "informational",
+            "source": "synthetic.telemetry",
+            "timestamp": "2026-01-15T09:00:00+00:00",
+            "type": "info"
+          },
+          "file": {
+            "path": null
+          },
+          "host": {
+            "ip": "10.10.1.10",
+            "name": "workstation-01"
+          },
+          "metadata": {
+            "product": "linux",
+            "synthetic": true
+          },
+          "network": {
+            "protocol": null
+          },
+          "process": {
+            "command_line": null,
+            "executable": null,
+            "name": null,
+            "parent": {
+              "executable": null,
+              "name": null,
+              "pid": null
+            },
+            "pid": null
+          },
+          "source": {
+            "ip": "10.10.20.15",
+            "port": 51000
+          },
+          "user": {
+            "name": "analyst01"
+          }
+        }
+      },
+      {
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "dns": {
+          "query": null
+        },
+        "event": {
+          "action": "login",
+          "category": "authentication",
+          "id": "auth-success-1",
+          "outcome": "success",
+          "severity": "informational",
+          "source": "synthetic.telemetry",
+          "timestamp": "2026-01-15T09:00:30Z",
+          "type": "info"
+        },
+        "file": {
+          "path": null
+        },
+        "host": {
+          "ip": "10.10.1.10",
+          "name": "workstation-01"
+        },
+        "metadata": {
+          "product": "linux",
+          "synthetic": true
+        },
+        "network": {
+          "protocol": null
+        },
+        "process": {
+          "command_line": null,
+          "executable": null,
+          "name": null,
+          "parent": {
+            "executable": null,
+            "name": null,
+            "pid": null
+          },
+          "pid": null
+        },
+        "source": {
+          "ip": "10.10.20.15",
+          "port": 51000
+        },
+        "user": {
+          "name": "analyst01"
+        },
+        "raw_event": {
+          "destination": {
+            "ip": null,
+            "port": null
+          },
+          "dns": {
+            "query": null
+          },
+          "event": {
+            "action": "login",
+            "category": "authentication",
+            "id": "auth-success-1",
+            "outcome": "success",
+            "severity": "informational",
+            "source": "synthetic.telemetry",
+            "timestamp": "2026-01-15T09:00:30+00:00",
+            "type": "info"
+          },
+          "file": {
+            "path": null
+          },
+          "host": {
+            "ip": "10.10.1.10",
+            "name": "workstation-01"
+          },
+          "metadata": {
+            "product": "linux",
+            "synthetic": true
+          },
+          "network": {
+            "protocol": null
+          },
+          "process": {
+            "command_line": null,
+            "executable": null,
+            "name": null,
+            "parent": {
+              "executable": null,
+              "name": null,
+              "pid": null
+            },
+            "pid": null
+          },
+          "source": {
+            "ip": "10.10.20.15",
+            "port": 51000
+          },
+          "user": {
+            "name": "analyst01"
+          }
+        }
+      },
+      {
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "dns": {
+          "query": null
+        },
+        "event": {
+          "action": "login",
+          "category": "authentication",
+          "id": "auth-success-2",
+          "outcome": "success",
+          "severity": "informational",
+          "source": "synthetic.telemetry",
+          "timestamp": "2026-01-15T09:01:00Z",
+          "type": "info"
+        },
+        "file": {
+          "path": null
+        },
+        "host": {
+          "ip": "10.10.1.10",
+          "name": "workstation-01"
+        },
+        "metadata": {
+          "product": "linux",
+          "synthetic": true
+        },
+        "network": {
+          "protocol": null
+        },
+        "process": {
+          "command_line": null,
+          "executable": null,
+          "name": null,
+          "parent": {
+            "executable": null,
+            "name": null,
+            "pid": null
+          },
+          "pid": null
+        },
+        "source": {
+          "ip": "10.10.20.15",
+          "port": 51000
+        },
+        "user": {
+          "name": "analyst01"
+        },
+        "raw_event": {
+          "destination": {
+            "ip": null,
+            "port": null
+          },
+          "dns": {
+            "query": null
+          },
+          "event": {
+            "action": "login",
+            "category": "authentication",
+            "id": "auth-success-2",
+            "outcome": "success",
+            "severity": "informational",
+            "source": "synthetic.telemetry",
+            "timestamp": "2026-01-15T09:01:00+00:00",
+            "type": "info"
+          },
+          "file": {
+            "path": null
+          },
+          "host": {
+            "ip": "10.10.1.10",
+            "name": "workstation-01"
+          },
+          "metadata": {
+            "product": "linux",
+            "synthetic": true
+          },
+          "network": {
+            "protocol": null
+          },
+          "process": {
+            "command_line": null,
+            "executable": null,
+            "name": null,
+            "parent": {
+              "executable": null,
+              "name": null,
+              "pid": null
+            },
+            "pid": null
+          },
+          "source": {
+            "ip": "10.10.20.15",
+            "port": 51000
+          },
+          "user": {
+            "name": "analyst01"
+          }
+        }
+      },
+      {
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "dns": {
+          "query": null
+        },
+        "event": {
+          "action": "login",
+          "category": "authentication",
+          "id": "auth-success-3",
+          "outcome": "success",
+          "severity": "informational",
+          "source": "synthetic.telemetry",
+          "timestamp": "2026-01-15T09:01:30Z",
+          "type": "info"
+        },
+        "file": {
+          "path": null
+        },
+        "host": {
+          "ip": "10.10.1.10",
+          "name": "workstation-01"
+        },
+        "metadata": {
+          "product": "linux",
+          "synthetic": true
+        },
+        "network": {
+          "protocol": null
+        },
+        "process": {
+          "command_line": null,
+          "executable": null,
+          "name": null,
+          "parent": {
+            "executable": null,
+            "name": null,
+            "pid": null
+          },
+          "pid": null
+        },
+        "source": {
+          "ip": "10.10.20.15",
+          "port": 51000
+        },
+        "user": {
+          "name": "analyst01"
+        },
+        "raw_event": {
+          "destination": {
+            "ip": null,
+            "port": null
+          },
+          "dns": {
+            "query": null
+          },
+          "event": {
+            "action": "login",
+            "category": "authentication",
+            "id": "auth-success-3",
+            "outcome": "success",
+            "severity": "informational",
+            "source": "synthetic.telemetry",
+            "timestamp": "2026-01-15T09:01:30+00:00",
+            "type": "info"
+          },
+          "file": {
+            "path": null
+          },
+          "host": {
+            "ip": "10.10.1.10",
+            "name": "workstation-01"
+          },
+          "metadata": {
+            "product": "linux",
+            "synthetic": true
+          },
+          "network": {
+            "protocol": null
+          },
+          "process": {
+            "command_line": null,
+            "executable": null,
+            "name": null,
+            "parent": {
+              "executable": null,
+              "name": null,
+              "pid": null
+            },
+            "pid": null
+          },
+          "source": {
+            "ip": "10.10.20.15",
+            "port": 51000
+          },
+          "user": {
+            "name": "analyst01"
+          }
+        }
+      },
+      {
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "dns": {
+          "query": null
+        },
+        "event": {
+          "action": "login",
+          "category": "authentication",
+          "id": "auth-success-4",
+          "outcome": "success",
+          "severity": "informational",
+          "source": "synthetic.telemetry",
+          "timestamp": "2026-01-15T09:02:00Z",
+          "type": "info"
+        },
+        "file": {
+          "path": null
+        },
+        "host": {
+          "ip": "10.10.1.10",
+          "name": "workstation-01"
+        },
+        "metadata": {
+          "product": "linux",
+          "synthetic": true
+        },
+        "network": {
+          "protocol": null
+        },
+        "process": {
+          "command_line": null,
+          "executable": null,
+          "name": null,
+          "parent": {
+            "executable": null,
+            "name": null,
+            "pid": null
+          },
+          "pid": null
+        },
+        "source": {
+          "ip": "10.10.20.15",
+          "port": 51000
+        },
+        "user": {
+          "name": "analyst01"
+        },
+        "raw_event": {
+          "destination": {
+            "ip": null,
+            "port": null
+          },
+          "dns": {
+            "query": null
+          },
+          "event": {
+            "action": "login",
+            "category": "authentication",
+            "id": "auth-success-4",
+            "outcome": "success",
+            "severity": "informational",
+            "source": "synthetic.telemetry",
+            "timestamp": "2026-01-15T09:02:00+00:00",
+            "type": "info"
+          },
+          "file": {
+            "path": null
+          },
+          "host": {
+            "ip": "10.10.1.10",
+            "name": "workstation-01"
+          },
+          "metadata": {
+            "product": "linux",
+            "synthetic": true
+          },
+          "network": {
+            "protocol": null
+          },
+          "process": {
+            "command_line": null,
+            "executable": null,
+            "name": null,
+            "parent": {
+              "executable": null,
+              "name": null,
+              "pid": null
+            },
+            "pid": null
+          },
+          "source": {
+            "ip": "10.10.20.15",
+            "port": 51000
+          },
+          "user": {
+            "name": "analyst01"
+          }
+        }
+      },
+      {
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "dns": {
+          "query": null
+        },
+        "event": {
+          "action": "login",
+          "category": "authentication",
+          "id": "auth-success-5",
+          "outcome": "success",
+          "severity": "informational",
+          "source": "synthetic.telemetry",
+          "timestamp": "2026-01-15T09:02:30Z",
+          "type": "info"
+        },
+        "file": {
+          "path": null
+        },
+        "host": {
+          "ip": "10.10.1.10",
+          "name": "workstation-01"
+        },
+        "metadata": {
+          "product": "linux",
+          "synthetic": true
+        },
+        "network": {
+          "protocol": null
+        },
+        "process": {
+          "command_line": null,
+          "executable": null,
+          "name": null,
+          "parent": {
+            "executable": null,
+            "name": null,
+            "pid": null
+          },
+          "pid": null
+        },
+        "source": {
+          "ip": "10.10.20.15",
+          "port": 51000
+        },
+        "user": {
+          "name": "analyst01"
+        },
+        "raw_event": {
+          "destination": {
+            "ip": null,
+            "port": null
+          },
+          "dns": {
+            "query": null
+          },
+          "event": {
+            "action": "login",
+            "category": "authentication",
+            "id": "auth-success-5",
+            "outcome": "success",
+            "severity": "informational",
+            "source": "synthetic.telemetry",
+            "timestamp": "2026-01-15T09:02:30+00:00",
+            "type": "info"
+          },
+          "file": {
+            "path": null
+          },
+          "host": {
+            "ip": "10.10.1.10",
+            "name": "workstation-01"
+          },
+          "metadata": {
+            "product": "linux",
+            "synthetic": true
+          },
+          "network": {
+            "protocol": null
+          },
+          "process": {
+            "command_line": null,
+            "executable": null,
+            "name": null,
+            "parent": {
+              "executable": null,
+              "name": null,
+              "pid": null
+            },
+            "pid": null
+          },
+          "source": {
+            "ip": "10.10.20.15",
+            "port": 51000
+          },
+          "user": {
+            "name": "analyst01"
+          }
+        }
+      },
+      {
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "dns": {
+          "query": null
+        },
+        "event": {
+          "action": "login",
+          "category": "authentication",
+          "id": "auth-success-6",
+          "outcome": "success",
+          "severity": "informational",
+          "source": "synthetic.telemetry",
+          "timestamp": "2026-01-15T09:03:00Z",
+          "type": "info"
+        },
+        "file": {
+          "path": null
+        },
+        "host": {
+          "ip": "10.10.1.10",
+          "name": "workstation-01"
+        },
+        "metadata": {
+          "product": "linux",
+          "synthetic": true
+        },
+        "network": {
+          "protocol": null
+        },
+        "process": {
+          "command_line": null,
+          "executable": null,
+          "name": null,
+          "parent": {
+            "executable": null,
+            "name": null,
+            "pid": null
+          },
+          "pid": null
+        },
+        "source": {
+          "ip": "10.10.20.15",
+          "port": 51000
+        },
+        "user": {
+          "name": "analyst01"
+        },
+        "raw_event": {
+          "destination": {
+            "ip": null,
+            "port": null
+          },
+          "dns": {
+            "query": null
+          },
+          "event": {
+            "action": "login",
+            "category": "authentication",
+            "id": "auth-success-6",
+            "outcome": "success",
+            "severity": "informational",
+            "source": "synthetic.telemetry",
+            "timestamp": "2026-01-15T09:03:00+00:00",
+            "type": "info"
+          },
+          "file": {
+            "path": null
+          },
+          "host": {
+            "ip": "10.10.1.10",
+            "name": "workstation-01"
+          },
+          "metadata": {
+            "product": "linux",
+            "synthetic": true
+          },
+          "network": {
+            "protocol": null
+          },
+          "process": {
+            "command_line": null,
+            "executable": null,
+            "name": null,
+            "parent": {
+              "executable": null,
+              "name": null,
+              "pid": null
+            },
+            "pid": null
+          },
+          "source": {
+            "ip": "10.10.20.15",
+            "port": 51000
+          },
+          "user": {
+            "name": "analyst01"
+          }
+        }
+      },
+      {
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "dns": {
+          "query": null
+        },
+        "event": {
+          "action": "login",
+          "category": "authentication",
+          "id": "auth-success-7",
+          "outcome": "success",
+          "severity": "informational",
+          "source": "synthetic.telemetry",
+          "timestamp": "2026-01-15T09:03:30Z",
+          "type": "info"
+        },
+        "file": {
+          "path": null
+        },
+        "host": {
+          "ip": "10.10.1.10",
+          "name": "workstation-01"
+        },
+        "metadata": {
+          "product": "linux",
+          "synthetic": true
+        },
+        "network": {
+          "protocol": null
+        },
+        "process": {
+          "command_line": null,
+          "executable": null,
+          "name": null,
+          "parent": {
+            "executable": null,
+            "name": null,
+            "pid": null
+          },
+          "pid": null
+        },
+        "source": {
+          "ip": "10.10.20.15",
+          "port": 51000
+        },
+        "user": {
+          "name": "analyst01"
+        },
+        "raw_event": {
+          "destination": {
+            "ip": null,
+            "port": null
+          },
+          "dns": {
+            "query": null
+          },
+          "event": {
+            "action": "login",
+            "category": "authentication",
+            "id": "auth-success-7",
+            "outcome": "success",
+            "severity": "informational",
+            "source": "synthetic.telemetry",
+            "timestamp": "2026-01-15T09:03:30+00:00",
+            "type": "info"
+          },
+          "file": {
+            "path": null
+          },
+          "host": {
+            "ip": "10.10.1.10",
+            "name": "workstation-01"
+          },
+          "metadata": {
+            "product": "linux",
+            "synthetic": true
+          },
+          "network": {
+            "protocol": null
+          },
+          "process": {
+            "command_line": null,
+            "executable": null,
+            "name": null,
+            "parent": {
+              "executable": null,
+              "name": null,
+              "pid": null
+            },
+            "pid": null
+          },
+          "source": {
+            "ip": "10.10.20.15",
+            "port": 51000
+          },
+          "user": {
+            "name": "analyst01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "path": "parsers/events.csv",
+    "format": "csv",
+    "expected": [
+      {
+        "event": {
+          "id": "csv-login",
+          "timestamp": "2026-01-15T09:00:00Z",
+          "source": "csv.fixture",
+          "category": "authentication",
+          "type": "info",
+          "action": "login",
+          "outcome": "success",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "gateway-01",
+          "ip": null
+        },
+        "user": {
+          "name": "operator01"
+        },
+        "source": {
+          "ip": "192.0.2.10",
+          "port": 51000
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "raw_event": {
+          "event.id": "csv-login",
+          "event.timestamp": "2026-01-15T12:00:00+03:00",
+          "event.source": "csv.fixture",
+          "event.category": "authentication",
+          "event.type": "info",
+          "event.action": "login",
+          "event.outcome": "success",
+          "event.severity": "informational",
+          "host.name": "gateway-01",
+          "user.name": "operator01",
+          "source.ip": "192.0.2.10",
+          "source.port": "51000",
+          "destination.ip": "",
+          "destination.port": "",
+          "process.name": "",
+          "process.command_line": "",
+          "network.protocol": "",
+          "dns.query": "",
+          "file.path": ""
+        },
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "path": "parsers/auth.log",
+    "format": "syslog",
+    "expected": [
+      {
+        "event": {
+          "id": "43e45313d515c345d9c9562425706d86",
+          "timestamp": "2026-01-15T09:00:00Z",
+          "source": "sshd",
+          "category": "authentication",
+          "type": "info",
+          "action": "login",
+          "outcome": "failure",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "gateway-01",
+          "ip": null
+        },
+        "user": {
+          "name": "operator01"
+        },
+        "source": {
+          "ip": "192.0.2.10",
+          "port": 51000
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "raw_event": "Jan 15 09:00:00 gateway-01 sshd[120]: Failed password for operator01 from 192.0.2.10 port 51000 ssh2",
+        "metadata": {}
+      },
+      {
+        "event": {
+          "id": "dd8a2514223aaa061c1ef485c4ca0a6b",
+          "timestamp": "2026-01-15T09:00:01Z",
+          "source": "sshd",
+          "category": "authentication",
+          "type": "info",
+          "action": "login",
+          "outcome": "success",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "gateway-01",
+          "ip": null
+        },
+        "user": {
+          "name": "operator01"
+        },
+        "source": {
+          "ip": "192.0.2.10",
+          "port": 51001
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "raw_event": "2026-01-15T12:00:01+03:00 gateway-01 sshd[120]: Accepted publickey for operator01 from 192.0.2.10 port 51001 ssh2",
+        "metadata": {}
+      },
+      {
+        "event": {
+          "id": "151703e4a4d1890fc58a83f50dc99c37",
+          "timestamp": "2026-01-15T09:00:02Z",
+          "source": "sshd",
+          "category": "authentication",
+          "type": "info",
+          "action": "logout",
+          "outcome": "success",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "gateway-01",
+          "ip": null
+        },
+        "user": {
+          "name": "operator01"
+        },
+        "source": {
+          "ip": null,
+          "port": null
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "raw_event": "Jan 15 09:00:02 gateway-01 sshd[120]: pam_unix(sshd:session): session closed for user operator01",
+        "metadata": {}
+      },
+      {
+        "event": {
+          "id": "28dc380a7d7fa19a2ca9a6aae8749c05",
+          "timestamp": "2026-01-15T09:00:03Z",
+          "source": "auth",
+          "category": "authentication",
+          "type": "info",
+          "action": "account_lockout",
+          "outcome": "failure",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "gateway-01",
+          "ip": null
+        },
+        "user": {
+          "name": "operator01"
+        },
+        "source": {
+          "ip": "192.0.2.10",
+          "port": null
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "raw_event": "Jan 15 09:00:03 gateway-01 auth[121]: account operator01 locked from 192.0.2.10",
+        "metadata": {}
+      },
+      {
+        "event": {
+          "id": "7ec7348db1db530dcde2a69b1492a008",
+          "timestamp": "2026-01-15T09:00:04Z",
+          "source": "passwd",
+          "category": "authentication",
+          "type": "info",
+          "action": "password_change",
+          "outcome": "success",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "gateway-01",
+          "ip": null
+        },
+        "user": {
+          "name": "operator01"
+        },
+        "source": {
+          "ip": null,
+          "port": null
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "raw_event": "Jan 15 09:00:04 gateway-01 passwd[122]: password changed for operator01",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "path": "parsers/windows_events.json",
+    "format": "windows",
+    "expected": [
+      {
+        "event": {
+          "id": "edff96e52bc8290757a3b5a011832ec7",
+          "timestamp": "2026-01-15T09:00:00Z",
+          "source": "Microsoft-Windows-Security-Auditing",
+          "category": "authentication",
+          "type": "info",
+          "action": "login",
+          "outcome": "failure",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "win-client-01",
+          "ip": null
+        },
+        "user": {
+          "name": "operator01"
+        },
+        "source": {
+          "ip": "192.0.2.11",
+          "port": 51000
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "raw_event": {
+          "System": {
+            "EventID": 4625,
+            "TimeCreated": {
+              "SystemTime": "2026-01-15T09:00:00Z"
+            },
+            "Computer": "win-client-01",
+            "Provider": {
+              "Name": "Microsoft-Windows-Security-Auditing"
+            },
+            "EventRecordID": 1
+          },
+          "EventData": {
+            "TargetUserName": "operator01",
+            "IpAddress": "192.0.2.11",
+            "IpPort": "51000"
+          }
+        },
+        "metadata": {
+          "product": "windows",
+          "windows_event_id": 4625,
+          "windows_record_id": 1,
+          "group_name": null,
+          "target_user": "operator01",
+          "privileged": false
+        }
+      },
+      {
+        "event": {
+          "id": "5527f4b024ede112503a76a0efc82346",
+          "timestamp": "2026-01-15T09:00:01Z",
+          "source": "Microsoft-Windows-Security-Auditing",
+          "category": "process",
+          "type": "start",
+          "action": "process_created",
+          "outcome": "success",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "win-client-01",
+          "ip": null
+        },
+        "user": {
+          "name": "operator01"
+        },
+        "source": {
+          "ip": null,
+          "port": null
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": "cmd.exe",
+          "executable": "C:\\Windows\\cmd.exe",
+          "command_line": "cmd.exe /c echo hello",
+          "pid": null,
+          "parent": {
+            "name": "explorer.exe",
+            "executable": "C:\\Windows\\explorer.exe",
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "raw_event": {
+          "System": {
+            "EventID": 4688,
+            "TimeCreated": {
+              "SystemTime": "2026-01-15T09:00:01Z"
+            },
+            "Computer": "win-client-01",
+            "Provider": {
+              "Name": "Microsoft-Windows-Security-Auditing"
+            },
+            "EventRecordID": 2
+          },
+          "EventData": {
+            "User": "operator01",
+            "NewProcessName": "C:\\Windows\\cmd.exe",
+            "CommandLine": "cmd.exe /c echo hello",
+            "ParentProcessName": "C:\\Windows\\explorer.exe"
+          }
+        },
+        "metadata": {
+          "product": "windows",
+          "windows_event_id": 4688,
+          "windows_record_id": 2,
+          "group_name": null,
+          "target_user": null,
+          "privileged": false
+        }
+      },
+      {
+        "event": {
+          "id": "24abd82a8d324471279a3f54e4f8fd5a",
+          "timestamp": "2026-01-15T09:00:02Z",
+          "source": "Microsoft-Windows-Sysmon",
+          "category": "network",
+          "type": "info",
+          "action": "dns_query",
+          "outcome": "unknown",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "win-client-01",
+          "ip": null
+        },
+        "user": {
+          "name": "operator01"
+        },
+        "source": {
+          "ip": null,
+          "port": null
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": "portal.example.test"
+        },
+        "file": {
+          "path": null
+        },
+        "raw_event": {
+          "System": {
+            "EventID": 22,
+            "TimeCreated": {
+              "SystemTime": "2026-01-15T09:00:02Z"
+            },
+            "Computer": "win-client-01",
+            "Provider": {
+              "Name": "Microsoft-Windows-Sysmon"
+            },
+            "EventRecordID": 3
+          },
+          "EventData": {
+            "User": "operator01",
+            "QueryName": "portal.example.test"
+          }
+        },
+        "metadata": {
+          "product": "windows",
+          "windows_event_id": 22,
+          "windows_record_id": 3,
+          "group_name": null,
+          "target_user": null,
+          "privileged": false,
+          "dns_metrics": {
+            "max_label_length": 7,
+            "max_label_entropy": 2.584963,
+            "label_count": 3,
+            "base_domain": "example.test"
+          }
+        }
+      },
+      {
+        "event": {
+          "id": "76e86cc50d2ddcc53d69e34d0fe4d16c",
+          "timestamp": "2026-01-15T09:00:03Z",
+          "source": "Microsoft-Windows-Sysmon",
+          "category": "network",
+          "type": "info",
+          "action": "connection",
+          "outcome": "success",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "win-client-01",
+          "ip": null
+        },
+        "user": {
+          "name": "operator01"
+        },
+        "source": {
+          "ip": "10.10.1.10",
+          "port": 51000
+        },
+        "destination": {
+          "ip": "198.51.100.20",
+          "port": 443
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": "tcp"
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "raw_event": {
+          "System": {
+            "EventID": 3,
+            "TimeCreated": {
+              "SystemTime": "2026-01-15T09:00:03Z"
+            },
+            "Computer": "win-client-01",
+            "Provider": {
+              "Name": "Microsoft-Windows-Sysmon"
+            },
+            "EventRecordID": 4
+          },
+          "EventData": {
+            "User": "operator01",
+            "SourceIp": "10.10.1.10",
+            "DestinationIp": "198.51.100.20",
+            "SourcePort": "51000",
+            "DestinationPort": "443",
+            "Protocol": "tcp"
+          }
+        },
+        "metadata": {
+          "product": "windows",
+          "windows_event_id": 3,
+          "windows_record_id": 4,
+          "group_name": null,
+          "target_user": null,
+          "privileged": false
+        }
+      },
+      {
+        "event": {
+          "id": "d341b85dadc3e2bdb19cd05f92ad318b",
+          "timestamp": "2026-01-15T09:00:04Z",
+          "source": "Microsoft-Windows-Security-Auditing",
+          "category": "identity",
+          "type": "info",
+          "action": "account_created",
+          "outcome": "success",
+          "severity": "informational"
+        },
+        "host": {
+          "name": "win-client-01",
+          "ip": null
+        },
+        "user": {
+          "name": "svc_identity"
+        },
+        "source": {
+          "ip": null,
+          "port": null
+        },
+        "destination": {
+          "ip": null,
+          "port": null
+        },
+        "process": {
+          "name": null,
+          "executable": null,
+          "command_line": null,
+          "pid": null,
+          "parent": {
+            "name": null,
+            "executable": null,
+            "pid": null
+          }
+        },
+        "network": {
+          "protocol": null
+        },
+        "dns": {
+          "query": null
+        },
+        "file": {
+          "path": null
+        },
+        "raw_event": {
+          "System": {
+            "EventID": 4720,
+            "TimeCreated": {
+              "SystemTime": "2026-01-15T09:00:04Z"
+            },
+            "Computer": "win-client-01",
+            "Provider": {
+              "Name": "Microsoft-Windows-Security-Auditing"
+            },
+            "EventRecordID": 5
+          },
+          "EventData": {
+            "SubjectUserName": "svc_identity",
+            "TargetUserName": "operator05"
+          }
+        },
+        "metadata": {
+          "product": "windows",
+          "windows_event_id": 4720,
+          "windows_record_id": 5,
+          "group_name": null,
+          "target_user": "operator05",
+          "privileged": false
+        }
+      }
+    ]
+  }
+]

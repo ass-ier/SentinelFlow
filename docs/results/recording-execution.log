@@ -1,0 +1,391 @@
+LIVE 0.0s Dashboard: real event and detection statistics
+LIVE 30.0s Event explorer and original raw evidence
+LIVE 52.0s Brute-force replay: real-time arrival of 25 events
+LIVE 77.2s AUTH-001 fired
+LIVE 89.2s Alert investigation: source, user, UTC time, MITRE and 25 evidence records
+LIVE 128.0s Detection testing: exact positive and benign assertions
+LIVE 160.0s PowerShell indicators, not proof of compromise
+LIVE 189.0s DNS anomaly: actual long-label evidence
+LIVE 218.0s Sigma: unchanged upstream source, compilation, import and real tests
+LIVE 277.0s Execute make validate and show its real output
+python3 scripts/manage.py validate
++ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python scripts/validate.py
+
+========================================================================
+Environment
+$ /Users/triplea/.nvm/versions/node/v20.19.2/bin/node -e const [a,b]=process.versions.node.split('.').map(Number);if(a<20||(a===20&&b<19))process.exit(1);console.log(process.version)
+========================================================================
+v20.19.2
+
+========================================================================
+Pinned Python dependency consistency
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python -m pip check
+========================================================================
+No broken requirements found.
+
+========================================================================
+Backend static checks
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python -m ruff check backend scripts
+========================================================================
+All checks passed!
+
+========================================================================
+Backend formatting
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python -m ruff format --check backend scripts
+========================================================================
+55 files already formatted
+
+========================================================================
+Backend strict types
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python -m mypy backend/app
+========================================================================
+Success: no issues found in 29 source files
+
+========================================================================
+Frontend lint
+$ /Users/triplea/.nvm/versions/node/v20.19.2/bin/npm --prefix frontend run lint
+========================================================================
+
+> sentinelflow-frontend@0.1.0 lint
+> eslint . --max-warnings 0
+
+
+========================================================================
+Frontend formatting
+$ /Users/triplea/.nvm/versions/node/v20.19.2/bin/npm --prefix frontend run format:check
+========================================================================
+
+> sentinelflow-frontend@0.1.0 format:check
+> prettier --check . --ignore-unknown
+
+Checking formatting...
+All matched files use Prettier code style!
+
+========================================================================
+Frontend types and production build
+$ /Users/triplea/.nvm/versions/node/v20.19.2/bin/npm --prefix frontend run build
+========================================================================
+
+> sentinelflow-frontend@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 1619 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   1.44 kB │ gzip:   0.82 kB
+dist/assets/index-C71NGMZe.css   37.32 kB │ gzip:   8.43 kB
+dist/assets/index-tdwb53NO.js   335.38 kB │ gzip: 102.74 kB
+✓ built in 1.18s
+
+========================================================================
+Browser workflow syntax
+$ /Users/triplea/.nvm/versions/node/v20.19.2/bin/node --check scripts/browser_workflows.mjs
+========================================================================
+
+========================================================================
+Live verification syntax
+$ /Users/triplea/.nvm/versions/node/v20.19.2/bin/node --check scripts/browser_verify.mjs
+========================================================================
+
+========================================================================
+Recording workflow syntax
+$ /Users/triplea/.nvm/versions/node/v20.19.2/bin/node --check scripts/record_demo.mjs
+========================================================================
+
+========================================================================
+Saved fixture reproducibility
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python scripts/generate_test_data.py --check
+========================================================================
+Reproduced 56 generated files byte-for-byte in isolated storage.
+
+========================================================================
+All backend tests
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python -m pytest -q --tb=short --junitxml=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/backend-junit.xml --cov=app --cov-report=json:/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/coverage.json
+========================================================================
+........................................................................ [ 26%]
+........................................................................ [ 53%]
+........................................................................ [ 80%]
+....................................................                     [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/starlette/testclient.py:51
+  /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/lib/python3.13/site-packages/starlette/testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/backend-junit.xml -
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.13.7-final-0 _______________
+
+Coverage JSON written to file /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/coverage.json
+268 passed, 1 warning in 18.57s
+
+========================================================================
+All frontend tests
+$ /Users/triplea/.nvm/versions/node/v20.19.2/bin/npm --prefix frontend test -- --reporter=json --outputFile=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/frontend-tests.json
+========================================================================
+
+> sentinelflow-frontend@0.1.0 test
+> vitest run --reporter=json --outputFile=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/frontend-tests.json
+
+JSON report written to /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/frontend-tests.json
+
+========================================================================
+Exact detection validation
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python scripts/validate_detections.py
+========================================================================
+SENTINELFLOW DETECTION VALIDATION
+Scope: bundled
+Each scenario uses fresh event-time correlation state.
+
+PASSED   auth-brute-force                     events=  25 alerts= 1 duplicates=0
+PASSED   auth-normal-failures                 events=   3 alerts= 0 duplicates=0
+PASSED   auth-success                         events=   8 alerts= 0 duplicates=0
+PASSED   auth-lifecycle                       events=   2 alerts= 0 duplicates=0
+PASSED   auth-distributed                     events=  12 alerts= 0 duplicates=0
+PASSED   auth-multiple-users                  events=  12 alerts= 1 duplicates=0
+PASSED   auth-lockout                         events=   4 alerts= 1 duplicates=0
+PASSED   auth-normal-lockout                  events=   2 alerts= 0 duplicates=0
+PASSED   auth-below-threshold                 events=   9 alerts= 0 duplicates=0
+PASSED   auth-window-boundary                 events=  10 alerts= 1 duplicates=0
+PASSED   auth-window-outside                  events=  10 alerts= 0 duplicates=0
+PASSED   auth-group-separation                events=  20 alerts= 2 duplicates=0
+PASSED   auth-duplicates                      events=  25 alerts= 1 duplicates=25
+PASSED   auth-shuffled                        events=  25 alerts= 1 duplicates=0
+PASSED   auth-suppression-boundary            events=  25 alerts= 2 duplicates=0
+PASSED   auth-missing-source                  events=  10 alerts= 0 duplicates=0
+PASSED   powershell-indicators                events=   5 alerts= 1 duplicates=0
+PASSED   powershell-encoded                   events=   1 alerts= 1 duplicates=0
+PASSED   powershell-admin                     events=   4 alerts= 0 duplicates=0
+PASSED   powershell-legitimate-download       events=   1 alerts= 1 duplicates=0
+PASSED   process-suspicious                   events=   3 alerts= 1 duplicates=0
+PASSED   process-benign                       events=   2 alerts= 0 duplicates=0
+PASSED   iam-privileged-group                 events=   2 alerts= 1 duplicates=0
+PASSED   iam-normal-group                     events=   2 alerts= 0 duplicates=0
+PASSED   iam-approved-maintenance             events=   2 alerts= 0 duplicates=0
+PASSED   iam-maintenance-wrong-host           events=   2 alerts= 1 duplicates=0
+PASSED   iam-privilege-actions                events=   2 alerts= 1 duplicates=0
+PASSED   iam-service-activity                 events=   2 alerts= 0 duplicates=0
+PASSED   dns-normal                           events=  10 alerts= 0 duplicates=0
+PASSED   dns-long-label                       events=   3 alerts= 1 duplicates=0
+PASSED   dns-entropy                          events=   3 alerts= 1 duplicates=0
+PASSED   dns-frequency                        events=  25 alerts= 1 duplicates=0
+PASSED   dns-subdomain-pattern                events=  22 alerts= 1 duplicates=0
+PASSED   dns-below-frequency                  events=  19 alerts= 0 duplicates=0
+PASSED   net-unusual                          events=   6 alerts= 1 duplicates=0
+PASSED   net-normal                           events=   8 alerts= 0 duplicates=0
+PASSED   net-below-threshold                  events=   2 alerts= 0 duplicates=0
+PASSED   net-allowlisted                      events=   6 alerts= 0 duplicates=0
+PASSED   net-private                          events=   6 alerts= 0 duplicates=0
+PASSED   mixed-incident                       events=  56 alerts= 7 duplicates=0
+PASSED   benign-baseline                      events=1000 alerts= 0 duplicates=0
+PASSED   parser-csv                           events=   1 alerts= 0 duplicates=0
+PASSED   parser-syslog                        events=   5 alerts= 0 duplicates=0
+PASSED   parser-windows                       events=   5 alerts= 0 duplicates=0
+PASSED   parser-json                          events=   2 alerts= 0 duplicates=0
+PASSED   sigma-download                       events=   1 alerts= 1 duplicates=0
+PASSED   sigma-encoded                        events=   1 alerts= 0 duplicates=0
+PASSED   sigma-benign                         events=   1 alerts= 0 duplicates=0
+PASSED   sigma-azure                          events=   1 alerts= 0 duplicates=0
+PASSED   public-otrf-adapted                  events=   6 alerts= 0 duplicates=0
+
+Scenarios: 50 passed, 0 failed, 50 total
+Controlled benign scenarios: 14 / 14 passed
+Duration: 0.247600s
+STATUS: PASSED
+
+========================================================================
+Licensed Sigma compatibility
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python scripts/validate_sigma.py
+========================================================================
+{
+  "rules_imported": 2,
+  "rules_compiled": 2,
+  "rules_tested": 2,
+  "tests_passed": 4,
+  "tests_failed": 0,
+  "expected_detections": 2,
+  "observed_detections": 2,
+  "results": [
+    {
+      "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+      "dataset_id": "sigma-download",
+      "expected_alerts": 1,
+      "observed_alerts": 1,
+      "severity": "high",
+      "author": "Florian Roth (Nextron Systems)",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+      "status": "passed",
+      "events_processed": 1
+    },
+    {
+      "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+      "dataset_id": "sigma-benign",
+      "expected_alerts": 0,
+      "observed_alerts": 0,
+      "severity": "high",
+      "author": "Florian Roth (Nextron Systems)",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+      "status": "passed",
+      "events_processed": 1
+    },
+    {
+      "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+      "dataset_id": "sigma-encoded",
+      "expected_alerts": 1,
+      "observed_alerts": 1,
+      "severity": "medium",
+      "author": "frack113",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+      "status": "passed",
+      "events_processed": 1
+    },
+    {
+      "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+      "dataset_id": "sigma-benign",
+      "expected_alerts": 0,
+      "observed_alerts": 0,
+      "severity": "medium",
+      "author": "frack113",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+      "status": "passed",
+      "events_processed": 1
+    }
+  ]
+}
+
+========================================================================
+Measured detection benchmark
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/bin/python scripts/benchmark_detection.py
+========================================================================
+{
+  "measured_at": "2026-09-28T00:04:29.782643+00:00",
+  "source_fingerprint": "f4f27c57afbd72864a29557fec670a2cb2865ff6f2bfe95a3e8af03808aeae5e",
+  "scope": "Single-process engine-only; parsing/storage excluded. Not a production capacity claim.",
+  "python": "3.13.7",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "dataset": "mixed/benchmark_5600.jsonl",
+  "dataset_sha256": "b99174b1ee5f7cc972fe14d9a3baf1081270129bab22d6f5b44a3c22d01e6a12",
+  "iterations": 3,
+  "events_processed": 5600,
+  "events_per_second": 12675.722380851706,
+  "detection_seconds": 0.4417894169455394,
+  "sample_seconds": [
+    0.4522057910216972,
+    0.44097116601187736,
+    0.4417894169455394
+  ],
+  "alerts_generated": 700,
+  "rules_evaluated": 39200,
+  "active_rules": 7,
+  "expected_alerts": 700,
+  "rule_alert_counts": {
+    "AUTH-001": 100,
+    "AUTH-002": 100,
+    "PROC-001": 100,
+    "PROC-002": 100,
+    "IAM-001": 100,
+    "DNS-001": 100,
+    "NET-001": 100
+  },
+  "status": "passed"
+}
+
+========================================================================
+SENTINELFLOW VALIDATION
+Backend tests .............. 268 passed
+Frontend tests ............. 93 passed
+Parser                       35 passed (backend subset)
+Detection                    50 passed (backend subset)
+Negative                     14 passed (backend subset)
+Integration                  90 passed (backend subset)
+Replay                       17 passed (backend subset)
+Sigma                        34 passed (backend subset)
+Regression                   68 passed (backend subset)
+Security                     49 passed (backend subset)
+Detection scenarios ........ 50 passed, 0 failed
+Controlled benign cases .... 14/14
+Total unique test cases .... 361 passed, 0 failed
+STATUS: VALIDATED
+========================================================================
+
+LIVE 322.1s Actual validation completed
+LIVE 322.1s Included test data, tests, scripts and documentation
+{
+  "status": "recorded-and-decoded",
+  "path": "recordings/sentinelflow-final-demo.mp4",
+  "created_at": "2026-09-28T00:05:36.389Z",
+  "duration_seconds": 356.15999999999997,
+  "bytes": 9730783,
+  "sha256": "aa444d5de6e407cd1977cd41690fc972e3e92f6fa13ec854942f91af01366df5",
+  "browser": "153.0.8010.12",
+  "capture": "Continuous real Chromium browser-context video",
+  "resolution": {
+    "width": 1440,
+    "height": 1000
+  },
+  "audio": "Silent walkthrough; chapter guide in docs/demo.md",
+  "source_fingerprint": "f4f27c57afbd72864a29557fec670a2cb2865ff6f2bfe95a3e8af03808aeae5e",
+  "ffmpeg_version": "ffmpeg version 6.0 Copyright (c) 2000-2023 the FFmpeg developers",
+  "ffmpeg_sha256": "a90e3db6a3fd35f6074b013f948b1aa45b31c6375489d39e572bea3f18336584",
+  "decoded_successfully": true,
+  "page_errors": [],
+  "chapters": [
+    {
+      "title": "Dashboard: real event and detection statistics",
+      "at_seconds": 0
+    },
+    {
+      "title": "Event explorer and original raw evidence",
+      "at_seconds": 30.005
+    },
+    {
+      "title": "Brute-force replay: real-time arrival of 25 events",
+      "at_seconds": 52.004
+    },
+    {
+      "title": "AUTH-001 fired",
+      "at_seconds": 77.216,
+      "run_id": "3ed79a991f8a4d18866f501dee06ead3",
+      "events": 25,
+      "alerts": 1
+    },
+    {
+      "title": "Alert investigation: source, user, UTC time, MITRE and 25 evidence records",
+      "at_seconds": 89.152,
+      "alert_id": "bae8f02552617ff6f9537b93b5464475"
+    },
+    {
+      "title": "Detection testing: exact positive and benign assertions",
+      "at_seconds": 128
+    },
+    {
+      "title": "PowerShell indicators, not proof of compromise",
+      "at_seconds": 160.002
+    },
+    {
+      "title": "DNS anomaly: actual long-label evidence",
+      "at_seconds": 189.002
+    },
+    {
+      "title": "Sigma: unchanged upstream source, compilation, import and real tests",
+      "at_seconds": 218.004
+    },
+    {
+      "title": "Execute make validate and show its real output",
+      "at_seconds": 277.003
+    },
+    {
+      "title": "Actual validation completed",
+      "at_seconds": 322.103,
+      "backend_tests": 268,
+      "frontend_tests": 93,
+      "detection_scenarios": 50
+    },
+    {
+      "title": "Included test data, tests, scripts and documentation",
+      "at_seconds": 322.103
+    }
+  ]
+}

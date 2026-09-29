@@ -1,0 +1,15 @@
+[
+  {
+    "id": "public-otrf-adapted",
+    "path": "public/otrf_adapted.json",
+    "name": "Privacy-reduced public lab telemetry (parser interoperability)",
+    "format": "windows",
+    "event_count": 6,
+    "expected": [],
+    "kind": "public",
+    "synthetic": false,
+    "source": "OTRF public lab; adapted; see public/provenance.json",
+    "license": "MIT at pinned revision (README caveat documented)",
+    "sha256": "6c0f5cc5d9ecc36b51b0208424a9566a9731ddab236900e06141b6c286a7a070"
+  }
+]

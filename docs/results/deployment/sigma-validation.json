@@ -1,0 +1,55 @@
+{
+  "rules_imported": 2,
+  "rules_compiled": 2,
+  "rules_tested": 2,
+  "tests_passed": 4,
+  "tests_failed": 0,
+  "expected_detections": 2,
+  "observed_detections": 2,
+  "results": [
+    {
+      "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+      "dataset_id": "sigma-download",
+      "expected_alerts": 1,
+      "observed_alerts": 1,
+      "severity": "high",
+      "author": "Florian Roth (Nextron Systems)",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+      "status": "passed",
+      "events_processed": 1
+    },
+    {
+      "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+      "dataset_id": "sigma-benign",
+      "expected_alerts": 0,
+      "observed_alerts": 0,
+      "severity": "high",
+      "author": "Florian Roth (Nextron Systems)",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+      "status": "passed",
+      "events_processed": 1
+    },
+    {
+      "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+      "dataset_id": "sigma-encoded",
+      "expected_alerts": 1,
+      "observed_alerts": 1,
+      "severity": "medium",
+      "author": "frack113",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+      "status": "passed",
+      "events_processed": 1
+    },
+    {
+      "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+      "dataset_id": "sigma-benign",
+      "expected_alerts": 0,
+      "observed_alerts": 0,
+      "severity": "medium",
+      "author": "frack113",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+      "status": "passed",
+      "events_processed": 1
+    }
+  ]
+}

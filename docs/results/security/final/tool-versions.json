@@ -1,0 +1,42 @@
+{
+  "pip-audit": {
+    "expected": "2.10.1",
+    "output": "pip-audit 2.10.1\n",
+    "binary_sha256": "66c98da65de3e2c3dc28d48d0e77664b01c469d56038747c19a5350468f6506e"
+  },
+  "bandit": {
+    "expected": "1.9.4",
+    "output": "bandit 1.9.4\n  python version = 3.13.15 (main, Sep 24 2026, 17:46:40) [Clang 22.1.3 ]\n",
+    "binary_sha256": "f28ea855d3e65dc7a0b3e4bae4be0dcafcbeea166430ed964cd6b2d6c708f6a6"
+  },
+  "semgrep": {
+    "expected": "1.178.0",
+    "output": "1.178.0\n",
+    "binary_sha256": "d48f07a6212f0ea511e002b7a7f7065db7e4cb51a3825445e133c840f8ad1303"
+  },
+  "uv": {
+    "expected": "0.12.19",
+    "output": "uv 0.12.19 (bea138450 2026-09-24 aarch64-apple-darwin)\n",
+    "binary_sha256": "1bd368f1bdd1fc4067a9f9d5d7394363e83490e47c86b26056760abe1c4155fb"
+  },
+  "trivy": {
+    "expected": "0.74.0",
+    "output": "Version: 0.74.0\n",
+    "binary_sha256": "0ed07c205ca9ecc1065dc57b9f9f77adc79393bb469d9d1de9ec90c8c94ffc2f"
+  },
+  "gitleaks": {
+    "expected": "8.30.1",
+    "output": "8.30.1\n",
+    "binary_sha256": "ba52fb1bfabbcde42f032afad3d6e0b19dff8ed105229a16e7caa338bbc0e84f"
+  },
+  "osv-scanner": {
+    "expected": "2.6.0",
+    "output": "osv-scanner version: 2.6.0\nosv-scalibr version: 0.5.2\ncommit: e840a6e8adb14b7777c78e26cfbf6e2abc1d1fc6\nbuilt at: 2026-09-14T01:44:58Z\n",
+    "binary_sha256": "98c460dcd37de25819babd757d04542045b6243113e209edcd4d89fedb0256b4"
+  },
+  "syft": {
+    "expected": "1.52.0",
+    "output": "syft 1.52.0\n",
+    "binary_sha256": "17e4215af72264e186a843269d0b797697d643f53841d9598f73614bbcbe9022"
+  }
+}

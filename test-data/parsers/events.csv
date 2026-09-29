@@ -1,0 +1,2 @@
+event.id,event.timestamp,event.source,event.category,event.type,event.action,event.outcome,event.severity,host.name,user.name,source.ip,source.port,destination.ip,destination.port,process.name,process.command_line,network.protocol,dns.query,file.path
+csv-login,2026-01-15T12:00:00+03:00,csv.fixture,authentication,info,login,success,informational,gateway-01,operator01,192.0.2.10,51000,,,,,,,

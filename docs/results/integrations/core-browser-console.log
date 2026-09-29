@@ -1,0 +1,33 @@
+PASS Dashboard renders real scoped counts and event-time chart
+PASS Event explorer filters backend results
+PASS Event rows expand real raw evidence
+PASS File ingestion is real and changes the run scope
+PASS Chronological 10x replay reaches actual 25-event completion
+PASS Alert status, 25 linked events, raw evidence, MITRE and rule snapshot work
+PASS Rule toggle and explicit disabled-definition testing work without hidden enablement
+PASS Positive and benign detection tests display exact real results
+PASS PowerShell replay and inert command-line evidence work
+PASS DNS heuristic alert exposes its branch and actual evidence
+PASS Licensed Sigma compile/import and positive/negative tests preserve authorship
+PASS Unsupported Sigma condition is a visible failure, never simulated success
+PASS Project evidence reads actual make validate output and repository inventory
+PASS 1440px layout: Overview
+PASS 1440px layout: Event explorer
+PASS 1440px layout: Alert queue
+PASS 1440px layout: Detection rules
+PASS 1440px layout: Detection testing
+PASS 1440px layout: Detection replay
+PASS 1440px layout: Sigma workbench
+PASS 1440px layout: Project evidence
+PASS 390px layout: Overview
+PASS Mobile technique identifiers stay on one line
+PASS 390px layout: Event explorer
+PASS 390px layout: Alert queue
+PASS 390px layout: Detection rules
+PASS 390px layout: Detection testing
+PASS 390px layout: Detection replay
+PASS 390px layout: Sigma workbench
+PASS 390px layout: Project evidence
+PASS Mobile navigation opens, navigates, and closes
+PASS Keyboard skip link moves focus into the analyst workspace
+PASS No uncaught page errors or server errors during verified workflows

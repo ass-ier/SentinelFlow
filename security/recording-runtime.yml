@@ -1,0 +1,5 @@
+name: sentinelflow-recording
+channels:
+  - conda-forge
+dependencies:
+  - ffmpeg=9.0.2=gpl*

@@ -1,0 +1,10 @@
+PASS Analyst browser
+PASS Integration browser
+PASS Security browser
+PASS Actual collector CLI durably spools all 36 events during a real TCP outage
+PASS Collector restart drains its real spool through scoped HTTP ingestion
+PASS Repeated bookmark after process restart does not duplicate collector events
+PASS Same alert/destination is idempotent across restart; different destinations remain independent
+PASS native public deployment rehearsal
+PASS docker public deployment rehearsal
+PASS Network-isolated image enforces kernel boundaries and exact integration flows

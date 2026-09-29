@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "started_at": "2026-09-28T23:53:49.196850+00:00",
+  "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+  "engine": "native",
+  "ui": "http://127.0.0.1:57028",
+  "api": "http://127.0.0.1:57027",
+  "checks": [
+    {
+      "name": "Production frontend built with an explicit independent API origin",
+      "status": "passed"
+    },
+    {
+      "name": "Production backend starts on PORT with a credential-free health endpoint",
+      "status": "passed",
+      "health": {
+        "status": "ok",
+        "version": "0.1.0",
+        "auth_required": false,
+        "public_demo": true,
+        "public_demo_run_limit": 20
+      }
+    },
+    {
+      "name": "Runtime schema initialization and exact deterministic seed",
+      "status": "passed",
+      "events": 56,
+      "alerts": 7
+    },
+    {
+      "name": "Backend-only Swagger, OpenAPI, and favicon respond",
+      "status": "passed"
+    },
+    {
+      "name": "Explicit cross-origin preflight succeeds; wrong origins and hosts are rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Public validation executes every synthetic scenario in isolation",
+      "status": "passed",
+      "scenarios": 49,
+      "benign": 14
+    },
+    {
+      "name": "Real production-build desktop/mobile browser workflows",
+      "status": "passed",
+      "checks": 27
+    },
+    {
+      "name": "Restart preserves events, alerts, run IDs, and exact evidence",
+      "status": "passed",
+      "events": 89,
+      "alerts": 10,
+      "runs": 4
+    },
+    {
+      "name": "Visitor reset denied; operator reset restores the known demo state",
+      "status": "passed",
+      "events": 56,
+      "alerts": 7
+    },
+    {
+      "name": "Live ASGI startup confirms 0.0.0.0 binding on the selected PORT",
+      "status": "passed"
+    }
+  ],
+  "external_deployment": "Not attempted or verified",
+  "completed_at": "2026-09-28T23:54:04.322117+00:00"
+}

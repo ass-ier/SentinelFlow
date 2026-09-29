@@ -1,0 +1,104 @@
+[
+  {
+    "event": {
+      "id": "auth-success-0",
+      "timestamp": "2026-01-15T09:00:00+00:00",
+      "source": "synthetic.telemetry",
+      "category": "authentication",
+      "type": "info",
+      "action": "login",
+      "outcome": "success",
+      "severity": "informational"
+    },
+    "host": {
+      "name": "workstation-01",
+      "ip": "10.10.1.10"
+    },
+    "user": {
+      "name": "analyst01"
+    },
+    "source": {
+      "ip": "10.10.20.15",
+      "port": 51000
+    },
+    "destination": {
+      "ip": null,
+      "port": null
+    },
+    "process": {
+      "name": null,
+      "executable": null,
+      "command_line": null,
+      "pid": null,
+      "parent": {
+        "name": null,
+        "executable": null,
+        "pid": null
+      }
+    },
+    "network": {
+      "protocol": null
+    },
+    "dns": {
+      "query": null
+    },
+    "file": {
+      "path": null
+    },
+    "metadata": {
+      "synthetic": true,
+      "product": "linux"
+    }
+  },
+  {
+    "event": {
+      "id": "auth-success-1",
+      "timestamp": "2026-01-15T09:00:30+00:00",
+      "source": "synthetic.telemetry",
+      "category": "authentication",
+      "type": "info",
+      "action": "login",
+      "outcome": "success",
+      "severity": "informational"
+    },
+    "host": {
+      "name": "workstation-01",
+      "ip": "10.10.1.10"
+    },
+    "user": {
+      "name": "analyst01"
+    },
+    "source": {
+      "ip": "10.10.20.15",
+      "port": 51000
+    },
+    "destination": {
+      "ip": null,
+      "port": null
+    },
+    "process": {
+      "name": null,
+      "executable": null,
+      "command_line": null,
+      "pid": null,
+      "parent": {
+        "name": null,
+        "executable": null,
+        "pid": null
+      }
+    },
+    "network": {
+      "protocol": null
+    },
+    "dns": {
+      "query": null
+    },
+    "file": {
+      "path": null
+    },
+    "metadata": {
+      "synthetic": true,
+      "product": "linux"
+    }
+  }
+]

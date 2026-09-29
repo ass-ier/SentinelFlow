@@ -1,0 +1,49 @@
+id: DNS-001
+name: DNS behavior anomaly
+description: >-
+  Configurable DNS heuristics: a label longer than 40 characters, repeated
+  high-entropy-looking labels, or 20 queries per source in 60 seconds.
+  DNS anomalies do not prove tunneling. Entropy is a character-distribution
+  heuristic; service discovery, CDNs, and updates can legitimately match.
+severity: medium
+conditions:
+  all:
+    - field: event.category
+      operator: equals
+      value: network
+    - field: event.action
+      operator: equals
+      value: dns_query
+branches:
+  - name: long-label
+    conditions:
+      field: metadata.dns_metrics.max_label_length
+      operator: greater_than
+      value: 40
+    group_by: [source.ip]
+  - name: high-entropy
+    conditions:
+      all:
+        - field: metadata.dns_metrics.max_label_length
+          operator: greater_than
+          value: 25
+        - field: metadata.dns_metrics.max_label_length
+          operator: less_than
+          value: 41
+        - field: metadata.dns_metrics.max_label_entropy
+          operator: greater_than
+          value: 4.1
+    threshold: {count: 2, window_seconds: 60}
+    group_by: [source.ip]
+  - name: query-frequency
+    conditions:
+      field: event.action
+      operator: equals
+      value: dns_query
+    threshold: {count: 20, window_seconds: 60}
+    group_by: [source.ip]
+suppression_seconds: 300
+mitre_attack: [T1071.004]
+false_positives:
+  - DNS bursts, high-cardinality service discovery, telemetry endpoints, and CDN names.
+provenance: {kind: bundled, author: SentinelFlow contributors, license: MIT}

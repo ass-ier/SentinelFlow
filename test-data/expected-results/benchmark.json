@@ -1,0 +1,16 @@
+{
+  "file": "mixed/benchmark_5600.jsonl",
+  "events": 5600,
+  "alerts": 700,
+  "rules_evaluated": 39200,
+  "rule_alert_counts": {
+    "AUTH-001": 100,
+    "AUTH-002": 100,
+    "PROC-001": 100,
+    "PROC-002": 100,
+    "IAM-001": 100,
+    "DNS-001": 100,
+    "NET-001": 100
+  },
+  "sha256": "b99174b1ee5f7cc972fe14d9a3baf1081270129bab22d6f5b44a3c22d01e6a12"
+}

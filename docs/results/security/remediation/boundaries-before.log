@@ -1,0 +1,133 @@
+FFFFFF..............FFFFFF.............................................. [ 73%]
+......................FF..                                               [100%]
+=================================== FAILURES ===================================
+______ test_invalid_unicode_is_rejected_before_serialization[json-\ud800] ______
+backend/tests/security/test_input_boundaries.py:20: in test_invalid_unicode_is_rejected_before_serialization
+    with pytest.raises(DomainError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE DomainError
+______ test_invalid_unicode_is_rejected_before_serialization[json-\udfff] ______
+backend/tests/security/test_input_boundaries.py:20: in test_invalid_unicode_is_rejected_before_serialization
+    with pytest.raises(DomainError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE DomainError
+______ test_invalid_unicode_is_rejected_before_serialization[yaml-\ud800] ______
+backend/tests/security/test_input_boundaries.py:24: in test_invalid_unicode_is_rejected_before_serialization
+    yaml_loads("value: " + value)
+backend/app/core/safe.py:79: in yaml_loads
+    if len(text.encode("utf-8")) > MAX_RULE_BYTES:
+           ^^^^^^^^^^^^^^^^^^^^
+E   UnicodeEncodeError: 'utf-8' codec can't encode character '\ud800' in position 7: surrogates not allowed
+______ test_invalid_unicode_is_rejected_before_serialization[yaml-\udfff] ______
+backend/tests/security/test_input_boundaries.py:24: in test_invalid_unicode_is_rejected_before_serialization
+    yaml_loads("value: " + value)
+backend/app/core/safe.py:79: in yaml_loads
+    if len(text.encode("utf-8")) > MAX_RULE_BYTES:
+           ^^^^^^^^^^^^^^^^^^^^
+E   UnicodeEncodeError: 'utf-8' codec can't encode character '\udfff' in position 7: surrogates not allowed
+____ test_invalid_unicode_is_rejected_before_serialization[content-\ud800] _____
+backend/tests/security/test_input_boundaries.py:26: in test_invalid_unicode_is_rejected_before_serialization
+    parse_content(value, "json")
+backend/app/parsers/pipeline.py:22: in parse_content
+    if len(content.encode("utf-8")) > max_bytes:
+           ^^^^^^^^^^^^^^^^^^^^^^^
+E   UnicodeEncodeError: 'utf-8' codec can't encode character '\ud800' in position 0: surrogates not allowed
+____ test_invalid_unicode_is_rejected_before_serialization[content-\udfff] _____
+backend/tests/security/test_input_boundaries.py:26: in test_invalid_unicode_is_rejected_before_serialization
+    parse_content(value, "json")
+backend/app/parsers/pipeline.py:22: in parse_content
+    if len(content.encode("utf-8")) > max_bytes:
+           ^^^^^^^^^^^^^^^^^^^^^^^
+E   UnicodeEncodeError: 'utf-8' codec can't encode character '\udfff' in position 0: surrogates not allowed
+____________ test_public_schema_contains_only_the_public_interface _____________
+backend/tests/security/test_input_boundaries.py:115: in test_public_schema_contains_only_the_public_interface
+    assert "post" not in schema["paths"]["/events"]
+E   AssertionError: assert 'post' not in {'get': {'tags': ['Events'], 'summary': 'Events', 'operationId': 'events_events_get', 'parameters': [{'name': 'q', 'in...thorization', 'in': 'header', 'required': False, 'schema': {'anyOf': [{...}, {...}], 'title': 'Authorization'}}], ...}}
+______ test_private_schema_declares_actual_owner_and_scoped_requirements _______
+backend/tests/security/test_input_boundaries.py:127: in test_private_schema_declares_actual_owner_and_scoped_requirements
+    assert schema["components"]["securitySchemes"]["OwnerBearer"]["scheme"] == "bearer"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'securitySchemes'
+_____ test_corrupt_spool_row_is_quarantined_without_losing_other_events[{] _____
+backend/tests/security/test_collector_corruption.py:42: in test_corrupt_spool_row_is_quarantined_without_losing_other_events
+    assert collector.cycle() == {"pending": 1, "blocked": 1, "status": "pending"}
+           ^^^^^^^^^^^^^^^^^
+backend/app/integrations/collector.py:126: in cycle
+    self.flush()
+backend/app/integrations/collector.py:198: in flush
+    candidate = [*batch, json.loads(row[1])]
+                         ^^^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/json/decoder.py:361: in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+E   json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+___ test_corrupt_spool_row_is_quarantined_without_losing_other_events[null] ____
+backend/tests/security/test_collector_corruption.py:42: in test_corrupt_spool_row_is_quarantined_without_losing_other_events
+    assert collector.cycle() == {"pending": 1, "blocked": 1, "status": "pending"}
+E   AssertionError: assert {'pending': 2...s': 'pending'} == {'pending': 1...s': 'pending'}
+E     
+E     Omitting 1 identical items, use -vv to show
+E     Differing items:
+E     {'pending': 2} != {'pending': 1}
+E     {'blocked': 2} != {'blocked': 1}
+E     Use -v to get more diff
+_ test_corrupt_spool_row_is_quarantined_without_losing_other_events[{"x":NaN}] _
+backend/tests/security/test_collector_corruption.py:42: in test_corrupt_spool_row_is_quarantined_without_losing_other_events
+    assert collector.cycle() == {"pending": 1, "blocked": 1, "status": "pending"}
+E   AssertionError: assert {'pending': 2...s': 'pending'} == {'pending': 1...s': 'pending'}
+E     
+E     Omitting 1 identical items, use -vv to show
+E     Differing items:
+E     {'pending': 2} != {'pending': 1}
+E     {'blocked': 2} != {'blocked': 1}
+E     Use -v to get more diff
+_ test_corrupt_spool_row_is_quarantined_without_losing_other_events[{"x":1,"x":2}] _
+backend/tests/security/test_collector_corruption.py:42: in test_corrupt_spool_row_is_quarantined_without_losing_other_events
+    assert collector.cycle() == {"pending": 1, "blocked": 1, "status": "pending"}
+E   AssertionError: assert {'pending': 2...s': 'pending'} == {'pending': 1...s': 'pending'}
+E     
+E     Omitting 1 identical items, use -vv to show
+E     Differing items:
+E     {'pending': 2} != {'pending': 1}
+E     {'blocked': 2} != {'blocked': 1}
+E     Use -v to get more diff
+___ test_remote_endpoint_permission_matrix[POST-/ingest/windows-allowed34-] ____
+backend/tests/security/test_auth_matrix.py:100: in test_remote_endpoint_permission_matrix
+    assert response.status_code in {200, 404, 422}, (name, path, response.text)
+E   AssertionError: ('windows:ingest', '/ingest/windows', '{"error":{"code":"integration_disabled","message":"Enable this integration in the server environment first"},"request_id":"f5475c95b88043e3968ae9d1f4b172ea"}')
+E   assert 409 in {200, 404, 422}
+E    +  where 409 = <Response [409 Conflict]>.status_code
+_ test_remote_endpoint_permission_matrix[POST-/ingest/windows-allowed34-/api] __
+backend/tests/security/test_auth_matrix.py:100: in test_remote_endpoint_permission_matrix
+    assert response.status_code in {200, 404, 422}, (name, path, response.text)
+E   AssertionError: ('windows:ingest', '/ingest/windows', '{"error":{"code":"integration_disabled","message":"Enable this integration in the server environment first"},"request_id":"0669323b35fb4be8b01f5ea99823b3af"}')
+E   assert 409 in {200, 404, 422}
+E    +  where 409 = <Response [409 Conflict]>.status_code
+=============================== warnings summary ===============================
+.runtime/venv/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/security/test_input_boundaries.py::test_invalid_unicode_is_rejected_before_serialization[json-\ud800]
+FAILED backend/tests/security/test_input_boundaries.py::test_invalid_unicode_is_rejected_before_serialization[json-\udfff]
+FAILED backend/tests/security/test_input_boundaries.py::test_invalid_unicode_is_rejected_before_serialization[yaml-\ud800]
+FAILED backend/tests/security/test_input_boundaries.py::test_invalid_unicode_is_rejected_before_serialization[yaml-\udfff]
+FAILED backend/tests/security/test_input_boundaries.py::test_invalid_unicode_is_rejected_before_serialization[content-\ud800]
+FAILED backend/tests/security/test_input_boundaries.py::test_invalid_unicode_is_rejected_before_serialization[content-\udfff]
+FAILED backend/tests/security/test_input_boundaries.py::test_public_schema_contains_only_the_public_interface
+FAILED backend/tests/security/test_input_boundaries.py::test_private_schema_declares_actual_owner_and_scoped_requirements
+FAILED backend/tests/security/test_collector_corruption.py::test_corrupt_spool_row_is_quarantined_without_losing_other_events[{]
+FAILED backend/tests/security/test_collector_corruption.py::test_corrupt_spool_row_is_quarantined_without_losing_other_events[null]
+FAILED backend/tests/security/test_collector_corruption.py::test_corrupt_spool_row_is_quarantined_without_losing_other_events[{"x":NaN}]
+FAILED backend/tests/security/test_collector_corruption.py::test_corrupt_spool_row_is_quarantined_without_losing_other_events[{"x":1,"x":2}]
+FAILED backend/tests/security/test_auth_matrix.py::test_remote_endpoint_permission_matrix[POST-/ingest/windows-allowed34-]
+FAILED backend/tests/security/test_auth_matrix.py::test_remote_endpoint_permission_matrix[POST-/ingest/windows-allowed34-/api]
+14 failed, 84 passed, 1 warning in 9.61s

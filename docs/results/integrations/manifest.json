@@ -1,0 +1,146 @@
+{
+  "created_at": "2026-09-28T13:56:48.579813+00:00",
+  "source_fingerprint": "9db953ffd9fa343a3219d36051910f93151d32682381440091614d72823f14a2",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3372,
+      "sha256": "bf4c96d99b6985b259042413a5a4653e4d8f3864606a5470d2c332cb9a381731"
+    },
+    {
+      "path": "backend-junit.xml",
+      "bytes": 198066,
+      "sha256": "267ae589925c19c307990d0dbfa95b39a003f039628be663f42dfee42786a5d6"
+    },
+    {
+      "path": "baseline-validation.json",
+      "bytes": 11487,
+      "sha256": "6d52e5de552983dadc75be98aef86047fa8267e5ed5522f5e6ac236a3d6d03c4"
+    },
+    {
+      "path": "benchmark.json",
+      "bytes": 984,
+      "sha256": "cce2a71747506ee2e494522234d48c50b3dcd137760c43c899c6ebe22ca65c07"
+    },
+    {
+      "path": "collector-http.json",
+      "bytes": 709,
+      "sha256": "a96eab7b9c0b74622c9797bb7e53fc577c17dadf649ee4fe5fae2120565a785c"
+    },
+    {
+      "path": "core-browser-console.log",
+      "bytes": 1661,
+      "sha256": "a0173b9f0db6ae36b19047f93ca8085fdb2cd94303571da3f1c544aadb6a966b"
+    },
+    {
+      "path": "core-browser.json",
+      "bytes": 5669,
+      "sha256": "c5381852cfdf8d06e5f61e237d18875845f77af83449755e20e4b6d2667affbf"
+    },
+    {
+      "path": "coverage.json",
+      "bytes": 430832,
+      "sha256": "4589961a540b5ae2e10d1d7248457eca6dd3eb017e35dc320bf8303f2db2d7b2"
+    },
+    {
+      "path": "detection-validation.json",
+      "bytes": 955358,
+      "sha256": "1e3813f3738f32c6c9838a69ba98f09223b0756a8e57453eae78ea72b86d2519"
+    },
+    {
+      "path": "detection-validation.txt",
+      "bytes": 4277,
+      "sha256": "021c8dc976ac8fb30dd4cf7921607f308fac86e8d4de6b65becfe81e36dbdaee"
+    },
+    {
+      "path": "docker-deployment-commands.log",
+      "bytes": 17812,
+      "sha256": "4d847fa429d0cc9c31872cc4df1fddae162c7c04b186ecbe70cf6f77d71f754d"
+    },
+    {
+      "path": "docker-deployment.json",
+      "bytes": 2280,
+      "sha256": "8b43048fcf5f7a4a510d4ad2470d3822c093793084db797b0dd3af3ddabf0fdb"
+    },
+    {
+      "path": "docker-private-integrations.json",
+      "bytes": 711,
+      "sha256": "07f03e66dce22bd880192845087df1927f5fbcdc6b598ed995eccc993c67d4ba"
+    },
+    {
+      "path": "frontend-tests.json",
+      "bytes": 47214,
+      "sha256": "1adb64b4e1df974ace9848335ec430f267c3f95678d60cef23146b2425aed923"
+    },
+    {
+      "path": "integration-alert.png",
+      "bytes": 434896,
+      "sha256": "3eedd850a938f2924aed72558bfbfc66e0cd0a76c560ea911919c8129ebe24bf"
+    },
+    {
+      "path": "integration-browser-console.log",
+      "bytes": 2025,
+      "sha256": "136f8584cabf8a8532c037327dc005cc3ae82adc5df2cde6064c5b0d674993f1"
+    },
+    {
+      "path": "integration-browser.json",
+      "bytes": 4286,
+      "sha256": "472b779df63a68acdc11d1c0c94ef0b95bb6d747e53ad55e4ff09fd546cded80"
+    },
+    {
+      "path": "integrations-desktop.png",
+      "bytes": 233825,
+      "sha256": "b96f38474bb132630857a2897772988704dcdf8d4368c8c00974461f5fd5bba7"
+    },
+    {
+      "path": "integrations-mobile.png",
+      "bytes": 146201,
+      "sha256": "b05f7c56e6afc27dfcd225ecf8620b07d507f07c2ab4b9659e2d0f69426b0b04"
+    },
+    {
+      "path": "integrations-validation.json",
+      "bytes": 1904,
+      "sha256": "fa1e8e5ff8203dc3edf897ea440eb47cc2578a0e5cd54281aa55d68b6b891f6a"
+    },
+    {
+      "path": "native-deployment-commands.log",
+      "bytes": 2834,
+      "sha256": "d32a3ea89670f646c25dbd4edb8679840f0319a4d0d19f52c65553700ab25bf5"
+    },
+    {
+      "path": "native-deployment.json",
+      "bytes": 1951,
+      "sha256": "9ce0aabfca917651d57016855bb74da4d4ceba557c788202690bffb3d4d1772a"
+    },
+    {
+      "path": "notifications-desktop.png",
+      "bytes": 288964,
+      "sha256": "fd09a5c36afaf10a921c4b6d6a4137ca09cef08ed81985ee776b148f7b747023"
+    },
+    {
+      "path": "public-docker-browser.json",
+      "bytes": 34896,
+      "sha256": "d189ab22078ebec7942a2c2f7e16f7e5c76d72306bcedb770a678959a3cd80fb"
+    },
+    {
+      "path": "public-native-browser.json",
+      "bytes": 34804,
+      "sha256": "7cacdcf5e0eed8641118cba3b2e504123b460950a55eb0d41262c5402d1e6300"
+    },
+    {
+      "path": "sigma-validation.json",
+      "bytes": 2046,
+      "sha256": "18e76f5a0be20a4a883140f7f29222f98923d112545f84264ce675b17441de60"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 15002,
+      "sha256": "05e99c2101f8dbedddda4b012caa0ed9d2fc2e6310e26319049991490126356b"
+    },
+    {
+      "path": "validation.log",
+      "bytes": 18153,
+      "sha256": "3e2bff2944090a1b7ec7bd118f6cea805e26869d6aaf2b26bf3d200b9bc9d4f1"
+    }
+  ]
+}

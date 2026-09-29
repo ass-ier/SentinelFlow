@@ -1,0 +1,229 @@
+{
+  "status": "passed",
+  "started_at": "2026-09-28T11:57:46.156Z",
+  "source_fingerprint": "d618438a4506636078d672bc8b4fcf444d0685970d2d06f3d7515b089c957595",
+  "browser": "153.0.8010.12",
+  "checks": [
+    {
+      "name": "Dashboard renders real scoped counts and event-time chart",
+      "status": "passed",
+      "events": 56,
+      "alerts": 7
+    },
+    {
+      "name": "Event explorer filters backend results",
+      "status": "passed",
+      "failedEvents": 29
+    },
+    {
+      "name": "Event rows expand real raw evidence",
+      "status": "passed"
+    },
+    {
+      "name": "File ingestion is real and changes the run scope",
+      "status": "passed",
+      "events": 25,
+      "alerts": 1
+    },
+    {
+      "name": "Chronological 10x replay reaches actual 25-event completion",
+      "status": "passed",
+      "run_id": "32e87c08f482447a8d377ce466c788e4"
+    },
+    {
+      "name": "Alert status, 25 linked events, raw evidence, MITRE and rule snapshot work",
+      "status": "passed",
+      "alert_id": "10e97dd34a5895f2d7c210cd65aa4d83"
+    },
+    {
+      "name": "Rule toggle and explicit disabled-definition testing work without hidden enablement",
+      "status": "passed"
+    },
+    {
+      "name": "Positive and benign detection tests display exact real results",
+      "status": "passed"
+    },
+    {
+      "name": "PowerShell replay and inert command-line evidence work",
+      "status": "passed"
+    },
+    {
+      "name": "DNS heuristic alert exposes its branch and actual evidence",
+      "status": "passed"
+    },
+    {
+      "name": "Licensed Sigma compile/import and positive/negative tests preserve authorship",
+      "status": "passed"
+    },
+    {
+      "name": "Unsupported Sigma condition is a visible failure, never simulated success",
+      "status": "passed"
+    },
+    {
+      "name": "Project evidence reads actual make validate output and repository inventory",
+      "status": "passed"
+    },
+    {
+      "name": "1440px layout: Overview",
+      "status": "passed",
+      "viewport": 1440,
+      "document": 1440,
+      "heading": "Overview"
+    },
+    {
+      "name": "1440px layout: Event explorer",
+      "status": "passed",
+      "viewport": 1440,
+      "document": 1440,
+      "heading": "Event explorer"
+    },
+    {
+      "name": "1440px layout: Alert queue",
+      "status": "passed",
+      "viewport": 1440,
+      "document": 1440,
+      "heading": "Alert queue"
+    },
+    {
+      "name": "1440px layout: Detection rules",
+      "status": "passed",
+      "viewport": 1440,
+      "document": 1440,
+      "heading": "Detection rules"
+    },
+    {
+      "name": "1440px layout: Detection testing",
+      "status": "passed",
+      "viewport": 1440,
+      "document": 1440,
+      "heading": "Detection testing"
+    },
+    {
+      "name": "1440px layout: Detection replay",
+      "status": "passed",
+      "viewport": 1440,
+      "document": 1440,
+      "heading": "Detection replay"
+    },
+    {
+      "name": "1440px layout: Sigma workbench",
+      "status": "passed",
+      "viewport": 1440,
+      "document": 1440,
+      "heading": "Sigma workbench"
+    },
+    {
+      "name": "1440px layout: Project evidence",
+      "status": "passed",
+      "viewport": 1440,
+      "document": 1440,
+      "heading": "Project evidence"
+    },
+    {
+      "name": "390px layout: Overview",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Overview"
+    },
+    {
+      "name": "Mobile technique identifiers stay on one line",
+      "status": "passed",
+      "identifiers": [
+        {
+          "id": "T1110",
+          "lines": 1
+        },
+        {
+          "id": "T1071.004",
+          "lines": 1
+        },
+        {
+          "id": "T1059.001",
+          "lines": 1
+        },
+        {
+          "id": "T1098",
+          "lines": 1
+        },
+        {
+          "id": "T1048",
+          "lines": 1
+        },
+        {
+          "id": "T1059.003",
+          "lines": 1
+        },
+        {
+          "id": "T1204.002",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "name": "390px layout: Event explorer",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Event explorer"
+    },
+    {
+      "name": "390px layout: Alert queue",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Alert queue"
+    },
+    {
+      "name": "390px layout: Detection rules",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Detection rules"
+    },
+    {
+      "name": "390px layout: Detection testing",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Detection testing"
+    },
+    {
+      "name": "390px layout: Detection replay",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Detection replay"
+    },
+    {
+      "name": "390px layout: Sigma workbench",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Sigma workbench"
+    },
+    {
+      "name": "390px layout: Project evidence",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Project evidence"
+    },
+    {
+      "name": "Mobile navigation opens, navigates, and closes",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard skip link moves focus into the analyst workspace",
+      "status": "passed"
+    },
+    {
+      "name": "No uncaught page errors or server errors during verified workflows",
+      "status": "passed"
+    }
+  ],
+  "screenshots": [],
+  "completed_at": "2026-09-28T11:57:56.493Z",
+  "page_errors": [],
+  "server_errors": []
+}

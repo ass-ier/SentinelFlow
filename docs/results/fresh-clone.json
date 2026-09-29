@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-27T23:59:19.520Z",
+  "cloned_commit": "8a8170225fa71544a73cb654cfd39dcfeb695a8d",
+  "source_fingerprint": "f4f27c57afbd72864a29557fec670a2cb2865ff6f2bfe95a3e8af03808aeae5e",
+  "checkout": "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone",
+  "python": {
+    "version": "3.13.7",
+    "prefix": "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone/.venv",
+    "project_root": "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-verified-clone"
+  },
+  "node": "v20.19.2",
+  "browser": "153.0.8010.12",
+  "api_url": "http://127.0.0.1:8766",
+  "ui_url": "http://127.0.0.1:5174",
+  "installation": "make install from a new local clone; independent .venv and frontend/node_modules; no primary-worktree environment reuse",
+  "validation_command": "make validate",
+  "backend_tests": 268,
+  "frontend_tests": 93,
+  "browser_checks": 33,
+  "actual_browser_posts": [
+    {
+      "url": "http://127.0.0.1:5174/api/detections/validate",
+      "method": "POST",
+      "origin": "http://127.0.0.1:5174",
+      "body": {
+        "scope": "bundled",
+        "dataset_id": "auth-brute-force",
+        "rule_id": "AUTH-001"
+      },
+      "response_status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5174/api/detections/validate",
+      "method": "POST",
+      "origin": "http://127.0.0.1:5174",
+      "body": {
+        "scope": "bundled",
+        "dataset_id": "auth-normal-failures",
+        "rule_id": "AUTH-001"
+      },
+      "response_status": 200
+    }
+  ],
+  "positive": {
+    "status": "passed",
+    "rule_id": "AUTH-001",
+    "severity": "high",
+    "evidence_events": 25
+  },
+  "benign": {
+    "status": "passed",
+    "observed_alerts": 0
+  },
+  "operational_alerts_before": 11,
+  "operational_alerts_after": 11
+}

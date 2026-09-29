@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: sentinelflow-api
+    runtime: python
+    plan: free
+    rootDir: .
+    autoDeployTrigger: "off"
+    buildCommand: >-
+      python -m pip install --require-hashes -r requirements-runtime.lock
+    startCommand: python scripts/serve.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.15
+      - key: PYTHONPATH
+        value: backend
+      - key: SENTINEL_PUBLIC_DEMO
+        value: "true"
+      - key: SENTINEL_DATABASE_URL
+        value: sqlite:///data/sentinelflow-public-demo.sqlite3
+      - key: SENTINEL_ALLOWED_ORIGINS
+        sync: false

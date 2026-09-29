@@ -1,0 +1,547 @@
+[
+  {
+    "test_id": "auth-brute-force",
+    "name": "Repeated failed login: 25 attempts, one source",
+    "dataset_id": "auth-brute-force",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 25,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "auth-normal-failures",
+    "name": "Three ordinary login errors remain below threshold",
+    "dataset_id": "auth-normal-failures",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "auth-success",
+    "name": "Successful employee logins",
+    "dataset_id": "auth-success",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "auth-lifecycle",
+    "name": "Logout and password change",
+    "dataset_id": "auth-lifecycle",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "auth-distributed",
+    "name": "Distributed low-volume failures; no per-source threshold",
+    "dataset_id": "auth-distributed",
+    "kind": "boundary",
+    "expected": []
+  },
+  {
+    "test_id": "auth-multiple-users",
+    "name": "One source targets multiple users",
+    "dataset_id": "auth-multiple-users",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 12,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "auth-lockout",
+    "name": "Four lockouts on one domain controller",
+    "dataset_id": "auth-lockout",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "AUTH-002",
+        "severity": "medium",
+        "event_count": 4,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "auth-normal-lockout",
+    "name": "Two isolated account lockouts",
+    "dataset_id": "auth-normal-lockout",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "auth-below-threshold",
+    "name": "Exactly one event below the brute-force threshold",
+    "dataset_id": "auth-below-threshold",
+    "kind": "boundary",
+    "expected": []
+  },
+  {
+    "test_id": "auth-window-boundary",
+    "name": "Inclusive 300-second event-time boundary",
+    "dataset_id": "auth-window-boundary",
+    "kind": "boundary",
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 10,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "auth-window-outside",
+    "name": "One microsecond outside the inclusive window",
+    "dataset_id": "auth-window-outside",
+    "kind": "boundary",
+    "expected": []
+  },
+  {
+    "test_id": "auth-group-separation",
+    "name": "Independent sources create independent evidence",
+    "dataset_id": "auth-group-separation",
+    "kind": "regression",
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 10,
+        "branch": "default"
+      },
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 10,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "auth-duplicates",
+    "name": "Repeated identical event IDs cannot inflate thresholds",
+    "dataset_id": "auth-duplicates",
+    "kind": "regression",
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 25,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "auth-shuffled",
+    "name": "A shuffled batch is evaluated chronologically",
+    "dataset_id": "auth-shuffled",
+    "kind": "regression",
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 25,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "auth-suppression-boundary",
+    "name": "Suppression ends exactly 600 seconds after the first trigger",
+    "dataset_id": "auth-suppression-boundary",
+    "kind": "regression",
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 15,
+        "branch": "default"
+      },
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 10,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "auth-missing-source",
+    "name": "Missing grouping entities are not merged into an unknown source",
+    "dataset_id": "auth-missing-source",
+    "kind": "regression",
+    "expected": []
+  },
+  {
+    "test_id": "powershell-indicators",
+    "name": "Five suspicious PowerShell indicators; never executed",
+    "dataset_id": "powershell-indicators",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "PROC-001",
+        "severity": "high",
+        "event_count": 5,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "powershell-encoded",
+    "name": "Inert encoded-command telemetry",
+    "dataset_id": "powershell-encoded",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "PROC-001",
+        "severity": "high",
+        "event_count": 1,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "powershell-admin",
+    "name": "Routine unencoded PowerShell administration",
+    "dataset_id": "powershell-admin",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "powershell-legitimate-download",
+    "name": "Legitimate download still flags the indicator; intent is not inferred",
+    "dataset_id": "powershell-legitimate-download",
+    "kind": "policy",
+    "expected": [
+      {
+        "rule_id": "PROC-001",
+        "severity": "high",
+        "event_count": 1,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "process-suspicious",
+    "name": "Configurable process relationships and command-line patterns",
+    "dataset_id": "process-suspicious",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "PROC-002",
+        "severity": "high",
+        "event_count": 3,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "process-benign",
+    "name": "Ordinary command prompt and script execution",
+    "dataset_id": "process-benign",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "iam-privileged-group",
+    "name": "Add and remove a privileged group member",
+    "dataset_id": "iam-privileged-group",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "IAM-001",
+        "severity": "high",
+        "event_count": 2,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "iam-normal-group",
+    "name": "Nonprivileged helpdesk group maintenance",
+    "dataset_id": "iam-normal-group",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "iam-approved-maintenance",
+    "name": "Explicit service, host, and ticket maintenance exception",
+    "dataset_id": "iam-approved-maintenance",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "iam-maintenance-wrong-host",
+    "name": "A service name and ticket alone must not exempt another host",
+    "dataset_id": "iam-maintenance-wrong-host",
+    "kind": "regression",
+    "expected": [
+      {
+        "rule_id": "IAM-001",
+        "severity": "high",
+        "event_count": 2,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "iam-privilege-actions",
+    "name": "Privileged account creation and escalation",
+    "dataset_id": "iam-privilege-actions",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "IAM-001",
+        "severity": "high",
+        "event_count": 2,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "iam-service-activity",
+    "name": "Nonprivileged account provisioning and service login",
+    "dataset_id": "iam-service-activity",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "dns-normal",
+    "name": "Low-volume ordinary DNS names",
+    "dataset_id": "dns-normal",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "dns-long-label",
+    "name": "Unusually long labels, not proof of tunneling",
+    "dataset_id": "dns-long-label",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "DNS-001",
+        "severity": "medium",
+        "event_count": 3,
+        "branch": "long-label"
+      }
+    ]
+  },
+  {
+    "test_id": "dns-entropy",
+    "name": "Repeated high-entropy-looking labels",
+    "dataset_id": "dns-entropy",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "DNS-001",
+        "severity": "medium",
+        "event_count": 3,
+        "branch": "high-entropy"
+      }
+    ]
+  },
+  {
+    "test_id": "dns-frequency",
+    "name": "25 queries in 25 seconds",
+    "dataset_id": "dns-frequency",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "DNS-001",
+        "severity": "medium",
+        "event_count": 25,
+        "branch": "query-frequency"
+      }
+    ]
+  },
+  {
+    "test_id": "dns-subdomain-pattern",
+    "name": "Repeated unusual subdomains cross the configurable frequency threshold",
+    "dataset_id": "dns-subdomain-pattern",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "DNS-001",
+        "severity": "medium",
+        "event_count": 22,
+        "branch": "query-frequency"
+      }
+    ]
+  },
+  {
+    "test_id": "dns-below-frequency",
+    "name": "19-query controlled burst, below the configured frequency threshold",
+    "dataset_id": "dns-below-frequency",
+    "kind": "boundary",
+    "expected": []
+  },
+  {
+    "test_id": "net-unusual",
+    "name": "Repeated connections to an unusual port",
+    "dataset_id": "net-unusual",
+    "kind": "positive",
+    "expected": [
+      {
+        "rule_id": "NET-001",
+        "severity": "medium",
+        "event_count": 6,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "net-normal",
+    "name": "Repeated normal HTTPS connections and requests",
+    "dataset_id": "net-normal",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "net-below-threshold",
+    "name": "Two unusual-port events are below threshold",
+    "dataset_id": "net-below-threshold",
+    "kind": "boundary",
+    "expected": []
+  },
+  {
+    "test_id": "net-allowlisted",
+    "name": "Explicit allowlisted monitoring destination",
+    "dataset_id": "net-allowlisted",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "net-private",
+    "name": "Private service connections excluded by configured policy",
+    "dataset_id": "net-private",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "mixed-incident",
+    "name": "Seven detection families interleaved with successful logins",
+    "dataset_id": "mixed-incident",
+    "kind": "mixed",
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 25,
+        "branch": "default"
+      },
+      {
+        "rule_id": "AUTH-002",
+        "severity": "medium",
+        "event_count": 4,
+        "branch": "default"
+      },
+      {
+        "rule_id": "PROC-001",
+        "severity": "high",
+        "event_count": 5,
+        "branch": "default"
+      },
+      {
+        "rule_id": "PROC-002",
+        "severity": "high",
+        "event_count": 3,
+        "branch": "default"
+      },
+      {
+        "rule_id": "IAM-001",
+        "severity": "high",
+        "event_count": 2,
+        "branch": "default"
+      },
+      {
+        "rule_id": "DNS-001",
+        "severity": "medium",
+        "event_count": 3,
+        "branch": "long-label"
+      },
+      {
+        "rule_id": "NET-001",
+        "severity": "medium",
+        "event_count": 6,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "benign-baseline",
+    "name": "1,000 successful logins for baseline and performance work",
+    "dataset_id": "benign-baseline",
+    "kind": "benign",
+    "expected": []
+  },
+  {
+    "test_id": "parser-csv",
+    "name": "Dotted-column CSV normalization contract",
+    "dataset_id": "parser-csv",
+    "kind": "parser",
+    "expected": []
+  },
+  {
+    "test_id": "parser-syslog",
+    "name": "Five supported authentication syslog messages",
+    "dataset_id": "parser-syslog",
+    "kind": "parser",
+    "expected": []
+  },
+  {
+    "test_id": "parser-windows",
+    "name": "Windows Security/Sysmon-style exported JSON, not EVTX",
+    "dataset_id": "parser-windows",
+    "kind": "parser",
+    "expected": []
+  },
+  {
+    "test_id": "parser-json",
+    "name": "Nested normalized JSON objects",
+    "dataset_id": "parser-json",
+    "kind": "parser",
+    "expected": []
+  },
+  {
+    "test_id": "sigma-download",
+    "name": "Synthetic Sigma compatibility telemetry",
+    "dataset_id": "sigma-download",
+    "kind": "sigma",
+    "expected": [
+      {
+        "rule_id": "PROC-001",
+        "severity": "high",
+        "event_count": 1,
+        "branch": "default"
+      }
+    ]
+  },
+  {
+    "test_id": "sigma-encoded",
+    "name": "Synthetic Sigma compatibility telemetry",
+    "dataset_id": "sigma-encoded",
+    "kind": "sigma",
+    "expected": []
+  },
+  {
+    "test_id": "sigma-benign",
+    "name": "Synthetic Sigma compatibility telemetry",
+    "dataset_id": "sigma-benign",
+    "kind": "sigma",
+    "expected": []
+  },
+  {
+    "test_id": "sigma-azure",
+    "name": "Upstream Azure parent-image exclusion",
+    "dataset_id": "sigma-azure",
+    "kind": "sigma",
+    "expected": []
+  }
+]

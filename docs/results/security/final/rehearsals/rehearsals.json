@@ -1,0 +1,323 @@
+{
+  "status": "passed",
+  "started_at": "2026-09-28T23:53:22.130913+00:00",
+  "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+  "checks": [
+    {
+      "name": "Analyst browser",
+      "status": "passed",
+      "checks": 33,
+      "receipt": "analyst-browser.json"
+    },
+    {
+      "name": "Integration browser",
+      "status": "passed",
+      "checks": 28,
+      "receipt": "integration-browser/browser-results.json"
+    },
+    {
+      "name": "Security browser",
+      "status": "passed",
+      "checks": 12,
+      "receipt": "security-browser/browser.json"
+    },
+    {
+      "name": "Actual collector CLI durably spools all 36 events during a real TCP outage",
+      "status": "passed"
+    },
+    {
+      "name": "Collector restart drains its real spool through scoped HTTP ingestion",
+      "status": "passed",
+      "events": 36,
+      "alerts": 7
+    },
+    {
+      "name": "Repeated bookmark after process restart does not duplicate collector events",
+      "status": "passed"
+    },
+    {
+      "name": "Same alert/destination is idempotent across restart; different destinations remain independent",
+      "status": "passed"
+    },
+    {
+      "name": "native public deployment rehearsal",
+      "status": "passed",
+      "checks": 10,
+      "browser_checks": 27
+    },
+    {
+      "name": "docker public deployment rehearsal",
+      "status": "passed",
+      "checks": 12,
+      "browser_checks": 27
+    },
+    {
+      "name": "Network-isolated image enforces kernel boundaries and exact integration flows",
+      "status": "passed",
+      "image": "sha256:69b32fc8ceafe8edeb6971df88ee5d16a9bf69769d881977c451c6876c937b00",
+      "checks": 9
+    }
+  ],
+  "commands": [
+    {
+      "name": "analyst-browser",
+      "command": [
+        "node",
+        "scripts/browser_verify.mjs",
+        "--no-capture",
+        "--preserve-database"
+      ],
+      "started_at": "2026-09-28T23:53:22.677281+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "integration-browser",
+      "command": [
+        "node",
+        "scripts/browser_integrations.mjs"
+      ],
+      "started_at": "2026-09-28T23:53:33.597831+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "security-browser",
+      "command": [
+        "node",
+        "scripts/browser_security.mjs"
+      ],
+      "started_at": "2026-09-28T23:53:40.498742+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "collector-outage",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "collector/windows/collect.py",
+        "--once",
+        "--local-test",
+        "--spool",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/rehearsals/collector.sqlite3",
+        "--fixture",
+        "test-data/integrations/microsoft-windows.json",
+        "--batch-size",
+        "200"
+      ],
+      "started_at": "2026-09-28T23:53:44.164830+00:00",
+      "exit_code": 2,
+      "expected_exit_code": 2
+    },
+    {
+      "name": "collector-recovery",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "collector/windows/collect.py",
+        "--once",
+        "--local-test",
+        "--spool",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/rehearsals/collector.sqlite3",
+        "--fixture",
+        "test-data/integrations/microsoft-windows.json",
+        "--batch-size",
+        "200"
+      ],
+      "started_at": "2026-09-28T23:53:47.018496+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "collector-repeat",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "collector/windows/collect.py",
+        "--once",
+        "--local-test",
+        "--spool",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/rehearsals/collector.sqlite3",
+        "--fixture",
+        "test-data/integrations/microsoft-windows.json",
+        "--batch-size",
+        "200"
+      ],
+      "started_at": "2026-09-28T23:53:47.277445+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "deployment-native",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "scripts/verify_deployment.py",
+        "--label",
+        "security-native-48bc9b7e",
+        "--backend-port",
+        "57027",
+        "--frontend-port",
+        "57028"
+      ],
+      "started_at": "2026-09-28T23:53:49.043490+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "deployment-docker",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "scripts/verify_deployment.py",
+        "--label",
+        "security-docker-b1193e02",
+        "--backend-port",
+        "57081",
+        "--frontend-port",
+        "57082",
+        "--docker",
+        "--image-id",
+        "sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9"
+      ],
+      "started_at": "2026-09-28T23:54:04.608741+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "private-volume",
+      "command": [
+        "docker",
+        "volume",
+        "create",
+        "sentinelflow-security-private-97a99206d8f1-data"
+      ],
+      "started_at": "2026-09-28T23:54:29.834412+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "private-image-start",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--name",
+        "sentinelflow-security-private-97a99206d8f1",
+        "--network",
+        "none",
+        "--platform",
+        "linux/amd64",
+        "--read-only",
+        "--cap-drop",
+        "ALL",
+        "--security-opt",
+        "no-new-privileges",
+        "--memory",
+        "768m",
+        "--cpus",
+        "2",
+        "--pids-limit",
+        "128",
+        "--tmpfs",
+        "/tmp:rw,noexec,nosuid,size=64m",
+        "--mount",
+        "type=volume,source=sentinelflow-security-private-97a99206d8f1-data,target=/srv/sentinelflow/data",
+        "--env",
+        "SENTINEL_API_TOKEN",
+        "--env",
+        "SENTINEL_DATABASE_URL",
+        "--env",
+        "SENTINEL_PUBLIC_DEMO=false",
+        "sha256:69b32fc8ceafe8edeb6971df88ee5d16a9bf69769d881977c451c6876c937b00"
+      ],
+      "started_at": "2026-09-28T23:54:29.856909+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "private-image-ready",
+      "command": [
+        "docker",
+        "exec",
+        "sentinelflow-security-private-97a99206d8f1",
+        "python",
+        "-c",
+        "import time,urllib.request\nfor attempt in range(60):\n try:\n  urllib.request.urlopen('http://127.0.0.1:8765/health',timeout=1); break\n except OSError:\n  time.sleep(0.5)\nelse: raise SystemExit('container did not become ready')\n"
+      ],
+      "started_at": "2026-09-28T23:54:30.016663+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "private-image-probe",
+      "command": [
+        "docker",
+        "exec",
+        "sentinelflow-security-private-97a99206d8f1",
+        "python",
+        "scripts/container_security_probe.py"
+      ],
+      "started_at": "2026-09-28T23:54:31.947014+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "private-image-cleanup",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "sentinelflow-security-private-97a99206d8f1"
+      ],
+      "started_at": "2026-09-28T23:55:34.099448+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "private-volume-cleanup",
+      "command": [
+        "docker",
+        "volume",
+        "rm",
+        "sentinelflow-security-private-97a99206d8f1-data"
+      ],
+      "started_at": "2026-09-28T23:55:34.196377+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    }
+  ],
+  "private_container": {
+    "status": "passed",
+    "checks": 9,
+    "uid": 10001,
+    "read_only_root": true,
+    "no_new_privileges": true,
+    "effective_capabilities": 0,
+    "development_tools_absent": true,
+    "historical_security_evidence_absent": true,
+    "rate_limit_enforced_and_recovered": true,
+    "retries": {
+      "integration_busy": 0,
+      "integration_rate_limit": 1
+    },
+    "flows": [
+      {
+        "source": "microsoft_sentinel",
+        "events": 13,
+        "alerts": 2,
+        "deliveries": 2
+      },
+      {
+        "source": "microsoft_graph",
+        "events": 13,
+        "alerts": 2,
+        "deliveries": 2
+      },
+      {
+        "source": "windows_wef",
+        "events": 36,
+        "alerts": 7,
+        "deliveries": 7
+      }
+    ],
+    "live_integrations": "Not tested"
+  },
+  "finished_at": "2026-09-28T23:55:34.329810+00:00"
+}

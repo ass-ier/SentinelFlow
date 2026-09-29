@@ -1,0 +1,854 @@
+[
+  {
+    "id": "auth-brute-force",
+    "path": "authentication/brute_force.jsonl",
+    "name": "Repeated failed login: 25 attempts, one source",
+    "format": "jsonl",
+    "event_count": 25,
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 25,
+        "branch": "default"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "4ae9f92f34db55ced0115915befaa8bdd05126425f1e463e54915c06c43ef146"
+  },
+  {
+    "id": "auth-normal-failures",
+    "path": "benign/normal_authentication.jsonl",
+    "name": "Three ordinary login errors remain below threshold",
+    "format": "jsonl",
+    "event_count": 3,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "da39370ae130177f5f82ddf79c70912e5fff33d3b3bff13dba1e413d5128e44e"
+  },
+  {
+    "id": "auth-success",
+    "path": "authentication/normal_login.jsonl",
+    "name": "Successful employee logins",
+    "format": "jsonl",
+    "event_count": 8,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "c6d5a1879c3e97f53f7b022f470510521baf4dea416f70fb2caa36d27e87dade"
+  },
+  {
+    "id": "auth-lifecycle",
+    "path": "authentication/lifecycle.jsonl",
+    "name": "Logout and password change",
+    "format": "jsonl",
+    "event_count": 2,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "565a7d467c25c4f2af4bfbac35976116c2f1b4b30c29433e0366c865e1891561"
+  },
+  {
+    "id": "auth-distributed",
+    "path": "authentication/distributed_failures.jsonl",
+    "name": "Distributed low-volume failures; no per-source threshold",
+    "format": "jsonl",
+    "event_count": 12,
+    "expected": [],
+    "kind": "boundary",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "a5a27c025aec0707c586516db5996e6549b7f72c52e8c6b101669e0bc5379122"
+  },
+  {
+    "id": "auth-multiple-users",
+    "path": "authentication/password_spray.jsonl",
+    "name": "One source targets multiple users",
+    "format": "jsonl",
+    "event_count": 12,
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 12,
+        "branch": "default"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "e39584bdf17c5199cb14c58cbf11fcd56c5f353a2b86fb42c0ce55a77d012ffa"
+  },
+  {
+    "id": "auth-lockout",
+    "path": "authentication/account_lockout.jsonl",
+    "name": "Four lockouts on one domain controller",
+    "format": "jsonl",
+    "event_count": 4,
+    "expected": [
+      {
+        "rule_id": "AUTH-002",
+        "severity": "medium",
+        "event_count": 4,
+        "branch": "default"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "d3d49438e25f5a346b95bdbc8548c27c4620f4a0a65a001ac464cc291ea27734"
+  },
+  {
+    "id": "auth-normal-lockout",
+    "path": "benign/normal_lockouts.jsonl",
+    "name": "Two isolated account lockouts",
+    "format": "jsonl",
+    "event_count": 2,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "1f1cc648072c7eaabf01ff02e35499e6badced17b1f0d0ed45fb118c290cfd34"
+  },
+  {
+    "id": "auth-below-threshold",
+    "path": "authentication/below_threshold.jsonl",
+    "name": "Exactly one event below the brute-force threshold",
+    "format": "jsonl",
+    "event_count": 9,
+    "expected": [],
+    "kind": "boundary",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "a8c777ae1d4fc093cd1e3ec4675920fe9bdd8a4f7e1b963091c83fd4ebf81ad4"
+  },
+  {
+    "id": "auth-window-boundary",
+    "path": "authentication/window_boundary.jsonl",
+    "name": "Inclusive 300-second event-time boundary",
+    "format": "jsonl",
+    "event_count": 10,
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 10,
+        "branch": "default"
+      }
+    ],
+    "kind": "boundary",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "a8f1580d8ef42df77f17dc3ace5d1d1bc0bcdb1f5977ad9070fb3548b430e605"
+  },
+  {
+    "id": "auth-window-outside",
+    "path": "authentication/window_outside.jsonl",
+    "name": "One microsecond outside the inclusive window",
+    "format": "jsonl",
+    "event_count": 10,
+    "expected": [],
+    "kind": "boundary",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "0b5350704af29b368a962ff816b5fce9925635b2765f2135a9c97957af48dd7a"
+  },
+  {
+    "id": "auth-group-separation",
+    "path": "authentication/group_separation.jsonl",
+    "name": "Independent sources create independent evidence",
+    "format": "jsonl",
+    "event_count": 20,
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 10,
+        "branch": "default"
+      },
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 10,
+        "branch": "default"
+      }
+    ],
+    "kind": "regression",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "cafc8b1ed477dc7d44805f94ebdd3301fafc4c25000e8fcab5bf96b77ab42526"
+  },
+  {
+    "id": "auth-duplicates",
+    "path": "authentication/duplicate_events.jsonl",
+    "name": "Repeated identical event IDs cannot inflate thresholds",
+    "format": "jsonl",
+    "event_count": 50,
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 25,
+        "branch": "default"
+      }
+    ],
+    "kind": "regression",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "1726f3a00d15a8c3a45a219025871c8428335756686f923cb619010534bbcb71"
+  },
+  {
+    "id": "auth-shuffled",
+    "path": "authentication/shuffled_events.jsonl",
+    "name": "A shuffled batch is evaluated chronologically",
+    "format": "jsonl",
+    "event_count": 25,
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 25,
+        "branch": "default"
+      }
+    ],
+    "kind": "regression",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "daf97ce77d85b50865e657fdc20f125fb5f94dab4f204c1bd21fa6837398558d"
+  },
+  {
+    "id": "auth-suppression-boundary",
+    "path": "authentication/suppression_boundary.jsonl",
+    "name": "Suppression ends exactly 600 seconds after the first trigger",
+    "format": "jsonl",
+    "event_count": 25,
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 15,
+        "branch": "default"
+      },
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 10,
+        "branch": "default"
+      }
+    ],
+    "kind": "regression",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "835949335d0cc10f62d5826081e11ab0c23a2e7edb0edd969912f189521e0557"
+  },
+  {
+    "id": "auth-missing-source",
+    "path": "authentication/missing_source.jsonl",
+    "name": "Missing grouping entities are not merged into an unknown source",
+    "format": "jsonl",
+    "event_count": 10,
+    "expected": [],
+    "kind": "regression",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "8bcfa53e212a1b7189428dec91ab4517660e05e535b097c37172454b3efaf47f"
+  },
+  {
+    "id": "powershell-indicators",
+    "path": "powershell/suspicious_powershell.jsonl",
+    "name": "Five suspicious PowerShell indicators; never executed",
+    "format": "jsonl",
+    "event_count": 5,
+    "expected": [
+      {
+        "rule_id": "PROC-001",
+        "severity": "high",
+        "event_count": 5,
+        "branch": "default"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "4ecc61b962bbb17ec3d78a3082a0b68c1716e8a746d9918877411fea1b0f6a5d"
+  },
+  {
+    "id": "powershell-encoded",
+    "path": "powershell/encoded_command.jsonl",
+    "name": "Inert encoded-command telemetry",
+    "format": "jsonl",
+    "event_count": 1,
+    "expected": [
+      {
+        "rule_id": "PROC-001",
+        "severity": "high",
+        "event_count": 1,
+        "branch": "default"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "65299c263fdd7112213720e650af7eaffd3a722f0376e93a37571e318b8622ed"
+  },
+  {
+    "id": "powershell-admin",
+    "path": "benign/administrative_powershell.jsonl",
+    "name": "Routine unencoded PowerShell administration",
+    "format": "jsonl",
+    "event_count": 4,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "140f9c18514f69a6e59bd42bcb6a5f450d2735d59a7e5a9578108bc7147a0713"
+  },
+  {
+    "id": "powershell-legitimate-download",
+    "path": "powershell/legitimate_installer.jsonl",
+    "name": "Legitimate download still flags the indicator; intent is not inferred",
+    "format": "jsonl",
+    "event_count": 1,
+    "expected": [
+      {
+        "rule_id": "PROC-001",
+        "severity": "high",
+        "event_count": 1,
+        "branch": "default"
+      }
+    ],
+    "kind": "policy",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "cd8462a136533912630cc4b156b15f4de100f674d0e4991568a31d8c64136bff"
+  },
+  {
+    "id": "process-suspicious",
+    "path": "process/suspicious_execution.jsonl",
+    "name": "Configurable process relationships and command-line patterns",
+    "format": "jsonl",
+    "event_count": 3,
+    "expected": [
+      {
+        "rule_id": "PROC-002",
+        "severity": "high",
+        "event_count": 3,
+        "branch": "default"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "2e6bac5fd3f84495e3ff4bdc1ea932fc8ef9d0e7ab1e19ee0e5afda7ce0a3e23"
+  },
+  {
+    "id": "process-benign",
+    "path": "benign/normal_processes.jsonl",
+    "name": "Ordinary command prompt and script execution",
+    "format": "jsonl",
+    "event_count": 2,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "cd9ce2cccb11324b1aec37c19dd250383f9fdd552fa747b89b7ba9cd01bb1a03"
+  },
+  {
+    "id": "iam-privileged-group",
+    "path": "privilege-escalation/privileged_group.jsonl",
+    "name": "Add and remove a privileged group member",
+    "format": "jsonl",
+    "event_count": 2,
+    "expected": [
+      {
+        "rule_id": "IAM-001",
+        "severity": "high",
+        "event_count": 2,
+        "branch": "default"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "f084fccb3886108bdf9e269c2a43ac8f3a09a3281fa6db79695cda0652a0f6d1"
+  },
+  {
+    "id": "iam-normal-group",
+    "path": "benign/normal_group_modification.jsonl",
+    "name": "Nonprivileged helpdesk group maintenance",
+    "format": "jsonl",
+    "event_count": 2,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "9cee2560cd94623a7b47c1b7ea85f7c27d02cad11183110b6fe028bdc06a1165"
+  },
+  {
+    "id": "iam-approved-maintenance",
+    "path": "benign/privileged_group_maintenance.jsonl",
+    "name": "Explicit service, host, and ticket maintenance exception",
+    "format": "jsonl",
+    "event_count": 2,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "c01e450c5c4c958554cf89c205ef1e72e7226d794cc28ccaff9a9faa4b9a8992"
+  },
+  {
+    "id": "iam-maintenance-wrong-host",
+    "path": "privilege-escalation/maintenance_wrong_host.jsonl",
+    "name": "A service name and ticket alone must not exempt another host",
+    "format": "jsonl",
+    "event_count": 2,
+    "expected": [
+      {
+        "rule_id": "IAM-001",
+        "severity": "high",
+        "event_count": 2,
+        "branch": "default"
+      }
+    ],
+    "kind": "regression",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "63adce9c613711a0f6441d03f0abb8cdeb2b187ebd1277d2a53fc10c9441263c"
+  },
+  {
+    "id": "iam-privilege-actions",
+    "path": "privilege-escalation/privileged_account.jsonl",
+    "name": "Privileged account creation and escalation",
+    "format": "jsonl",
+    "event_count": 2,
+    "expected": [
+      {
+        "rule_id": "IAM-001",
+        "severity": "high",
+        "event_count": 2,
+        "branch": "default"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "1761168cf38434789c3398031b9d7de3dbf1a0b1c43bd453ceaab7bfb53f91bf"
+  },
+  {
+    "id": "iam-service-activity",
+    "path": "privilege-escalation/service_account_activity.jsonl",
+    "name": "Nonprivileged account provisioning and service login",
+    "format": "jsonl",
+    "event_count": 2,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "913e0eb6a1f8e0cdb3c430bfe6d80485bdf050abe8459db618887d65f6d8d1e2"
+  },
+  {
+    "id": "dns-normal",
+    "path": "benign/normal_dns.jsonl",
+    "name": "Low-volume ordinary DNS names",
+    "format": "jsonl",
+    "event_count": 10,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "d1027f807594a806d362d3282a85611c40892ca6d8401c77fee70a8315ad6c52"
+  },
+  {
+    "id": "dns-long-label",
+    "path": "dns/long_labels.jsonl",
+    "name": "Unusually long labels, not proof of tunneling",
+    "format": "jsonl",
+    "event_count": 3,
+    "expected": [
+      {
+        "rule_id": "DNS-001",
+        "severity": "medium",
+        "event_count": 3,
+        "branch": "long-label"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "5b0777921dd811ece7d5bc790ed6eb58b4b3dee18f8e73d47814930b94906a86"
+  },
+  {
+    "id": "dns-entropy",
+    "path": "dns/high_entropy.jsonl",
+    "name": "Repeated high-entropy-looking labels",
+    "format": "jsonl",
+    "event_count": 3,
+    "expected": [
+      {
+        "rule_id": "DNS-001",
+        "severity": "medium",
+        "event_count": 3,
+        "branch": "high-entropy"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "25cf5584ecc060e1f08ab87226e2351b66979da64844c59624c5f017a17bc24f"
+  },
+  {
+    "id": "dns-frequency",
+    "path": "dns/high_frequency.jsonl",
+    "name": "25 queries in 25 seconds",
+    "format": "jsonl",
+    "event_count": 25,
+    "expected": [
+      {
+        "rule_id": "DNS-001",
+        "severity": "medium",
+        "event_count": 25,
+        "branch": "query-frequency"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "9ace9a3bb8d96730f67931c43a0b9fe6f6ba2f366c1e918afe9925c46dfd39f2"
+  },
+  {
+    "id": "dns-subdomain-pattern",
+    "path": "dns/repeated_subdomains.jsonl",
+    "name": "Repeated unusual subdomains cross the configurable frequency threshold",
+    "format": "jsonl",
+    "event_count": 22,
+    "expected": [
+      {
+        "rule_id": "DNS-001",
+        "severity": "medium",
+        "event_count": 22,
+        "branch": "query-frequency"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "edd0ad10a88348f039853d4b2e25c873351131e5bd23f5a30b483638b699a0e5"
+  },
+  {
+    "id": "dns-below-frequency",
+    "path": "benign/dns_below_threshold.jsonl",
+    "name": "19-query controlled burst, below the configured frequency threshold",
+    "format": "jsonl",
+    "event_count": 19,
+    "expected": [],
+    "kind": "boundary",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "09a044afd220c0178a057d656146361eebe3e083b70d5c7e3fd8b68b8adecfcf"
+  },
+  {
+    "id": "net-unusual",
+    "path": "network/unusual_ports.jsonl",
+    "name": "Repeated connections to an unusual port",
+    "format": "jsonl",
+    "event_count": 6,
+    "expected": [
+      {
+        "rule_id": "NET-001",
+        "severity": "medium",
+        "event_count": 6,
+        "branch": "default"
+      }
+    ],
+    "kind": "positive",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "2e9a6204bc49d29467ac4f95b14eb59772e07727e7b5410d221e7cae6ec592c5"
+  },
+  {
+    "id": "net-normal",
+    "path": "benign/normal_connections.jsonl",
+    "name": "Repeated normal HTTPS connections and requests",
+    "format": "jsonl",
+    "event_count": 8,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "c2380788b841ae850bc732d80b949b0ec1bd46e549a13fe8225a3add0193a02e"
+  },
+  {
+    "id": "net-below-threshold",
+    "path": "network/below_threshold.jsonl",
+    "name": "Two unusual-port events are below threshold",
+    "format": "jsonl",
+    "event_count": 2,
+    "expected": [],
+    "kind": "boundary",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "4123c5453c3f349c7b157844efeaede4ecb12862e164693a989cc3d6b0be0b1b"
+  },
+  {
+    "id": "net-allowlisted",
+    "path": "benign/monitoring_connections.jsonl",
+    "name": "Explicit allowlisted monitoring destination",
+    "format": "jsonl",
+    "event_count": 6,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "f5621b82cf9277ad63b6c690b9a087e2e30b1a8adba98bd43c038daa6c61bd07"
+  },
+  {
+    "id": "net-private",
+    "path": "benign/private_connections.jsonl",
+    "name": "Private service connections excluded by configured policy",
+    "format": "jsonl",
+    "event_count": 6,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "ed1228eefe30bd66a077e2fda3e973f65fbb2e064d599342d8262354d4ece5c5"
+  },
+  {
+    "id": "mixed-incident",
+    "path": "mixed/incident_timeline.jsonl",
+    "name": "Seven detection families interleaved with successful logins",
+    "format": "jsonl",
+    "event_count": 56,
+    "expected": [
+      {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "event_count": 25,
+        "branch": "default"
+      },
+      {
+        "rule_id": "AUTH-002",
+        "severity": "medium",
+        "event_count": 4,
+        "branch": "default"
+      },
+      {
+        "rule_id": "PROC-001",
+        "severity": "high",
+        "event_count": 5,
+        "branch": "default"
+      },
+      {
+        "rule_id": "PROC-002",
+        "severity": "high",
+        "event_count": 3,
+        "branch": "default"
+      },
+      {
+        "rule_id": "IAM-001",
+        "severity": "high",
+        "event_count": 2,
+        "branch": "default"
+      },
+      {
+        "rule_id": "DNS-001",
+        "severity": "medium",
+        "event_count": 3,
+        "branch": "long-label"
+      },
+      {
+        "rule_id": "NET-001",
+        "severity": "medium",
+        "event_count": 6,
+        "branch": "default"
+      }
+    ],
+    "kind": "mixed",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "1d1028903b1543fd49550ae0d3588750f4d156c07123ad5f794e3407f1bc8a8c"
+  },
+  {
+    "id": "benign-baseline",
+    "path": "benign/baseline_1000.jsonl",
+    "name": "1,000 successful logins for baseline and performance work",
+    "format": "jsonl",
+    "event_count": 1000,
+    "expected": [],
+    "kind": "benign",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "0e321263262dce12b99e8e19ece8ee05d871df3944d0c2a67592e2e44b439d4e"
+  },
+  {
+    "id": "parser-csv",
+    "path": "parsers/events.csv",
+    "name": "Dotted-column CSV normalization contract",
+    "format": "csv",
+    "event_count": 1,
+    "expected": [],
+    "kind": "parser",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "7c6f62d18a2c9617ec2a4169d12f14c4f545b08e87e41b76423fc26942775deb"
+  },
+  {
+    "id": "parser-syslog",
+    "path": "parsers/auth.log",
+    "name": "Five supported authentication syslog messages",
+    "format": "syslog",
+    "event_count": 5,
+    "expected": [],
+    "kind": "parser",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "8ed2ffaf6bbfb505ae51f0776250457864af9c0a16ba643bee933bfdccf193e1"
+  },
+  {
+    "id": "parser-windows",
+    "path": "parsers/windows_events.json",
+    "name": "Windows Security/Sysmon-style exported JSON, not EVTX",
+    "format": "windows",
+    "event_count": 5,
+    "expected": [],
+    "kind": "parser",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "1f790e3e8d6a308ddea8f400bd5b6a1874c49e995c98f440d1fd44b4534afa74"
+  },
+  {
+    "id": "parser-json",
+    "path": "parsers/normalized.json",
+    "name": "Nested normalized JSON objects",
+    "format": "json",
+    "event_count": 2,
+    "expected": [],
+    "kind": "parser",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "39210b2e9dc1d35addd383b1569f0574cd6b5c939f156044f29071622a5981a0"
+  },
+  {
+    "id": "sigma-download",
+    "path": "sigma/download_iex.jsonl",
+    "name": "Synthetic Sigma compatibility telemetry",
+    "format": "jsonl",
+    "event_count": 1,
+    "expected": [
+      {
+        "rule_id": "PROC-001",
+        "severity": "high",
+        "event_count": 1,
+        "branch": "default"
+      }
+    ],
+    "kind": "sigma",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "64a2a65aedafae51bde88d84f100fc1c8e713edba6e1c42003db5fac349ee7e7"
+  },
+  {
+    "id": "sigma-encoded",
+    "path": "sigma/encoded.jsonl",
+    "name": "Synthetic Sigma compatibility telemetry",
+    "format": "jsonl",
+    "event_count": 1,
+    "expected": [],
+    "kind": "sigma",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "c70f81085c4c1173eb8cc2c8c4d52aa1316bac787bfdd35617a0bc306f174db3"
+  },
+  {
+    "id": "sigma-benign",
+    "path": "sigma/benign_encoding.jsonl",
+    "name": "Synthetic Sigma compatibility telemetry",
+    "format": "jsonl",
+    "event_count": 1,
+    "expected": [],
+    "kind": "sigma",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "ab39b51011c2fc17aaadefc9d48d5e6c289f6a325574d5bea347aadbfd000f8e"
+  },
+  {
+    "id": "sigma-azure",
+    "path": "sigma/benign_azure.jsonl",
+    "name": "Upstream Azure parent-image exclusion",
+    "format": "jsonl",
+    "event_count": 1,
+    "expected": [],
+    "kind": "sigma",
+    "synthetic": true,
+    "source": "SentinelFlow generator; seed sentinelflow-20260115-v1",
+    "license": "MIT",
+    "sha256": "b4caa1b19601eac45081ae97115683809bfb12b46564a4901aa7884600ad5127"
+  },
+  {
+    "id": "public-otrf-adapted",
+    "path": "public/otrf_adapted.json",
+    "name": "Privacy-reduced public lab telemetry (parser interoperability)",
+    "format": "windows",
+    "event_count": 6,
+    "expected": [],
+    "kind": "public",
+    "synthetic": false,
+    "source": "OTRF public lab; adapted; see public/provenance.json",
+    "license": "MIT at pinned revision (README caveat documented)",
+    "sha256": "6c0f5cc5d9ecc36b51b0208424a9566a9731ddab236900e06141b6c286a7a070"
+  }
+]

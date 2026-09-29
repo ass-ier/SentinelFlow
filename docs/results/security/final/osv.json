@@ -1,0 +1,4146 @@
+{
+  "results": [
+    {
+      "source": {
+        "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/package-lock.json",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "@adobe/css-tools",
+            "version": "4.5.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@asamuzakjp/css-color",
+            "version": "3.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/code-frame",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/compat-data",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/core",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/generator",
+            "version": "7.29.8",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/helper-compilation-targets",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/helper-globals",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/helper-module-imports",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/helper-module-transforms",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/helper-plugin-utils",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/helper-string-parser",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/helper-validator-identifier",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/helper-validator-option",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/helpers",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/parser",
+            "version": "7.29.9",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/plugin-transform-react-jsx-self",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/plugin-transform-react-jsx-source",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/runtime",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/template",
+            "version": "7.29.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/traverse",
+            "version": "7.29.8",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@babel/types",
+            "version": "7.29.8",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@csstools/color-helpers",
+            "version": "5.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@csstools/css-calc",
+            "version": "2.1.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@csstools/css-color-parser",
+            "version": "3.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@csstools/css-parser-algorithms",
+            "version": "3.0.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@csstools/css-tokenizer",
+            "version": "3.0.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/aix-ppc64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/android-arm",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/android-arm64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/android-x64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/darwin-arm64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/darwin-x64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/freebsd-arm64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/freebsd-x64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/linux-arm",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/linux-arm64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/linux-ia32",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/linux-loong64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/linux-mips64el",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/linux-ppc64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/linux-riscv64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/linux-s390x",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/linux-x64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/netbsd-arm64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/netbsd-x64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/openbsd-arm64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/openbsd-x64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/openharmony-arm64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/sunos-x64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/win32-arm64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/win32-ia32",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@esbuild/win32-x64",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@eslint-community/eslint-utils",
+            "version": "4.10.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@eslint-community/regexpp",
+            "version": "4.12.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@eslint/config-array",
+            "version": "0.21.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@eslint/config-helpers",
+            "version": "0.3.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@eslint/core",
+            "version": "0.15.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@eslint/eslintrc",
+            "version": "3.3.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@eslint/js",
+            "version": "9.33.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@eslint/object-schema",
+            "version": "2.1.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@eslint/plugin-kit",
+            "version": "0.3.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@humanfs/core",
+            "version": "0.19.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@humanfs/node",
+            "version": "0.16.8",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@humanfs/types",
+            "version": "0.15.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@humanwhocodes/module-importer",
+            "version": "1.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@humanwhocodes/retry",
+            "version": "0.4.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@jridgewell/gen-mapping",
+            "version": "0.3.13",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@jridgewell/remapping",
+            "version": "2.3.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@jridgewell/resolve-uri",
+            "version": "3.1.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@jridgewell/sourcemap-codec",
+            "version": "1.6.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@jridgewell/trace-mapping",
+            "version": "0.3.31",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@napi-rs/lzma-linux-x64-gnu",
+            "version": "1.5.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@nodelib/fs.scandir",
+            "version": "2.1.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@nodelib/fs.stat",
+            "version": "2.0.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@nodelib/fs.walk",
+            "version": "1.2.8",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@playwright/test",
+            "version": "1.63.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rolldown/pluginutils",
+            "version": "1.0.0-beta.27",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-android-arm-eabi",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-android-arm64",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-darwin-arm64",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-darwin-x64",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-freebsd-arm64",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-freebsd-x64",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-arm-gnueabihf",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-arm-musleabihf",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-arm64-gnu",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-arm64-musl",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-loong64-gnu",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-loong64-musl",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-ppc64-gnu",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-ppc64-musl",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-riscv64-gnu",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-riscv64-musl",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-s390x-gnu",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-x64-gnu",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-linux-x64-musl",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-openbsd-x64",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-openharmony-arm64",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-win32-arm64-msvc",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-win32-ia32-msvc",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-win32-x64-gnu",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@rollup/rollup-win32-x64-msvc",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "@scarf/scarf",
+            "version": "1.4.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@standard-schema/spec",
+            "version": "1.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@testing-library/dom",
+            "version": "10.4.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@testing-library/jest-dom",
+            "version": "6.6.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@testing-library/react",
+            "version": "16.3.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@testing-library/user-event",
+            "version": "14.6.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@tootallnate/quickjs-emscripten",
+            "version": "0.23.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/aria-query",
+            "version": "5.0.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/babel__core",
+            "version": "7.20.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/babel__generator",
+            "version": "7.27.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/babel__template",
+            "version": "7.4.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/babel__traverse",
+            "version": "7.28.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/chai",
+            "version": "5.2.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/deep-eql",
+            "version": "4.0.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/estree",
+            "version": "1.0.9",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/json-schema",
+            "version": "7.0.15",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/node",
+            "version": "20.19.11",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/react",
+            "version": "19.1.10",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@types/react-dom",
+            "version": "19.1.9",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@typescript-eslint/eslint-plugin",
+            "version": "8.39.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@typescript-eslint/parser",
+            "version": "8.39.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@typescript-eslint/project-service",
+            "version": "8.39.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@typescript-eslint/scope-manager",
+            "version": "8.39.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@typescript-eslint/tsconfig-utils",
+            "version": "8.39.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@typescript-eslint/type-utils",
+            "version": "8.39.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@typescript-eslint/types",
+            "version": "8.39.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@typescript-eslint/typescript-estree",
+            "version": "8.39.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@typescript-eslint/utils",
+            "version": "8.39.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@typescript-eslint/visitor-keys",
+            "version": "8.39.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@vitejs/plugin-react",
+            "version": "4.7.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@vitest/expect",
+            "version": "4.1.11",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@vitest/mocker",
+            "version": "4.1.11",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@vitest/pretty-format",
+            "version": "4.1.11",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@vitest/runner",
+            "version": "4.1.11",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@vitest/snapshot",
+            "version": "4.1.11",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@vitest/spy",
+            "version": "4.1.11",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "@vitest/utils",
+            "version": "4.1.11",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "acorn",
+            "version": "8.18.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "acorn-jsx",
+            "version": "5.3.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "agent-base",
+            "version": "7.1.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ajv",
+            "version": "6.15.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ansi-colors",
+            "version": "4.1.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ansi-regex",
+            "version": "5.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ansi-styles",
+            "version": "4.3.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ansi-styles",
+            "version": "5.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "argparse",
+            "version": "2.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "aria-query",
+            "version": "5.3.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "assertion-error",
+            "version": "2.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ast-types",
+            "version": "0.13.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "astronomical",
+            "version": "3.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "balanced-match",
+            "version": "1.0.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "baseline-browser-mapping",
+            "version": "2.11.26",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "basic-ftp",
+            "version": "5.3.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "version": "1.1.21",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "brace-expansion",
+            "version": "2.1.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "braces",
+            "version": "3.0.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "browserslist",
+            "version": "4.29.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "callsites",
+            "version": "3.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "caniuse-lite",
+            "version": "1.0.30001812",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "chai",
+            "version": "6.2.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "chalk",
+            "version": "3.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "chalk",
+            "version": "4.1.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "color-convert",
+            "version": "2.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "color-name",
+            "version": "1.1.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "commander",
+            "version": "10.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "concat-map",
+            "version": "0.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "convert-source-map",
+            "version": "2.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "cookie",
+            "version": "1.1.1",
+            "ecosystem": "npm"
+          }
+        },
+        {
+          "package": {
+            "name": "cross-spawn",
+            "version": "7.0.6",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "css.escape",
+            "version": "1.5.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "cssstyle",
+            "version": "4.6.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "csstype",
+            "version": "3.2.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "data-uri-to-buffer",
+            "version": "6.0.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "data-urls",
+            "version": "5.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "debug",
+            "version": "4.4.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "decimal.js",
+            "version": "10.6.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "deep-is",
+            "version": "0.1.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "degenerator",
+            "version": "5.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "dequal",
+            "version": "2.0.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "dom-accessibility-api",
+            "version": "0.5.16",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "dom-accessibility-api",
+            "version": "0.6.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "electron-to-chromium",
+            "version": "1.5.439",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "entities",
+            "version": "6.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "es-module-lexer",
+            "version": "2.3.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "esbuild",
+            "version": "0.28.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "escalade",
+            "version": "3.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "escape-string-regexp",
+            "version": "4.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "escodegen",
+            "version": "2.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "eslint",
+            "version": "9.33.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "eslint-plugin-react-hooks",
+            "version": "5.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "eslint-plugin-react-refresh",
+            "version": "0.4.20",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "eslint-scope",
+            "version": "8.4.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "eslint-visitor-keys",
+            "version": "3.4.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "eslint-visitor-keys",
+            "version": "4.2.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "espree",
+            "version": "10.4.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "esprima",
+            "version": "4.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "esquery",
+            "version": "1.7.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "esrecurse",
+            "version": "4.3.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "estraverse",
+            "version": "5.3.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "estree-walker",
+            "version": "3.0.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "esutils",
+            "version": "2.0.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "expect-type",
+            "version": "1.4.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "fast-deep-equal",
+            "version": "3.1.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "fast-glob",
+            "version": "3.3.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "fast-json-stable-stringify",
+            "version": "2.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "fast-levenshtein",
+            "version": "2.0.6",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "fastq",
+            "version": "1.20.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "fdir",
+            "version": "6.5.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "file-entry-cache",
+            "version": "8.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "fill-range",
+            "version": "7.1.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "find-up",
+            "version": "5.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "flat-cache",
+            "version": "4.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "flatted",
+            "version": "3.4.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "fsevents",
+            "version": "2.3.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "fsevents",
+            "version": "2.3.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "gensync",
+            "version": "1.0.0-beta.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "get-uri",
+            "version": "6.0.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "glob-parent",
+            "version": "5.1.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "glob-parent",
+            "version": "6.0.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "globals",
+            "version": "14.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "globals",
+            "version": "16.3.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "graphemer",
+            "version": "1.4.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "has-flag",
+            "version": "4.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "html-encoding-sniffer",
+            "version": "4.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "http-proxy-agent",
+            "version": "7.0.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "https-proxy-agent",
+            "version": "7.0.6",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "iconv-lite",
+            "version": "0.6.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ignore",
+            "version": "5.3.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ignore",
+            "version": "7.0.10",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "import-fresh",
+            "version": "3.3.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "imurmurhash",
+            "version": "0.1.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "indent-string",
+            "version": "4.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ip-address",
+            "version": "10.7.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "is-extglob",
+            "version": "2.1.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "is-glob",
+            "version": "4.0.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "is-number",
+            "version": "7.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "is-potential-custom-element-name",
+            "version": "1.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "isexe",
+            "version": "2.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "js-tokens",
+            "version": "4.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "js-yaml",
+            "version": "4.3.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "jsdom",
+            "version": "26.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "jsesc",
+            "version": "3.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "json-buffer",
+            "version": "3.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "json-schema-traverse",
+            "version": "0.4.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "json-stable-stringify-without-jsonify",
+            "version": "1.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "json5",
+            "version": "2.2.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "keyv",
+            "version": "4.5.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "levn",
+            "version": "0.4.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "locate-path",
+            "version": "6.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "lodash",
+            "version": "4.18.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "lodash.merge",
+            "version": "4.6.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "lru-cache",
+            "version": "10.4.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "lru-cache",
+            "version": "5.1.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "lru-cache",
+            "version": "7.18.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "lucide-react",
+            "version": "0.468.0",
+            "ecosystem": "npm"
+          }
+        },
+        {
+          "package": {
+            "name": "lz-string",
+            "version": "1.5.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "magic-string",
+            "version": "0.30.21",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "merge2",
+            "version": "1.4.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "meriyah",
+            "version": "7.3.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "micromatch",
+            "version": "4.0.8",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "min-indent",
+            "version": "1.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "minimatch",
+            "version": "3.1.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "minimatch",
+            "version": "9.0.9",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ms",
+            "version": "2.1.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "nanoid",
+            "version": "3.3.19",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "natural-compare",
+            "version": "1.4.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "netmask",
+            "version": "2.1.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "node-releases",
+            "version": "2.0.57",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "nwsapi",
+            "version": "2.2.28",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "obug",
+            "version": "2.2.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "optionator",
+            "version": "0.9.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "p-limit",
+            "version": "3.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "p-locate",
+            "version": "5.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "pac-proxy-agent",
+            "version": "7.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "pac-resolver",
+            "version": "7.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "parent-module",
+            "version": "1.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "parse5",
+            "version": "7.3.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "path-exists",
+            "version": "4.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "path-key",
+            "version": "3.1.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "pathe",
+            "version": "2.0.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "picocolors",
+            "version": "1.1.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "picomatch",
+            "version": "2.3.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "picomatch",
+            "version": "4.0.7",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "playwright",
+            "version": "1.63.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "playwright-core",
+            "version": "1.63.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "postcss",
+            "version": "8.5.28",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "prelude-ls",
+            "version": "1.2.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "prettier",
+            "version": "3.6.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "pretty-format",
+            "version": "27.5.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "proxy-agent",
+            "version": "6.5.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "proxy-from-env",
+            "version": "1.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "punycode",
+            "version": "2.3.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "queue-microtask",
+            "version": "1.2.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "react",
+            "version": "19.1.1",
+            "ecosystem": "npm"
+          }
+        },
+        {
+          "package": {
+            "name": "react-dom",
+            "version": "19.1.1",
+            "ecosystem": "npm"
+          }
+        },
+        {
+          "package": {
+            "name": "react-is",
+            "version": "17.0.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "react-refresh",
+            "version": "0.17.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "react-router",
+            "version": "7.18.4",
+            "ecosystem": "npm"
+          }
+        },
+        {
+          "package": {
+            "name": "react-router-dom",
+            "version": "7.18.4",
+            "ecosystem": "npm"
+          }
+        },
+        {
+          "package": {
+            "name": "redent",
+            "version": "3.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "resolve-from",
+            "version": "4.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "retire",
+            "version": "5.7.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "reusify",
+            "version": "1.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "rollup",
+            "version": "4.63.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "rrweb-cssom",
+            "version": "0.8.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "run-parallel",
+            "version": "1.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "safer-buffer",
+            "version": "2.1.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "saxes",
+            "version": "6.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "scheduler",
+            "version": "0.26.0",
+            "ecosystem": "npm"
+          }
+        },
+        {
+          "package": {
+            "name": "semver",
+            "version": "6.3.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "semver",
+            "version": "7.8.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "set-cookie-parser",
+            "version": "2.7.2",
+            "ecosystem": "npm"
+          }
+        },
+        {
+          "package": {
+            "name": "shebang-command",
+            "version": "2.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "shebang-regex",
+            "version": "3.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "siginfo",
+            "version": "2.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "smart-buffer",
+            "version": "4.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "socks",
+            "version": "2.8.10",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "socks-proxy-agent",
+            "version": "8.0.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "source-map",
+            "version": "0.6.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev",
+            "optional"
+          ]
+        },
+        {
+          "package": {
+            "name": "source-map-js",
+            "version": "1.2.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "stackback",
+            "version": "0.0.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "std-env",
+            "version": "4.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "strip-indent",
+            "version": "3.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "strip-json-comments",
+            "version": "3.1.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "supports-color",
+            "version": "7.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "swagger-ui-dist",
+            "version": "5.33.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "symbol-tree",
+            "version": "3.2.4",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "tinybench",
+            "version": "2.9.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "tinyexec",
+            "version": "1.3.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "tinyglobby",
+            "version": "0.2.17",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "tinyrainbow",
+            "version": "3.1.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "tldts",
+            "version": "6.1.86",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "tldts-core",
+            "version": "6.1.86",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "to-regex-range",
+            "version": "5.0.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "tough-cookie",
+            "version": "5.1.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "tr46",
+            "version": "5.1.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ts-api-utils",
+            "version": "2.5.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "tslib",
+            "version": "2.8.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "type-check",
+            "version": "0.4.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "typescript",
+            "version": "5.9.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "typescript-eslint",
+            "version": "8.39.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "undici-types",
+            "version": "6.21.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "update-browserslist-db",
+            "version": "1.3.3",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "uri-js",
+            "version": "4.4.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "vite",
+            "version": "7.3.6",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "vitest",
+            "version": "4.1.11",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "w3c-xmlserializer",
+            "version": "5.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "walkdir",
+            "version": "0.4.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "webidl-conversions",
+            "version": "7.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "whatwg-encoding",
+            "version": "3.1.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "whatwg-mimetype",
+            "version": "4.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "whatwg-url",
+            "version": "14.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "which",
+            "version": "2.0.2",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "why-is-node-running",
+            "version": "2.3.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "word-wrap",
+            "version": "1.2.5",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "ws",
+            "version": "8.22.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "xml-name-validator",
+            "version": "5.0.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "xmlchars",
+            "version": "2.2.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "yallist",
+            "version": "3.1.1",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "yocto-queue",
+            "version": "0.1.0",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        },
+        {
+          "package": {
+            "name": "zod",
+            "version": "3.25.76",
+            "ecosystem": "npm"
+          },
+          "dependency_groups": [
+            "dev"
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/requirements-runtime.lock",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "annotated-doc",
+            "version": "0.0.5",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "annotated-types",
+            "version": "0.8.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "anyio",
+            "version": "4.15.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "click",
+            "version": "8.5.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "defusedxml",
+            "version": "0.7.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "fastapi",
+            "version": "0.141.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "greenlet",
+            "version": "3.5.6",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "h11",
+            "version": "0.16.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "idna",
+            "version": "3.20",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pydantic",
+            "version": "2.11.7",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pydantic-core",
+            "version": "2.33.2",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "python-dotenv",
+            "version": "1.2.3",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "python-multipart",
+            "version": "0.0.32",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pyyaml",
+            "version": "6.0.2",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "regex",
+            "version": "2025.7.34",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "sqlalchemy",
+            "version": "2.0.43",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "starlette",
+            "version": "1.7.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "typing-extensions",
+            "version": "4.16.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "typing-inspection",
+            "version": "0.4.4",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "uvicorn",
+            "version": "0.35.0",
+            "ecosystem": "PyPI"
+          }
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/requirements.lock",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "annotated-doc",
+            "version": "0.0.5",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "annotated-types",
+            "version": "0.8.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "anyio",
+            "version": "4.15.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "build",
+            "version": "1.6.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "click",
+            "version": "8.5.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "coverage",
+            "version": "7.16.2",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "defusedxml",
+            "version": "0.7.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "fastapi",
+            "version": "0.141.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "greenlet",
+            "version": "3.5.6",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "h11",
+            "version": "0.16.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "httpcore",
+            "version": "1.0.9",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "httpx",
+            "version": "0.28.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "idna",
+            "version": "3.20",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "iniconfig",
+            "version": "2.3.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "mypy",
+            "version": "1.17.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "mypy-extensions",
+            "version": "1.1.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "packaging",
+            "version": "26.3",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pathspec",
+            "version": "1.1.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pip",
+            "version": "26.2.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pip-tools",
+            "version": "7.6.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pluggy",
+            "version": "1.6.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pydantic",
+            "version": "2.11.7",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pydantic-core",
+            "version": "2.33.2",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pygments",
+            "version": "2.21.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pyproject-hooks",
+            "version": "1.3.3",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pytest",
+            "version": "9.1.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pytest-cov",
+            "version": "6.2.1",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "python-dotenv",
+            "version": "1.2.3",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "python-multipart",
+            "version": "0.0.32",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "pyyaml",
+            "version": "6.0.2",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "regex",
+            "version": "2025.7.34",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "ruff",
+            "version": "0.12.10",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "setuptools",
+            "version": "84.0.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "sqlalchemy",
+            "version": "2.0.43",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "starlette",
+            "version": "1.7.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "types-defusedxml",
+            "version": "0.7.0.20260504",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "types-pyyaml",
+            "version": "6.0.12.20250822",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "types-regex",
+            "version": "2025.7.34.20250809",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "typing-extensions",
+            "version": "4.16.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "typing-inspection",
+            "version": "0.4.4",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "uvicorn",
+            "version": "0.35.0",
+            "ecosystem": "PyPI"
+          }
+        },
+        {
+          "package": {
+            "name": "wheel",
+            "version": "0.48.0",
+            "ecosystem": "PyPI"
+          }
+        }
+      ]
+    }
+  ],
+  "experimental_config": {
+    "licenses": {
+      "summary": false,
+      "allowlist": null
+    }
+  }
+}

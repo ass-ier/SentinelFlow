@@ -1,0 +1,398 @@
+{
+  "status": "validated",
+  "started_at": "2026-09-28T11:54:10.546084+00:00",
+  "steps": [
+    {
+      "name": "Environment",
+      "command": [
+        "/Users/triplea/.nvm/versions/node/v20.19.2/bin/node",
+        "-e",
+        "const [a,b]=process.versions.node.split('.').map(Number);if(a<20||(a===20&&b<19))process.exit(1);console.log(process.version)"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.031057541957125068
+    },
+    {
+      "name": "Pinned Python dependency consistency",
+      "command": [
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/.venv/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.30204066704027355
+    },
+    {
+      "name": "Backend static checks",
+      "command": [
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/.venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "backend",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.09433354099746794
+    },
+    {
+      "name": "Backend formatting",
+      "command": [
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/.venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "backend",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.0579599579796195
+    },
+    {
+      "name": "Backend strict types",
+      "command": [
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/.venv/bin/python",
+        "-m",
+        "mypy",
+        "backend/app"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.6477932500420138
+    },
+    {
+      "name": "Frontend lint",
+      "command": [
+        "/Users/triplea/.nvm/versions/node/v20.19.2/bin/npm",
+        "--prefix",
+        "frontend",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.723670250037685
+    },
+    {
+      "name": "Frontend formatting",
+      "command": [
+        "/Users/triplea/.nvm/versions/node/v20.19.2/bin/npm",
+        "--prefix",
+        "frontend",
+        "run",
+        "format:check"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.2743963750544935
+    },
+    {
+      "name": "Frontend types and production build",
+      "command": [
+        "/Users/triplea/.nvm/versions/node/v20.19.2/bin/npm",
+        "--prefix",
+        "frontend",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 4.358381040976383
+    },
+    {
+      "name": "Browser workflow syntax",
+      "command": [
+        "/Users/triplea/.nvm/versions/node/v20.19.2/bin/node",
+        "--check",
+        "scripts/browser_workflows.mjs"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.026316499919630587
+    },
+    {
+      "name": "Live verification syntax",
+      "command": [
+        "/Users/triplea/.nvm/versions/node/v20.19.2/bin/node",
+        "--check",
+        "scripts/browser_verify.mjs"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.02605045901145786
+    },
+    {
+      "name": "Deployment browser syntax",
+      "command": [
+        "/Users/triplea/.nvm/versions/node/v20.19.2/bin/node",
+        "--check",
+        "scripts/browser_deployment.mjs"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.026318792020902038
+    },
+    {
+      "name": "Recording workflow syntax",
+      "command": [
+        "/Users/triplea/.nvm/versions/node/v20.19.2/bin/node",
+        "--check",
+        "scripts/record_demo.mjs"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.02623308403417468
+    },
+    {
+      "name": "Saved fixture reproducibility",
+      "command": [
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/.venv/bin/python",
+        "scripts/generate_test_data.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.2740210829069838
+    },
+    {
+      "name": "All backend tests",
+      "command": [
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--tb=short",
+        "--junitxml=/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/artifacts/backend-junit.xml",
+        "--cov=app",
+        "--cov-report=json:/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/artifacts/coverage.json"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 35.97149145801086
+    },
+    {
+      "name": "All frontend tests",
+      "command": [
+        "/Users/triplea/.nvm/versions/node/v20.19.2/bin/npm",
+        "--prefix",
+        "frontend",
+        "test",
+        "--",
+        "--reporter=json",
+        "--outputFile=/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/artifacts/frontend-tests.json"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 5.649974082945846
+    },
+    {
+      "name": "Exact detection validation",
+      "command": [
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/.venv/bin/python",
+        "scripts/validate_detections.py"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.5669252920197323
+    },
+    {
+      "name": "Licensed Sigma compatibility",
+      "command": [
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/.venv/bin/python",
+        "scripts/validate_sigma.py"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.2629192500608042
+    },
+    {
+      "name": "Measured detection benchmark",
+      "command": [
+        "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone/.venv/bin/python",
+        "scripts/benchmark_detection.py"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 2.1003597079543397
+    }
+  ],
+  "source_fingerprint": "d618438a4506636078d672bc8b4fcf444d0685970d2d06f3d7515b089c957595",
+  "backend": {
+    "total": 351,
+    "passed": 351,
+    "failed": 0,
+    "skipped": 0,
+    "categories": {
+      "detection": {
+        "total": 50,
+        "passed": 50,
+        "failed": 0
+      },
+      "parametrize": {
+        "total": 265,
+        "passed": 265,
+        "failed": 0
+      },
+      "negative": {
+        "total": 14,
+        "passed": 14,
+        "failed": 0
+      },
+      "regression": {
+        "total": 151,
+        "passed": 151,
+        "failed": 0
+      },
+      "": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0
+      },
+      "integration": {
+        "total": 133,
+        "passed": 133,
+        "failed": 0
+      },
+      "security": {
+        "total": 92,
+        "passed": 92,
+        "failed": 0
+      },
+      "replay": {
+        "total": 17,
+        "passed": 17,
+        "failed": 0
+      },
+      "sigma": {
+        "total": 34,
+        "passed": 34,
+        "failed": 0
+      },
+      "unit": {
+        "total": 128,
+        "passed": 128,
+        "failed": 0
+      },
+      "usefixtures": {
+        "total": 9,
+        "passed": 9,
+        "failed": 0
+      },
+      "parser": {
+        "total": 35,
+        "passed": 35,
+        "failed": 0
+      }
+    },
+    "coverage_percent": 88.65514650638617
+  },
+  "frontend": {
+    "total": 122,
+    "passed": 122,
+    "failed": 0,
+    "skipped": 0
+  },
+  "detections": {
+    "passed": 50,
+    "failed": 0,
+    "total": 50,
+    "benign_passed": 14,
+    "benign_total": 14
+  },
+  "sigma": {
+    "rules_imported": 2,
+    "rules_compiled": 2,
+    "rules_tested": 2,
+    "tests_passed": 4,
+    "tests_failed": 0,
+    "expected_detections": 2,
+    "observed_detections": 2,
+    "results": [
+      {
+        "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+        "dataset_id": "sigma-download",
+        "expected_alerts": 1,
+        "observed_alerts": 1,
+        "severity": "high",
+        "author": "Florian Roth (Nextron Systems)",
+        "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+        "status": "passed",
+        "events_processed": 1
+      },
+      {
+        "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+        "dataset_id": "sigma-benign",
+        "expected_alerts": 0,
+        "observed_alerts": 0,
+        "severity": "high",
+        "author": "Florian Roth (Nextron Systems)",
+        "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+        "status": "passed",
+        "events_processed": 1
+      },
+      {
+        "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+        "dataset_id": "sigma-encoded",
+        "expected_alerts": 1,
+        "observed_alerts": 1,
+        "severity": "medium",
+        "author": "frack113",
+        "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+        "status": "passed",
+        "events_processed": 1
+      },
+      {
+        "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+        "dataset_id": "sigma-benign",
+        "expected_alerts": 0,
+        "observed_alerts": 0,
+        "severity": "medium",
+        "author": "frack113",
+        "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+        "status": "passed",
+        "events_processed": 1
+      }
+    ]
+  },
+  "benchmark": {
+    "measured_at": "2026-09-28T11:55:03.894591+00:00",
+    "source_fingerprint": "d618438a4506636078d672bc8b4fcf444d0685970d2d06f3d7515b089c957595",
+    "scope": "Single-process engine-only; parsing/storage excluded. Not a production capacity claim.",
+    "python": "3.13.7",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "dataset": "mixed/benchmark_5600.jsonl",
+    "dataset_sha256": "b99174b1ee5f7cc972fe14d9a3baf1081270129bab22d6f5b44a3c22d01e6a12",
+    "iterations": 3,
+    "events_processed": 5600,
+    "events_per_second": 12658.214715852628,
+    "detection_seconds": 0.44240045896731317,
+    "sample_seconds": [
+      0.43984862498473376,
+      0.4525289579760283,
+      0.44240045896731317
+    ],
+    "alerts_generated": 700,
+    "rules_evaluated": 39200,
+    "active_rules": 7,
+    "expected_alerts": 700,
+    "rule_alert_counts": {
+      "AUTH-001": 100,
+      "AUTH-002": 100,
+      "PROC-001": 100,
+      "PROC-002": 100,
+      "IAM-001": 100,
+      "DNS-001": 100,
+      "NET-001": 100
+    },
+    "status": "passed"
+  },
+  "total_tests_passed": 473,
+  "completed_at": "2026-09-28T11:55:04.008487+00:00",
+  "duration_seconds": 53.46361529210117
+}

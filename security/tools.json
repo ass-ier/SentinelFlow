@@ -1,0 +1,46 @@
+{
+  "python": {
+    "pip-audit": "2.10.1",
+    "bandit": "1.9.4",
+    "semgrep": "1.178.0",
+    "uv": "0.12.19"
+  },
+  "native": {
+    "trivy": {
+      "version": "0.74.0",
+      "repository": "aquasecurity/trivy",
+      "assets": {
+        "Darwin-arm64": ["trivy_0.74.0_macOS-ARM64.tar.gz", "1caada5e0e2091909357c7525d3aa76f4b660b13821bc143b190c7483e31cc11"],
+        "Linux-x86_64": ["trivy_0.74.0_Linux-64bit.tar.gz", "2ae6fe3ee734b7fdf11335663e18c75ea12dccc76062f09f164a3b0f8be4371a"]
+      }
+    },
+    "gitleaks": {
+      "version": "8.30.1",
+      "repository": "gitleaks/gitleaks",
+      "assets": {
+        "Darwin-arm64": ["gitleaks_8.30.1_darwin_arm64.tar.gz", "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5"],
+        "Linux-x86_64": ["gitleaks_8.30.1_linux_x64.tar.gz", "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb"]
+      }
+    },
+    "osv-scanner": {
+      "version": "2.6.0",
+      "repository": "google/osv-scanner",
+      "assets": {
+        "Darwin-arm64": ["osv-scanner_darwin_arm64", "98c460dcd37de25819babd757d04542045b6243113e209edcd4d89fedb0256b4"],
+        "Linux-x86_64": ["osv-scanner_linux_amd64", "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108"]
+      }
+    },
+    "syft": {
+      "version": "1.52.0",
+      "repository": "anchore/syft",
+      "assets": {
+        "Darwin-arm64": ["syft_1.52.0_darwin_arm64.tar.gz", "014d561b6d13059124155f74a6c5a9a99501f5e209313638dd884f39eb418ee6"],
+        "Linux-x86_64": ["syft_1.52.0_linux_amd64.tar.gz", "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d"]
+      }
+    }
+  },
+  "node": {
+    "retire": "5.7.0"
+  },
+  "semgrep_packs": ["owasp-top-ten", "python", "react", "typescript", "secrets"]
+}

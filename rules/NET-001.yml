@@ -1,0 +1,42 @@
+id: NET-001
+name: Unusual outbound connection
+description: >-
+  Repeated connections to configured unusual ports outside the explicit
+  private-network and monitoring-destination exceptions. Port numbers do not
+  identify malware; compare with the host's expected network behavior.
+severity: medium
+conditions:
+  all:
+    - field: event.category
+      operator: equals
+      value: network
+    - field: event.action
+      operator: in
+      value: [connection, http_request]
+    - field: destination.port
+      operator: in
+      value: [1337, 4444, 9001]
+    - field: destination.ip
+      operator: not_equals
+      value: 203.0.113.10
+    - not:
+        any:
+          - field: destination.ip
+            operator: starts_with
+            value: '10.'
+          - field: destination.ip
+            operator: starts_with
+            value: '192.168.'
+          - field: destination.ip
+            operator: regex
+            value: '^172\.(1[6-9]|2[0-9]|3[01])\.'
+          - field: destination.ip
+            operator: equals
+            value: '::1'
+threshold: {count: 3, window_seconds: 120}
+group_by: [source.ip, destination.ip]
+suppression_seconds: 300
+mitre_attack: [T1048]
+false_positives:
+  - Legitimate services on unusual ports outside the configured exceptions.
+provenance: {kind: bundled, author: SentinelFlow contributors, license: MIT}

@@ -1,0 +1,1301 @@
+{
+  "status": "passed",
+  "started_at": "2026-09-28T11:54:21.566Z",
+  "source_fingerprint": "d618438a4506636078d672bc8b4fcf444d0685970d2d06f3d7515b089c957595",
+  "browser": "153.0.8010.12",
+  "ui": "http://127.0.0.1:18878",
+  "api": "http://127.0.0.1:18868",
+  "checks": [
+    {
+      "name": "Public dashboard shows the real 56-event, seven-alert seed without credentials",
+      "status": "passed"
+    },
+    {
+      "name": "Production assets, exact API-origin CSP, security headers, and no preview API proxy",
+      "status": "passed"
+    },
+    {
+      "name": "Direct navigation and refresh: /events",
+      "status": "passed"
+    },
+    {
+      "name": "Direct navigation and refresh: /alerts",
+      "status": "passed"
+    },
+    {
+      "name": "Direct navigation and refresh: /rules",
+      "status": "passed"
+    },
+    {
+      "name": "Direct navigation and refresh: /testing",
+      "status": "passed"
+    },
+    {
+      "name": "Direct navigation and refresh: /detections",
+      "status": "passed"
+    },
+    {
+      "name": "Direct navigation and refresh: /replay",
+      "status": "passed"
+    },
+    {
+      "name": "Direct navigation and refresh: /sigma",
+      "status": "passed"
+    },
+    {
+      "name": "Direct navigation and refresh: /evidence",
+      "status": "passed"
+    },
+    {
+      "name": "Event search filters real results and expands inert raw evidence",
+      "status": "passed",
+      "failed_events": 29
+    },
+    {
+      "name": "10x replay processes 25 real authentication events",
+      "status": "passed",
+      "run_id": "bb32cbd061bd40269bbd11d9e29815f9"
+    },
+    {
+      "name": "AUTH-001 preserves 25 linked events, MITRE, snapshot, and read-only investigation",
+      "status": "passed"
+    },
+    {
+      "name": "Read-only rule detail still executes real isolated definition tests",
+      "status": "passed"
+    },
+    {
+      "name": "Positive and benign validation return exact results without operational alerts",
+      "status": "passed"
+    },
+    {
+      "name": "PowerShell and DNS replay preserve actual heuristic evidence",
+      "status": "passed"
+    },
+    {
+      "name": "Licensed pinned Sigma compilation and positive/benign tests work without import",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile layout: /",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Overview"
+    },
+    {
+      "name": "Mobile layout: /events",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Event explorer"
+    },
+    {
+      "name": "Mobile layout: /alerts",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Alert queue"
+    },
+    {
+      "name": "Mobile layout: /rules",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Detection rules"
+    },
+    {
+      "name": "Mobile layout: /replay",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Detection replay"
+    },
+    {
+      "name": "Mobile layout: /sigma",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Sigma workbench"
+    },
+    {
+      "name": "Mobile layout: /evidence",
+      "status": "passed",
+      "viewport": 390,
+      "document": 390,
+      "heading": "Demo data & limits"
+    },
+    {
+      "name": "Mobile navigation opens and closes by keyboard",
+      "status": "passed"
+    },
+    {
+      "name": "All completed browser API requests use the configured backend without credentials",
+      "status": "passed"
+    },
+    {
+      "name": "No critical console errors or unexpected failed requests",
+      "status": "passed",
+      "api_requests": 164
+    }
+  ],
+  "errors": [],
+  "failed_requests": [],
+  "api_requests": [
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/dashboard",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/events/search?offset=0&limit=25",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/events/search?offset=0&limit=25",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/alerts?offset=0&limit=25",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/rules",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/rules",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/rules",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/rules",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/rules",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/sigma/samples",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/events/search?offset=0&limit=25",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/events/search?outcome=failure&offset=0&limit=25",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay",
+      "method": "POST",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/bb32cbd061bd40269bbd11d9e29815f9",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs/bb32cbd061bd40269bbd11d9e29815f9/feed",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/bb32cbd061bd40269bbd11d9e29815f9",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs/bb32cbd061bd40269bbd11d9e29815f9/feed",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/bb32cbd061bd40269bbd11d9e29815f9",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs/bb32cbd061bd40269bbd11d9e29815f9/feed",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/bb32cbd061bd40269bbd11d9e29815f9",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs/bb32cbd061bd40269bbd11d9e29815f9/feed",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/bb32cbd061bd40269bbd11d9e29815f9",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs/bb32cbd061bd40269bbd11d9e29815f9/feed",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/bb32cbd061bd40269bbd11d9e29815f9",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/bb32cbd061bd40269bbd11d9e29815f9",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs/bb32cbd061bd40269bbd11d9e29815f9/feed",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/alerts/e2272155928d8c1856f38eafeea32b10",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/rules/AUTH-001",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/rules/AUTH-001/test",
+      "method": "POST",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/rules",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/validate",
+      "method": "POST",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/rules",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/validate",
+      "method": "POST",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay",
+      "method": "POST",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/b747e89146824228bdabdbbc79eab27a",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs/b747e89146824228bdabdbbc79eab27a/feed",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/b747e89146824228bdabdbbc79eab27a",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/b747e89146824228bdabdbbc79eab27a",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs/b747e89146824228bdabdbbc79eab27a/feed",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/alerts/a64818a90d536ff0c33250c0ee035e3f",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay",
+      "method": "POST",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/c910cdc3d5834dc7b8cef26fc5a2f975",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs/c910cdc3d5834dc7b8cef26fc5a2f975/feed",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/c910cdc3d5834dc7b8cef26fc5a2f975",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/detections/replay/c910cdc3d5834dc7b8cef26fc5a2f975",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs/c910cdc3d5834dc7b8cef26fc5a2f975/feed",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/alerts/52623ec1fd40b002ddeba80b22177e44",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/sigma/samples",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/sigma/compile",
+      "method": "POST",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/sigma/test",
+      "method": "POST",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/sigma/test",
+      "method": "POST",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/dashboard",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/events/search?offset=0&limit=25",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/alerts?offset=0&limit=25",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/rules",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/datasets",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/sigma/samples",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/health",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/runs",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    },
+    {
+      "url": "http://127.0.0.1:18868/api/dashboard",
+      "method": "GET",
+      "origin": "http://127.0.0.1:18878",
+      "authorization": false,
+      "cookie": false
+    }
+  ],
+  "request_scope": "Completed browser API requests; intentional navigation cancellations excluded",
+  "screenshots": [
+    "desktop-dashboard.png",
+    "alert-evidence.png",
+    "mobile-dashboard.png"
+  ],
+  "completed_at": "2026-09-28T11:54:31.874Z"
+}

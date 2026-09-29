@@ -1,0 +1,1925 @@
+{
+  "created_at": "2026-09-28T23:56:49.891129+00:00",
+  "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+  "original_release_directory": "artifacts/security/release-delivery",
+  "copied_files": [
+    {
+      "source": "artifacts/security/baseline/dependency-inventory.json",
+      "path": "baseline/dependency-inventory.json",
+      "sha256": "fe4f2eb56eaea24fa3b56b5ef1ac0a2ef97358562513e528b53c6b681770439e",
+      "bytes": 186742
+    },
+    {
+      "source": "artifacts/security/baseline/python-lock-audit.json",
+      "path": "baseline/python-lock-audit.json",
+      "sha256": "2c3af6b8d024d2444f32390765a5cfeb9d8026be31ef9470fca11b1d671e3926",
+      "bytes": 72669
+    },
+    {
+      "source": "artifacts/security/baseline/python-lock-audit.log",
+      "path": "baseline/python-lock-audit.log",
+      "sha256": "b2537e4a6bd6585cdb1d6dbe58fde6fdff0510467e3bc48246e593e84be7c2ab",
+      "bytes": 366
+    },
+    {
+      "source": "artifacts/security/baseline/python-installed-audit.json",
+      "path": "baseline/python-installed-audit.json",
+      "sha256": "b3b9f6f899f35d0d4a615e9b8a74310bf20b49ffb2b6dc04f7c1f147d84e8007",
+      "bytes": 72728
+    },
+    {
+      "source": "artifacts/security/baseline/python-installed-audit.log",
+      "path": "baseline/python-installed-audit.log",
+      "sha256": "27f10469269b434d029f5f4c7c0d9a65b8e375b3f4d462e96fb5394c901ad4cf",
+      "bytes": 45
+    },
+    {
+      "source": "artifacts/security/baseline/node-audit-all.json",
+      "path": "baseline/node-audit-all.json",
+      "sha256": "d86cb485a9e284cdcc45ae049e6d528e9dae235696217e8cb0e29328a19ff6b5",
+      "bytes": 363
+    },
+    {
+      "source": "artifacts/security/baseline/osv.json",
+      "path": "baseline/osv.json",
+      "sha256": "10ecab541a585dd52a4c523358f2b28e415770f87560d4c21468fd4858c9d87e",
+      "bytes": 462472
+    },
+    {
+      "source": "artifacts/security/baseline/osv.log",
+      "path": "baseline/osv.log",
+      "sha256": "fa56986f99368519ea8223e378966349b142f7304ee880e3608f7a21e4250d30",
+      "bytes": 437
+    },
+    {
+      "source": "artifacts/security/baseline/container-trivy.json",
+      "path": "baseline/container-trivy.json",
+      "sha256": "e7f71b2840f7a1a032eee51a9837ac6780da496bcbb94087aece7d1d51e61828",
+      "bytes": 2203662
+    },
+    {
+      "source": "artifacts/security/baseline/container-trivy.log",
+      "path": "baseline/container-trivy.log",
+      "sha256": "815ee54e377844ce9ed2d641e7658466ff3cce4287c60bcc531b2c694d079964",
+      "bytes": 95195
+    },
+    {
+      "source": "artifacts/security/baseline/container-sbom.cdx.json",
+      "path": "baseline/container-sbom.cdx.json",
+      "sha256": "553b4bd7696667bc0df9b40babd9ae96bc6db90b1d79d8bb9269a8707051d837",
+      "bytes": 1237241
+    },
+    {
+      "source": "artifacts/security/baseline/bandit.json",
+      "path": "baseline/bandit.json",
+      "sha256": "019f1c488061c1a91f5caab895ed271db6cec841439f6f64a0f1dcfdbaa20946",
+      "bytes": 613095
+    },
+    {
+      "source": "artifacts/security/baseline/bandit.log",
+      "path": "baseline/bandit.log",
+      "sha256": "3a8d9c89e778598c0b08b29e1f9c0a7b6c9d9ffd9dc7662721f658ed57b5a0c7",
+      "bytes": 378
+    },
+    {
+      "source": "artifacts/security/baseline/semgrep.json",
+      "path": "baseline/semgrep.json",
+      "sha256": "5e285123c3486eac608784d5ed29ce8a6d4c8a83dc9457f23052caf35318c9cb",
+      "bytes": 19534
+    },
+    {
+      "source": "artifacts/security/baseline/semgrep.log",
+      "path": "baseline/semgrep.log",
+      "sha256": "16702b6b4b78d60209bd46e7d0fdae0111baa4362c35a68a5d6276b200d8a359",
+      "bytes": 1798
+    },
+    {
+      "source": "artifacts/security/baseline/secrets-history.json",
+      "path": "baseline/secrets-history.json",
+      "sha256": "d3429286e9d84b8e598c6d6cf0503021d6384be3bd185193dcca01cf1801fe4b",
+      "bytes": 1487
+    },
+    {
+      "source": "artifacts/security/baseline/secrets-history.log",
+      "path": "baseline/secrets-history.log",
+      "sha256": "b37610ab574e37172ee2717ad6e8004ceece973f3d85e9bc021cd480928cb408",
+      "bytes": 193
+    },
+    {
+      "source": "artifacts/security/baseline/secrets-working-tree.json",
+      "path": "baseline/secrets-working-tree.json",
+      "sha256": "acaef446cd1321da410a369949cfa68fdd8a41a8c334cae773314e6fd527c2d5",
+      "bytes": 594
+    },
+    {
+      "source": "artifacts/security/baseline/secrets-working-tree.log",
+      "path": "baseline/secrets-working-tree.log",
+      "sha256": "3d1951063dce60730a6be00ab97e8b0d418f1856d43c670d954b6f86e15bd224",
+      "bytes": 135
+    },
+    {
+      "source": "artifacts/security/baseline/swagger-retire.json",
+      "path": "baseline/swagger-retire.json",
+      "sha256": "25e6d0b847b9ec493eee141478e2aecc672776ec42b2d206b68d624e810d1fcf",
+      "bytes": 41837
+    },
+    {
+      "source": "artifacts/security/baseline/swagger-retire.log",
+      "path": "baseline/swagger-retire.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/baseline/xml-before.log",
+      "path": "baseline/xml-before.log",
+      "sha256": "e53f19e70d4a78705cbc60b858c3b41144f6b5eda3cc8ff32ecf1b57a7c980c6",
+      "bytes": 4294
+    },
+    {
+      "source": "artifacts/security/baseline/image-inspect.json",
+      "path": "baseline/image-inspect.json",
+      "sha256": "c8e755b356e7ab7fb2776f38657a7a64679c0ab7a9942115e0e8b42ceaa826cc",
+      "bytes": 4944
+    },
+    {
+      "source": "artifacts/security/baseline/image-history.jsonl",
+      "path": "baseline/image-history.jsonl",
+      "sha256": "633e87a8419a41f6330ba2ac4233f136e700e2a4159582b0cd3962bc901a3067",
+      "bytes": 8783
+    },
+    {
+      "source": "artifacts/security/baseline/os-packages.tsv",
+      "path": "baseline/os-packages.tsv",
+      "sha256": "5fbd4406f0c3146dc692f798f9bc543712deee90b62da3535102f302a7680f8d",
+      "bytes": 2050
+    },
+    {
+      "source": "artifacts/security/baseline/image-python-packages.json",
+      "path": "baseline/image-python-packages.json",
+      "sha256": "a9224181bb934d209a4b4b95b18fc00c31eb44809103a78834ff3b4464f17d72",
+      "bytes": 1984
+    },
+    {
+      "source": "artifacts/security/baseline/source-scope.json",
+      "path": "baseline/source-scope.json",
+      "sha256": "1ae2cf1e4980426ea5b9a9d77c4d37dcd9931ddd7197d4f7d9cff34b9401747b",
+      "bytes": 16359
+    },
+    {
+      "source": "artifacts/security/remediation/boundaries-before.log",
+      "path": "remediation/boundaries-before.log",
+      "sha256": "4ab36a4550e0fffb7e8595f6811cea141297a38b078662c3498803fbe5f5e901",
+      "bytes": 10069
+    },
+    {
+      "source": "artifacts/security/remediation/hmac-before.log",
+      "path": "remediation/hmac-before.log",
+      "sha256": "c31ecc603693c0e51d34dbab93e73781b7bf3f628aeb82679f1b7a907217f0ad",
+      "bytes": 1552
+    },
+    {
+      "source": "artifacts/security/remediation/resource-before.log",
+      "path": "remediation/resource-before.log",
+      "sha256": "4d1c6cad2e4bb89a6f159a826572b962ca6fbe4b31aa330582ac9dfbb358177b",
+      "bytes": 10359
+    },
+    {
+      "source": "artifacts/security/remediation/artifact-permissions-before.log",
+      "path": "remediation/artifact-permissions-before.log",
+      "sha256": "3b8a6c4579454b94ba563b7b756d7cf49de4d1a4eed98cd60b45a8b6d585e9c0",
+      "bytes": 3043
+    },
+    {
+      "source": "artifacts/security/remediation/artifact-permissions-after.log",
+      "path": "remediation/artifact-permissions-after.log",
+      "sha256": "7452846d4b4d74abd3401763e1c43df2e8e7112098acd672fe414d3ac6b97232",
+      "bytes": 674
+    },
+    {
+      "source": "artifacts/security/remediation/private-probe-corrected.log",
+      "path": "remediation/private-probe-corrected.log",
+      "sha256": "b31c56013003ea1124fe5e9a7be4dea57b1b242f2592b131101cd19356057561",
+      "bytes": 903
+    },
+    {
+      "source": "artifacts/security/remediation/release-final-console.log",
+      "path": "remediation/release-final-console.log",
+      "sha256": "88eb81d035b5d380fe3832ae4817b52f7013092b7da096b1061bf3da092aad7c",
+      "bytes": 1295
+    },
+    {
+      "source": "artifacts/security/release-candidate-1/summary.json",
+      "path": "earlier-gates/release-candidate-1.json",
+      "sha256": "450e015e649792a90bfc8d5a6e43c9c239e99f511a092473e34f6ff7a3a7ee6b",
+      "bytes": 61836
+    },
+    {
+      "source": "artifacts/security/release-candidate-2/summary.json",
+      "path": "earlier-gates/release-candidate-2.json",
+      "sha256": "62cfbac9be7fb59fe78b5b2a51ae1b498a641dbd23d4c4f22f7f25186c48578b",
+      "bytes": 61896
+    },
+    {
+      "source": "artifacts/security/release-candidate-3/summary.json",
+      "path": "earlier-gates/release-candidate-3.json",
+      "sha256": "7a31b7017340be1c6ce41cba24d4479dca0d9025718a3a8178e9208ecaaac147",
+      "bytes": 61895
+    },
+    {
+      "source": "artifacts/security/release-candidate-4/summary.json",
+      "path": "earlier-gates/release-candidate-4.json",
+      "sha256": "859e753367973df7daabed7657641eedc379bda7ed4c74fd6fbf6a43ea0e1151",
+      "bytes": 72064
+    },
+    {
+      "source": "artifacts/security/release-candidate-5/summary.json",
+      "path": "earlier-gates/release-candidate-5.json",
+      "sha256": "adfcde405dc4841aecaa5e52d5f580485d10657fdbfe64168cbc8c0b2fc7ccbf",
+      "bytes": 71984
+    },
+    {
+      "source": "artifacts/security/remediation/baseline-vulnerability-triage.json",
+      "path": "baseline/dependency-triage-original.json",
+      "sha256": "5d5d5ea9a8ad925781849e559e47e2a7e516ba33042d8f79f3d150e752960705",
+      "bytes": 483503
+    },
+    {
+      "source": "artifacts/security/release-final/summary.json",
+      "path": "earlier-gates/release-final.json",
+      "sha256": "15b67e2872657584e266a982fea6c9f098fd9247aafdc20ea88d2831016925c6",
+      "bytes": 71781
+    },
+    {
+      "source": "artifacts/security/release-packaged/summary.json",
+      "path": "earlier-gates/release-packaged.json",
+      "sha256": "ee6e1a081169bdcac8250b060070e735a5b87ae6692ec0286abd96368ba2a910",
+      "bytes": 154765
+    },
+    {
+      "source": "artifacts/security/release-verified/summary.json",
+      "path": "earlier-gates/release-verified.json",
+      "sha256": "a71deeb1883cac9365be17030d305fa9935e87217175305c07fced8e7da1b7ed",
+      "bytes": 80418
+    },
+    {
+      "source": "artifacts/security/release-delivery/advisory-database.json",
+      "path": "final/advisory-database.json",
+      "sha256": "8358d858113c0c56f40afc7a3501879ed5837e89bdaf8a171d0e8748c72c5d4f",
+      "bytes": 167
+    },
+    {
+      "source": "artifacts/security/release-delivery/backend-junit.xml",
+      "path": "final/backend-junit.xml",
+      "sha256": "570a05dafc41256609786ab5f592adb95c26a0388a843635b001cd23d94a8154",
+      "bytes": 351797
+    },
+    {
+      "source": "artifacts/security/release-delivery/bandit.json",
+      "path": "final/bandit.json",
+      "sha256": "7bbead1cb2b5ba421b10e488e7e611950fcad3cac0917c10d7bf3fef54846a9c",
+      "bytes": 766297
+    },
+    {
+      "source": "artifacts/security/release-delivery/bandit.log",
+      "path": "final/bandit.log",
+      "sha256": "3becae746696ab5c4207c0f607c00f6f0f376116e74b7c5f7358cbae14278886",
+      "bytes": 145
+    },
+    {
+      "source": "artifacts/security/release-delivery/bandit.stderr.log",
+      "path": "final/bandit.stderr.log",
+      "sha256": "97aad78c03b4354b1380e390c0e0d3343c3545d5c57f101d7cbe1fc860557f8e",
+      "bytes": 332
+    },
+    {
+      "source": "artifacts/security/release-delivery/benchmark.json",
+      "path": "final/benchmark.json",
+      "sha256": "9a7b651b9222efedae7a18631cac6d1dc721d4e2cc6f484e2fbd48ff04dc2901",
+      "bytes": 986
+    },
+    {
+      "source": "artifacts/security/release-delivery/build-application.log",
+      "path": "final/build-application.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/build-application.stderr.log",
+      "path": "final/build-application.stderr.log",
+      "sha256": "76c7febbe2fc9e9c8e1aace07c75499beb01beb2d812446d6b453e71707683f0",
+      "bytes": 2810
+    },
+    {
+      "source": "artifacts/security/release-delivery/build-backend.log",
+      "path": "final/build-backend.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/build-backend.stderr.log",
+      "path": "final/build-backend.stderr.log",
+      "sha256": "69c461a58fc1a4854ec4eecaa18d3787eaa5d3fbcd05949ecfb433ad7bb62128",
+      "bytes": 2057
+    },
+    {
+      "source": "artifacts/security/release-delivery/container-application.cdx.json",
+      "path": "final/container-application.cdx.json",
+      "sha256": "c6ef1e599563c96ab86418b0cf8bed701968eda277136926a51034424284f543",
+      "bytes": 374772
+    },
+    {
+      "source": "artifacts/security/release-delivery/container-application.json",
+      "path": "final/container-application.json",
+      "sha256": "69f1e59e5c735833096dd87e47b23658f0b934907bf60eed2e58727aa1746d38",
+      "bytes": 100900
+    },
+    {
+      "source": "artifacts/security/release-delivery/container-backend.cdx.json",
+      "path": "final/container-backend.cdx.json",
+      "sha256": "f814ae5b737a658d8adfdb0a973bc36e8915067b62f5ef994dbb2f26c68f3acd",
+      "bytes": 374772
+    },
+    {
+      "source": "artifacts/security/release-delivery/container-backend.json",
+      "path": "final/container-backend.json",
+      "sha256": "81acfc29523a6ef8fc53b09fe799e06f07500ae39e1f595b9baa7531cc5e3e9f",
+      "bytes": 100221
+    },
+    {
+      "source": "artifacts/security/release-delivery/coverage.json",
+      "path": "final/coverage.json",
+      "sha256": "6f6f89dba83f007bf5700879a9a48b492652966db4ab4d8c69a2e12856c98520",
+      "bytes": 440713
+    },
+    {
+      "source": "artifacts/security/release-delivery/dependency-inventory.json",
+      "path": "final/dependency-inventory.json",
+      "sha256": "7db9ba077c1e45237e10205aa6772e844145281d5b7d75d299c237c075ba755c",
+      "bytes": 245321
+    },
+    {
+      "source": "artifacts/security/release-delivery/detection-validation.json",
+      "path": "final/detection-validation.json",
+      "sha256": "9548521856689c0cc1ceebfb3a6084bcc85853a31c6a4e0a730849d82f36fdbf",
+      "bytes": 955358
+    },
+    {
+      "source": "artifacts/security/release-delivery/detection-validation.txt",
+      "path": "final/detection-validation.txt",
+      "sha256": "dd9ee5fda5f5baccf53f33f40a10a7c65504992fd6f899eff8ad6f33e55503e5",
+      "bytes": 4277
+    },
+    {
+      "source": "artifacts/security/release-delivery/docker-endpoint.json",
+      "path": "final/docker-endpoint.json",
+      "sha256": "93fb5e66ea179d0a63dda2443acff803a32da581f646b6711e256ac7d2e700d1",
+      "bytes": 48
+    },
+    {
+      "source": "artifacts/security/release-delivery/docker-endpoint.stderr.log",
+      "path": "final/docker-endpoint.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/filesystem-trivy.json",
+      "path": "final/filesystem-trivy.json",
+      "sha256": "e4b4e952c40901c66dc6fb4e7ccb540ef473be189c18d700ca4521fc579fe1c0",
+      "bytes": 231870
+    },
+    {
+      "source": "artifacts/security/release-delivery/filesystem-trivy.log",
+      "path": "final/filesystem-trivy.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/filesystem-trivy.stderr.log",
+      "path": "final/filesystem-trivy.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/frontend-tests.json",
+      "path": "final/frontend-tests.json",
+      "sha256": "2b80b1e06790f48750fd1caef97c224f1258cd528ba843a0448544c36d5023fa",
+      "bytes": 48586
+    },
+    {
+      "source": "artifacts/security/release-delivery/full-validation.log",
+      "path": "final/full-validation.log",
+      "sha256": "562113a09a8319afd0d4a02629f276523790fdaea53728ecdd48acd594e52150",
+      "bytes": 20055
+    },
+    {
+      "source": "artifacts/security/release-delivery/full-validation.stderr.log",
+      "path": "final/full-validation.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/image-application.json",
+      "path": "final/image-application.json",
+      "sha256": "33922ce9a158827407410b668c63149506d9523e781e83c74b07681247958686",
+      "bytes": 5595
+    },
+    {
+      "source": "artifacts/security/release-delivery/image-application.stderr.log",
+      "path": "final/image-application.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/image-backend.json",
+      "path": "final/image-backend.json",
+      "sha256": "bfc70932cb07ee7295c4dd59eb49242fe9e7320ef57419521de35e55b93dea06",
+      "bytes": 5453
+    },
+    {
+      "source": "artifacts/security/release-delivery/image-backend.stderr.log",
+      "path": "final/image-backend.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/installed-sbom-trivy.json",
+      "path": "final/installed-sbom-trivy.json",
+      "sha256": "ee985e2c8e16a1393e699061768a81a856b9ada705e9f9fa21a6d0f00267e40e",
+      "bytes": 27576
+    },
+    {
+      "source": "artifacts/security/release-delivery/installed-sbom-trivy.log",
+      "path": "final/installed-sbom-trivy.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/installed-sbom-trivy.stderr.log",
+      "path": "final/installed-sbom-trivy.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/integrations-validation.json",
+      "path": "final/integrations-validation.json",
+      "sha256": "7e189111dfcb37d8ad881fb9f885ded3bb7f7dbb272f614baf6be2f5d425d4a4",
+      "bytes": 1904
+    },
+    {
+      "source": "artifacts/security/release-delivery/manifest.json",
+      "path": "final/manifest.json",
+      "sha256": "7b8f93319b441048e0856df8cfb0cb2f8bbec0fd751ae4e98b211964eec5603c",
+      "bytes": 26658
+    },
+    {
+      "source": "artifacts/security/release-delivery/node-all.json",
+      "path": "final/node-all.json",
+      "sha256": "51519f830160092fc556da676bc04841b554984ed4c442e3e2a365b92a35348c",
+      "bytes": 363
+    },
+    {
+      "source": "artifacts/security/release-delivery/node-all.stderr.log",
+      "path": "final/node-all.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/node-production.json",
+      "path": "final/node-production.json",
+      "sha256": "51519f830160092fc556da676bc04841b554984ed4c442e3e2a365b92a35348c",
+      "bytes": 363
+    },
+    {
+      "source": "artifacts/security/release-delivery/node-production.stderr.log",
+      "path": "final/node-production.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/node-sbom.json",
+      "path": "final/node-sbom.json",
+      "sha256": "90485bcc38a4250d6234589f1124373bac2923c3766d84f30d1ab1765ac3ad62",
+      "bytes": 358126
+    },
+    {
+      "source": "artifacts/security/release-delivery/node-sbom.stderr.log",
+      "path": "final/node-sbom.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/node-version.log",
+      "path": "final/node-version.log",
+      "sha256": "f2ec568164f99546161909b0189b57bb5be3e80f8e2ccd8a51a4aed8c4055a04",
+      "bytes": 9
+    },
+    {
+      "source": "artifacts/security/release-delivery/node-version.stderr.log",
+      "path": "final/node-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/npm-version.log",
+      "path": "final/npm-version.log",
+      "sha256": "005206ab803f8881d8227540b7980b37e723b69a8849edb31734a90b7e7964e2",
+      "bytes": 8
+    },
+    {
+      "source": "artifacts/security/release-delivery/npm-version.stderr.log",
+      "path": "final/npm-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/osv.json",
+      "path": "final/osv.json",
+      "sha256": "48e4fd3a54fef7b17d221034aa61cf03c91cf144a9bf7b3e82ad3326ccdabb32",
+      "bytes": 92401
+    },
+    {
+      "source": "artifacts/security/release-delivery/osv.log",
+      "path": "final/osv.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/osv.stderr.log",
+      "path": "final/osv.stderr.log",
+      "sha256": "63fc92c720a11e25d2e92ec9901cb04c748f34c03e44215d16eb7f8c2bed73db",
+      "bytes": 590
+    },
+    {
+      "source": "artifacts/security/release-delivery/pip-check.log",
+      "path": "final/pip-check.log",
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "bytes": 30
+    },
+    {
+      "source": "artifacts/security/release-delivery/pip-check.stderr.log",
+      "path": "final/pip-check.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-installed.json",
+      "path": "final/python-installed.json",
+      "sha256": "b482da4ec0ed9ef5018fcf8138b171b60b160a6f7215b0b1d5d72ab6f10416cb",
+      "bytes": 2553
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-installed.log",
+      "path": "final/python-installed.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-installed.stderr.log",
+      "path": "final/python-installed.stderr.log",
+      "sha256": "15950a68a7ed99c59779717acefdceb3f69cfd31bde67d2c954f2a3cea4d7955",
+      "bytes": 31
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-lock.json",
+      "path": "final/python-lock.json",
+      "sha256": "03a5bba158c0f76eeaa9beaef592252a0c3b1ef8428d72767f47c08443125c0e",
+      "bytes": 2494
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-lock.log",
+      "path": "final/python-lock.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-lock.stderr.log",
+      "path": "final/python-lock.stderr.log",
+      "sha256": "15950a68a7ed99c59779717acefdceb3f69cfd31bde67d2c954f2a3cea4d7955",
+      "bytes": 31
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-runtime.json",
+      "path": "final/python-runtime.json",
+      "sha256": "b0c0dba11252584d2a727a955b875e418b8003d6bf9d9a60f59f846f5af1d55f",
+      "bytes": 1176
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-runtime.log",
+      "path": "final/python-runtime.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-runtime.stderr.log",
+      "path": "final/python-runtime.stderr.log",
+      "sha256": "15950a68a7ed99c59779717acefdceb3f69cfd31bde67d2c954f2a3cea4d7955",
+      "bytes": 31
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-sbom.cdx.json",
+      "path": "final/python-sbom.cdx.json",
+      "sha256": "1df7a0728dc02fd548bda35cdd2d17ec3ef48780498a96656ea997ee5c940db1",
+      "bytes": 2363282
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-sbom.log",
+      "path": "final/python-sbom.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-sbom.stderr.log",
+      "path": "final/python-sbom.stderr.log",
+      "sha256": "d099d170723bfedbe19305be6d7c33f292791663a2291826925ae43c74ba9fdc",
+      "bytes": 135
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-scanners.json",
+      "path": "final/python-scanners.json",
+      "sha256": "3285074a1a485018cbcd41cd4e3673d59d1425d73f2252a4dbe9797463121a34",
+      "bytes": 5241
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-scanners.log",
+      "path": "final/python-scanners.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/python-scanners.stderr.log",
+      "path": "final/python-scanners.stderr.log",
+      "sha256": "15950a68a7ed99c59779717acefdceb3f69cfd31bde67d2c954f2a3cea4d7955",
+      "bytes": 31
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/analyst-browser.json",
+      "path": "final/rehearsals/analyst-browser.json",
+      "sha256": "02d4dea5eb8cdbef034aefa04efc086e85107e68e9cbfff4a82c1e8bdd7b5163",
+      "bytes": 5669
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/analyst-browser.log",
+      "path": "final/rehearsals/analyst-browser.log",
+      "sha256": "a0173b9f0db6ae36b19047f93ca8085fdb2cd94303571da3f1c544aadb6a966b",
+      "bytes": 1661
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/collector-outage.log",
+      "path": "final/rehearsals/collector-outage.log",
+      "sha256": "1ad398cc6459de3ecac5c1ec7cc973545f484747b49d272bfacab8fe11815012",
+      "bytes": 51
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/collector-recovery.log",
+      "path": "final/rehearsals/collector-recovery.log",
+      "sha256": "40b6b46a9c296f828eb049f2a0294cfcd791cbfb2497d9ff9a30a6960a8afcca",
+      "bytes": 52
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/collector-repeat.log",
+      "path": "final/rehearsals/collector-repeat.log",
+      "sha256": "40b6b46a9c296f828eb049f2a0294cfcd791cbfb2497d9ff9a30a6960a8afcca",
+      "bytes": 52
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-docker/alert-evidence.png",
+      "path": "final/rehearsals/deployment-docker/alert-evidence.png",
+      "sha256": "76f9e97fab14044d89b3f9a2ea7c804a0b144962d9cadb7cdee42712893c8cba",
+      "bytes": 640336
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-docker/backend.log",
+      "path": "final/rehearsals/deployment-docker/backend.log",
+      "sha256": "e101b55b3c0f29bfb069b635a214cf7b6871df96bf66b9ac5491215a54dbd55e",
+      "bytes": 680
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-docker/browser.json",
+      "path": "final/rehearsals/deployment-docker/browser.json",
+      "sha256": "eb9bb1af9bf8584951a948bf142fdd21b21e356062b5dbe4b106a436d63108d1",
+      "bytes": 34064
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-docker/commands.log",
+      "path": "final/rehearsals/deployment-docker/commands.log",
+      "sha256": "32bd41c0e77dbc3ff55c3275fdb9361d682495e03893676c0d100d1eb9cf5b04",
+      "bytes": 6102
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-docker/desktop-dashboard.png",
+      "path": "final/rehearsals/deployment-docker/desktop-dashboard.png",
+      "sha256": "715eb64a3fc1107914bdbaf775e4e4b51a34afd308af06862b59a43010d32d01",
+      "bytes": 278441
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-docker/frontend.log",
+      "path": "final/rehearsals/deployment-docker/frontend.log",
+      "sha256": "9f371549e0cc475c80320ff6357459b28dc50266f2ca057846527138d7a374b0",
+      "bytes": 40
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-docker/mobile-dashboard.png",
+      "path": "final/rehearsals/deployment-docker/mobile-dashboard.png",
+      "sha256": "2d3177af8a502b942219abcd734a4caf832badcdbb50d3a61bdcddd7b7177d4b",
+      "bytes": 192930
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-docker/report.json",
+      "path": "final/rehearsals/deployment-docker/report.json",
+      "sha256": "d7f05fb81b0325ba47f7e7848ea5a70288bac58ab44ea5c493e164a88a6f3c60",
+      "bytes": 5299
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-docker.log",
+      "path": "final/rehearsals/deployment-docker.log",
+      "sha256": "125f77641b347b5d57f9b2fbbd60b3f52f26dfb359f2af31dde3cdb4c1a8305e",
+      "bytes": 982
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-native/alert-evidence.png",
+      "path": "final/rehearsals/deployment-native/alert-evidence.png",
+      "sha256": "b7cefbb619287dd56dcfae5d4c790e160c8f91359ff7706a2167a04ac34c1b57",
+      "bytes": 641466
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-native/backend.log",
+      "path": "final/rehearsals/deployment-native/backend.log",
+      "sha256": "e8ebe652271093c24b011a2f519c5b293049618209754281cf3984fbfb569c20",
+      "bytes": 696
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-native/browser.json",
+      "path": "final/rehearsals/deployment-native/browser.json",
+      "sha256": "ce31679e525504d350053936ff976bc49be522cc3ca7be8b6cb24599aa803acf",
+      "bytes": 35207
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-native/commands.log",
+      "path": "final/rehearsals/deployment-native/commands.log",
+      "sha256": "22c8d178e31edac6571e23a73a0636120f3397efd4ff66b10eab6ba8beb977a3",
+      "bytes": 2827
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-native/desktop-dashboard.png",
+      "path": "final/rehearsals/deployment-native/desktop-dashboard.png",
+      "sha256": "e7d88ed53c49c7ce4be7dcf39ae7e1c27534e146550a763fcfc9cecf73c9efc8",
+      "bytes": 278907
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-native/frontend.log",
+      "path": "final/rehearsals/deployment-native/frontend.log",
+      "sha256": "e616d8843a9d00020748aea161207864a663d66125dedc5117d8a6cc09d9bacd",
+      "bytes": 40
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-native/mobile-dashboard.png",
+      "path": "final/rehearsals/deployment-native/mobile-dashboard.png",
+      "sha256": "b1cdcb093493f6df4452d33de34bf76b329fa823a3bd74c9a8758cd96116e17f",
+      "bytes": 193521
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-native/report.json",
+      "path": "final/rehearsals/deployment-native/report.json",
+      "sha256": "ab965061c11441cdbd26eea82282c72008e5eab613734c99d046839a1e4a4b25",
+      "bytes": 1951
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/deployment-native.log",
+      "path": "final/rehearsals/deployment-native.log",
+      "sha256": "8b9a9021af88342c89c9779f0a1db564cdd55a7f2b103baf644f8672ad7296d6",
+      "bytes": 852
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/integration-browser/browser-results.json",
+      "path": "final/rehearsals/integration-browser/browser-results.json",
+      "sha256": "900febb4320b7769fa59d2c6c20889f3bd4bdc6e8357fbffdd67c0babb92f501",
+      "bytes": 4286
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/integration-browser/integration-alert.png",
+      "path": "final/rehearsals/integration-browser/integration-alert.png",
+      "sha256": "b57d5f7c20cc22d0306c41a9d34d26d18e7f4cd2854be559b29509916dc0c5ca",
+      "bytes": 435006
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/integration-browser/integrations-desktop.png",
+      "path": "final/rehearsals/integration-browser/integrations-desktop.png",
+      "sha256": "f64d5008fc3f3dcd28873b98ee6e42eff8001775ce8fc8ec4eda611618406861",
+      "bytes": 234590
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/integration-browser/integrations-mobile.png",
+      "path": "final/rehearsals/integration-browser/integrations-mobile.png",
+      "sha256": "39a947d51a2a7524d7915df94c9cbd861c3ce43b0ab951149a184a4f2f85f4ae",
+      "bytes": 145945
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/integration-browser/notifications-desktop.png",
+      "path": "final/rehearsals/integration-browser/notifications-desktop.png",
+      "sha256": "5bcf12ba22457bf2ab2720f3e94ba83ef7b24d821a46397bf1a8777164aafbd0",
+      "bytes": 288509
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/integration-browser.log",
+      "path": "final/rehearsals/integration-browser.log",
+      "sha256": "136f8584cabf8a8532c037327dc005cc3ae82adc5df2cde6064c5b0d674993f1",
+      "bytes": 2025
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/private-image-cleanup.log",
+      "path": "final/rehearsals/private-image-cleanup.log",
+      "sha256": "1ece873770757ceedff7809dfd6856805de85ae7f2ba410ecdd54e578d63510b",
+      "bytes": 43
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/private-image-probe.log",
+      "path": "final/rehearsals/private-image-probe.log",
+      "sha256": "bbd2f74f4c161aae82e930b66fc0f215258a32ab6958ac25861e76d9f56fa70b",
+      "bytes": 585
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/private-image-ready.log",
+      "path": "final/rehearsals/private-image-ready.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/private-image-start.log",
+      "path": "final/rehearsals/private-image-start.log",
+      "sha256": "ee123e70d92fd2e2449a0d6a32faaec9fd25a92566b9e978f9d0c0427fea0563",
+      "bytes": 65
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/private-server.log",
+      "path": "final/rehearsals/private-server.log",
+      "sha256": "3968939c25be24e932311d44a3ec94ebfff7c2252c0944476fa8839dd7b13863",
+      "bytes": 1050
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/private-volume-cleanup.log",
+      "path": "final/rehearsals/private-volume-cleanup.log",
+      "sha256": "cd2e9b3f52b2d6e23b2a012f01c8c186ccc8422378d9747c0e21c3a4d3af2bf1",
+      "bytes": 48
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/private-volume.log",
+      "path": "final/rehearsals/private-volume.log",
+      "sha256": "cd2e9b3f52b2d6e23b2a012f01c8c186ccc8422378d9747c0e21c3a4d3af2bf1",
+      "bytes": 48
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/rehearsals.json",
+      "path": "final/rehearsals/rehearsals.json",
+      "sha256": "952dc5132bb4bf854d91939f42b05c920aacbef8499d98bf392374ca28e2ed85",
+      "bytes": 9366
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/security-browser/browser.json",
+      "path": "final/rehearsals/security-browser/browser.json",
+      "sha256": "a1fd4d68d3a383105d51c182bb7a8c7b0cfd0d4e59f47929668d01443d5b5f97",
+      "bytes": 1813
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/security-browser/credential-expiry.png",
+      "path": "final/rehearsals/security-browser/credential-expiry.png",
+      "sha256": "e6c7d43bb12f5436fddcf2b1160e14f58e5cfcc885decedfdce8f40b0c3d95d5",
+      "bytes": 298345
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/security-browser/literal-evidence.png",
+      "path": "final/rehearsals/security-browser/literal-evidence.png",
+      "sha256": "3a2eca892915826e6b19042d02096be6beed58abe7269c0174db7597e71c55a0",
+      "bytes": 362810
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals/security-browser.log",
+      "path": "final/rehearsals/security-browser.log",
+      "sha256": "eb02c3655d2a8e8d5f1b4b010ac90bc550beeb0d449c9a55284b6de3a02f77d0",
+      "bytes": 909
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals.log",
+      "path": "final/rehearsals.log",
+      "sha256": "98c7fae0d0e3e1940344c4eaefca3ed1f6ec2bf4976209c9a3f27d2f7bde7cd3",
+      "bytes": 567
+    },
+    {
+      "source": "artifacts/security/release-delivery/rehearsals.stderr.log",
+      "path": "final/rehearsals.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/retire-advisories.json",
+      "path": "final/retire-advisories.json",
+      "sha256": "eb0289a2b0cb7b1b61c39e30dc587db49d1901977eaabfa9c6dd28606ce30fd5",
+      "bytes": 580173
+    },
+    {
+      "source": "artifacts/security/release-delivery/retire-database.json",
+      "path": "final/retire-database.json",
+      "sha256": "ffd8c28d25eaf13a7f244abd7a65042dbf225fbe7f14b1a337d4953644d629aa",
+      "bytes": 244
+    },
+    {
+      "source": "artifacts/security/release-delivery/retire-frontend.json",
+      "path": "final/retire-frontend.json",
+      "sha256": "2366efc07ef539ccc373b71acd7b3be9e36fac6bcfbc3e11041b77d80d0807fc",
+      "bytes": 652
+    },
+    {
+      "source": "artifacts/security/release-delivery/retire-frontend.log",
+      "path": "final/retire-frontend.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/retire-frontend.stderr.log",
+      "path": "final/retire-frontend.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/retire-swagger.json",
+      "path": "final/retire-swagger.json",
+      "sha256": "b2f0e08de95776fd1ca4bc8353062e7bcbdf8230610ef823cd5488ff1612ac26",
+      "bytes": 1050
+    },
+    {
+      "source": "artifacts/security/release-delivery/retire-swagger.log",
+      "path": "final/retire-swagger.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/retire-swagger.stderr.log",
+      "path": "final/retire-swagger.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/sast-triage.json",
+      "path": "final/sast-triage.json",
+      "sha256": "ff707e68f37eba11159fd2473b2a71e2121bdd57b9f3c87a8f4595a1a31d102a",
+      "bytes": 439416
+    },
+    {
+      "source": "artifacts/security/release-delivery/sbom-application.log",
+      "path": "final/sbom-application.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/sbom-application.stderr.log",
+      "path": "final/sbom-application.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/sbom-backend.log",
+      "path": "final/sbom-backend.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/sbom-backend.stderr.log",
+      "path": "final/sbom-backend.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/sbom.cdx.json",
+      "path": "final/sbom.cdx.json",
+      "sha256": "98e1319e6ab05b46aa6fa6e118fe11adf2a5dcb808474f73c355fd986c6c7fc7",
+      "bytes": 755330
+    },
+    {
+      "source": "artifacts/security/release-delivery/scan-application.log",
+      "path": "final/scan-application.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/scan-application.stderr.log",
+      "path": "final/scan-application.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/scan-backend.log",
+      "path": "final/scan-backend.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/scan-backend.stderr.log",
+      "path": "final/scan-backend.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/secrets-history.json",
+      "path": "final/secrets-history.json",
+      "sha256": "a99a78466db22bddb030229336f24d95a2319c60607b8ecbd784f945112f372d",
+      "bytes": 2233
+    },
+    {
+      "source": "artifacts/security/release-delivery/secrets-history.log",
+      "path": "final/secrets-history.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/secrets-history.stderr.log",
+      "path": "final/secrets-history.stderr.log",
+      "sha256": "16e94594979bf780243f8f8bbb6f62fcfe85a38f9884822b689fbdfb1b7f8073",
+      "bytes": 112
+    },
+    {
+      "source": "artifacts/security/release-delivery/secrets-triage.json",
+      "path": "final/secrets-triage.json",
+      "sha256": "872d2a2d8545a9cfffdb2dc171cded58c0d3376a22bd14749a469a365f114b65",
+      "bytes": 9195
+    },
+    {
+      "source": "artifacts/security/release-delivery/secrets-working-tree.json",
+      "path": "final/secrets-working-tree.json",
+      "sha256": "065596460557e165af04feccb5916f805dccfa6499b5ca9a75a1e9f762af65ae",
+      "bytes": 9351
+    },
+    {
+      "source": "artifacts/security/release-delivery/secrets-working-tree.log",
+      "path": "final/secrets-working-tree.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/secrets-working-tree.stderr.log",
+      "path": "final/secrets-working-tree.stderr.log",
+      "sha256": "2923b20ec46427845d6c72e9c39978e5b41d9996c29e03aaa6a512125f212b26",
+      "bytes": 82
+    },
+    {
+      "source": "artifacts/security/release-delivery/semgrep.json",
+      "path": "final/semgrep.json",
+      "sha256": "7dd7c5eb26da1ed75d02294afbdf2f49a43c3ea95308bd2b348763266d725dba",
+      "bytes": 15774
+    },
+    {
+      "source": "artifacts/security/release-delivery/semgrep.log",
+      "path": "final/semgrep.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/semgrep.stderr.log",
+      "path": "final/semgrep.stderr.log",
+      "sha256": "05ad28056b73be34a20e916c0f0f899ba5a705d6ad74516aee4e9beb1be4cd65",
+      "bytes": 1972
+    },
+    {
+      "source": "artifacts/security/release-delivery/sigma-validation.json",
+      "path": "final/sigma-validation.json",
+      "sha256": "18e76f5a0be20a4a883140f7f29222f98923d112545f84264ce675b17441de60",
+      "bytes": 2046
+    },
+    {
+      "source": "artifacts/security/release-delivery/source-scope.json",
+      "path": "final/source-scope.json",
+      "sha256": "b1d1292f7b044b899c14768a8ec204a5cc233e1f0b8e0cbdcceb799218d297c8",
+      "bytes": 103400
+    },
+    {
+      "source": "artifacts/security/release-delivery/summary.json",
+      "path": "final/summary.json",
+      "sha256": "441326e4b85d45e1f3ceba1ebcaad9b1212e49e0ea354c5615d8df3bbd52fe22",
+      "bytes": 80573
+    },
+    {
+      "source": "artifacts/security/release-delivery/swagger-integrity.log",
+      "path": "final/swagger-integrity.log",
+      "sha256": "d938ce053d429b5ad3e2f063e3f4574c1b3278b83047e47c089fc50e3c8deb07",
+      "bytes": 54
+    },
+    {
+      "source": "artifacts/security/release-delivery/swagger-integrity.stderr.log",
+      "path": "final/swagger-integrity.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/tool-versions.json",
+      "path": "final/tool-versions.json",
+      "sha256": "d6fac0493b39e3af362c3ee489e898fd1bb16dbd40e31955781de788137bea1a",
+      "bytes": 1562
+    },
+    {
+      "source": "artifacts/security/release-delivery/validation.json",
+      "path": "final/validation.json",
+      "sha256": "4e8603e22bab97a9d903751c7a698637c9e5ab4b74b67cad97c75bca6d650c92",
+      "bytes": 16669
+    },
+    {
+      "source": "artifacts/security/release-delivery/validation.log",
+      "path": "final/validation.log",
+      "sha256": "ec3a781ae64e9b499b8a1f0ce6f619d11016aa4f579647913ee83c2a8539dbd4",
+      "bytes": 20054
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-bandit.log",
+      "path": "final/version-bandit.log",
+      "sha256": "e33c06f624c601fa86d53a424905da5d989564c197438c16d6690a2244bc6754",
+      "bytes": 86
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-bandit.stderr.log",
+      "path": "final/version-bandit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-gitleaks.log",
+      "path": "final/version-gitleaks.log",
+      "sha256": "c9fd9ccb6682c54b5fcb0363757b6c6873564e7c067f70b3b5581b611528b9f4",
+      "bytes": 7
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-gitleaks.stderr.log",
+      "path": "final/version-gitleaks.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-osv-scanner.log",
+      "path": "final/version-osv-scanner.log",
+      "sha256": "e0bc7fa9d9b902f5179238abc870bc238c6f119e8c4c0b58b63fd26289fc5ea7",
+      "bytes": 134
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-osv-scanner.stderr.log",
+      "path": "final/version-osv-scanner.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-pip-audit.log",
+      "path": "final/version-pip-audit.log",
+      "sha256": "70d9a63a0ea389b4992009be156f8738d7c22f2f5c049084054528ed7f9eee0c",
+      "bytes": 17
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-pip-audit.stderr.log",
+      "path": "final/version-pip-audit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-retire.log",
+      "path": "final/version-retire.log",
+      "sha256": "794a495980132b2741146c50652467ad5e5bf4b0e8f1695b2af12572c35d6008",
+      "bytes": 6
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-retire.stderr.log",
+      "path": "final/version-retire.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-semgrep.log",
+      "path": "final/version-semgrep.log",
+      "sha256": "05192603e2d208e5cbfa3ec0de34c122510f96bec935dc5f965992e444036d63",
+      "bytes": 8
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-semgrep.stderr.log",
+      "path": "final/version-semgrep.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-syft.log",
+      "path": "final/version-syft.log",
+      "sha256": "93f3e034d586773063db801297f457fbe182478bc9a743855be0126077e7542f",
+      "bytes": 12
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-syft.stderr.log",
+      "path": "final/version-syft.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-trivy.log",
+      "path": "final/version-trivy.log",
+      "sha256": "41e22ed321a4c139a4fae57e92d8fa971cf7e91a8c1c4444d9a948c52a72c73a",
+      "bytes": 16
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-trivy.stderr.log",
+      "path": "final/version-trivy.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-uv.log",
+      "path": "final/version-uv.log",
+      "sha256": "1e8f5117af90f0ee32b0bbe36a1e6cdca3de2428b4f5b8144f114a7d64ffecbb",
+      "bytes": 55
+    },
+    {
+      "source": "artifacts/security/release-delivery/version-uv.stderr.log",
+      "path": "final/version-uv.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/remediation/release-delivery-console.log",
+      "path": "remediation/release-delivery-console.log",
+      "sha256": "9808d278ed14b65572ade8ccc09e06df47829660036efdf2cf233fd7f47c646b",
+      "bytes": 1301
+    },
+    {
+      "source": "artifacts/security/delivery-documentation-check/summary.json",
+      "path": "documentation-check/summary.json",
+      "sha256": "978e0497681e610b72d935d03c98af05ab418ba940c08342bf5f9974debee2fa",
+      "bytes": 15807
+    },
+    {
+      "source": "artifacts/security/delivery-documentation-check/secrets.json",
+      "path": "documentation-check/secrets.json",
+      "sha256": "85518a792e31373590d125956fa4a36b84147363daec054ee373fc314ffff56d",
+      "bytes": 9615
+    },
+    {
+      "source": "artifacts/security/delivery-documentation-check/triage.json",
+      "path": "documentation-check/triage.json",
+      "sha256": "1ba180d5dab08402b5e9659cf2aa31bbabd78a138373a62e0ef9f73a7fdd4aba",
+      "bytes": 8301
+    },
+    {
+      "source": "artifacts/security/delivery-documentation-check/secrets.log",
+      "path": "documentation-check/secrets.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "artifacts/security/delivery-documentation-check/secrets.stderr.log",
+      "path": "documentation-check/secrets.stderr.log",
+      "sha256": "e61e06a168b82804751d41783e20757fd6a1bd42c779d3cb267a0c2ace148d42",
+      "bytes": 82
+    },
+    {
+      "source": "artifacts/security/delivery-documentation-check/manifest.json",
+      "path": "documentation-check/manifest.json",
+      "sha256": "871d1b2f0c962824a1c95a270f00010725aaa043f031cedd7a244b8fa39995da",
+      "bytes": 694
+    }
+  ],
+  "excluded_from_original_release": [
+    "rehearsals/collector.sqlite3",
+    "rehearsals/deployment-docker/frontend/assets/index-DdSLY-h7.css",
+    "rehearsals/deployment-docker/frontend/assets/index-rrgvkHRg.js",
+    "rehearsals/deployment-docker/frontend/favicon.svg",
+    "rehearsals/deployment-docker/frontend/index.html",
+    "rehearsals/deployment-native/database/sentinelflow-public-demo.sqlite3",
+    "rehearsals/deployment-native/frontend/assets/index-BOHNvb4T.js",
+    "rehearsals/deployment-native/frontend/assets/index-DdSLY-h7.css",
+    "rehearsals/deployment-native/frontend/favicon.svg",
+    "rehearsals/deployment-native/frontend/index.html",
+    "rehearsals/private.sqlite3",
+    "semgrep-rules/owasp-top-ten.yaml",
+    "semgrep-rules/python.yaml",
+    "semgrep-rules/react.yaml",
+    "semgrep-rules/secrets.yaml",
+    "semgrep-rules/typescript.yaml",
+    "source/.dockerignore",
+    "source/.env.example",
+    "source/.env.public-demo.example",
+    "source/.gitattributes",
+    "source/.github/workflows/security.yml",
+    "source/.gitignore",
+    "source/.nvmrc",
+    "source/.python-version",
+    "source/.semgrepignore",
+    "source/DESIGN.md",
+    "source/Dockerfile",
+    "source/Dockerfile.backend",
+    "source/LICENSE",
+    "source/Makefile",
+    "source/PRODUCT.md",
+    "source/README.md",
+    "source/backend/app/__init__.py",
+    "source/backend/app/api/__init__.py",
+    "source/backend/app/api/integrations.py",
+    "source/backend/app/api/routes.py",
+    "source/backend/app/core/__init__.py",
+    "source/backend/app/core/config.py",
+    "source/backend/app/core/errors.py",
+    "source/backend/app/core/evidence.py",
+    "source/backend/app/core/openapi.py",
+    "source/backend/app/core/safe.py",
+    "source/backend/app/core/security.py",
+    "source/backend/app/detection/__init__.py",
+    "source/backend/app/detection/engine.py",
+    "source/backend/app/detection/rules.py",
+    "source/backend/app/detection/sigma.py",
+    "source/backend/app/integrations/__init__.py",
+    "source/backend/app/integrations/auth.py",
+    "source/backend/app/integrations/collector.py",
+    "source/backend/app/integrations/connectors.py",
+    "source/backend/app/integrations/correlation.py",
+    "source/backend/app/integrations/demo.py",
+    "source/backend/app/integrations/destinations.py",
+    "source/backend/app/integrations/management.py",
+    "source/backend/app/integrations/normalize.py",
+    "source/backend/app/integrations/operations.py",
+    "source/backend/app/integrations/outbox.py",
+    "source/backend/app/integrations/payloads.py",
+    "source/backend/app/integrations/profiles.py",
+    "source/backend/app/integrations/queue_worker.py",
+    "source/backend/app/integrations/runtime.py",
+    "source/backend/app/integrations/schemas.py",
+    "source/backend/app/integrations/settings.py",
+    "source/backend/app/integrations/stream.py",
+    "source/backend/app/integrations/transport.py",
+    "source/backend/app/integrations/windows_native.py",
+    "source/backend/app/main.py",
+    "source/backend/app/parsers/__init__.py",
+    "source/backend/app/parsers/normalize.py",
+    "source/backend/app/parsers/pipeline.py",
+    "source/backend/app/parsers/syslog.py",
+    "source/backend/app/parsers/wazuh.py",
+    "source/backend/app/parsers/windows.py",
+    "source/backend/app/parsers/windows_xml.py",
+    "source/backend/app/schemas/__init__.py",
+    "source/backend/app/schemas/api.py",
+    "source/backend/app/schemas/events.py",
+    "source/backend/app/services/__init__.py",
+    "source/backend/app/services/datasets.py",
+    "source/backend/app/services/platform.py",
+    "source/backend/app/services/validation.py",
+    "source/backend/app/static/swagger/LICENSE",
+    "source/backend/app/static/swagger/NOTICE",
+    "source/backend/app/static/swagger/provenance.json",
+    "source/backend/app/static/swagger/swagger-ui-bundle.js",
+    "source/backend/app/static/swagger/swagger-ui-bundle.js.LICENSE.txt",
+    "source/backend/app/static/swagger/swagger-ui.css",
+    "source/backend/app/storage/__init__.py",
+    "source/backend/app/storage/database.py",
+    "source/backend/app/storage/integrations.py",
+    "source/backend/app/storage/migrations.py",
+    "source/backend/app/storage/models.py",
+    "source/backend/tests/conftest.py",
+    "source/backend/tests/detection/test_scenarios.py",
+    "source/backend/tests/integration/test_api.py",
+    "source/backend/tests/integration/test_public_demo.py",
+    "source/backend/tests/integration/test_replay.py",
+    "source/backend/tests/integration/test_security.py",
+    "source/backend/tests/integration/test_sigma.py",
+    "source/backend/tests/integrations/conftest.py",
+    "source/backend/tests/integrations/test_connectors.py",
+    "source/backend/tests/integrations/test_flows.py",
+    "source/backend/tests/integrations/test_integration_security.py",
+    "source/backend/tests/integrations/test_notifications.py",
+    "source/backend/tests/integrations/test_persistence.py",
+    "source/backend/tests/integrations/test_windows.py",
+    "source/backend/tests/regression/test_dependency_baseline.py",
+    "source/backend/tests/regression/test_dev_origins.py",
+    "source/backend/tests/regression/test_engine.py",
+    "source/backend/tests/regression/test_malformed_boundaries.py",
+    "source/backend/tests/security/test_auth_matrix.py",
+    "source/backend/tests/security/test_bounded_fuzz.py",
+    "source/backend/tests/security/test_collector_corruption.py",
+    "source/backend/tests/security/test_input_boundaries.py",
+    "source/backend/tests/security/test_release_gate.py",
+    "source/backend/tests/security/test_resource_and_migration.py",
+    "source/backend/tests/security/test_transport_boundary.py",
+    "source/backend/tests/security/test_webhook_security.py",
+    "source/backend/tests/security/test_xml_boundary.py",
+    "source/backend/tests/unit/test_deployment_config.py",
+    "source/backend/tests/unit/test_parsers.py",
+    "source/backend/tests/unit/test_receipts.py",
+    "source/backend/tests/unit/test_rules.py",
+    "source/backend/tests/unit/test_safe.py",
+    "source/backend/tests/unit/test_validation_harness.py",
+    "source/collector/windows/README.md",
+    "source/collector/windows/collect.py",
+    "source/docker-compose.yml",
+    "source/docs/api.md",
+    "source/docs/architecture.md",
+    "source/docs/data-model.md",
+    "source/docs/data-provenance.md",
+    "source/docs/demo.md",
+    "source/docs/dependency-maintenance.md",
+    "source/docs/deployment-checklist.md",
+    "source/docs/deployment-readiness.md",
+    "source/docs/deployment.md",
+    "source/docs/detection-engine.md",
+    "source/docs/fresh-clone.md",
+    "source/docs/implementation-status.md",
+    "source/docs/integrations-implementation-report.md",
+    "source/docs/integrations.md",
+    "source/docs/limitations.md",
+    "source/docs/results/README.md",
+    "source/docs/results/backend-junit.xml",
+    "source/docs/results/benchmark.json",
+    "source/docs/results/browser-results.json",
+    "source/docs/results/coverage.json",
+    "source/docs/results/dependency-audit-after.json",
+    "source/docs/results/dependency-audit-before.json",
+    "source/docs/results/deployment/README.md",
+    "source/docs/results/deployment/artifact-integrity.json",
+    "source/docs/results/deployment/backend-junit.xml",
+    "source/docs/results/deployment/baseline-benchmark.json",
+    "source/docs/results/deployment/baseline-validation.json",
+    "source/docs/results/deployment/benchmark.json",
+    "source/docs/results/deployment/clone-benchmark.json",
+    "source/docs/results/deployment/clone-docker-browser.json",
+    "source/docs/results/deployment/clone-docker.json",
+    "source/docs/results/deployment/clone-install.log",
+    "source/docs/results/deployment/clone-native-browser.json",
+    "source/docs/results/deployment/clone-native.json",
+    "source/docs/results/deployment/clone-private-browser.json",
+    "source/docs/results/deployment/clone-private-console.log",
+    "source/docs/results/deployment/clone-validation.json",
+    "source/docs/results/deployment/clone-validation.log",
+    "source/docs/results/deployment/detection-validation.json",
+    "source/docs/results/deployment/detection-validation.txt",
+    "source/docs/results/deployment/docker-browser.json",
+    "source/docs/results/deployment/docker.json",
+    "source/docs/results/deployment/frontend-tests.json",
+    "source/docs/results/deployment/hosted-builds.json",
+    "source/docs/results/deployment/legacy-docker.json",
+    "source/docs/results/deployment/linux-lock-after.log",
+    "source/docs/results/deployment/linux-lock-before.log",
+    "source/docs/results/deployment/native-browser.json",
+    "source/docs/results/deployment/native.json",
+    "source/docs/results/deployment/npm-audit.json",
+    "source/docs/results/deployment/preserved-media.json",
+    "source/docs/results/deployment/provider-schemas.json",
+    "source/docs/results/deployment/python-pins-after.json",
+    "source/docs/results/deployment/python-pins-before.json",
+    "source/docs/results/deployment/secret-review.json",
+    "source/docs/results/deployment/sigma-validation.json",
+    "source/docs/results/deployment/source-overlay.json",
+    "source/docs/results/deployment/validation.json",
+    "source/docs/results/deployment/validation.log",
+    "source/docs/results/detection-validation.json",
+    "source/docs/results/detection-validation.txt",
+    "source/docs/results/fresh-clone-browser-results.json",
+    "source/docs/results/fresh-clone-install.log",
+    "source/docs/results/fresh-clone-validation.json",
+    "source/docs/results/fresh-clone-validation.log",
+    "source/docs/results/fresh-clone.json",
+    "source/docs/results/frontend-tests.json",
+    "source/docs/results/integrations/README.md",
+    "source/docs/results/integrations/backend-junit.xml",
+    "source/docs/results/integrations/baseline-validation.json",
+    "source/docs/results/integrations/benchmark.json",
+    "source/docs/results/integrations/collector-http.json",
+    "source/docs/results/integrations/core-browser-console.log",
+    "source/docs/results/integrations/core-browser.json",
+    "source/docs/results/integrations/coverage.json",
+    "source/docs/results/integrations/detection-validation.json",
+    "source/docs/results/integrations/detection-validation.txt",
+    "source/docs/results/integrations/docker-deployment-commands.log",
+    "source/docs/results/integrations/docker-deployment.json",
+    "source/docs/results/integrations/docker-private-integrations.json",
+    "source/docs/results/integrations/frontend-tests.json",
+    "source/docs/results/integrations/integration-alert.png",
+    "source/docs/results/integrations/integration-browser-console.log",
+    "source/docs/results/integrations/integration-browser.json",
+    "source/docs/results/integrations/integrations-desktop.png",
+    "source/docs/results/integrations/integrations-mobile.png",
+    "source/docs/results/integrations/integrations-validation.json",
+    "source/docs/results/integrations/manifest.json",
+    "source/docs/results/integrations/native-deployment-commands.log",
+    "source/docs/results/integrations/native-deployment.json",
+    "source/docs/results/integrations/notifications-desktop.png",
+    "source/docs/results/integrations/public-docker-browser.json",
+    "source/docs/results/integrations/public-native-browser.json",
+    "source/docs/results/integrations/sigma-validation.json",
+    "source/docs/results/integrations/validation.json",
+    "source/docs/results/integrations/validation.log",
+    "source/docs/results/recording-execution.log",
+    "source/docs/results/security/README.md",
+    "source/docs/results/security/baseline/bandit.json",
+    "source/docs/results/security/baseline/bandit.log",
+    "source/docs/results/security/baseline/container-sbom.cdx.json",
+    "source/docs/results/security/baseline/container-trivy.json",
+    "source/docs/results/security/baseline/container-trivy.log",
+    "source/docs/results/security/baseline/dependency-inventory.json",
+    "source/docs/results/security/baseline/dependency-triage-original.json",
+    "source/docs/results/security/baseline/image-history.jsonl",
+    "source/docs/results/security/baseline/image-inspect.json",
+    "source/docs/results/security/baseline/image-python-packages.json",
+    "source/docs/results/security/baseline/node-audit-all.json",
+    "source/docs/results/security/baseline/os-packages.tsv",
+    "source/docs/results/security/baseline/osv.json",
+    "source/docs/results/security/baseline/osv.log",
+    "source/docs/results/security/baseline/python-installed-audit.json",
+    "source/docs/results/security/baseline/python-installed-audit.log",
+    "source/docs/results/security/baseline/python-lock-audit.json",
+    "source/docs/results/security/baseline/python-lock-audit.log",
+    "source/docs/results/security/baseline/secrets-history.json",
+    "source/docs/results/security/baseline/secrets-history.log",
+    "source/docs/results/security/baseline/secrets-working-tree.json",
+    "source/docs/results/security/baseline/secrets-working-tree.log",
+    "source/docs/results/security/baseline/semgrep.json",
+    "source/docs/results/security/baseline/semgrep.log",
+    "source/docs/results/security/baseline/source-scope.json",
+    "source/docs/results/security/baseline/swagger-retire.json",
+    "source/docs/results/security/baseline/swagger-retire.log",
+    "source/docs/results/security/baseline/xml-before.log",
+    "source/docs/results/security/curation.json",
+    "source/docs/results/security/dependency-remediation.json",
+    "source/docs/results/security/earlier-gates/release-candidate-1.json",
+    "source/docs/results/security/earlier-gates/release-candidate-2.json",
+    "source/docs/results/security/earlier-gates/release-candidate-3.json",
+    "source/docs/results/security/earlier-gates/release-candidate-4.json",
+    "source/docs/results/security/earlier-gates/release-candidate-5.json",
+    "source/docs/results/security/final/advisory-database.json",
+    "source/docs/results/security/final/backend-junit.xml",
+    "source/docs/results/security/final/bandit.json",
+    "source/docs/results/security/final/bandit.log",
+    "source/docs/results/security/final/bandit.stderr.log",
+    "source/docs/results/security/final/benchmark.json",
+    "source/docs/results/security/final/build-application.log",
+    "source/docs/results/security/final/build-application.stderr.log",
+    "source/docs/results/security/final/build-backend.log",
+    "source/docs/results/security/final/build-backend.stderr.log",
+    "source/docs/results/security/final/container-application.cdx.json",
+    "source/docs/results/security/final/container-application.json",
+    "source/docs/results/security/final/container-backend.cdx.json",
+    "source/docs/results/security/final/container-backend.json",
+    "source/docs/results/security/final/coverage.json",
+    "source/docs/results/security/final/dependency-inventory.json",
+    "source/docs/results/security/final/detection-validation.json",
+    "source/docs/results/security/final/detection-validation.txt",
+    "source/docs/results/security/final/docker-endpoint.json",
+    "source/docs/results/security/final/docker-endpoint.stderr.log",
+    "source/docs/results/security/final/filesystem-trivy.json",
+    "source/docs/results/security/final/filesystem-trivy.log",
+    "source/docs/results/security/final/filesystem-trivy.stderr.log",
+    "source/docs/results/security/final/frontend-tests.json",
+    "source/docs/results/security/final/full-validation.log",
+    "source/docs/results/security/final/full-validation.stderr.log",
+    "source/docs/results/security/final/image-application.json",
+    "source/docs/results/security/final/image-application.stderr.log",
+    "source/docs/results/security/final/image-backend.json",
+    "source/docs/results/security/final/image-backend.stderr.log",
+    "source/docs/results/security/final/installed-sbom-trivy.json",
+    "source/docs/results/security/final/installed-sbom-trivy.log",
+    "source/docs/results/security/final/installed-sbom-trivy.stderr.log",
+    "source/docs/results/security/final/integrations-validation.json",
+    "source/docs/results/security/final/manifest.json",
+    "source/docs/results/security/final/node-all.json",
+    "source/docs/results/security/final/node-all.stderr.log",
+    "source/docs/results/security/final/node-production.json",
+    "source/docs/results/security/final/node-production.stderr.log",
+    "source/docs/results/security/final/node-sbom.json",
+    "source/docs/results/security/final/node-sbom.stderr.log",
+    "source/docs/results/security/final/node-version.log",
+    "source/docs/results/security/final/node-version.stderr.log",
+    "source/docs/results/security/final/npm-version.log",
+    "source/docs/results/security/final/npm-version.stderr.log",
+    "source/docs/results/security/final/osv.json",
+    "source/docs/results/security/final/osv.log",
+    "source/docs/results/security/final/osv.stderr.log",
+    "source/docs/results/security/final/pip-check.log",
+    "source/docs/results/security/final/pip-check.stderr.log",
+    "source/docs/results/security/final/python-installed.json",
+    "source/docs/results/security/final/python-installed.log",
+    "source/docs/results/security/final/python-installed.stderr.log",
+    "source/docs/results/security/final/python-lock.json",
+    "source/docs/results/security/final/python-lock.log",
+    "source/docs/results/security/final/python-lock.stderr.log",
+    "source/docs/results/security/final/python-runtime.json",
+    "source/docs/results/security/final/python-runtime.log",
+    "source/docs/results/security/final/python-runtime.stderr.log",
+    "source/docs/results/security/final/python-sbom.cdx.json",
+    "source/docs/results/security/final/python-sbom.log",
+    "source/docs/results/security/final/python-sbom.stderr.log",
+    "source/docs/results/security/final/python-scanners.json",
+    "source/docs/results/security/final/python-scanners.log",
+    "source/docs/results/security/final/python-scanners.stderr.log",
+    "source/docs/results/security/final/rehearsals/analyst-browser.json",
+    "source/docs/results/security/final/rehearsals/analyst-browser.log",
+    "source/docs/results/security/final/rehearsals/collector-outage.log",
+    "source/docs/results/security/final/rehearsals/collector-recovery.log",
+    "source/docs/results/security/final/rehearsals/collector-repeat.log",
+    "source/docs/results/security/final/rehearsals/deployment-docker/alert-evidence.png",
+    "source/docs/results/security/final/rehearsals/deployment-docker/backend.log",
+    "source/docs/results/security/final/rehearsals/deployment-docker/browser.json",
+    "source/docs/results/security/final/rehearsals/deployment-docker/commands.log",
+    "source/docs/results/security/final/rehearsals/deployment-docker/desktop-dashboard.png",
+    "source/docs/results/security/final/rehearsals/deployment-docker/frontend.log",
+    "source/docs/results/security/final/rehearsals/deployment-docker/mobile-dashboard.png",
+    "source/docs/results/security/final/rehearsals/deployment-docker/report.json",
+    "source/docs/results/security/final/rehearsals/deployment-docker.log",
+    "source/docs/results/security/final/rehearsals/deployment-native/alert-evidence.png",
+    "source/docs/results/security/final/rehearsals/deployment-native/backend.log",
+    "source/docs/results/security/final/rehearsals/deployment-native/browser.json",
+    "source/docs/results/security/final/rehearsals/deployment-native/commands.log",
+    "source/docs/results/security/final/rehearsals/deployment-native/desktop-dashboard.png",
+    "source/docs/results/security/final/rehearsals/deployment-native/frontend.log",
+    "source/docs/results/security/final/rehearsals/deployment-native/mobile-dashboard.png",
+    "source/docs/results/security/final/rehearsals/deployment-native/report.json",
+    "source/docs/results/security/final/rehearsals/deployment-native.log",
+    "source/docs/results/security/final/rehearsals/integration-browser/browser-results.json",
+    "source/docs/results/security/final/rehearsals/integration-browser/integration-alert.png",
+    "source/docs/results/security/final/rehearsals/integration-browser/integrations-desktop.png",
+    "source/docs/results/security/final/rehearsals/integration-browser/integrations-mobile.png",
+    "source/docs/results/security/final/rehearsals/integration-browser/notifications-desktop.png",
+    "source/docs/results/security/final/rehearsals/integration-browser.log",
+    "source/docs/results/security/final/rehearsals/private-image-cleanup.log",
+    "source/docs/results/security/final/rehearsals/private-image-probe.log",
+    "source/docs/results/security/final/rehearsals/private-image-ready.log",
+    "source/docs/results/security/final/rehearsals/private-image-start.log",
+    "source/docs/results/security/final/rehearsals/private-server.log",
+    "source/docs/results/security/final/rehearsals/private-volume-cleanup.log",
+    "source/docs/results/security/final/rehearsals/private-volume.log",
+    "source/docs/results/security/final/rehearsals/rehearsals.json",
+    "source/docs/results/security/final/rehearsals/security-browser/browser.json",
+    "source/docs/results/security/final/rehearsals/security-browser/credential-expiry.png",
+    "source/docs/results/security/final/rehearsals/security-browser/literal-evidence.png",
+    "source/docs/results/security/final/rehearsals/security-browser.log",
+    "source/docs/results/security/final/rehearsals.log",
+    "source/docs/results/security/final/rehearsals.stderr.log",
+    "source/docs/results/security/final/retire-advisories.json",
+    "source/docs/results/security/final/retire-database.json",
+    "source/docs/results/security/final/retire-frontend.json",
+    "source/docs/results/security/final/retire-frontend.log",
+    "source/docs/results/security/final/retire-frontend.stderr.log",
+    "source/docs/results/security/final/retire-swagger.json",
+    "source/docs/results/security/final/retire-swagger.log",
+    "source/docs/results/security/final/retire-swagger.stderr.log",
+    "source/docs/results/security/final/sast-triage.json",
+    "source/docs/results/security/final/sbom-application.log",
+    "source/docs/results/security/final/sbom-application.stderr.log",
+    "source/docs/results/security/final/sbom-backend.log",
+    "source/docs/results/security/final/sbom-backend.stderr.log",
+    "source/docs/results/security/final/sbom.cdx.json",
+    "source/docs/results/security/final/scan-application.log",
+    "source/docs/results/security/final/scan-application.stderr.log",
+    "source/docs/results/security/final/scan-backend.log",
+    "source/docs/results/security/final/scan-backend.stderr.log",
+    "source/docs/results/security/final/secrets-history.json",
+    "source/docs/results/security/final/secrets-history.log",
+    "source/docs/results/security/final/secrets-history.stderr.log",
+    "source/docs/results/security/final/secrets-triage.json",
+    "source/docs/results/security/final/secrets-working-tree.json",
+    "source/docs/results/security/final/secrets-working-tree.log",
+    "source/docs/results/security/final/secrets-working-tree.stderr.log",
+    "source/docs/results/security/final/semgrep.json",
+    "source/docs/results/security/final/semgrep.log",
+    "source/docs/results/security/final/semgrep.stderr.log",
+    "source/docs/results/security/final/sigma-validation.json",
+    "source/docs/results/security/final/source-scope.json",
+    "source/docs/results/security/final/summary.json",
+    "source/docs/results/security/final/swagger-integrity.log",
+    "source/docs/results/security/final/swagger-integrity.stderr.log",
+    "source/docs/results/security/final/tool-versions.json",
+    "source/docs/results/security/final/validation.json",
+    "source/docs/results/security/final/validation.log",
+    "source/docs/results/security/final/version-bandit.log",
+    "source/docs/results/security/final/version-bandit.stderr.log",
+    "source/docs/results/security/final/version-gitleaks.log",
+    "source/docs/results/security/final/version-gitleaks.stderr.log",
+    "source/docs/results/security/final/version-osv-scanner.log",
+    "source/docs/results/security/final/version-osv-scanner.stderr.log",
+    "source/docs/results/security/final/version-pip-audit.log",
+    "source/docs/results/security/final/version-pip-audit.stderr.log",
+    "source/docs/results/security/final/version-retire.log",
+    "source/docs/results/security/final/version-retire.stderr.log",
+    "source/docs/results/security/final/version-semgrep.log",
+    "source/docs/results/security/final/version-semgrep.stderr.log",
+    "source/docs/results/security/final/version-syft.log",
+    "source/docs/results/security/final/version-syft.stderr.log",
+    "source/docs/results/security/final/version-trivy.log",
+    "source/docs/results/security/final/version-trivy.stderr.log",
+    "source/docs/results/security/final/version-uv.log",
+    "source/docs/results/security/final/version-uv.stderr.log",
+    "source/docs/results/security/preservation.json",
+    "source/docs/results/security/public-key-provenance.json",
+    "source/docs/results/security/remediation/artifact-permissions-after.log",
+    "source/docs/results/security/remediation/artifact-permissions-before.log",
+    "source/docs/results/security/remediation/boundaries-before.log",
+    "source/docs/results/security/remediation/hmac-before.log",
+    "source/docs/results/security/remediation/private-probe-corrected.log",
+    "source/docs/results/security/remediation/release-final-console.log",
+    "source/docs/results/security/remediation/resource-before.log",
+    "source/docs/results/sigma-validation.json",
+    "source/docs/results/validation.json",
+    "source/docs/results/validation.log",
+    "source/docs/security-assessment.md",
+    "source/docs/security.md",
+    "source/docs/sigma.md",
+    "source/docs/testing.md",
+    "source/docs/third-party-notices.md",
+    "source/frontend/.gitignore",
+    "source/frontend/.nvmrc",
+    "source/frontend/.prettierignore",
+    "source/frontend/.prettierrc.json",
+    "source/frontend/DESIGN.md",
+    "source/frontend/README.md",
+    "source/frontend/eslint.config.js",
+    "source/frontend/index.html",
+    "source/frontend/package-lock.json",
+    "source/frontend/package.json",
+    "source/frontend/public/favicon.svg",
+    "source/frontend/src/App.tsx",
+    "source/frontend/src/components/ActivityChart.tsx",
+    "source/frontend/src/components/AlertTable.tsx",
+    "source/frontend/src/components/ConnectorForm.tsx",
+    "source/frontend/src/components/CredentialSettings.tsx",
+    "source/frontend/src/components/DatasetFields.tsx",
+    "source/frontend/src/components/DeliveryTable.tsx",
+    "source/frontend/src/components/DestinationForm.tsx",
+    "source/frontend/src/components/EventEvidence.tsx",
+    "source/frontend/src/components/FileTree.tsx",
+    "source/frontend/src/components/IngestForm.tsx",
+    "source/frontend/src/components/NotificationPolicies.tsx",
+    "source/frontend/src/components/ProjectReports.tsx",
+    "source/frontend/src/components/Provenance.tsx",
+    "source/frontend/src/components/RuleDefinition.tsx",
+    "source/frontend/src/components/Shell.tsx",
+    "source/frontend/src/components/ValidationReport.tsx",
+    "source/frontend/src/components/WorkspaceProvider.tsx",
+    "source/frontend/src/components/ui.tsx",
+    "source/frontend/src/hooks/useListFilters.ts",
+    "source/frontend/src/hooks/useResource.ts",
+    "source/frontend/src/hooks/workspace.ts",
+    "source/frontend/src/main.tsx",
+    "source/frontend/src/pages/AlertDetailPage.tsx",
+    "source/frontend/src/pages/AlertsPage.tsx",
+    "source/frontend/src/pages/DashboardPage.tsx",
+    "source/frontend/src/pages/EventsPage.tsx",
+    "source/frontend/src/pages/EvidencePage.tsx",
+    "source/frontend/src/pages/IntegrationsPage.tsx",
+    "source/frontend/src/pages/NotificationsPage.tsx",
+    "source/frontend/src/pages/ReplayPage.tsx",
+    "source/frontend/src/pages/RulesPage.tsx",
+    "source/frontend/src/pages/SigmaPage.tsx",
+    "source/frontend/src/pages/TestingPage.tsx",
+    "source/frontend/src/services/api.ts",
+    "source/frontend/src/services/apiBase.ts",
+    "source/frontend/src/services/format.ts",
+    "source/frontend/src/services/integrations.ts",
+    "source/frontend/src/styles-integrations.css",
+    "source/frontend/src/styles-responsive.css",
+    "source/frontend/src/styles.css",
+    "source/frontend/src/types/index.ts",
+    "source/frontend/src/types/integrations.ts",
+    "source/frontend/tests/alerts-rules.test.tsx",
+    "source/frontend/tests/api.test.ts",
+    "source/frontend/tests/deployment.test.tsx",
+    "source/frontend/tests/events.test.tsx",
+    "source/frontend/tests/evidence.test.tsx",
+    "source/frontend/tests/fixtures.ts",
+    "source/frontend/tests/helpers.tsx",
+    "source/frontend/tests/input-limits.test.tsx",
+    "source/frontend/tests/integrations.test.tsx",
+    "source/frontend/tests/overview.test.tsx",
+    "source/frontend/tests/project-fixtures.ts",
+    "source/frontend/tests/replay.test.tsx",
+    "source/frontend/tests/setup.ts",
+    "source/frontend/tests/sigma.test.tsx",
+    "source/frontend/tests/validation.test.tsx",
+    "source/frontend/tsconfig.json",
+    "source/frontend/vercel.json",
+    "source/frontend/vite.config.ts",
+    "source/pyproject.toml",
+    "source/recordings/media-inspection.txt",
+    "source/recordings/recording.json",
+    "source/recordings/sentinelflow-final-demo.mp4",
+    "source/render.yaml",
+    "source/requirements-runtime.lock",
+    "source/requirements.lock",
+    "source/rules/AUTH-001.yml",
+    "source/rules/AUTH-002.yml",
+    "source/rules/DNS-001.yml",
+    "source/rules/IAM-001.yml",
+    "source/rules/NET-001.yml",
+    "source/rules/PROC-001.yml",
+    "source/rules/PROC-002.yml",
+    "source/screenshots/alert-details.png",
+    "source/screenshots/dashboard.png",
+    "source/screenshots/detection-rules.png",
+    "source/screenshots/detection-validation.png",
+    "source/screenshots/events.png",
+    "source/screenshots/mobile-dashboard.png",
+    "source/screenshots/replay.png",
+    "source/screenshots/sigma-validation.png",
+    "source/scripts/benchmark_detection.py",
+    "source/scripts/browser_deployment.mjs",
+    "source/scripts/browser_integrations.mjs",
+    "source/scripts/browser_security.mjs",
+    "source/scripts/browser_verify.mjs",
+    "source/scripts/browser_workflows.mjs",
+    "source/scripts/container_security_probe.py",
+    "source/scripts/demo_reset.py",
+    "source/scripts/dev.py",
+    "source/scripts/generate_integration_data.py",
+    "source/scripts/generate_security_data.py",
+    "source/scripts/generate_test_data.py",
+    "source/scripts/manage.py",
+    "source/scripts/prepare_public_sample.py",
+    "source/scripts/prepare_sigma.py",
+    "source/scripts/record_demo.mjs",
+    "source/scripts/replay_events.py",
+    "source/scripts/security_rehearsal.py",
+    "source/scripts/security_release.py",
+    "source/scripts/security_scan.py",
+    "source/scripts/security_tools.py",
+    "source/scripts/serve.py",
+    "source/scripts/validate.py",
+    "source/scripts/validate_detections.py",
+    "source/scripts/validate_integrations.py",
+    "source/scripts/validate_sigma.py",
+    "source/scripts/vendor_swagger.py",
+    "source/scripts/verify_deployment.py",
+    "source/security/recording-osx-arm64.lock",
+    "source/security/recording-runtime.yml",
+    "source/security/requirements.in",
+    "source/security/requirements.lock",
+    "source/security/sast-reviews.json",
+    "source/security/tools.json",
+    "source/test-data/README.md",
+    "source/test-data/authentication/account_lockout.jsonl",
+    "source/test-data/authentication/below_threshold.jsonl",
+    "source/test-data/authentication/brute_force.jsonl",
+    "source/test-data/authentication/distributed_failures.jsonl",
+    "source/test-data/authentication/duplicate_events.jsonl",
+    "source/test-data/authentication/group_separation.jsonl",
+    "source/test-data/authentication/lifecycle.jsonl",
+    "source/test-data/authentication/missing_source.jsonl",
+    "source/test-data/authentication/normal_login.jsonl",
+    "source/test-data/authentication/password_spray.jsonl",
+    "source/test-data/authentication/shuffled_events.jsonl",
+    "source/test-data/authentication/suppression_boundary.jsonl",
+    "source/test-data/authentication/window_boundary.jsonl",
+    "source/test-data/authentication/window_outside.jsonl",
+    "source/test-data/benign/administrative_powershell.jsonl",
+    "source/test-data/benign/baseline_1000.jsonl",
+    "source/test-data/benign/dns_below_threshold.jsonl",
+    "source/test-data/benign/monitoring_connections.jsonl",
+    "source/test-data/benign/normal_authentication.jsonl",
+    "source/test-data/benign/normal_connections.jsonl",
+    "source/test-data/benign/normal_dns.jsonl",
+    "source/test-data/benign/normal_group_modification.jsonl",
+    "source/test-data/benign/normal_lockouts.jsonl",
+    "source/test-data/benign/normal_processes.jsonl",
+    "source/test-data/benign/private_connections.jsonl",
+    "source/test-data/benign/privileged_group_maintenance.jsonl",
+    "source/test-data/dns/high_entropy.jsonl",
+    "source/test-data/dns/high_frequency.jsonl",
+    "source/test-data/dns/long_labels.jsonl",
+    "source/test-data/dns/repeated_subdomains.jsonl",
+    "source/test-data/expected-results/benchmark.json",
+    "source/test-data/expected-results/parser-contracts.json",
+    "source/test-data/expected-results/scenarios.json",
+    "source/test-data/integrations/README.md",
+    "source/test-data/integrations/microsoft-windows.json",
+    "source/test-data/integrations/notification.schema.json",
+    "source/test-data/manifest.json",
+    "source/test-data/mixed/benchmark_5600.jsonl",
+    "source/test-data/mixed/incident_timeline.jsonl",
+    "source/test-data/network/below_threshold.jsonl",
+    "source/test-data/network/unusual_ports.jsonl",
+    "source/test-data/parsers/auth.log",
+    "source/test-data/parsers/events.csv",
+    "source/test-data/parsers/normalized.json",
+    "source/test-data/parsers/windows_events.json",
+    "source/test-data/powershell/encoded_command.jsonl",
+    "source/test-data/powershell/legitimate_installer.jsonl",
+    "source/test-data/powershell/suspicious_powershell.jsonl",
+    "source/test-data/privilege-escalation/maintenance_wrong_host.jsonl",
+    "source/test-data/privilege-escalation/privileged_account.jsonl",
+    "source/test-data/privilege-escalation/privileged_group.jsonl",
+    "source/test-data/privilege-escalation/service_account_activity.jsonl",
+    "source/test-data/process/suspicious_execution.jsonl",
+    "source/test-data/public/LICENSE.OTRF",
+    "source/test-data/public/manifest.json",
+    "source/test-data/public/otrf_adapted.json",
+    "source/test-data/public/provenance.json",
+    "source/test-data/security/README.md",
+    "source/test-data/security/api-fuzz.json",
+    "source/test-data/security/entity.xml",
+    "source/test-data/security/nonfinite.yaml",
+    "source/test-data/security/overflow_number.json",
+    "source/test-data/security/sigma_dates.yml",
+    "source/test-data/sigma/LICENSE.Detection.Rules.md",
+    "source/test-data/sigma/benign_azure.jsonl",
+    "source/test-data/sigma/benign_encoding.jsonl",
+    "source/test-data/sigma/download_iex.jsonl",
+    "source/test-data/sigma/encoded.jsonl",
+    "source/test-data/sigma/provenance.json",
+    "source/test-data/sigma/rules/proc_creation_win_powershell_download_iex.yml",
+    "source/test-data/sigma/rules/proc_creation_win_powershell_encode.yml"
+  ],
+  "exclusion_reason": "No source/environment snapshots, SQLite databases, built asset copies, scanner installations or third-party Semgrep rule packs are distributed in this curated package. Original manifest retains their hashes; local originals remain under artifacts/security. No raw report is edited.",
+  "previous_final_receipt": "earlier-gates/release-final.json",
+  "post_documentation_check": "documentation-check/summary.json"
+}

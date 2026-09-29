@@ -1,0 +1,146 @@
+FFFFF..FF                                                                [100%]
+=================================== FAILURES ===================================
+______ test_many_small_request_frames_are_coalesced_under_the_byte_limit _______
+backend/tests/security/test_resource_and_migration.py:35: in test_many_small_request_frames_are_coalesced_under_the_byte_limit
+    asyncio.run(exercise())
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/runners.py:196: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/runners.py:119: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/base_events.py:726: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/tests/security/test_resource_and_migration.py:33: in exercise
+    assert received == [{"type": "http.request", "body": b"x" * 2000, "more_body": False}]
+E   AssertionError: assert [{'type': 'ht..._body': True}] == [{'type': 'ht...body': False}]
+E     
+E     At index 0 diff: {'type': 'http.request', 'body': b'x', 'more_body': True} != {'type': 'http.request', 'body': b'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...
+E     
+E     ...Full output truncated (2 lines hidden), use '-vv' to show
+_______________ test_stalled_request_body_has_a_finite_deadline ________________
+backend/tests/security/test_resource_and_migration.py:59: in test_stalled_request_body_has_a_finite_deadline
+    asyncio.run(exercise())
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/runners.py:196: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/runners.py:119: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/base_events.py:726: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/tests/security/test_resource_and_migration.py:52: in exercise
+    middleware = BodyLimitMiddleware(app, max_bytes=2000, timeout_seconds=0.02)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: BodyLimitMiddleware.__init__() got an unexpected keyword argument 'timeout_seconds'
+________ test_invalid_content_length_fails_before_consuming_a_body[-1] _________
+backend/tests/security/test_resource_and_migration.py:83: in test_invalid_content_length_fails_before_consuming_a_body
+    asyncio.run(exercise())
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/runners.py:196: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/runners.py:119: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/base_events.py:726: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/tests/security/test_resource_and_migration.py:76: in exercise
+    await BodyLimitMiddleware(app, max_bytes=2000)(
+backend/app/core/security.py:114: in __call__
+    message = await receive()
+              ^^^^^^^^^^^^^^^
+backend/tests/security/test_resource_and_migration.py:71: in receive
+    pytest.fail("Invalid Content-Length should be rejected before consuming input")
+E   Failed: Invalid Content-Length should be rejected before consuming input
+________ test_invalid_content_length_fails_before_consuming_a_body[+1] _________
+backend/tests/security/test_resource_and_migration.py:83: in test_invalid_content_length_fails_before_consuming_a_body
+    asyncio.run(exercise())
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/runners.py:196: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/runners.py:119: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/base_events.py:726: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/tests/security/test_resource_and_migration.py:76: in exercise
+    await BodyLimitMiddleware(app, max_bytes=2000)(
+backend/app/core/security.py:114: in __call__
+    message = await receive()
+              ^^^^^^^^^^^^^^^
+backend/tests/security/test_resource_and_migration.py:71: in receive
+    pytest.fail("Invalid Content-Length should be rejected before consuming input")
+E   Failed: Invalid Content-Length should be rejected before consuming input
+________ test_invalid_content_length_fails_before_consuming_a_body[ 1] _________
+backend/tests/security/test_resource_and_migration.py:83: in test_invalid_content_length_fails_before_consuming_a_body
+    asyncio.run(exercise())
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/runners.py:196: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/runners.py:119: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.runtime/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/asyncio/base_events.py:726: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/tests/security/test_resource_and_migration.py:76: in exercise
+    await BodyLimitMiddleware(app, max_bytes=2000)(
+backend/app/core/security.py:114: in __call__
+    message = await receive()
+              ^^^^^^^^^^^^^^^
+backend/tests/security/test_resource_and_migration.py:71: in receive
+    pytest.fail("Invalid Content-Length should be rejected before consuming input")
+E   Failed: Invalid Content-Length should be rejected before consuming input
+____ test_incomplete_existing_table_is_rejected_before_any_schema_mutation _____
+backend/tests/security/test_resource_and_migration.py:93: in test_incomplete_existing_table_is_rejected_before_any_schema_mutation
+    with pytest.raises(DomainError) as failure:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE DomainError
+____ test_missing_additive_tables_are_restored_without_changing_legacy_rows ____
+.runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1967: in _exec_single_context
+    self.dialect.do_execute(
+.runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py:951: in do_execute
+    cursor.execute(statement, parameters)
+E   sqlite3.OperationalError: no such table: integration_checkpoints
+
+The above exception was the direct cause of the following exception:
+backend/tests/security/test_resource_and_migration.py:109: in test_missing_additive_tables_are_restored_without_changing_legacy_rows
+    connection.execute(text("DROP TABLE integration_checkpoints"))
+.runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1419: in execute
+    return meth(
+.runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:526: in _execute_on_connection
+    return connection._execute_clauseelement(
+.runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1641: in _execute_clauseelement
+    ret = self._execute_context(
+.runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1846: in _execute_context
+    return self._exec_single_context(
+.runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1986: in _exec_single_context
+    self._handle_dbapi_exception(
+.runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:2355: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+.runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1967: in _exec_single_context
+    self.dialect.do_execute(
+.runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py:951: in do_execute
+    cursor.execute(statement, parameters)
+E   sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: integration_checkpoints
+E   [SQL: DROP TABLE integration_checkpoints]
+E   (Background on this error at: https://sqlalche.me/e/20/e3q8)
+=============================== warnings summary ===============================
+.runtime/venv/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/security/test_resource_and_migration.py::test_many_small_request_frames_are_coalesced_under_the_byte_limit
+FAILED backend/tests/security/test_resource_and_migration.py::test_stalled_request_body_has_a_finite_deadline
+FAILED backend/tests/security/test_resource_and_migration.py::test_invalid_content_length_fails_before_consuming_a_body[-1]
+FAILED backend/tests/security/test_resource_and_migration.py::test_invalid_content_length_fails_before_consuming_a_body[+1]
+FAILED backend/tests/security/test_resource_and_migration.py::test_invalid_content_length_fails_before_consuming_a_body[ 1]
+FAILED backend/tests/security/test_resource_and_migration.py::test_incomplete_existing_table_is_rejected_before_any_schema_mutation
+FAILED backend/tests/security/test_resource_and_migration.py::test_missing_additive_tables_are_restored_without_changing_legacy_rows
+7 failed, 2 passed, 1 warning in 0.26s

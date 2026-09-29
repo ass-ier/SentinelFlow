@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "created_at": "2026-09-28T13:38:01.360421+00:00",
+  "source_fingerprint": "9db953ffd9fa343a3219d36051910f93151d32682381440091614d72823f14a2",
+  "scenarios": [
+    {
+      "provider": "microsoft_sentinel",
+      "normalized_events": 13,
+      "expected_alerts": {
+        "AUTH-001": 1,
+        "IAM-001": 1
+      },
+      "observed_alerts": {
+        "IAM-001": 1,
+        "AUTH-001": 1
+      },
+      "delivered_to_mock": 2,
+      "duplicate_deliveries": 0,
+      "workflow_seconds": 0.059693,
+      "workflow_events_per_second": 217.78,
+      "live_tested": false
+    },
+    {
+      "provider": "microsoft_graph",
+      "normalized_events": 13,
+      "expected_alerts": {
+        "AUTH-001": 1,
+        "IAM-001": 1
+      },
+      "observed_alerts": {
+        "IAM-001": 1,
+        "AUTH-001": 1
+      },
+      "delivered_to_mock": 2,
+      "duplicate_deliveries": 0,
+      "workflow_seconds": 0.039438,
+      "workflow_events_per_second": 329.63,
+      "live_tested": false
+    },
+    {
+      "provider": "windows_wef",
+      "normalized_events": 36,
+      "expected_alerts": {
+        "AUTH-001": 1,
+        "AUTH-002": 1,
+        "PROC-001": 1,
+        "PROC-002": 1,
+        "IAM-001": 1,
+        "DNS-001": 1,
+        "NET-001": 1
+      },
+      "observed_alerts": {
+        "PROC-002": 1,
+        "PROC-001": 1,
+        "NET-001": 1,
+        "IAM-001": 1,
+        "DNS-001": 1,
+        "AUTH-002": 1,
+        "AUTH-001": 1
+      },
+      "delivered_to_mock": 7,
+      "duplicate_deliveries": 0,
+      "workflow_seconds": 0.048274,
+      "workflow_events_per_second": 745.74,
+      "live_tested": false
+    }
+  ],
+  "total_events": 62,
+  "total_alerts": 11,
+  "workflow_seconds": 0.764401,
+  "measurement": "Application workflow including loopback HTTP, normalization, SQLite, detection and notification; not cloud latency or a scale benchmark",
+  "live_tested": false
+}

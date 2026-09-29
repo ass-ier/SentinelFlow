@@ -1,0 +1,80 @@
+{
+  "source_report": "artifacts/security/release-packaged/container-application.json",
+  "source_sha256": "6c4cc340f2c0884510b0630569460c34c75e34acbb04f55d4b109260404336b8",
+  "reported_findings": 23,
+  "affected_package_records": [
+    {
+      "Name": "pip",
+      "Version": "25.2",
+      "AnalyzedBy": "sbom"
+    },
+    {
+      "Name": "pytest",
+      "Version": "8.4.1",
+      "AnalyzedBy": "sbom"
+    },
+    {
+      "Name": "python-dotenv",
+      "Version": "1.1.1",
+      "AnalyzedBy": "sbom"
+    },
+    {
+      "Name": "python-multipart",
+      "Version": "0.0.20",
+      "AnalyzedBy": "sbom"
+    },
+    {
+      "Name": "setuptools",
+      "Version": "80.9.0",
+      "AnalyzedBy": "sbom"
+    },
+    {
+      "Name": "starlette",
+      "Version": "0.47.3",
+      "AnalyzedBy": "sbom"
+    },
+    {
+      "Name": "wheel",
+      "Version": "0.45.1",
+      "AnalyzedBy": "sbom"
+    }
+  ],
+  "classification": "Archived baseline SBOM package attribution, not installed runtime modules",
+  "runtime_probe": {
+    "status": "passed",
+    "checks": 8,
+    "uid": 10001,
+    "read_only_root": true,
+    "no_new_privileges": true,
+    "effective_capabilities": 0,
+    "development_tools_absent": true,
+    "rate_limit_enforced_and_recovered": true,
+    "retries": {
+      "integration_busy": 1,
+      "integration_rate_limit": 1
+    },
+    "flows": [
+      {
+        "source": "microsoft_sentinel",
+        "events": 13,
+        "alerts": 2,
+        "deliveries": 2
+      },
+      {
+        "source": "microsoft_graph",
+        "events": 13,
+        "alerts": 2,
+        "deliveries": 2
+      },
+      {
+        "source": "windows_wef",
+        "events": 36,
+        "alerts": 7,
+        "deliveries": 7
+      }
+    ],
+    "live_integrations": "Not tested"
+  },
+  "remediation": "Historical security report/SBOM archive stays in the repository but is not copied into production images. No actual installed dependency is excluded from scanning. Final image probe verifies archive absence.",
+  "final_source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6"
+}

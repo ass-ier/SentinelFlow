@@ -1,0 +1,1521 @@
+{
+  "sentinel": {
+    "SigninLogs": [
+      {
+        "Id": "synthetic-signin-000",
+        "TimeGenerated": "2026-01-15T10:00:00+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "50126",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      },
+      {
+        "Id": "synthetic-signin-001",
+        "TimeGenerated": "2026-01-15T10:00:10+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "50126",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      },
+      {
+        "Id": "synthetic-signin-002",
+        "TimeGenerated": "2026-01-15T10:00:20+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "50126",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      },
+      {
+        "Id": "synthetic-signin-003",
+        "TimeGenerated": "2026-01-15T10:00:30+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "50126",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      },
+      {
+        "Id": "synthetic-signin-004",
+        "TimeGenerated": "2026-01-15T10:00:40+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "50126",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      },
+      {
+        "Id": "synthetic-signin-005",
+        "TimeGenerated": "2026-01-15T10:00:50+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "50126",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      },
+      {
+        "Id": "synthetic-signin-006",
+        "TimeGenerated": "2026-01-15T10:01:00+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "50126",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      },
+      {
+        "Id": "synthetic-signin-007",
+        "TimeGenerated": "2026-01-15T10:01:10+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "50126",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      },
+      {
+        "Id": "synthetic-signin-008",
+        "TimeGenerated": "2026-01-15T10:01:20+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "50126",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      },
+      {
+        "Id": "synthetic-signin-009",
+        "TimeGenerated": "2026-01-15T10:01:30+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "50126",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      },
+      {
+        "Id": "synthetic-signin-010",
+        "TimeGenerated": "2026-01-15T10:01:40+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "0",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      },
+      {
+        "Id": "synthetic-signin-011",
+        "TimeGenerated": "2026-01-15T10:01:50+00:00",
+        "UserPrincipalName": "analyst01@example.invalid",
+        "UserId": "synthetic-user-01",
+        "IPAddress": "192.0.2.44",
+        "ResultType": "0",
+        "AppDisplayName": "Synthetic Portal",
+        "DeviceDetail": {
+          "displayName": "demo-workstation-01"
+        }
+      }
+    ],
+    "AuditLogs": [
+      {
+        "Id": "synthetic-audit-001",
+        "TimeGenerated": "2026-01-15T10:02:20+00:00",
+        "OperationName": "Add member to group",
+        "Result": "success",
+        "LoggedByService": "Core Directory",
+        "AdditionalDetails": [
+          {
+            "key": "Computer",
+            "value": "demo-dc-01"
+          }
+        ],
+        "InitiatedBy": {
+          "user": {
+            "id": "synthetic-operator",
+            "userPrincipalName": "operator01@example.invalid"
+          }
+        },
+        "TargetResources": [
+          {
+            "id": "synthetic-admin-group",
+            "type": "Group",
+            "displayName": "Administrators"
+          }
+        ]
+      }
+    ]
+  },
+  "graph": {
+    "signIns": [
+      {
+        "id": "synthetic-signin-000",
+        "createdDateTime": "2026-01-15T10:00:00+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 50126
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      },
+      {
+        "id": "synthetic-signin-001",
+        "createdDateTime": "2026-01-15T10:00:10+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 50126
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      },
+      {
+        "id": "synthetic-signin-002",
+        "createdDateTime": "2026-01-15T10:00:20+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 50126
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      },
+      {
+        "id": "synthetic-signin-003",
+        "createdDateTime": "2026-01-15T10:00:30+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 50126
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      },
+      {
+        "id": "synthetic-signin-004",
+        "createdDateTime": "2026-01-15T10:00:40+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 50126
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      },
+      {
+        "id": "synthetic-signin-005",
+        "createdDateTime": "2026-01-15T10:00:50+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 50126
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      },
+      {
+        "id": "synthetic-signin-006",
+        "createdDateTime": "2026-01-15T10:01:00+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 50126
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      },
+      {
+        "id": "synthetic-signin-007",
+        "createdDateTime": "2026-01-15T10:01:10+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 50126
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      },
+      {
+        "id": "synthetic-signin-008",
+        "createdDateTime": "2026-01-15T10:01:20+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 50126
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      },
+      {
+        "id": "synthetic-signin-009",
+        "createdDateTime": "2026-01-15T10:01:30+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 50126
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      },
+      {
+        "id": "synthetic-signin-010",
+        "createdDateTime": "2026-01-15T10:01:40+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 0
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      },
+      {
+        "id": "synthetic-signin-011",
+        "createdDateTime": "2026-01-15T10:01:50+00:00",
+        "userPrincipalName": "analyst01@example.invalid",
+        "userId": "synthetic-user-01",
+        "ipAddress": "192.0.2.44",
+        "status": {
+          "errorCode": 0
+        },
+        "appDisplayName": "Synthetic Portal",
+        "deviceDetail": {
+          "displayName": "demo-workstation-01"
+        },
+        "authenticationRequirement": "singleFactorAuthentication"
+      }
+    ],
+    "directoryAudits": [
+      {
+        "id": "synthetic-audit-001",
+        "activityDateTime": "2026-01-15T10:02:20+00:00",
+        "activityDisplayName": "Add member to group",
+        "result": "success",
+        "loggedByService": "Core Directory",
+        "additionalDetails": [
+          {
+            "key": "Computer",
+            "value": "demo-dc-01"
+          }
+        ],
+        "initiatedBy": {
+          "user": {
+            "id": "synthetic-operator",
+            "userPrincipalName": "operator01@example.invalid"
+          }
+        },
+        "targetResources": [
+          {
+            "id": "synthetic-admin-group",
+            "type": "Group",
+            "displayName": "Administrators"
+          }
+        ]
+      }
+    ]
+  },
+  "windows": [
+    {
+      "Event": {
+        "System": {
+          "EventID": 4624,
+          "EventRecordID": 1,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:00+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4625,
+          "EventRecordID": 2,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:03+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4740,
+          "EventRecordID": 3,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:06+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4720,
+          "EventRecordID": 4,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:09+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4722,
+          "EventRecordID": 5,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:12+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4725,
+          "EventRecordID": 6,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:15+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4726,
+          "EventRecordID": 7,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:18+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4728,
+          "EventRecordID": 8,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:21+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "Domain Admins",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55",
+          "MemberName": "SYNTHETIC\\analyst01"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4732,
+          "EventRecordID": 9,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:24+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "Domain Admins",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55",
+          "MemberName": "SYNTHETIC\\analyst01"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4756,
+          "EventRecordID": 10,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:27+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "Domain Admins",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55",
+          "MemberName": "SYNTHETIC\\analyst01"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4729,
+          "EventRecordID": 11,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:30+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "Domain Admins",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55",
+          "MemberName": "SYNTHETIC\\analyst01"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4733,
+          "EventRecordID": 12,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:33+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "Domain Admins",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55",
+          "MemberName": "SYNTHETIC\\analyst01"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4757,
+          "EventRecordID": 13,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:36+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "Domain Admins",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55",
+          "MemberName": "SYNTHETIC\\analyst01"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4672,
+          "EventRecordID": 14,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:39+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4688,
+          "EventRecordID": 15,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:42+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55",
+          "NewProcessName": "C:\\Windows\\System32\\notepad.exe",
+          "CommandLine": "notepad.exe"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4625,
+          "EventRecordID": 16,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:45+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4625,
+          "EventRecordID": 17,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:48+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4625,
+          "EventRecordID": 18,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:51+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4625,
+          "EventRecordID": 19,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:54+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4625,
+          "EventRecordID": 20,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:00:57+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4625,
+          "EventRecordID": 21,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:00+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4625,
+          "EventRecordID": 22,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:03+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4625,
+          "EventRecordID": 23,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:06+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4625,
+          "EventRecordID": 24,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:09+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "IpAddress": "192.0.2.55"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4740,
+          "EventRecordID": 25,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:12+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4740,
+          "EventRecordID": 26,
+          "Channel": "Security",
+          "Provider": {
+            "Name": "Microsoft-Windows-Security-Auditing"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:15+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 4104,
+          "EventRecordID": 27,
+          "Channel": "Microsoft-Windows-PowerShell/Operational",
+          "Provider": {
+            "Name": "Microsoft-Windows-PowerShell"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:18+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "ScriptBlockText": "powershell.exe -EncodedCommand VwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAxAA=="
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 1,
+          "EventRecordID": 28,
+          "Channel": "Microsoft-Windows-Sysmon/Operational",
+          "Provider": {
+            "Name": "Microsoft-Windows-Sysmon"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:21+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "Image": "C:\\Windows\\System32\\cmd.exe",
+          "ParentImage": "C:\\Office\\WINWORD.EXE",
+          "CommandLine": "cmd.exe /c echo synthetic"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 3,
+          "EventRecordID": 29,
+          "Channel": "Microsoft-Windows-Sysmon/Operational",
+          "Provider": {
+            "Name": "Microsoft-Windows-Sysmon"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:24+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "SourceIp": "192.0.2.55",
+          "DestinationIp": "198.51.100.25",
+          "DestinationPort": "4444",
+          "Protocol": "tcp"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 3,
+          "EventRecordID": 30,
+          "Channel": "Microsoft-Windows-Sysmon/Operational",
+          "Provider": {
+            "Name": "Microsoft-Windows-Sysmon"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:27+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "SourceIp": "192.0.2.55",
+          "DestinationIp": "198.51.100.25",
+          "DestinationPort": "4444",
+          "Protocol": "tcp"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 3,
+          "EventRecordID": 31,
+          "Channel": "Microsoft-Windows-Sysmon/Operational",
+          "Provider": {
+            "Name": "Microsoft-Windows-Sysmon"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:30+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "SourceIp": "192.0.2.55",
+          "DestinationIp": "198.51.100.25",
+          "DestinationPort": "4444",
+          "Protocol": "tcp"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 22,
+          "EventRecordID": 32,
+          "Channel": "Microsoft-Windows-Sysmon/Operational",
+          "Provider": {
+            "Name": "Microsoft-Windows-Sysmon"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:33+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "SourceIp": "192.0.2.55",
+          "QueryName": "abcdefghijklmnopqrstuvwxyz0123456789abcdefghijkl.synthetic.invalid"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 22,
+          "EventRecordID": 33,
+          "Channel": "Microsoft-Windows-Sysmon/Operational",
+          "Provider": {
+            "Name": "Microsoft-Windows-Sysmon"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:36+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "SourceIp": "192.0.2.55",
+          "QueryName": "abcdefghijklmnopqrstuvwxyz0123456789abcdefghijkl.synthetic.invalid"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 22,
+          "EventRecordID": 34,
+          "Channel": "Microsoft-Windows-Sysmon/Operational",
+          "Provider": {
+            "Name": "Microsoft-Windows-Sysmon"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:39+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "SourceIp": "192.0.2.55",
+          "QueryName": "abcdefghijklmnopqrstuvwxyz0123456789abcdefghijkl.synthetic.invalid"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 7036,
+          "EventRecordID": 35,
+          "Channel": "System",
+          "Provider": {
+            "Name": "SyntheticProvider"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:42+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "ServiceName": "SyntheticService"
+        }
+      }
+    },
+    {
+      "Event": {
+        "System": {
+          "EventID": 1000,
+          "EventRecordID": 36,
+          "Channel": "Application",
+          "Provider": {
+            "Name": "SyntheticProvider"
+          },
+          "Computer": "demo-dc-01",
+          "TimeCreated": {
+            "SystemTime": "2026-01-15T10:01:45+00:00"
+          }
+        },
+        "EventData": {
+          "TargetUserName": "analyst01",
+          "SubjectUserName": "operator01",
+          "User": "operator01",
+          "TargetDomainName": "SYNTHETIC",
+          "ApplicationName": "SyntheticApplication"
+        }
+      }
+    }
+  ],
+  "benign": {
+    "sentinel": {
+      "SigninLogs": [
+        {
+          "Id": "synthetic-signin-010",
+          "TimeGenerated": "2026-01-15T10:01:40+00:00",
+          "UserPrincipalName": "analyst01@example.invalid",
+          "UserId": "synthetic-user-01",
+          "IPAddress": "192.0.2.44",
+          "ResultType": "0",
+          "AppDisplayName": "Synthetic Portal",
+          "DeviceDetail": {
+            "displayName": "demo-workstation-01"
+          }
+        },
+        {
+          "Id": "synthetic-signin-011",
+          "TimeGenerated": "2026-01-15T10:01:50+00:00",
+          "UserPrincipalName": "analyst01@example.invalid",
+          "UserId": "synthetic-user-01",
+          "IPAddress": "192.0.2.44",
+          "ResultType": "0",
+          "AppDisplayName": "Synthetic Portal",
+          "DeviceDetail": {
+            "displayName": "demo-workstation-01"
+          }
+        }
+      ],
+      "AuditLogs": [
+        {
+          "Id": "synthetic-audit-001",
+          "TimeGenerated": "2026-01-15T10:02:20+00:00",
+          "OperationName": "Add member to group",
+          "Result": "success",
+          "LoggedByService": "Core Directory",
+          "AdditionalDetails": [
+            {
+              "key": "Computer",
+              "value": "demo-dc-01"
+            }
+          ],
+          "InitiatedBy": {
+            "user": {
+              "id": "synthetic-operator",
+              "userPrincipalName": "operator01@example.invalid"
+            }
+          },
+          "TargetResources": [
+            {
+              "id": "synthetic-admin-group",
+              "type": "Group",
+              "displayName": "Readers"
+            }
+          ]
+        }
+      ]
+    },
+    "graph": {
+      "signIns": [
+        {
+          "id": "synthetic-signin-010",
+          "createdDateTime": "2026-01-15T10:01:40+00:00",
+          "userPrincipalName": "analyst01@example.invalid",
+          "userId": "synthetic-user-01",
+          "ipAddress": "192.0.2.44",
+          "status": {
+            "errorCode": 0
+          },
+          "appDisplayName": "Synthetic Portal",
+          "deviceDetail": {
+            "displayName": "demo-workstation-01"
+          },
+          "authenticationRequirement": "singleFactorAuthentication"
+        },
+        {
+          "id": "synthetic-signin-011",
+          "createdDateTime": "2026-01-15T10:01:50+00:00",
+          "userPrincipalName": "analyst01@example.invalid",
+          "userId": "synthetic-user-01",
+          "ipAddress": "192.0.2.44",
+          "status": {
+            "errorCode": 0
+          },
+          "appDisplayName": "Synthetic Portal",
+          "deviceDetail": {
+            "displayName": "demo-workstation-01"
+          },
+          "authenticationRequirement": "singleFactorAuthentication"
+        }
+      ],
+      "directoryAudits": [
+        {
+          "id": "synthetic-audit-001",
+          "activityDateTime": "2026-01-15T10:02:20+00:00",
+          "activityDisplayName": "Add member to group",
+          "result": "success",
+          "loggedByService": "Core Directory",
+          "additionalDetails": [
+            {
+              "key": "Computer",
+              "value": "demo-dc-01"
+            }
+          ],
+          "initiatedBy": {
+            "user": {
+              "id": "synthetic-operator",
+              "userPrincipalName": "operator01@example.invalid"
+            }
+          },
+          "targetResources": [
+            {
+              "id": "synthetic-admin-group",
+              "type": "Group",
+              "displayName": "Readers"
+            }
+          ]
+        }
+      ]
+    },
+    "windows": [
+      {
+        "Event": {
+          "System": {
+            "EventID": 4624,
+            "EventRecordID": 1,
+            "Channel": "Security",
+            "Provider": {
+              "Name": "Microsoft-Windows-Security-Auditing"
+            },
+            "Computer": "demo-dc-01",
+            "TimeCreated": {
+              "SystemTime": "2026-01-15T10:00:00+00:00"
+            }
+          },
+          "EventData": {
+            "TargetUserName": "analyst01",
+            "SubjectUserName": "operator01",
+            "User": "operator01",
+            "TargetDomainName": "SYNTHETIC",
+            "IpAddress": "192.0.2.55"
+          }
+        }
+      },
+      {
+        "Event": {
+          "System": {
+            "EventID": 4688,
+            "EventRecordID": 15,
+            "Channel": "Security",
+            "Provider": {
+              "Name": "Microsoft-Windows-Security-Auditing"
+            },
+            "Computer": "demo-dc-01",
+            "TimeCreated": {
+              "SystemTime": "2026-01-15T10:00:42+00:00"
+            }
+          },
+          "EventData": {
+            "TargetUserName": "analyst01",
+            "SubjectUserName": "operator01",
+            "User": "operator01",
+            "TargetDomainName": "SYNTHETIC",
+            "IpAddress": "192.0.2.55",
+            "NewProcessName": "C:\\Windows\\System32\\notepad.exe",
+            "CommandLine": "notepad.exe"
+          }
+        }
+      },
+      {
+        "Event": {
+          "System": {
+            "EventID": 7036,
+            "EventRecordID": 35,
+            "Channel": "System",
+            "Provider": {
+              "Name": "SyntheticProvider"
+            },
+            "Computer": "demo-dc-01",
+            "TimeCreated": {
+              "SystemTime": "2026-01-15T10:01:42+00:00"
+            }
+          },
+          "EventData": {
+            "TargetUserName": "analyst01",
+            "SubjectUserName": "operator01",
+            "User": "operator01",
+            "TargetDomainName": "SYNTHETIC",
+            "ServiceName": "SyntheticService"
+          }
+        }
+      },
+      {
+        "Event": {
+          "System": {
+            "EventID": 1000,
+            "EventRecordID": 36,
+            "Channel": "Application",
+            "Provider": {
+              "Name": "SyntheticProvider"
+            },
+            "Computer": "demo-dc-01",
+            "TimeCreated": {
+              "SystemTime": "2026-01-15T10:01:45+00:00"
+            }
+          },
+          "EventData": {
+            "TargetUserName": "analyst01",
+            "SubjectUserName": "operator01",
+            "User": "operator01",
+            "TargetDomainName": "SYNTHETIC",
+            "ApplicationName": "SyntheticApplication"
+          }
+        }
+      }
+    ],
+    "expected": {
+      "microsoft_sentinel": {
+        "events": 3,
+        "alerts": {}
+      },
+      "microsoft_graph": {
+        "events": 3,
+        "alerts": {}
+      },
+      "windows_wef": {
+        "events": 4,
+        "alerts": {}
+      }
+    }
+  },
+  "wazuh": [
+    {
+      "timestamp": "2026-01-15T10:00:00+00:00",
+      "agent": {
+        "id": "001",
+        "name": "demo-dc-01"
+      },
+      "data": {
+        "win": {
+          "system": {
+            "eventID": "4625",
+            "systemTime": "2026-01-15T10:00:00+00:00",
+            "computer": "demo-dc-01",
+            "providerName": "Microsoft-Windows-Security-Auditing"
+          },
+          "eventdata": {
+            "targetUserName": "analyst01",
+            "ipAddress": "192.0.2.55"
+          }
+        }
+      }
+    }
+  ],
+  "expected": {
+    "microsoft_sentinel": {
+      "events": 13,
+      "alerts": {
+        "AUTH-001": 1,
+        "IAM-001": 1
+      }
+    },
+    "microsoft_graph": {
+      "events": 13,
+      "alerts": {
+        "AUTH-001": 1,
+        "IAM-001": 1
+      }
+    },
+    "windows_wef": {
+      "events": 36,
+      "alerts": {
+        "AUTH-001": 1,
+        "AUTH-002": 1,
+        "PROC-001": 1,
+        "PROC-002": 1,
+        "IAM-001": 1,
+        "DNS-001": 1,
+        "NET-001": 1
+      }
+    }
+  }
+}

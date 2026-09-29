@@ -1,0 +1,94 @@
+[
+  {
+    "System": {
+      "EventID": 4625,
+      "TimeCreated": {
+        "SystemTime": "2026-01-15T09:00:00Z"
+      },
+      "Computer": "win-client-01",
+      "Provider": {
+        "Name": "Microsoft-Windows-Security-Auditing"
+      },
+      "EventRecordID": 1
+    },
+    "EventData": {
+      "TargetUserName": "operator01",
+      "IpAddress": "192.0.2.11",
+      "IpPort": "51000"
+    }
+  },
+  {
+    "System": {
+      "EventID": 4688,
+      "TimeCreated": {
+        "SystemTime": "2026-01-15T09:00:01Z"
+      },
+      "Computer": "win-client-01",
+      "Provider": {
+        "Name": "Microsoft-Windows-Security-Auditing"
+      },
+      "EventRecordID": 2
+    },
+    "EventData": {
+      "User": "operator01",
+      "NewProcessName": "C:\\Windows\\cmd.exe",
+      "CommandLine": "cmd.exe /c echo hello",
+      "ParentProcessName": "C:\\Windows\\explorer.exe"
+    }
+  },
+  {
+    "System": {
+      "EventID": 22,
+      "TimeCreated": {
+        "SystemTime": "2026-01-15T09:00:02Z"
+      },
+      "Computer": "win-client-01",
+      "Provider": {
+        "Name": "Microsoft-Windows-Sysmon"
+      },
+      "EventRecordID": 3
+    },
+    "EventData": {
+      "User": "operator01",
+      "QueryName": "portal.example.test"
+    }
+  },
+  {
+    "System": {
+      "EventID": 3,
+      "TimeCreated": {
+        "SystemTime": "2026-01-15T09:00:03Z"
+      },
+      "Computer": "win-client-01",
+      "Provider": {
+        "Name": "Microsoft-Windows-Sysmon"
+      },
+      "EventRecordID": 4
+    },
+    "EventData": {
+      "User": "operator01",
+      "SourceIp": "10.10.1.10",
+      "DestinationIp": "198.51.100.20",
+      "SourcePort": "51000",
+      "DestinationPort": "443",
+      "Protocol": "tcp"
+    }
+  },
+  {
+    "System": {
+      "EventID": 4720,
+      "TimeCreated": {
+        "SystemTime": "2026-01-15T09:00:04Z"
+      },
+      "Computer": "win-client-01",
+      "Provider": {
+        "Name": "Microsoft-Windows-Security-Auditing"
+      },
+      "EventRecordID": 5
+    },
+    "EventData": {
+      "SubjectUserName": "svc_identity",
+      "TargetUserName": "operator05"
+    }
+  }
+]

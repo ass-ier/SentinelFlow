@@ -1,0 +1,944 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.74.0"
+  },
+  "ReportID": "01a0ea6f-ddfa-7582-9930-993769dfed95",
+  "CreatedAt": "2026-09-29T02:53:15.002363+03:00",
+  "ArtifactName": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/python-sbom.cdx.json",
+  "ArtifactType": "cyclonedx",
+  "Results": [
+    {
+      "Target": "Python",
+      "Class": "lang-pkgs",
+      "Type": "python-pkg",
+      "Packages": [
+        {
+          "ID": "annotated-doc@0.0.5",
+          "Name": "annotated-doc",
+          "Identifier": {
+            "PURL": "pkg:pypi/annotated-doc@0.0.5",
+            "UID": "782a4ef2ac4d9a21",
+            "BOMRef": "pkg:pypi/annotated-doc@0.0.5?package-id=bef4d8251c5422f3"
+          },
+          "Version": "0.0.5",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "annotated-types@0.8.0",
+          "Name": "annotated-types",
+          "Identifier": {
+            "PURL": "pkg:pypi/annotated-types@0.8.0",
+            "UID": "97678700bbd5c65d",
+            "BOMRef": "pkg:pypi/annotated-types@0.8.0?package-id=4f043b6c53a9179c"
+          },
+          "Version": "0.8.0",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "anyio@4.15.1",
+          "Name": "anyio",
+          "Identifier": {
+            "PURL": "pkg:pypi/anyio@4.15.1",
+            "UID": "dfde20c510562203",
+            "BOMRef": "pkg:pypi/anyio@4.15.1?package-id=b9d9eb76ebf4680f"
+          },
+          "Version": "4.15.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "idna@3.20",
+            "typing-extensions@4.16.0"
+          ]
+        },
+        {
+          "ID": "autocommand@2.2.2",
+          "Name": "autocommand",
+          "Identifier": {
+            "PURL": "pkg:pypi/autocommand@2.2.2",
+            "UID": "ec38461351709760",
+            "BOMRef": "pkg:pypi/autocommand@2.2.2?package-id=fe00b30a2ce64ecf"
+          },
+          "Version": "2.2.2",
+          "Licenses": [
+            "LGPLv3"
+          ]
+        },
+        {
+          "ID": "backports-tarfile@1.2.0",
+          "Name": "backports-tarfile",
+          "Identifier": {
+            "PURL": "pkg:pypi/backports-tarfile@1.2.0",
+            "UID": "ebd3530211b60e6e",
+            "BOMRef": "pkg:pypi/backports-tarfile@1.2.0?package-id=87e8a65dc1158d9e"
+          },
+          "Version": "1.2.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "pytest-cov@6.2.1",
+            "pytest@9.1.1"
+          ]
+        },
+        {
+          "ID": "build@1.6.1",
+          "Name": "build",
+          "Identifier": {
+            "PURL": "pkg:pypi/build@1.6.1",
+            "UID": "629d0e459388ba8c",
+            "BOMRef": "pkg:pypi/build@1.6.1?package-id=cf3aa5997de5c51a"
+          },
+          "Version": "1.6.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "importlib-metadata@8.7.1",
+            "packaging@26.3",
+            "pyproject-hooks@1.3.3",
+            "tomli@2.4.0"
+          ]
+        },
+        {
+          "ID": "certifi@2026.7.22",
+          "Name": "certifi",
+          "Identifier": {
+            "PURL": "pkg:pypi/certifi@2026.7.22",
+            "UID": "264a38fca661998c",
+            "BOMRef": "pkg:pypi/certifi@2026.7.22?package-id=716ef4b6dfa8b0e0"
+          },
+          "Version": "2026.7.22",
+          "Licenses": [
+            "MPL-2.0"
+          ]
+        },
+        {
+          "ID": "click@8.5.0",
+          "Name": "click",
+          "Identifier": {
+            "PURL": "pkg:pypi/click@8.5.0",
+            "UID": "af109c517a5a71a5",
+            "BOMRef": "pkg:pypi/click@8.5.0?package-id=46743b14e8b2484a"
+          },
+          "Version": "8.5.0",
+          "Licenses": [
+            "BSD-3-Clause"
+          ]
+        },
+        {
+          "ID": "coverage@7.16.2",
+          "Name": "coverage",
+          "Identifier": {
+            "PURL": "pkg:pypi/coverage@7.16.2",
+            "UID": "6b1ca27c13852197",
+            "BOMRef": "pkg:pypi/coverage@7.16.2?package-id=5af8f64694e469ea"
+          },
+          "Version": "7.16.2",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "DependsOn": [
+            "tomli@2.4.0"
+          ]
+        },
+        {
+          "ID": "defusedxml@0.7.1",
+          "Name": "defusedxml",
+          "Identifier": {
+            "PURL": "pkg:pypi/defusedxml@0.7.1",
+            "UID": "2d93aee303a468c3",
+            "BOMRef": "pkg:pypi/defusedxml@0.7.1?package-id=6f60d5e567a53af0"
+          },
+          "Version": "0.7.1",
+          "Licenses": [
+            "PSFL"
+          ]
+        },
+        {
+          "ID": "fastapi@0.141.1",
+          "Name": "fastapi",
+          "Identifier": {
+            "PURL": "pkg:pypi/fastapi@0.141.1",
+            "UID": "83a47bb33fe7cc37",
+            "BOMRef": "pkg:pypi/fastapi@0.141.1?package-id=d068507aaccf3af2"
+          },
+          "Version": "0.141.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "annotated-doc@0.0.5",
+            "httpx@0.28.1",
+            "pydantic@2.11.7",
+            "python-multipart@0.0.32",
+            "pyyaml@6.0.2",
+            "starlette@1.7.0",
+            "typing-extensions@4.16.0",
+            "typing-inspection@0.4.4",
+            "uvicorn@0.35.0"
+          ]
+        },
+        {
+          "ID": "greenlet@3.5.6",
+          "Name": "greenlet",
+          "Identifier": {
+            "PURL": "pkg:pypi/greenlet@3.5.6",
+            "UID": "a997b823472f6a0a",
+            "BOMRef": "pkg:pypi/greenlet@3.5.6?package-id=47f0f7daa95c1f98"
+          },
+          "Version": "3.5.6",
+          "Licenses": [
+            "MIT AND PSF-2.0"
+          ],
+          "DependsOn": [
+            "setuptools@84.0.0"
+          ]
+        },
+        {
+          "ID": "h11@0.16.0",
+          "Name": "h11",
+          "Identifier": {
+            "PURL": "pkg:pypi/h11@0.16.0",
+            "UID": "e7adeee43308b47e",
+            "BOMRef": "pkg:pypi/h11@0.16.0?package-id=7abce8f90f14203d"
+          },
+          "Version": "0.16.0",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "httpcore@1.0.9",
+          "Name": "httpcore",
+          "Identifier": {
+            "PURL": "pkg:pypi/httpcore@1.0.9",
+            "UID": "bb79658c698cb619",
+            "BOMRef": "pkg:pypi/httpcore@1.0.9?package-id=1c0f1b3376103f0f"
+          },
+          "Version": "1.0.9",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "DependsOn": [
+            "anyio@4.15.1",
+            "certifi@2026.7.22",
+            "h11@0.16.0"
+          ]
+        },
+        {
+          "ID": "httpx@0.28.1",
+          "Name": "httpx",
+          "Identifier": {
+            "PURL": "pkg:pypi/httpx@0.28.1",
+            "UID": "66886c08d223e369",
+            "BOMRef": "pkg:pypi/httpx@0.28.1?package-id=fc8994574e02c52b"
+          },
+          "Version": "0.28.1",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "DependsOn": [
+            "anyio@4.15.1",
+            "certifi@2026.7.22",
+            "click@8.5.0",
+            "httpcore@1.0.9",
+            "idna@3.20",
+            "pygments@2.21.0"
+          ]
+        },
+        {
+          "ID": "idna@3.20",
+          "Name": "idna",
+          "Identifier": {
+            "PURL": "pkg:pypi/idna@3.20",
+            "UID": "82c86be67c71e611",
+            "BOMRef": "pkg:pypi/idna@3.20?package-id=0583a60f8f316337"
+          },
+          "Version": "3.20",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "DependsOn": [
+            "coverage@7.16.2",
+            "mypy@1.17.1",
+            "pytest@9.1.1",
+            "ruff@0.12.10"
+          ]
+        },
+        {
+          "ID": "importlib-metadata@8.7.1",
+          "Name": "importlib-metadata",
+          "Identifier": {
+            "PURL": "pkg:pypi/importlib-metadata@8.7.1",
+            "UID": "fd78e7a51f34d045",
+            "BOMRef": "pkg:pypi/importlib-metadata@8.7.1?package-id=c611857653b56b81"
+          },
+          "Version": "8.7.1",
+          "Licenses": [
+            "Apache-2.0"
+          ],
+          "DependsOn": [
+            "mypy@1.17.1",
+            "packaging@26.3",
+            "pytest-cov@6.2.1",
+            "pytest@9.1.1",
+            "zipp@3.23.0"
+          ]
+        },
+        {
+          "ID": "iniconfig@2.3.0",
+          "Name": "iniconfig",
+          "Identifier": {
+            "PURL": "pkg:pypi/iniconfig@2.3.0",
+            "UID": "8d270b875da4cdc0",
+            "BOMRef": "pkg:pypi/iniconfig@2.3.0?package-id=9ef9469242bab23d"
+          },
+          "Version": "2.3.0",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "jaraco-context@6.1.0",
+          "Name": "jaraco-context",
+          "Identifier": {
+            "PURL": "pkg:pypi/jaraco-context@6.1.0",
+            "UID": "a3fbd1185a8dfbeb",
+            "BOMRef": "pkg:pypi/jaraco-context@6.1.0?package-id=1cfc6579c5032dad"
+          },
+          "Version": "6.1.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "backports-tarfile@1.2.0",
+            "mypy@1.17.1",
+            "pytest-cov@6.2.1",
+            "pytest@9.1.1"
+          ]
+        },
+        {
+          "ID": "jaraco-functools@4.4.0",
+          "Name": "jaraco-functools",
+          "Identifier": {
+            "PURL": "pkg:pypi/jaraco-functools@4.4.0",
+            "UID": "807bf174d16f2d8a",
+            "BOMRef": "pkg:pypi/jaraco-functools@4.4.0?package-id=3db119d6bd464b71"
+          },
+          "Version": "4.4.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "more-itertools@10.8.0",
+            "mypy@1.17.1",
+            "pytest-cov@6.2.1",
+            "pytest@9.1.1"
+          ]
+        },
+        {
+          "ID": "jaraco-text@4.0.0",
+          "Name": "jaraco-text",
+          "Identifier": {
+            "PURL": "pkg:pypi/jaraco-text@4.0.0",
+            "UID": "e50924274fed25fd",
+            "BOMRef": "pkg:pypi/jaraco-text@4.0.0?package-id=5703319bf4b052fe"
+          },
+          "Version": "4.0.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "autocommand@2.2.2",
+            "jaraco-context@6.1.0",
+            "jaraco-functools@4.4.0",
+            "more-itertools@10.8.0",
+            "pytest-cov@6.2.1",
+            "pytest@9.1.1"
+          ]
+        },
+        {
+          "ID": "more-itertools@10.8.0",
+          "Name": "more-itertools",
+          "Identifier": {
+            "PURL": "pkg:pypi/more-itertools@10.8.0",
+            "UID": "58c9bb5270974003",
+            "BOMRef": "pkg:pypi/more-itertools@10.8.0?package-id=fe62f58408c45941"
+          },
+          "Version": "10.8.0",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "mypy@1.17.1",
+          "Name": "mypy",
+          "Identifier": {
+            "PURL": "pkg:pypi/mypy@1.17.1",
+            "UID": "aa4505dffcb6b355",
+            "BOMRef": "pkg:pypi/mypy@1.17.1?package-id=74ffc42fd66f3bc9"
+          },
+          "Version": "1.17.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "mypy-extensions@1.1.0",
+            "pathspec@1.1.1",
+            "pip@26.2.1",
+            "setuptools@84.0.0",
+            "tomli@2.4.0",
+            "typing-extensions@4.16.0"
+          ]
+        },
+        {
+          "ID": "mypy-extensions@1.1.0",
+          "Name": "mypy-extensions",
+          "Identifier": {
+            "PURL": "pkg:pypi/mypy-extensions@1.1.0",
+            "UID": "1c95472f34a3bc0e",
+            "BOMRef": "pkg:pypi/mypy-extensions@1.1.0?package-id=8c02d1d7ebde6190"
+          },
+          "Version": "1.1.0",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "packaging@26.0",
+          "Name": "packaging",
+          "Identifier": {
+            "PURL": "pkg:pypi/packaging@26.0",
+            "UID": "f3eb0cdbb0542299",
+            "BOMRef": "pkg:pypi/packaging@26.0?package-id=4c35957bf0201294"
+          },
+          "Version": "26.0",
+          "Licenses": [
+            "Apache-2.0 OR BSD-2-Clause"
+          ]
+        },
+        {
+          "ID": "packaging@26.3",
+          "Name": "packaging",
+          "Identifier": {
+            "PURL": "pkg:pypi/packaging@26.3",
+            "UID": "a8bfb97bc787d506",
+            "BOMRef": "pkg:pypi/packaging@26.3?package-id=a536d1ba5947f3d3"
+          },
+          "Version": "26.3",
+          "Licenses": [
+            "Apache-2.0 OR BSD-2-Clause"
+          ]
+        },
+        {
+          "ID": "pathspec@1.1.1",
+          "Name": "pathspec",
+          "Identifier": {
+            "PURL": "pkg:pypi/pathspec@1.1.1",
+            "UID": "2f0a65dc264313d2",
+            "BOMRef": "pkg:pypi/pathspec@1.1.1?package-id=50024012d27829f2"
+          },
+          "Version": "1.1.1",
+          "DependsOn": [
+            "typing-extensions@4.16.0"
+          ]
+        },
+        {
+          "ID": "pip@26.2.1",
+          "Name": "pip",
+          "Identifier": {
+            "PURL": "pkg:pypi/pip@26.2.1",
+            "UID": "90eb9b058e7de0c2",
+            "BOMRef": "pkg:pypi/pip@26.2.1?package-id=2dbc87d5029c24a7"
+          },
+          "Version": "26.2.1",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "pip-tools@7.6.1",
+          "Name": "pip-tools",
+          "Identifier": {
+            "PURL": "pkg:pypi/pip-tools@7.6.1",
+            "UID": "c33e9d4e4e8ae20c",
+            "BOMRef": "pkg:pypi/pip-tools@7.6.1?package-id=e238ed3bbbf2056d"
+          },
+          "Version": "7.6.1",
+          "Licenses": [
+            "BSD"
+          ],
+          "DependsOn": [
+            "build@1.6.1",
+            "click@8.5.0",
+            "pip@26.2.1",
+            "pyproject-hooks@1.3.3",
+            "pytest-cov@6.2.1",
+            "pytest@9.1.1",
+            "setuptools@84.0.0",
+            "tomli@2.4.0",
+            "typing-extensions@4.16.0",
+            "wheel@0.48.0"
+          ]
+        },
+        {
+          "ID": "platformdirs@4.4.0",
+          "Name": "platformdirs",
+          "Identifier": {
+            "PURL": "pkg:pypi/platformdirs@4.4.0",
+            "UID": "6ce959b52d9ed0b2",
+            "BOMRef": "pkg:pypi/platformdirs@4.4.0?package-id=7a4d188ce2a01656"
+          },
+          "Version": "4.4.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "mypy@1.17.1",
+            "pytest-cov@6.2.1",
+            "pytest@9.1.1"
+          ]
+        },
+        {
+          "ID": "pluggy@1.6.0",
+          "Name": "pluggy",
+          "Identifier": {
+            "PURL": "pkg:pypi/pluggy@1.6.0",
+            "UID": "da6c8804d8271b17",
+            "BOMRef": "pkg:pypi/pluggy@1.6.0?package-id=c1e5f1f91a53cb9e"
+          },
+          "Version": "1.6.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "coverage@7.16.2",
+            "pytest@9.1.1"
+          ]
+        },
+        {
+          "ID": "pydantic@2.11.7",
+          "Name": "pydantic",
+          "Identifier": {
+            "PURL": "pkg:pypi/pydantic@2.11.7",
+            "UID": "75ed8fac39c1af11",
+            "BOMRef": "pkg:pypi/pydantic@2.11.7?package-id=da515765c221db34"
+          },
+          "Version": "2.11.7",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "annotated-types@0.8.0",
+            "pydantic-core@2.33.2",
+            "typing-extensions@4.16.0",
+            "typing-inspection@0.4.4"
+          ]
+        },
+        {
+          "ID": "pydantic-core@2.33.2",
+          "Name": "pydantic-core",
+          "Identifier": {
+            "PURL": "pkg:pypi/pydantic-core@2.33.2",
+            "UID": "27d72a0bb7539090",
+            "BOMRef": "pkg:pypi/pydantic-core@2.33.2?package-id=0532d03b4fa5ce78"
+          },
+          "Version": "2.33.2",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "typing-extensions@4.16.0"
+          ]
+        },
+        {
+          "ID": "pygments@2.21.0",
+          "Name": "pygments",
+          "Identifier": {
+            "PURL": "pkg:pypi/pygments@2.21.0",
+            "UID": "cd6fcd284dbb9a73",
+            "BOMRef": "pkg:pypi/pygments@2.21.0?package-id=c0b59b02ebf3e9fe"
+          },
+          "Version": "2.21.0",
+          "Licenses": [
+            "BSD-2-Clause"
+          ]
+        },
+        {
+          "ID": "pyproject-hooks@1.3.3",
+          "Name": "pyproject-hooks",
+          "Identifier": {
+            "PURL": "pkg:pypi/pyproject-hooks@1.3.3",
+            "UID": "6398e120b38305ca",
+            "BOMRef": "pkg:pypi/pyproject-hooks@1.3.3?package-id=029ed73f1500adab"
+          },
+          "Version": "1.3.3",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "pytest@9.1.1",
+          "Name": "pytest",
+          "Identifier": {
+            "PURL": "pkg:pypi/pytest@9.1.1",
+            "UID": "349f8987e828104c",
+            "BOMRef": "pkg:pypi/pytest@9.1.1?package-id=c9efcf549140dad3"
+          },
+          "Version": "9.1.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "iniconfig@2.3.0",
+            "packaging@26.3",
+            "pluggy@1.6.0",
+            "pygments@2.21.0",
+            "setuptools@84.0.0",
+            "tomli@2.4.0"
+          ]
+        },
+        {
+          "ID": "pytest-cov@6.2.1",
+          "Name": "pytest-cov",
+          "Identifier": {
+            "PURL": "pkg:pypi/pytest-cov@6.2.1",
+            "UID": "c83f17025c132150",
+            "BOMRef": "pkg:pypi/pytest-cov@6.2.1?package-id=5049d7250e65cd8b"
+          },
+          "Version": "6.2.1",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "coverage@7.16.2",
+            "pluggy@1.6.0",
+            "pytest@9.1.1"
+          ]
+        },
+        {
+          "ID": "python-dotenv@1.2.3",
+          "Name": "python-dotenv",
+          "Identifier": {
+            "PURL": "pkg:pypi/python-dotenv@1.2.3",
+            "UID": "b38c4722c1f80b74",
+            "BOMRef": "pkg:pypi/python-dotenv@1.2.3?package-id=ee53f418af72b418"
+          },
+          "Version": "1.2.3",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "DependsOn": [
+            "click@8.5.0"
+          ]
+        },
+        {
+          "ID": "python-multipart@0.0.32",
+          "Name": "python-multipart",
+          "Identifier": {
+            "PURL": "pkg:pypi/python-multipart@0.0.32",
+            "UID": "cbb9e2c1ed0defc9",
+            "BOMRef": "pkg:pypi/python-multipart@0.0.32?package-id=5d055e6c310a901f"
+          },
+          "Version": "0.0.32",
+          "Licenses": [
+            "Apache-2.0"
+          ]
+        },
+        {
+          "ID": "pyyaml@6.0.2",
+          "Name": "pyyaml",
+          "Identifier": {
+            "PURL": "pkg:pypi/pyyaml@6.0.2",
+            "UID": "81070ab01b4c3e73",
+            "BOMRef": "pkg:pypi/pyyaml@6.0.2?package-id=6ed72c844f2a8314"
+          },
+          "Version": "6.0.2",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "regex@2025.7.34",
+          "Name": "regex",
+          "Identifier": {
+            "PURL": "pkg:pypi/regex@2025.7.34",
+            "UID": "38e9cdc5c95ccdc",
+            "BOMRef": "pkg:pypi/regex@2025.7.34?package-id=405bbb94e22f77b9"
+          },
+          "Version": "2025.7.34",
+          "Licenses": [
+            "Apache-2.0 AND CNRI-Python"
+          ]
+        },
+        {
+          "ID": "ruff@0.12.10",
+          "Name": "ruff",
+          "Identifier": {
+            "PURL": "pkg:pypi/ruff@0.12.10",
+            "UID": "13751291fcbdbd03",
+            "BOMRef": "pkg:pypi/ruff@0.12.10?package-id=ecee8ac50f42b0f4"
+          },
+          "Version": "0.12.10"
+        },
+        {
+          "ID": "sentinelflow@0.1.0",
+          "Name": "sentinelflow",
+          "Identifier": {
+            "PURL": "pkg:pypi/sentinelflow@0.1.0",
+            "UID": "542c1b46f2789dc6",
+            "BOMRef": "pkg:pypi/sentinelflow@0.1.0?package-id=f9077b3c4cd4be6b"
+          },
+          "Version": "0.1.0",
+          "DependsOn": [
+            "defusedxml@0.7.1",
+            "fastapi@0.141.1",
+            "greenlet@3.5.6",
+            "httpx@0.28.1",
+            "mypy@1.17.1",
+            "pip-tools@7.6.1",
+            "pip@26.2.1",
+            "pydantic@2.11.7",
+            "pytest-cov@6.2.1",
+            "pytest@9.1.1",
+            "python-dotenv@1.2.3",
+            "python-multipart@0.0.32",
+            "pyyaml@6.0.2",
+            "regex@2025.7.34",
+            "ruff@0.12.10",
+            "setuptools@84.0.0",
+            "sqlalchemy@2.0.43",
+            "starlette@1.7.0",
+            "types-defusedxml@0.7.0.20260504",
+            "types-pyyaml@6.0.12.20250822",
+            "types-regex@2025.7.34.20250809",
+            "uvicorn@0.35.0"
+          ]
+        },
+        {
+          "ID": "setuptools@84.0.0",
+          "Name": "setuptools",
+          "Identifier": {
+            "PURL": "pkg:pypi/setuptools@84.0.0",
+            "UID": "3182601864a115d9",
+            "BOMRef": "pkg:pypi/setuptools@84.0.0?package-id=0e1047c01bf52a9e"
+          },
+          "Version": "84.0.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "build@1.6.1",
+            "importlib-metadata@8.7.1",
+            "jaraco-functools@4.4.0",
+            "jaraco-text@4.0.0",
+            "more-itertools@10.8.0",
+            "mypy@1.17.1",
+            "packaging@26.3",
+            "pip@26.2.1",
+            "pyproject-hooks@1.3.3",
+            "pytest-cov@6.2.1",
+            "pytest@9.1.1",
+            "ruff@0.12.10",
+            "tomli@2.4.0",
+            "wheel@0.48.0"
+          ]
+        },
+        {
+          "ID": "sqlalchemy@2.0.43",
+          "Name": "sqlalchemy",
+          "Identifier": {
+            "PURL": "pkg:pypi/sqlalchemy@2.0.43",
+            "UID": "b19aac8c48282315",
+            "BOMRef": "pkg:pypi/sqlalchemy@2.0.43?package-id=5ab5b7688e5807d9"
+          },
+          "Version": "2.0.43",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "greenlet@3.5.6",
+            "importlib-metadata@8.7.1",
+            "mypy@1.17.1",
+            "typing-extensions@4.16.0"
+          ]
+        },
+        {
+          "ID": "starlette@1.7.0",
+          "Name": "starlette",
+          "Identifier": {
+            "PURL": "pkg:pypi/starlette@1.7.0",
+            "UID": "9796a13499533d54",
+            "BOMRef": "pkg:pypi/starlette@1.7.0?package-id=a5519ec304449e0a"
+          },
+          "Version": "1.7.0",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "DependsOn": [
+            "anyio@4.15.1",
+            "httpx@0.28.1",
+            "python-multipart@0.0.32",
+            "pyyaml@6.0.2",
+            "typing-extensions@4.16.0"
+          ]
+        },
+        {
+          "ID": "tomli@2.4.0",
+          "Name": "tomli",
+          "Identifier": {
+            "PURL": "pkg:pypi/tomli@2.4.0",
+            "UID": "17f3b19429cbcada",
+            "BOMRef": "pkg:pypi/tomli@2.4.0?package-id=3b4d7e60d098e364"
+          },
+          "Version": "2.4.0",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "types-defusedxml@0.7.0.20260504",
+          "Name": "types-defusedxml",
+          "Identifier": {
+            "PURL": "pkg:pypi/types-defusedxml@0.7.0.20260504",
+            "UID": "fe63ba1d1e20025f",
+            "BOMRef": "pkg:pypi/types-defusedxml@0.7.0.20260504?package-id=6cba199f33625a6b"
+          },
+          "Version": "0.7.0.20260504",
+          "Licenses": [
+            "Apache-2.0"
+          ]
+        },
+        {
+          "ID": "types-pyyaml@6.0.12.20250822",
+          "Name": "types-pyyaml",
+          "Identifier": {
+            "PURL": "pkg:pypi/types-pyyaml@6.0.12.20250822",
+            "UID": "338d0d7bcbeaed7e",
+            "BOMRef": "pkg:pypi/types-pyyaml@6.0.12.20250822?package-id=a9de8945cd5fc9b3"
+          },
+          "Version": "6.0.12.20250822",
+          "Licenses": [
+            "Apache-2.0"
+          ]
+        },
+        {
+          "ID": "types-regex@2025.7.34.20250809",
+          "Name": "types-regex",
+          "Identifier": {
+            "PURL": "pkg:pypi/types-regex@2025.7.34.20250809",
+            "UID": "526cce0cc9877d98",
+            "BOMRef": "pkg:pypi/types-regex@2025.7.34.20250809?package-id=f295c93b1f079430"
+          },
+          "Version": "2025.7.34.20250809",
+          "Licenses": [
+            "Apache-2.0"
+          ]
+        },
+        {
+          "ID": "typing-extensions@4.16.0",
+          "Name": "typing-extensions",
+          "Identifier": {
+            "PURL": "pkg:pypi/typing-extensions@4.16.0",
+            "UID": "bfa9a2a1fad7697d",
+            "BOMRef": "pkg:pypi/typing-extensions@4.16.0?package-id=7d136d36362be7b7"
+          },
+          "Version": "4.16.0",
+          "Licenses": [
+            "PSF-2.0"
+          ]
+        },
+        {
+          "ID": "typing-inspection@0.4.4",
+          "Name": "typing-inspection",
+          "Identifier": {
+            "PURL": "pkg:pypi/typing-inspection@0.4.4",
+            "UID": "6c5b00069d339f77",
+            "BOMRef": "pkg:pypi/typing-inspection@0.4.4?package-id=6c1f87a6b585055d"
+          },
+          "Version": "0.4.4",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "typing-extensions@4.16.0"
+          ]
+        },
+        {
+          "ID": "uvicorn@0.35.0",
+          "Name": "uvicorn",
+          "Identifier": {
+            "PURL": "pkg:pypi/uvicorn@0.35.0",
+            "UID": "79384f416eb23f98",
+            "BOMRef": "pkg:pypi/uvicorn@0.35.0?package-id=cc1765d3bf561f1d"
+          },
+          "Version": "0.35.0",
+          "Licenses": [
+            "BSD-3-Clause"
+          ],
+          "DependsOn": [
+            "click@8.5.0",
+            "h11@0.16.0",
+            "python-dotenv@1.2.3",
+            "pyyaml@6.0.2",
+            "typing-extensions@4.16.0"
+          ]
+        },
+        {
+          "ID": "wheel@0.46.3",
+          "Name": "wheel",
+          "Identifier": {
+            "PURL": "pkg:pypi/wheel@0.46.3",
+            "UID": "b9612a77262953ad",
+            "BOMRef": "pkg:pypi/wheel@0.46.3?package-id=f8f81d389a35b632"
+          },
+          "Version": "0.46.3",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "wheel@0.48.0",
+          "Name": "wheel",
+          "Identifier": {
+            "PURL": "pkg:pypi/wheel@0.48.0",
+            "UID": "7c4a56914bb9a94f",
+            "BOMRef": "pkg:pypi/wheel@0.48.0?package-id=fb4e945b4562dde4"
+          },
+          "Version": "0.48.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "packaging@26.3"
+          ]
+        },
+        {
+          "ID": "zipp@3.23.0",
+          "Name": "zipp",
+          "Identifier": {
+            "PURL": "pkg:pypi/zipp@3.23.0",
+            "UID": "74e896fc59cc7501",
+            "BOMRef": "pkg:pypi/zipp@3.23.0?package-id=5c6a54aa446fe7f0"
+          },
+          "Version": "3.23.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "jaraco-functools@4.4.0",
+            "more-itertools@10.8.0",
+            "pytest-cov@6.2.1",
+            "pytest@9.1.1"
+          ]
+        }
+      ]
+    }
+  ]
+}
