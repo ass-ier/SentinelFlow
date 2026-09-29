@@ -62,6 +62,28 @@ required when identified as a Vercel build. Its CSP permits only that API origin
 and self. No tokens belong in `VITE_` variables. Frame-denial is an HTTP header,
 not an ineffective `frame-ancestors` meta directive.
 
+## Public website analytics
+
+Production Vercel builds optionally report aggregate website page views through
+`@vercel/analytics/react`. Collection starts only after the backend confirms
+public-demo mode. Local/private workspaces, Preview builds, failed health
+checks, unrecognized pages and detailed referring URLs are excluded.
+Public record-detail paths use `/:id` placeholders; query strings, fragments,
+search values and custom events are discarded. The component disables
+automatic history tracking and submits only sanitized React Router page
+changes. Its retained callback stops accepting events after health failure,
+private-mode transition or unmount.
+
+The SDK uses same-origin `/_vercel/insights/*` paths without weakening the
+existing CSP. No telemetry payloads, entities, credentials or investigation
+notes are passed to it. Vercel still receives ordinary website-request
+metadata, including browser/device information and an origin-only referrer
+where available. This is not a claim of zero metadata collection. Public users
+can read this disclosure on **Demo data & limits**. The
+[deployment runbook](deployment.md#vercel-web-analytics) describes activation;
+the dated security assessment and recordings remain evidence of their earlier
+source fingerprints, not an assessment of every later dependency change.
+
 ## Input and resource limits
 
 Default file size: **5 MiB**; **10,000 unique events per run**; **100 stored rules**;

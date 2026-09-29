@@ -39,6 +39,11 @@ export default defineConfig(({ mode }) => {
   };
   return {
     envDir,
+    define: {
+      'import.meta.env.VITE_WEB_ANALYTICS': JSON.stringify(
+        env.VERCEL === '1' && env.VERCEL_ENV === 'production' ? 'true' : 'false',
+      ),
+    },
     plugins: [react(), csp],
     server: {
       host: '127.0.0.1',

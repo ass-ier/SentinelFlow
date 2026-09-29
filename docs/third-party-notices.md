@@ -25,6 +25,11 @@ This does not relicense third-party material.
   https://impeccable.style, was used during implementation. No proprietary design
   assets, source code from unrelated repositories, or third-party marketing
   imagery is included.
+- **Vercel Web Analytics:** `@vercel/analytics` 2.0.1, MIT, copyright (c) 2026
+  Vercel, Inc. The original notice is retained in
+  `frontend/public/vercel-analytics-license.txt` and included in the frontend
+  build. The separately hosted collection script is loaded only for eligible
+  production public-demo visitors; see the deployment/privacy documentation.
 
 No sample command, image, URL, or attack-themed telemetry is executed. Public
 source reproduction scripts are explicit optional actions; core operation and

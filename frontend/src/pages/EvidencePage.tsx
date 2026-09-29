@@ -84,6 +84,21 @@ export function EvidencePage() {
             repository.
           </p>
         </Panel>
+        {import.meta.env.PROD && import.meta.env.VITE_WEB_ANALYTICS === 'true' && (
+          <Panel title="Website usage analytics">
+            <p className="reading-text">
+              This public deployment uses Vercel Web Analytics for aggregate page-view statistics.
+              Search values, URL parameters, fragments, record identifiers and telemetry payloads
+              are not included. Detail pages are grouped by page type, and custom events are
+              disabled. Visits with detailed referring URLs are excluded.
+            </p>
+            <p className="reading-text">
+              Vercel receives standard website request metadata, such as browser/device information
+              and an origin-only referrer when available. Local builds, preview builds and private
+              workspaces do not load the analytics collector.
+            </p>
+          </Panel>
+        )}
       </>
     );
 

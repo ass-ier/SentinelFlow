@@ -116,6 +116,11 @@ an image or contacts a deployment service. See the runbook for manual equivalent
 | Your GitHub repository | `GITHUB_URL` |
 | Published demonstration video | `DEMO_VIDEO_URL` |
 
+Production Vercel builds include privacy-limited **Web Analytics** for the
+synthetic public demo. Enable Analytics in the Vercel project and deploy this
+frontend; no analytics secret is needed. Private/local and Preview builds stay
+untracked. See [activation and privacy details](docs/deployment.md#vercel-web-analytics).
+
 ## What it does
 
 The complete feature list below describes private/local mode. Public-demo

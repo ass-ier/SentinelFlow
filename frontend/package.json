@@ -22,6 +22,7 @@
     "test:report": "vitest run --reporter=default --reporter=json --outputFile=test-results/vitest.json"
   },
   "dependencies": {
+    "@vercel/analytics": "2.0.1",
     "lucide-react": "0.468.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",

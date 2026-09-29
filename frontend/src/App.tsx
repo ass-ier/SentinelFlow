@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { Shell } from './components/Shell';
 import { WorkspaceProvider } from './components/WorkspaceProvider';
+import { PublicAnalytics } from './components/PublicAnalytics';
 import { Button, EmptyState, LinkButton, PageHeader } from './components/ui';
 import { AlertDetailPage } from './pages/AlertDetailPage';
 import { AlertsPage } from './pages/AlertsPage';
@@ -68,6 +69,7 @@ export function App() {
   return (
     <RenderBoundary>
       <WorkspaceProvider>
+        <PublicAnalytics />
         <Routes>
           <Route element={<Shell />}>
             <Route index element={<DashboardPage />} />

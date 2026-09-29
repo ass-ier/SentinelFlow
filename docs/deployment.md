@@ -225,6 +225,38 @@ without a path. Include any approved custom frontend origin separated by a
 comma. Wait for the backend configuration restart, then reload the frontend.
 Initial CORS errors before this final origin update are not a successful setup.
 
+### Vercel Web Analytics
+
+The frontend includes `@vercel/analytics` 2.0.1 through its **React** integration,
+not `@vercel/analytics/next`. In the Vercel project, open **Analytics** and enable
+Web Analytics if it is not already enabled. Deploy the branch containing this
+integration, visit the production website, and navigate between pages. The
+dashboard may take a short time to show visits; browser content blockers can
+prevent collection. No analytics key or additional Render variable is needed.
+
+The build enables collection only when Vercel supplies `VERCEL=1` and
+`VERCEL_ENV=production`. The browser also waits for a successful backend health
+response with `public_demo: true`. Local/private workspaces and Vercel Preview
+builds do not load the collector. If the website still says **Local API
+connected**, finish the public-demo configuration before expecting analytics.
+Do not set the generated `VITE_WEB_ANALYTICS` flag yourself.
+
+Only recognized public page types are counted. Dynamic event/alert/rule paths
+are aggregated as `/:id`; query parameters, fragments and arbitrary paths are
+excluded. Search/filter changes on the same page do not generate additional
+page views. Custom events are rejected, and detailed or malformed referrers
+prevent collection for that document. No log, entity, alert, form or token data
+is submitted. Standard request metadata still reaches Vercel; see its
+[Web Analytics privacy documentation](https://vercel.com/docs/analytics/privacy-policy).
+The public **Demo data & limits** page discloses this behavior.
+
+The script and collection endpoints use same-origin `/_vercel/insights/*`
+paths, so the existing CSP does not need an external-domain exception. After
+deployment, verify that `/_vercel/insights/script.js` returns JavaScript, not
+the SPA HTML, and that page navigation produces successful
+`/_vercel/insights/view` requests. Enabling the dashboard alone does not add the
+React component to an older deployed build.
+
 ## Part D: post-deployment checks you must perform
 
 Replace `BACKEND_URL` and `FRONTEND_URL` with the two URLs copied from the provider
