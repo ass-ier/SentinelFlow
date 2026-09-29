@@ -26,7 +26,7 @@ import { duration, number } from '../services/format';
 import type { Collection, Dataset, Rule, ValidationReport } from '../types';
 
 export function RulesPage() {
-  const { runId, revision, refresh } = useWorkspace();
+  const { runId, revision, refresh, publicDemo } = useWorkspace();
   const rules = useResource<Collection<Rule>>('/rules', { refreshKey: revision });
   const [query, setQuery] = useState('');
   const [pending, setPending] = useState<Set<string>>(new Set());
@@ -80,15 +80,16 @@ export function RulesPage() {
         }
       />
       <Notice>
-        Enable changes affect new imports and replays only. Active runs and existing alerts retain
-        their pinned rule snapshots.
+        {publicDemo
+          ? 'Bundled rules are read-only in the public demo. Inspect any definition or run an isolated test without changing the shared catalog.'
+          : 'Enable changes affect new imports and replays only. Active runs and existing alerts retain their pinned rule snapshots.'}
       </Notice>
       <div className="rule-search-row">
         <TextField
           label="Search detection rules"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Name, rule ID, or ATT&CK technique…"
+          placeholder="Name, rule ID, or ATT&amp;CK technique…"
         />
         {rules.data && (
           <p className="muted">
@@ -126,7 +127,7 @@ export function RulesPage() {
                   <th scope="col">Severity</th>
                   <th scope="col">Threshold / window</th>
                   <th scope="col">Grouped by</th>
-                  <th scope="col">MITRE ATT&CK</th>
+                  <th scope="col">MITRE ATT&amp;CK</th>
                   <th scope="col">New runs</th>
                 </tr>
               </thead>
@@ -162,7 +163,8 @@ export function RulesPage() {
                         aria-checked={rule.enabled}
                         aria-label={`${rule.enabled ? 'Disable' : 'Enable'} ${rule.name}`}
                         className="rule-switch"
-                        disabled={pending.has(rule.id)}
+                        disabled={publicDemo || pending.has(rule.id)}
+                        title={publicDemo ? 'Read-only in the public demo' : undefined}
                         onClick={() => void toggle(rule)}
                       >
                         <span className="switch-track">
@@ -197,7 +199,7 @@ export function RulesPage() {
 
 export function RuleDetailPage() {
   const { id = '' } = useParams();
-  const { runId, revision, refresh } = useWorkspace();
+  const { runId, revision, refresh, publicDemo } = useWorkspace();
   const rule = useResource<Rule>(`/rules/${encodeURIComponent(id)}`, { refreshKey: revision });
   const datasets = useResource<Collection<Dataset>>('/datasets', { refreshKey: revision });
   const [datasetId, setDatasetId] = useState('');
@@ -269,6 +271,11 @@ export function RuleDetailPage() {
         </Notice>
       )}
       {rule.loading && <LoadingState label="Loading rule definition" />}
+      {publicDemo && (
+        <Notice>
+          Bundled definitions are read-only here. Isolated rule testing remains available.
+        </Notice>
+      )}
       {rule.data && (
         <>
           <Panel
@@ -285,7 +292,8 @@ export function RuleDetailPage() {
                 aria-checked={rule.data.enabled}
                 aria-label={`${rule.data.enabled ? 'Disable' : 'Enable'} ${rule.data.name}`}
                 className="rule-switch"
-                disabled={toggling}
+                disabled={publicDemo || toggling}
+                title={publicDemo ? 'Read-only in the public demo' : undefined}
                 onClick={() => void toggle()}
               >
                 <span className="switch-track">

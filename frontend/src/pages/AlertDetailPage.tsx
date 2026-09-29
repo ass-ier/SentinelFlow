@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ArrowRight, ChevronRight, FileSearch, Save } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { EventTable } from '../components/EventEvidence';
+import { DeliveryTable } from '../components/DeliveryTable';
 import { MitreTags, Provenance } from '../components/Provenance';
 import { RuleDefinition } from '../components/RuleDefinition';
 import {
@@ -30,7 +31,7 @@ import type { Alert, AlertDetail, AlertStatus } from '../types';
 
 export function AlertDetailPage() {
   const { id = '' } = useParams();
-  const { runId, revision, refresh } = useWorkspace();
+  const { runId, revision, refresh, publicDemo } = useWorkspace();
   const detail = useResource<AlertDetail>(`/alerts/${encodeURIComponent(id)}`, {
     refreshKey: revision,
   });
@@ -211,45 +212,52 @@ export function AlertDetailPage() {
             </div>
             <aside className="case-controls" aria-label="Investigation controls">
               <h2>Investigation status</h2>
-              <form
-                onSubmit={(event) => {
-                  event.preventDefault();
-                  void saveStatus();
-                }}
-              >
-                <SelectField
-                  label="Set alert status"
-                  value={status}
-                  onChange={(event) => {
-                    setStatus(event.target.value as AlertStatus);
-                    setSaved(false);
+              {publicDemo ? (
+                <Notice>
+                  Read-only in the shared demo. Status changes and investigation notes are available
+                  in private local mode.
+                </Notice>
+              ) : (
+                <form
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    void saveStatus();
                   }}
-                  disabled={saving}
                 >
-                  {['new', 'investigating', 'resolved', 'false_positive', 'suppressed'].map(
-                    (value) => (
-                      <option key={value} value={value}>
-                        {label(value)}
-                      </option>
-                    ),
-                  )}
-                </SelectField>
-                <TextField
-                  label="Investigation note (optional)"
-                  value={note}
-                  onChange={(event) => setNote(event.target.value)}
-                  maxLength={2000}
-                  disabled={saving}
-                />
-                <Button
-                  variant="primary"
-                  type="submit"
-                  disabled={saving || (status === alert.status && !note.trim())}
-                >
-                  <Save size={14} aria-hidden="true" />
-                  {saving ? 'Saving…' : 'Save status'}
-                </Button>
-              </form>
+                  <SelectField
+                    label="Set alert status"
+                    value={status}
+                    onChange={(event) => {
+                      setStatus(event.target.value as AlertStatus);
+                      setSaved(false);
+                    }}
+                    disabled={saving}
+                  >
+                    {['new', 'investigating', 'resolved', 'false_positive', 'suppressed'].map(
+                      (value) => (
+                        <option key={value} value={value}>
+                          {label(value)}
+                        </option>
+                      ),
+                    )}
+                  </SelectField>
+                  <TextField
+                    label="Investigation note (optional)"
+                    value={note}
+                    onChange={(event) => setNote(event.target.value)}
+                    maxLength={2000}
+                    disabled={saving}
+                  />
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    disabled={saving || (status === alert.status && !note.trim())}
+                  >
+                    <Save size={14} aria-hidden="true" />
+                    {saving ? 'Saving…' : 'Save status'}
+                  </Button>
+                </form>
+              )}
               <ErrorNotice error={saveError} title="Status not changed" />
               {saved && (
                 <p className="success-text" role="status">
@@ -265,6 +273,35 @@ export function AlertDetailPage() {
               </div>
             </aside>
           </div>
+          <Panel
+            title="Telemetry provenance"
+            description="Provider attribution is distinct from detection-rule provenance."
+          >
+            {alert.telemetry_sources?.length ? (
+              <dl className="facts facts-grid">
+                {alert.telemetry_sources.map((source, index) => (
+                  <Fact key={index} term={label(source.provider)}>
+                    <span className="break-all">
+                      {source.connector_id || 'Manual upload'}
+                      {source.source_table && ` / ${source.source_table}`}
+                      {source.source_channel && ` / ${source.source_channel}`}
+                    </span>
+                  </Fact>
+                ))}
+              </dl>
+            ) : (
+              <p className="panel-note">
+                Manual or legacy ingestion. Inspect raw event metadata for source details.
+              </p>
+            )}
+          </Panel>
+          <Panel
+            title="Notifications"
+            description="Delivery state is independent of investigation status."
+          >
+            <DeliveryTable deliveries={alert.notifications || []} />
+            <Link to="/notifications">Notification destinations and delivery history</Link>
+          </Panel>
           <Panel
             title="Triggering evidence"
             description={`${number(alert.event_count)} linked events · ${number(alert.evidence_ids.length)} stored evidence references · UTC`}

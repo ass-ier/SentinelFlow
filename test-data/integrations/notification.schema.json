@@ -1,0 +1,122 @@
+{
+  "$defs": {
+    "AlertSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "informational",
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "rule": {
+          "title": "Rule",
+          "type": "string"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        },
+        "timestamp": {
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "mitre_attack": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Mitre Attack",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "severity",
+        "title",
+        "rule",
+        "status",
+        "timestamp",
+        "mitre_attack"
+      ],
+      "title": "AlertSummary",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "event": {
+      "enum": [
+        "security_alert",
+        "notification_test"
+      ],
+      "title": "Event",
+      "type": "string"
+    },
+    "version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Version",
+      "type": "string"
+    },
+    "alert": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AlertSummary"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "source": {
+      "additionalProperties": true,
+      "title": "Source",
+      "type": "object"
+    },
+    "detection": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Detection",
+      "type": "object"
+    },
+    "investigation": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "title": "Investigation",
+      "type": "object"
+    },
+    "mock": {
+      "default": false,
+      "title": "Mock",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "event"
+  ],
+  "title": "NotificationPayload",
+  "type": "object"
+}

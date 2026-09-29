@@ -1,0 +1,345 @@
+
+========================================================================
+Environment
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/node-v24.21.0-darwin-arm64/bin/node -e const [a,b]=process.versions.node.split('.').map(Number);if(a!==24||b<21)process.exit(1);console.log(process.version)
+========================================================================
+v24.21.0
+
+========================================================================
+Pinned Python dependency consistency
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python -m pip check
+========================================================================
+No broken requirements found.
+
+========================================================================
+Offline Swagger asset integrity
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python scripts/vendor_swagger.py --check
+========================================================================
+Verified offline Swagger UI 5.33.0: 5 licensed assets
+
+========================================================================
+Backend static checks
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python -m ruff check backend scripts collector
+========================================================================
+All checks passed!
+
+========================================================================
+Backend formatting
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python -m ruff format --check backend scripts collector
+========================================================================
+111 files already formatted
+
+========================================================================
+Backend strict types
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python -m mypy backend/app
+========================================================================
+Success: no issues found in 55 source files
+
+========================================================================
+Frontend lint
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/node-v24.21.0-darwin-arm64/bin/npm --prefix frontend run lint
+========================================================================
+
+> sentinelflow-frontend@0.1.0 lint
+> eslint . --max-warnings 0
+
+
+========================================================================
+Frontend formatting
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/node-v24.21.0-darwin-arm64/bin/npm --prefix frontend run format:check
+========================================================================
+
+> sentinelflow-frontend@0.1.0 format:check
+> prettier --check . --ignore-unknown
+
+Checking formatting...
+All matched files use Prettier code style!
+
+========================================================================
+Frontend types and production build
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/node-v24.21.0-darwin-arm64/bin/npm --prefix frontend run build
+========================================================================
+
+> sentinelflow-frontend@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 1629 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   1.77 kB │ gzip:   0.94 kB
+dist/assets/index-DdSLY-h7.css   38.76 kB │ gzip:   8.71 kB
+dist/assets/index-IrHnF70a.js   370.72 kB │ gzip: 111.65 kB
+✓ built in 1.21s
+
+========================================================================
+Browser workflow syntax
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/node-v24.21.0-darwin-arm64/bin/node --check scripts/browser_workflows.mjs
+========================================================================
+
+========================================================================
+Live verification syntax
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/node-v24.21.0-darwin-arm64/bin/node --check scripts/browser_verify.mjs
+========================================================================
+
+========================================================================
+Deployment browser syntax
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/node-v24.21.0-darwin-arm64/bin/node --check scripts/browser_deployment.mjs
+========================================================================
+
+========================================================================
+Integration browser syntax
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/node-v24.21.0-darwin-arm64/bin/node --check scripts/browser_integrations.mjs
+========================================================================
+
+========================================================================
+Recording workflow syntax
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/node-v24.21.0-darwin-arm64/bin/node --check scripts/record_demo.mjs
+========================================================================
+
+========================================================================
+Saved fixture reproducibility
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python scripts/generate_test_data.py --check
+========================================================================
+Reproduced 56 generated files byte-for-byte in isolated storage.
+
+========================================================================
+Integration fixture reproducibility
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python scripts/generate_integration_data.py --check
+========================================================================
+Integration fixture matches its deterministic generator: microsoft-windows.json
+Integration fixture matches its deterministic generator: notification.schema.json
+
+========================================================================
+Security fixture reproducibility
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python scripts/generate_security_data.py --check
+========================================================================
+Security corpus: 16 shape cases + 7 malformed bodies across 9 endpoints (207 requests)
+
+========================================================================
+All backend tests
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python -m pytest -q --tb=short --junitxml=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/backend-junit.xml --cov=app --cov-report=json:/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/coverage.json
+========================================================================
+........................................................................ [  8%]
+........................................................................ [ 17%]
+........................................................................ [ 26%]
+........................................................................ [ 35%]
+........................................................................ [ 44%]
+........................................................................ [ 53%]
+........................................................................ [ 62%]
+........................................................................ [ 71%]
+........................................................................ [ 80%]
+........................................................................ [ 89%]
+........................................................................ [ 98%]
+.........                                                                [100%]
+=============================== warnings summary ===============================
+.runtime/venv/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+______________ coverage: platform darwin, python 3.13.15-final-0 _______________
+
+Coverage JSON written to file /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/coverage.json
+801 passed, 1 warning in 103.65s (0:01:43)
+
+========================================================================
+All frontend tests
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/node-v24.21.0-darwin-arm64/bin/npm --prefix frontend test -- --reporter=json --outputFile=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/frontend-tests.json
+========================================================================
+
+> sentinelflow-frontend@0.1.0 test
+> vitest run --reporter=json --outputFile=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/frontend-tests.json
+
+JSON report written to /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/frontend-tests.json
+
+========================================================================
+Exact detection validation
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python scripts/validate_detections.py
+========================================================================
+SENTINELFLOW DETECTION VALIDATION
+Scope: bundled
+Each scenario uses fresh event-time correlation state.
+
+PASSED   auth-brute-force                     events=  25 alerts= 1 duplicates=0
+PASSED   auth-normal-failures                 events=   3 alerts= 0 duplicates=0
+PASSED   auth-success                         events=   8 alerts= 0 duplicates=0
+PASSED   auth-lifecycle                       events=   2 alerts= 0 duplicates=0
+PASSED   auth-distributed                     events=  12 alerts= 0 duplicates=0
+PASSED   auth-multiple-users                  events=  12 alerts= 1 duplicates=0
+PASSED   auth-lockout                         events=   4 alerts= 1 duplicates=0
+PASSED   auth-normal-lockout                  events=   2 alerts= 0 duplicates=0
+PASSED   auth-below-threshold                 events=   9 alerts= 0 duplicates=0
+PASSED   auth-window-boundary                 events=  10 alerts= 1 duplicates=0
+PASSED   auth-window-outside                  events=  10 alerts= 0 duplicates=0
+PASSED   auth-group-separation                events=  20 alerts= 2 duplicates=0
+PASSED   auth-duplicates                      events=  25 alerts= 1 duplicates=25
+PASSED   auth-shuffled                        events=  25 alerts= 1 duplicates=0
+PASSED   auth-suppression-boundary            events=  25 alerts= 2 duplicates=0
+PASSED   auth-missing-source                  events=  10 alerts= 0 duplicates=0
+PASSED   powershell-indicators                events=   5 alerts= 1 duplicates=0
+PASSED   powershell-encoded                   events=   1 alerts= 1 duplicates=0
+PASSED   powershell-admin                     events=   4 alerts= 0 duplicates=0
+PASSED   powershell-legitimate-download       events=   1 alerts= 1 duplicates=0
+PASSED   process-suspicious                   events=   3 alerts= 1 duplicates=0
+PASSED   process-benign                       events=   2 alerts= 0 duplicates=0
+PASSED   iam-privileged-group                 events=   2 alerts= 1 duplicates=0
+PASSED   iam-normal-group                     events=   2 alerts= 0 duplicates=0
+PASSED   iam-approved-maintenance             events=   2 alerts= 0 duplicates=0
+PASSED   iam-maintenance-wrong-host           events=   2 alerts= 1 duplicates=0
+PASSED   iam-privilege-actions                events=   2 alerts= 1 duplicates=0
+PASSED   iam-service-activity                 events=   2 alerts= 0 duplicates=0
+PASSED   dns-normal                           events=  10 alerts= 0 duplicates=0
+PASSED   dns-long-label                       events=   3 alerts= 1 duplicates=0
+PASSED   dns-entropy                          events=   3 alerts= 1 duplicates=0
+PASSED   dns-frequency                        events=  25 alerts= 1 duplicates=0
+PASSED   dns-subdomain-pattern                events=  22 alerts= 1 duplicates=0
+PASSED   dns-below-frequency                  events=  19 alerts= 0 duplicates=0
+PASSED   net-unusual                          events=   6 alerts= 1 duplicates=0
+PASSED   net-normal                           events=   8 alerts= 0 duplicates=0
+PASSED   net-below-threshold                  events=   2 alerts= 0 duplicates=0
+PASSED   net-allowlisted                      events=   6 alerts= 0 duplicates=0
+PASSED   net-private                          events=   6 alerts= 0 duplicates=0
+PASSED   mixed-incident                       events=  56 alerts= 7 duplicates=0
+PASSED   benign-baseline                      events=1000 alerts= 0 duplicates=0
+PASSED   parser-csv                           events=   1 alerts= 0 duplicates=0
+PASSED   parser-syslog                        events=   5 alerts= 0 duplicates=0
+PASSED   parser-windows                       events=   5 alerts= 0 duplicates=0
+PASSED   parser-json                          events=   2 alerts= 0 duplicates=0
+PASSED   sigma-download                       events=   1 alerts= 1 duplicates=0
+PASSED   sigma-encoded                        events=   1 alerts= 0 duplicates=0
+PASSED   sigma-benign                         events=   1 alerts= 0 duplicates=0
+PASSED   sigma-azure                          events=   1 alerts= 0 duplicates=0
+PASSED   public-otrf-adapted                  events=   6 alerts= 0 duplicates=0
+
+Scenarios: 50 passed, 0 failed, 50 total
+Controlled benign scenarios: 14 / 14 passed
+Duration: 0.230993s
+STATUS: PASSED
+
+========================================================================
+Licensed Sigma compatibility
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python scripts/validate_sigma.py
+========================================================================
+{
+  "rules_imported": 2,
+  "rules_compiled": 2,
+  "rules_tested": 2,
+  "tests_passed": 4,
+  "tests_failed": 0,
+  "expected_detections": 2,
+  "observed_detections": 2,
+  "results": [
+    {
+      "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+      "dataset_id": "sigma-download",
+      "expected_alerts": 1,
+      "observed_alerts": 1,
+      "severity": "high",
+      "author": "Florian Roth (Nextron Systems)",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+      "status": "passed",
+      "events_processed": 1
+    },
+    {
+      "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+      "dataset_id": "sigma-benign",
+      "expected_alerts": 0,
+      "observed_alerts": 0,
+      "severity": "high",
+      "author": "Florian Roth (Nextron Systems)",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+      "status": "passed",
+      "events_processed": 1
+    },
+    {
+      "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+      "dataset_id": "sigma-encoded",
+      "expected_alerts": 1,
+      "observed_alerts": 1,
+      "severity": "medium",
+      "author": "frack113",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+      "status": "passed",
+      "events_processed": 1
+    },
+    {
+      "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+      "dataset_id": "sigma-benign",
+      "expected_alerts": 0,
+      "observed_alerts": 0,
+      "severity": "medium",
+      "author": "frack113",
+      "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+      "status": "passed",
+      "events_processed": 1
+    }
+  ]
+}
+
+========================================================================
+Offline integration end-to-end validation
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python scripts/validate_integrations.py
+========================================================================
+microsoft_sentinel: 13 events, 2 alerts, 2 actual mock receipts; repeated run stable
+microsoft_graph: 13 events, 2 alerts, 2 actual mock receipts; repeated run stable
+windows_wef: 36 events, 7 alerts, 7 actual mock receipts; repeated run stable
+/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/integrations-validation.json
+
+========================================================================
+Measured detection benchmark
+$ /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python scripts/benchmark_detection.py
+========================================================================
+{
+  "measured_at": "2026-09-28T23:52:04.387586+00:00",
+  "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+  "scope": "Single-process engine-only; parsing/storage excluded. Not a production capacity claim.",
+  "python": "3.13.15",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "dataset": "mixed/benchmark_5600.jsonl",
+  "dataset_sha256": "b99174b1ee5f7cc972fe14d9a3baf1081270129bab22d6f5b44a3c22d01e6a12",
+  "iterations": 3,
+  "events_processed": 5600,
+  "events_per_second": 13162.840605384665,
+  "detection_seconds": 0.42544008302502334,
+  "sample_seconds": [
+    0.4358808749821037,
+    0.42544008302502334,
+    0.4247549169231206
+  ],
+  "alerts_generated": 700,
+  "rules_evaluated": 39200,
+  "active_rules": 7,
+  "expected_alerts": 700,
+  "rule_alert_counts": {
+    "AUTH-001": 100,
+    "AUTH-002": 100,
+    "PROC-001": 100,
+    "PROC-002": 100,
+    "IAM-001": 100,
+    "DNS-001": 100,
+    "NET-001": 100
+  },
+  "status": "passed"
+}
+
+========================================================================
+SENTINELFLOW VALIDATION
+Backend tests .............. 801 passed
+Frontend tests ............. 145 passed
+Parser                       64 passed (backend subset)
+Detection                    50 passed (backend subset)
+Negative                     17 passed (backend subset)
+Integration                  472 passed (backend subset)
+Replay                       17 passed (backend subset)
+Sigma                        34 passed (backend subset)
+Regression                   440 passed (backend subset)
+Security                     434 passed (backend subset)
+Detection scenarios ........ 50 passed, 0 failed
+Controlled benign cases .... 14/14
+Total unique test cases .... 946 passed, 0 failed
+STATUS: VALIDATED
+========================================================================
+

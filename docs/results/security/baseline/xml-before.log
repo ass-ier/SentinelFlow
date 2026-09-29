@@ -1,0 +1,56 @@
+.FF..FFFFF....                                                           [100%]
+=================================== FAILURES ===================================
+__ test_xml_entity_declaration_is_rejected_in_every_input_encoding[utf-16le] ___
+backend/tests/security/test_xml_boundary.py:16: in test_xml_entity_declaration_is_rejected_in_every_input_encoding
+    with pytest.raises(DomainError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'app.core.errors.DomainError'>
+__ test_xml_entity_declaration_is_rejected_in_every_input_encoding[utf-16be] ___
+backend/tests/security/test_xml_boundary.py:16: in test_xml_entity_declaration_is_rejected_in_every_input_encoding
+    with pytest.raises(DomainError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'app.core.errors.DomainError'>
+_______________________ test_xml_nesting_is_bounded[13] ________________________
+backend/tests/security/test_xml_boundary.py:22: in test_xml_nesting_is_bounded
+    with pytest.raises(DomainError, match="nesting"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'app.core.errors.DomainError'>
+______________________ test_xml_nesting_is_bounded[3000] _______________________
+backend/tests/security/test_xml_boundary.py:22: in test_xml_nesting_is_bounded
+    with pytest.raises(DomainError, match="nesting"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'app.core.errors.DomainError'>
+___________ test_xml_node_count_is_bounded_even_when_bytes_are_small ___________
+backend/tests/security/test_xml_boundary.py:27: in test_xml_node_count_is_bounded_even_when_bytes_are_small
+    with pytest.raises(DomainError, match="nodes"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'app.core.errors.DomainError'>
+_________ test_xml_invalid_unicode_is_a_controlled_input_error[\ud800] _________
+backend/tests/security/test_xml_boundary.py:34: in test_xml_invalid_unicode_is_a_controlled_input_error
+    xml_root(f"<x>{value}</x>")
+backend/app/parsers/windows_xml.py:10: in xml_root
+    if len(text.encode()) > 65_536 or "<!DOCTYPE" in text.upper() or "<!ENTITY" in text.upper():
+           ^^^^^^^^^^^^^
+E   UnicodeEncodeError: 'utf-8' codec can't encode character '\ud800' in position 3: surrogates not allowed
+_________ test_xml_invalid_unicode_is_a_controlled_input_error[\udfff] _________
+backend/tests/security/test_xml_boundary.py:34: in test_xml_invalid_unicode_is_a_controlled_input_error
+    xml_root(f"<x>{value}</x>")
+backend/app/parsers/windows_xml.py:10: in xml_root
+    if len(text.encode()) > 65_536 or "<!DOCTYPE" in text.upper() or "<!ENTITY" in text.upper():
+           ^^^^^^^^^^^^^
+E   UnicodeEncodeError: 'utf-8' codec can't encode character '\udfff' in position 3: surrogates not allowed
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/starlette/testclient.py:51
+  /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.venv/lib/python3.13/site-packages/starlette/testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/security/test_xml_boundary.py::test_xml_entity_declaration_is_rejected_in_every_input_encoding[utf-16le]
+FAILED backend/tests/security/test_xml_boundary.py::test_xml_entity_declaration_is_rejected_in_every_input_encoding[utf-16be]
+FAILED backend/tests/security/test_xml_boundary.py::test_xml_nesting_is_bounded[13]
+FAILED backend/tests/security/test_xml_boundary.py::test_xml_nesting_is_bounded[3000]
+FAILED backend/tests/security/test_xml_boundary.py::test_xml_node_count_is_bounded_even_when_bytes_are_small
+FAILED backend/tests/security/test_xml_boundary.py::test_xml_invalid_unicode_is_a_controlled_input_error[\ud800]
+FAILED backend/tests/security/test_xml_boundary.py::test_xml_invalid_unicode_is_a_controlled_input_error[\udfff]
+7 failed, 7 passed, 1 warning in 0.08s

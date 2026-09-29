@@ -2,6 +2,7 @@ import logging
 import uuid
 from collections.abc import AsyncIterator, Awaitable, Callable
 from contextlib import asynccontextmanager
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
 from fastapi import FastAPI, Request
@@ -12,9 +13,11 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 from starlette.staticfiles import StaticFiles
 
+from app.api.integrations import router as integration_router
 from app.api.routes import router
-from app.core.config import ROOT, Settings
+from app.core.config import PUBLIC_DEMO_RUN_LIMIT, ROOT, Settings
 from app.core.errors import DomainError
+from app.core.openapi import SentinelAPI
 from app.core.security import BodyLimitMiddleware
 from app.services.platform import Platform
 
@@ -30,24 +33,33 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         yield
         application.state.platform.close()
 
-    application = FastAPI(
+    application = SentinelAPI(
         title="SentinelFlow",
         version="0.1.0",
         description=(
-            "Local evidence-first detection engineering. All operational APIs are also under /api."
+            "Evidence-first detection engineering. All operational APIs are also under /api. "
+            + (
+                "Public demo: shared synthetic telemetry only. Uploads, rule mutations, "
+                "status/notes, and developer evidence endpoints are disabled. "
+                "Sigma accepts only bundled samples; reset requires an operator token."
+                if config.public_demo
+                else "Local analyst mode."
+            )
         ),
         docs_url=None,
         redoc_url=None,
         lifespan=lifespan,
     )
-    application.add_middleware(BodyLimitMiddleware, max_bytes=config.max_upload_bytes * 2 + 65_536)
+    application.public_demo = config.public_demo
     application.add_middleware(
-        TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "[::1]", "testserver"]
+        BodyLimitMiddleware,
+        max_bytes=128 * 1024 if config.public_demo else config.max_upload_bytes * 2 + 65_536,
     )
+    application.add_middleware(TrustedHostMiddleware, allowed_hosts=list(config.allowed_hosts))
     application.add_middleware(
         CORSMiddleware,
         allow_origins=list(config.allowed_origins),
-        allow_methods=["GET", "POST", "PATCH"],
+        allow_methods=["GET", "POST", "PATCH", "DELETE"],
         allow_headers=["Authorization", "Content-Type"],
     )
 
@@ -59,16 +71,11 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         request_id = uuid.uuid4().hex
         request.state.request_id = request_id
         origin = request.headers.get("origin")
+        denied_origin = False
         if request.method not in {"GET", "HEAD", "OPTIONS"} and origin:
             same_origin = origin == f"{request.url.scheme}://{request.headers.get('host', '')}"
             if origin not in config.allowed_origins and not same_origin:
-                return JSONResponse(
-                    {
-                        "error": {"code": "origin_denied", "message": "Origin is not allowed"},
-                        "request_id": request_id,
-                    },
-                    status_code=403,
-                )
+                denied_origin = True
         path = request.url.path
         index = ROOT / "frontend" / "dist" / "index.html"
         spa = path == "/" or any(
@@ -79,19 +86,31 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 "/alerts",
                 "/rules",
                 "/testing",
+                "/detections",
                 "/replay",
                 "/sigma",
                 "/evidence",
                 "/validation",
+                "/integrations",
+                "/notifications",
             )
         )
-        if (
-            request.method == "GET"
+        if denied_origin:
+            response: Response = JSONResponse(
+                {
+                    "error": {"code": "origin_denied", "message": "Origin is not allowed"},
+                    "request_id": request_id,
+                },
+                status_code=403,
+            )
+        elif (
+            not config.public_demo
+            and request.method == "GET"
             and "text/html" in request.headers.get("accept", "")
             and spa
             and index.exists()
         ):
-            response: Response = FileResponse(index)
+            response = FileResponse(index)
         else:
             response = await call_next(request)
         response.headers["X-Request-ID"] = request_id
@@ -158,7 +177,18 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     @application.get("/health", tags=["Health"])
     @application.get("/api/health", include_in_schema=False)
     def health() -> dict[str, Any]:
-        return {"status": "ok", "version": "0.1.0", "auth_required": bool(config.api_token)}
+        result = {
+            "status": "ok",
+            "version": "0.1.0",
+            "auth_required": bool(config.api_token) and not config.public_demo,
+        }
+        if config.public_demo:
+            result.update(public_demo=True, public_demo_run_limit=PUBLIC_DEMO_RUN_LIMIT)
+        return result
+
+    @application.get("/favicon.svg", include_in_schema=False)
+    def favicon() -> FileResponse:
+        return FileResponse(ROOT / "frontend" / "public" / "favicon.svg")
 
     @application.get("/docs", include_in_schema=False)
     @application.get("/api/docs", include_in_schema=False)
@@ -169,21 +199,41 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             swagger_js_url="/swagger/swagger-ui-bundle.js",
             swagger_css_url="/swagger/swagger-ui.css",
             swagger_favicon_url="/favicon.svg",
+            swagger_ui_parameters={"validatorUrl": None, "queryConfigEnabled": False},
         )
 
     application.include_router(router)
     application.include_router(router, prefix="/api", include_in_schema=False)
+    application.include_router(integration_router)
+    application.include_router(integration_router, prefix="/api", include_in_schema=False)
 
-    from swagger_ui_bundle import swagger_ui_path  # type: ignore[import-untyped]
-
-    application.mount("/swagger", StaticFiles(directory=swagger_ui_path), name="swagger")
+    swagger = Path(__file__).parent / "static/swagger"
+    application.mount("/swagger", StaticFiles(directory=swagger), name="swagger")
     dist = ROOT / "frontend" / "dist"
-    if (dist / "assets").is_dir():
+    if not config.public_demo and (dist / "assets").is_dir():
         application.mount("/assets", StaticFiles(directory=dist / "assets"), name="assets")
 
     @application.get("/{path:path}", include_in_schema=False)
     def frontend(path: str) -> FileResponse:
-        candidate = (dist / path).resolve()
+        if config.public_demo:
+            raise DomainError(
+                "Backend API only; open the separately deployed frontend", 404, "not_found"
+            )
+        relative = PurePosixPath(path)
+        if (
+            relative.is_absolute()
+            or PureWindowsPath(path).drive
+            or "\\" in path
+            or "\x00" in path
+            or ".." in relative.parts
+        ):
+            raise DomainError("Route not found", 404, "not_found")
+        candidate = dist
+        for part in relative.parts:
+            candidate = candidate / part
+            if candidate.is_symlink():
+                raise DomainError("Route not found", 404, "not_found")
+        candidate = candidate.resolve()
         if candidate.is_relative_to(dist.resolve()) and candidate.is_file():
             return FileResponse(candidate)
         if path == "" and (dist / "index.html").exists():

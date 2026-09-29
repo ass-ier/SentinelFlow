@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "started_at": "2026-09-28T23:53:40.896Z",
+  "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+  "checks": [
+    {
+      "name": "Unauthenticated private configuration is denied without credential disclosure",
+      "status": "passed"
+    },
+    {
+      "name": "Owner token entry is masked and absent from rendered page text",
+      "status": "passed"
+    },
+    {
+      "name": "Reference-only credential creation enforces UTC expiry and the actual read-only scope",
+      "status": "passed"
+    },
+    {
+      "name": "UI revocation takes effect on the next authenticated request",
+      "status": "passed"
+    },
+    {
+      "name": "Expired credentials are visibly distinguished and rejected by the backend",
+      "status": "passed"
+    },
+    {
+      "name": "Malicious destination text remains inert and delivery history contains no server secrets",
+      "status": "passed"
+    },
+    {
+      "name": "Actual stored malicious alert names render as text, never executable markup",
+      "status": "passed"
+    },
+    {
+      "name": "Raw evidence preserves malicious bytes while remaining inert in the real browser",
+      "status": "passed"
+    },
+    {
+      "name": "Credential expiry controls remain usable at 1440px",
+      "status": "passed"
+    },
+    {
+      "name": "Credential expiry controls remain usable at 390px",
+      "status": "passed"
+    },
+    {
+      "name": "Updated offline Swagger renders and declares actual bearer/scoped authorization",
+      "status": "passed"
+    },
+    {
+      "name": "Security workflows completed without browser runtime errors",
+      "status": "passed"
+    }
+  ],
+  "screenshots": [
+    "credential-expiry.png",
+    "literal-evidence.png"
+  ],
+  "finished_at": "2026-09-28T23:53:43.397Z"
+}

@@ -1,0 +1,28 @@
+PASS Actual API load has an accessible loading state; no connectivity is invented
+PASS Default Microsoft and Windows sources remain externally disabled
+PASS Missing live enablement produces an actual, actionable error without an external request
+PASS Connector form saves reference-only configuration; a real mock query test imports nothing
+PASS Notification empty states leave core alerts and investigation available
+PASS Destination enablement and test enqueue lead to a real persisted HTTP 202 mock delivery
+PASS Delivery detail shows actual attempt evidence and an explicit non-incident test payload
+PASS Notification policy filters persist, exclude replay by default and disable independently
+PASS microsoft_sentinel UI demo normalizes, detects and delivers to the real local receiver
+PASS microsoft_graph UI demo normalizes, detects and delivers to the real local receiver
+PASS windows_wef UI demo normalizes, detects and delivers to the real local receiver
+PASS Alert investigation joins rule, ten triggering events, Microsoft provenance and independent delivery state
+PASS Repeated UI demonstration does not duplicate notifications
+PASS Event evidence preserves connector attribution and source JSON
+PASS Integration surface fits 1440px: integrations
+PASS Integration surface fits 1440px: notifications
+PASS Integration surface fits 1440px: notifications
+PASS Integration surface fits 1440px: alerts
+PASS Reference-only connector configuration is usable at 1440px
+PASS Integration surface fits 390px: integrations
+PASS Integration surface fits 390px: notifications
+PASS Integration surface fits 390px: notifications
+PASS Integration surface fits 390px: alerts
+PASS Reference-only connector configuration is usable at 390px
+PASS Mobile navigation reaches new integration pages without a broken route
+PASS Confirmed destination deletion retains its delivery evidence
+PASS No uncaught rendering errors in real integration workflows
+PASS Actual mock OAuth credentials are absent from management responses and rendered UI

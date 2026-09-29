@@ -142,7 +142,7 @@ function Result({ result }: { result: ValidationResult }) {
                       {alert.source_entities.ips.join(', ') || 'Not present'}
                     </span>
                   </Fact>
-                  <Fact term="MITRE ATT&CK">
+                  <Fact term="MITRE ATT&amp;CK">
                     <MitreTags techniques={alert.mitre_attack} />
                   </Fact>
                 </dl>

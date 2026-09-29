@@ -20,7 +20,7 @@ import { number } from '../services/format';
 import type { Dashboard } from '../types';
 
 export function DashboardPage() {
-  const { runId, revision } = useWorkspace();
+  const { runId, revision, publicDemo } = useWorkspace();
   const dashboard = useResource<Dashboard>(`/dashboard${queryString({ run_id: runId })}`, {
     refreshKey: revision,
   });
@@ -32,10 +32,12 @@ export function DashboardPage() {
         description="Telemetry, detections, and the evidence behind them."
         actions={
           <>
-            <LinkButton to={route('/events', runId, { import: '1' })}>
-              <Upload size={15} aria-hidden="true" />
-              Import events
-            </LinkButton>
+            {!publicDemo && (
+              <LinkButton to={route('/events', runId, { import: '1' })}>
+                <Upload size={15} aria-hidden="true" />
+                Import events
+              </LinkButton>
+            )}
             <LinkButton variant="primary" to={route('/replay', runId)}>
               <Play size={15} aria-hidden="true" />
               Replay dataset
@@ -94,7 +96,11 @@ export function DashboardPage() {
             ) : (
               <EmptyState
                 title="No event activity in this scope"
-                description="Replay an included dataset or import your own telemetry. Every new run keeps its evidence and rule snapshot isolated."
+                description={
+                  publicDemo
+                    ? 'Replay an included synthetic dataset. Each run keeps its evidence and rule snapshot isolated.'
+                    : 'Replay an included dataset or import your own telemetry. Every new run keeps its evidence and rule snapshot isolated.'
+                }
                 action={
                   <LinkButton variant="primary" to={route('/replay', runId)}>
                     <Play size={14} aria-hidden="true" />
@@ -175,11 +181,11 @@ export function DashboardPage() {
             </section>
           </div>
           <Panel
-            title="MITRE ATT&CK activity"
+            title="MITRE ATT&amp;CK activity"
             description="Mappings on triggered detections, not a claim of technique coverage."
           >
             {data.mitre.length ? (
-              <Table caption="MITRE ATT&CK activity">
+              <Table caption="MITRE ATT&amp;CK activity">
                 <thead>
                   <tr>
                     <th scope="col">Technique</th>
@@ -214,7 +220,7 @@ export function DashboardPage() {
                 </tbody>
               </Table>
             ) : (
-              <p className="panel-empty">No ATT&CK-mapped alerts in this scope.</p>
+              <p className="panel-empty">No ATT&amp;CK-mapped alerts in this scope.</p>
             )}
           </Panel>
         </>

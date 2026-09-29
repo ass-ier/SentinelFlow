@@ -68,7 +68,7 @@ function parseError(payload: unknown, status: number): ApiError {
       .join('; ');
   }
   if (!message) message = `The request could not be completed (HTTP ${status}). Please retry.`;
-  if (status === 401 || status === 403) {
+  if ((status === 401 || status === 403) && error?.code !== 'public_demo_restricted') {
     message += ' Open Connection settings to check your API token.';
   }
   if (
@@ -87,12 +87,17 @@ function parseError(payload: unknown, status: number): ApiError {
 
 export async function api<T>(
   path: string,
-  options: { method?: 'GET' | 'POST' | 'PATCH'; body?: unknown; signal?: AbortSignal } = {},
+  options: {
+    method?: 'GET' | 'POST' | 'PATCH' | 'DELETE';
+    body?: unknown;
+    signal?: AbortSignal;
+  } = {},
 ): Promise<T> {
   const token = getToken();
+  const base = resolveApiBase(import.meta.env.VITE_API_BASE_URL);
   let response: Response;
   try {
-    response = await fetch(`/api${path}`, {
+    response = await fetch(`${base}${path}`, {
       method: options.method ?? 'GET',
       signal: options.signal,
       headers: {
@@ -147,3 +152,4 @@ export function route(
 ): string {
   return `${path}${queryString({ run_id: runId, ...params })}`;
 }
+import { resolveApiBase } from './apiBase';

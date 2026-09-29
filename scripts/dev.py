@@ -31,7 +31,7 @@ def main() -> int:
     require_free(frontend)
     node = shutil.which("node")
     if node is None:
-        raise RuntimeError("Node.js is missing; install Node 20.19+")
+        raise RuntimeError("Node.js is missing; install Node 24.21+ LTS")
     vite = ROOT / "frontend" / "node_modules" / "vite" / "bin" / "vite.js"
     if not vite.exists():
         raise RuntimeError("Frontend dependencies are missing; run make install")

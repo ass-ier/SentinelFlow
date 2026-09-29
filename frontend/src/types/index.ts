@@ -1,8 +1,10 @@
+import type { Delivery } from './integrations';
+
 export type Severity = 'informational' | 'low' | 'medium' | 'high' | 'critical';
 export type AlertStatus = 'new' | 'investigating' | 'resolved' | 'false_positive' | 'suppressed';
 export type RunStatus = 'pending' | 'running' | 'completed' | 'failed' | 'cancelled';
 export type ReplaySpeed = 'instant' | 'realtime' | '10x';
-export type InputFormat = 'json' | 'jsonl' | 'csv' | 'syslog' | 'windows';
+export type InputFormat = 'json' | 'jsonl' | 'csv' | 'syslog' | 'windows' | 'wazuh';
 export type JsonObject = Record<string, unknown>;
 
 export interface NormalizedEvent {
@@ -12,7 +14,14 @@ export interface NormalizedEvent {
     id: string;
     timestamp: string;
     source: string;
-    category: 'authentication' | 'process' | 'network' | 'identity' | 'file';
+    category:
+      | 'authentication'
+      | 'process'
+      | 'network'
+      | 'identity'
+      | 'file'
+      | 'system'
+      | 'application';
     type: string;
     action: string;
     outcome: 'success' | 'failure' | 'unknown';
@@ -98,6 +107,14 @@ export interface AlertDetail extends Alert {
   evidence: NormalizedEvent[];
   rule_snapshot: RuleSnapshot;
   evidence_ids: string[];
+  telemetry_sources?: {
+    provider: string;
+    connector_id: string | null;
+    source_table: string | null;
+    source_channel: string | null;
+    source_host: string | null;
+  }[];
+  notifications?: Delivery[];
 }
 
 export interface ValidationAlert extends Alert {
@@ -286,4 +303,6 @@ export interface Health {
   status: string;
   version: string;
   auth_required: boolean;
+  public_demo?: boolean;
+  public_demo_run_limit?: number | null;
 }

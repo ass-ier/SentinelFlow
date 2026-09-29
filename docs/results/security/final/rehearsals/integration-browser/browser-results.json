@@ -1,0 +1,146 @@
+{
+  "status": "passed",
+  "started_at": "2026-09-28T23:53:34.053Z",
+  "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+  "checks": [
+    {
+      "name": "Actual API load has an accessible loading state; no connectivity is invented",
+      "status": "passed"
+    },
+    {
+      "name": "Default Microsoft and Windows sources remain externally disabled",
+      "status": "passed"
+    },
+    {
+      "name": "Missing live enablement produces an actual, actionable error without an external request",
+      "status": "passed"
+    },
+    {
+      "name": "Connector form saves reference-only configuration; a real mock query test imports nothing",
+      "status": "passed"
+    },
+    {
+      "name": "Notification empty states leave core alerts and investigation available",
+      "status": "passed"
+    },
+    {
+      "name": "Destination enablement and test enqueue lead to a real persisted HTTP 202 mock delivery",
+      "status": "passed"
+    },
+    {
+      "name": "Delivery detail shows actual attempt evidence and an explicit non-incident test payload",
+      "status": "passed"
+    },
+    {
+      "name": "Notification policy filters persist, exclude replay by default and disable independently",
+      "status": "passed"
+    },
+    {
+      "name": "microsoft_sentinel UI demo normalizes, detects and delivers to the real local receiver",
+      "status": "passed",
+      "events": 13,
+      "deliveries": 2
+    },
+    {
+      "name": "microsoft_graph UI demo normalizes, detects and delivers to the real local receiver",
+      "status": "passed",
+      "events": 13,
+      "deliveries": 2
+    },
+    {
+      "name": "windows_wef UI demo normalizes, detects and delivers to the real local receiver",
+      "status": "passed",
+      "events": 36,
+      "deliveries": 7
+    },
+    {
+      "name": "Alert investigation joins rule, ten triggering events, Microsoft provenance and independent delivery state",
+      "status": "passed"
+    },
+    {
+      "name": "Repeated UI demonstration does not duplicate notifications",
+      "status": "passed"
+    },
+    {
+      "name": "Event evidence preserves connector attribution and source JSON",
+      "status": "passed"
+    },
+    {
+      "name": "Integration surface fits 1440px: integrations",
+      "status": "passed"
+    },
+    {
+      "name": "Integration surface fits 1440px: notifications",
+      "status": "passed"
+    },
+    {
+      "name": "Integration surface fits 1440px: notifications",
+      "status": "passed"
+    },
+    {
+      "name": "Integration surface fits 1440px: alerts",
+      "status": "passed"
+    },
+    {
+      "name": "Reference-only connector configuration is usable at 1440px",
+      "status": "passed"
+    },
+    {
+      "name": "Integration surface fits 390px: integrations",
+      "status": "passed"
+    },
+    {
+      "name": "Integration surface fits 390px: notifications",
+      "status": "passed"
+    },
+    {
+      "name": "Integration surface fits 390px: notifications",
+      "status": "passed"
+    },
+    {
+      "name": "Integration surface fits 390px: alerts",
+      "status": "passed"
+    },
+    {
+      "name": "Reference-only connector configuration is usable at 390px",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile navigation reaches new integration pages without a broken route",
+      "status": "passed"
+    },
+    {
+      "name": "Confirmed destination deletion retains its delivery evidence",
+      "status": "passed"
+    },
+    {
+      "name": "No uncaught rendering errors in real integration workflows",
+      "status": "passed"
+    },
+    {
+      "name": "Actual mock OAuth credentials are absent from management responses and rendered UI",
+      "status": "passed"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "artifacts/integrations-browser/integrations-desktop.png",
+      "bytes": 234590
+    },
+    {
+      "path": "artifacts/integrations-browser/notifications-desktop.png",
+      "bytes": 288509
+    },
+    {
+      "path": "artifacts/integrations-browser/integration-alert.png",
+      "bytes": 435006
+    },
+    {
+      "path": "artifacts/integrations-browser/integrations-mobile.png",
+      "bytes": 145945
+    }
+  ],
+  "live_microsoft_tested": false,
+  "completed_at": "2026-09-28T23:53:40.472Z",
+  "page_errors": []
+}

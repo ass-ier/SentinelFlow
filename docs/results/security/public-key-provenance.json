@@ -1,0 +1,15 @@
+{
+  "classification": "Public key fingerprint, not a secret",
+  "component": "Official Python container image metadata",
+  "field": "GPG_KEY",
+  "public_fingerprint": "7169605F62C751356D054A26A821E680E5FA6305",
+  "upstream_repository": "https://github.com/docker-library/python",
+  "upstream_path": "3.13/alpine3.24/Dockerfile",
+  "upstream_ref_at_retrieval": "master",
+  "upstream_git_blob": "1977444e32bbbda7db8fe9dc960da1be182db7bc",
+  "verified_date_utc": "2026-09-28",
+  "python_version": "3.13.15",
+  "python_source_sha256": "1e66a7945a48390ee4c2a4268a0e4185884059a13c4aab6d148aa208deea4a76",
+  "reason": "The official Dockerfile publishes this fingerprint and uses it to retrieve a public signing key and verify the CPython source archive. It is neither the private signing key nor a SentinelFlow credential.",
+  "triage_boundary": "Only exact generic-api-key GPG_KEY matches in seven named image scan/inspection evidence files and the focused release-gate regression test are classified. The actual scanned snapshot or immutable historical Git blob must contain this exact public fingerprint on the reported line. Other values, other match keys and other paths remain blocking."
+}

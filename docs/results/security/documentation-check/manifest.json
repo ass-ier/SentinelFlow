@@ -1,0 +1,27 @@
+[
+  {
+    "path": "secrets.json",
+    "bytes": 9615,
+    "sha256": "85518a792e31373590d125956fa4a36b84147363daec054ee373fc314ffff56d"
+  },
+  {
+    "path": "secrets.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "secrets.stderr.log",
+    "bytes": 82,
+    "sha256": "e61e06a168b82804751d41783e20757fd6a1bd42c779d3cb267a0c2ace148d42"
+  },
+  {
+    "path": "source-scope.json",
+    "bytes": 104310,
+    "sha256": "32c0c36a860fb7959036121546eb325abebefb5ce7f9c711965f16eb99454b95"
+  },
+  {
+    "path": "triage.json",
+    "bytes": 8301,
+    "sha256": "1ba180d5dab08402b5e9659cf2aa31bbabd78a138373a62e0ef9f73a7fdd4aba"
+  }
+]

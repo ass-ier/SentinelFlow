@@ -21,6 +21,9 @@ WINDOWS_ACTIONS: dict[int, tuple[str, str, str]] = {
     4733: ("identity", "group_member_removed", "success"),
     4757: ("identity", "group_member_removed", "success"),
     4720: ("identity", "account_created", "success"),
+    4722: ("identity", "account_enabled", "success"),
+    4725: ("identity", "account_disabled", "success"),
+    4726: ("identity", "account_deleted", "success"),
     4672: ("identity", "privilege_assigned", "success"),
     3: ("network", "connection", "success"),
     22: ("network", "dns_query", "unknown"),
@@ -48,19 +51,30 @@ def parse_windows(record: dict[str, Any]) -> NormalizedEvent:
         code = int(event_id)
     except (ValueError, TypeError) as exc:
         raise DomainError("Windows EventID must be an integer") from exc
-    if code not in WINDOWS_ACTIONS:
+    channel = system.get("Channel")
+    if channel in {"System", "Application"} and 0 <= code <= 65535:
+        category, action, outcome = channel.lower(), "windows_event", "unknown"
+    elif code in WINDOWS_ACTIONS:
+        category, action, outcome = WINDOWS_ACTIONS[code]
+    else:
         raise DomainError(f"Unsupported Windows EventID {code}")
-    category, action, outcome = WINDOWS_ACTIONS[code]
     created = system.get("TimeCreated", root.get("timestamp"))
     timestamp = created.get("SystemTime") if isinstance(created, dict) else created
     image = optional(data.get("NewProcessName", data.get("Image")))
     parent = optional(data.get("ParentProcessName", data.get("ParentImage")))
     provider = system.get("Provider", "windows")
     provider_name = provider.get("Name", "windows") if isinstance(provider, dict) else provider
-    if code in {1, 3, 22} and str(provider_name).casefold() not in {
-        "microsoft-windows-sysmon",
-        "sysmon",
-    }:
+    security = system.get("Security", {})
+    user_sid = security.get("UserID") if isinstance(security, dict) else None
+    if (
+        channel not in {"System", "Application"}
+        and code in {1, 3, 22}
+        and str(provider_name).casefold()
+        not in {
+            "microsoft-windows-sysmon",
+            "sysmon",
+        }
+    ):
         raise DomainError("EventID 1, 3 and 22 require an explicit Sysmon provider")
     fields = {
         "event": {
@@ -77,7 +91,12 @@ def parse_windows(record: dict[str, Any]) -> NormalizedEvent:
             "name": optional(
                 data.get("SubjectUserName")
                 if category == "identity"
-                else data.get("TargetUserName", data.get("User"))
+                else (
+                    optional(data.get("TargetUserName"))
+                    or optional(data.get("User"))
+                    or optional(data.get("SubjectUserName"))
+                    or user_sid
+                )
             )
         },
         "source": {

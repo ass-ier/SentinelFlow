@@ -1,0 +1,276 @@
+{
+  "checked_at": "2026-09-28T12:15:38.387909+00:00",
+  "base_commit": "b987e6d7526b9a643bf9813fe816ada21c706b55",
+  "source_fingerprint": "d618438a4506636078d672bc8b4fcf444d0685970d2d06f3d7515b089c957595",
+  "method": "Fresh local clone --no-hardlinks plus explicit Git-derived uncommitted-source overlay; executable updates revalidated and final documentation/evidence refreshed. No new commit or original remote/branch changes.",
+  "clone_path": "/Users/triplea/.copilot/session-state/c558b1b2-adb7-42c1-a3c1-217aa9ca7c3b/files/sentinelflow-deployment-clone",
+  "independent_installation": "Separate .venv and frontend/node_modules created by make install, not copied",
+  "source_files": [
+    {
+      "path": ".dockerignore",
+      "sha256": "a26f4a85cb022dfac2c76cc61e72bb96a7b53d6d7830ffc9daaee3a55baf2d21",
+      "preexisting_document": false
+    },
+    {
+      "path": ".env.example",
+      "sha256": "ab289bcf381bf09196a93490fa45e7bcfef0d1529fae1af24c5d2a98089ac078",
+      "preexisting_document": false
+    },
+    {
+      "path": ".env.public-demo.example",
+      "sha256": "d70d853662a306afdf180c1c1227f2e6887bd44628f1421dddcce29c6ebb15c3",
+      "preexisting_document": false
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "bfb756af95f4d7977275ee1173eb6fa2d11539209c7c907adfe8cc52258d7486",
+      "preexisting_document": false
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "e8cddb8bdfc48317906bdacf66c0bc802c06ad7a242857c1538bbaf9a1b201db",
+      "preexisting_document": false
+    },
+    {
+      "path": "Dockerfile.backend",
+      "sha256": "67dab9174889c6796f5f70da1c310fe8c0c4bb6768929442d9a469cdfdd54b77",
+      "preexisting_document": false
+    },
+    {
+      "path": "Makefile",
+      "sha256": "69c6ff66f45951e544ede5da4864bcf30ea5d6e799aa999c9b39bc1e19bf1eff",
+      "preexisting_document": false
+    },
+    {
+      "path": "README.md",
+      "sha256": "d5ddcfd1a38b164efb82eb8cd1469f87464f6ec37885777aae5dd539a6be680f",
+      "preexisting_document": false
+    },
+    {
+      "path": "backend/app/api/routes.py",
+      "sha256": "8bab4609e949981be2a349c7d108a29c2b322fc13e1c0615eb3191493aaa3a54",
+      "preexisting_document": false
+    },
+    {
+      "path": "backend/app/core/config.py",
+      "sha256": "2d7958ab685ef8bbf4f70fa328022b0108ba93e69943dc15957be32ebdfc34ed",
+      "preexisting_document": false
+    },
+    {
+      "path": "backend/app/core/evidence.py",
+      "sha256": "6eddae6948511fa9611232f2e41c5823067c770e4a91b773a17ba39eb3b2c22d",
+      "preexisting_document": false
+    },
+    {
+      "path": "backend/app/core/security.py",
+      "sha256": "5f0c0f494eee215e5d286a15c08ec12edf3f4c6d437f02bbe3068144d0987a14",
+      "preexisting_document": false
+    },
+    {
+      "path": "backend/app/main.py",
+      "sha256": "b61bce40487b3f5610b6113105c036a90072dcd927d148fdb93f54a6a3307a0b",
+      "preexisting_document": false
+    },
+    {
+      "path": "backend/app/services/datasets.py",
+      "sha256": "662cffacc779ba609d480b8b47579b57cc058da10e681e921b1f0134c7821bbc",
+      "preexisting_document": false
+    },
+    {
+      "path": "backend/app/services/platform.py",
+      "sha256": "e2bc63a83088b748a32a1ec4a9cb8b7abb9ec65da9f0a82b57e0bc54c6feb582",
+      "preexisting_document": false
+    },
+    {
+      "path": "backend/tests/integration/test_public_demo.py",
+      "sha256": "978aace6621468ebefd0e9a3b74e3c0cb23724fc9c77257a9d7195db99a06c3b",
+      "preexisting_document": false
+    },
+    {
+      "path": "backend/tests/unit/test_deployment_config.py",
+      "sha256": "34f6c15ec9acd0a70a73ef3558e1e2918f90d668a5630c451e07412c2b918daa",
+      "preexisting_document": false
+    },
+    {
+      "path": "docs/api.md",
+      "sha256": "c0519fe1be9d29b12160e10f37effb5040f46e3817c72b782d93bf6dba8b2bdd",
+      "preexisting_document": false
+    },
+    {
+      "path": "docs/demo.md",
+      "sha256": "dcbb005c56c37ad0d363abcc82148fb9bd77670fbc93adae0712df994076ca92",
+      "preexisting_document": false
+    },
+    {
+      "path": "docs/dependency-maintenance.md",
+      "sha256": "b86d50de9df171be5f9e74ca2a4514f2eb5162d129facf7913f3ef88d117db25",
+      "preexisting_document": false
+    },
+    {
+      "path": "docs/deployment-checklist.md",
+      "sha256": "2daea0090df2b0d5ef0f2bd48dffd620dcc23e3d10474f26c5db60d93e6c92ca",
+      "preexisting_document": false
+    },
+    {
+      "path": "docs/deployment-readiness.md",
+      "sha256": "45c8fb0379ba147d6e9d9fccc78b486e1168096a4a4738f0f20aa41bd8e9beef",
+      "preexisting_document": false
+    },
+    {
+      "path": "docs/deployment.md",
+      "sha256": "440096652498092acea193d89c754960032b536c7a968dd4f65fce5acf20c869",
+      "preexisting_document": false
+    },
+    {
+      "path": "docs/fresh-clone.md",
+      "sha256": "32986c40499b23cae18bdf463f5b987c817074b7e689c7ddee2fe46290037aee",
+      "preexisting_document": false
+    },
+    {
+      "path": "docs/implementation-status.md",
+      "sha256": "5095b4626219c71c1ceb1ef611b3a73de834f954bce5b3d08e0e896927da86ca",
+      "preexisting_document": true
+    },
+    {
+      "path": "docs/limitations.md",
+      "sha256": "d5b8f2a29a30dbf2792ec870a5e040e944d8ad1c53b48a4f3a8776c4ffcf9e4c",
+      "preexisting_document": false
+    },
+    {
+      "path": "docs/security.md",
+      "sha256": "f4bd1f2e2360d7ee55636935e79e107f9911af9046e6d968564a5a567a30b577",
+      "preexisting_document": false
+    },
+    {
+      "path": "docs/testing.md",
+      "sha256": "af8f1d3a47abdd6bee2719e0d80be3acf845f050fa9d6d5c591a75f47601fd11",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "sha256": "266953206af9b4e71ec7cc3cd8cda5c804ceb6b7f11bccc94e5442e99353b21d",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/components/Shell.tsx",
+      "sha256": "a9585a102c0fcc630bc87ae9e9f763e979b6fb3a6466e6b3ef9ac7c906d1edac",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/components/WorkspaceProvider.tsx",
+      "sha256": "59388655f2c94ce34fdb0904ca452b9c6e9642b2b43d1d39694b3b6183a6a982",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/hooks/workspace.ts",
+      "sha256": "120ec8d0cd258e318639042d234a2b48ed417d12914189cdccb0157ca9dda4df",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/pages/AlertDetailPage.tsx",
+      "sha256": "4c09cab311f70bbc1bfe2d957dd85b75f5988bd44e33fc3d0947da5bee6fcae5",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/pages/DashboardPage.tsx",
+      "sha256": "440c84a7113e12101e33b8427799e4581f1404d1e44761b9023b8ef2f637a51a",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/pages/EventsPage.tsx",
+      "sha256": "a61be3e2d464c284a9ac01cbead1f33f0992f41ef100734bf5f08a35ee44193f",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/pages/EvidencePage.tsx",
+      "sha256": "12d928adbc13dd3239d51d01fb7b682a633a69296b20dccb135e6dc1acf06d29",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/pages/RulesPage.tsx",
+      "sha256": "6a6d1c843cf33d013c2ca1c303940f5623b52d41caaf6b7eace67e6fa37757ca",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/pages/SigmaPage.tsx",
+      "sha256": "931627ea21bef4758a796e64756fff52eac8a82d1f94b947f097b815ff868d3d",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/services/api.ts",
+      "sha256": "c0b71adcd1392de94ba9267aa22445a344fa3fa98878058d078c9264112b5b0c",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/services/apiBase.ts",
+      "sha256": "a86411e362c263ba658d20f34d751a48198710c149fa14420f0a559469bb623f",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/src/types/index.ts",
+      "sha256": "e34fc302932f707c25bc72180930aaa11cd703211882c88b27848b78545c990f",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/tests/deployment.test.tsx",
+      "sha256": "5f3786b138653bcf96da85a2c374804bc99bfd2530d5dc4983105a31377f1e1d",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/vercel.json",
+      "sha256": "b92eb83b7530e44d0bbd0198940717169efd468799acef8e28829594bd283d6c",
+      "preexisting_document": false
+    },
+    {
+      "path": "frontend/vite.config.ts",
+      "sha256": "326ff2ba8e245a9d010160aee784520c2fc32997f01825bee057d398eb54366d",
+      "preexisting_document": false
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "a298b15e80ccf5062371f49c5f267b79a9654c0a897985fd18d21ba0b7a3d354",
+      "preexisting_document": false
+    },
+    {
+      "path": "render.yaml",
+      "sha256": "3482c728c717a034ad45d532652d4dd3633c9af0d0e772a81fff6689f0052cbd",
+      "preexisting_document": false
+    },
+    {
+      "path": "requirements.lock",
+      "sha256": "a4f1f4d0a28b29c632892c82660b13eb99b955e6ff5ee61aa6da4ce56be2cd05",
+      "preexisting_document": false
+    },
+    {
+      "path": "scripts/browser_deployment.mjs",
+      "sha256": "d8729a090c76168f79819c51cdd2b15be7129cecffe92a93d616246e366f3f50",
+      "preexisting_document": false
+    },
+    {
+      "path": "scripts/browser_workflows.mjs",
+      "sha256": "70e988159117d3c9375eb1ee5339b3f1d4209ef6a86619ad1c9bc842b7a4bb18",
+      "preexisting_document": false
+    },
+    {
+      "path": "scripts/demo_reset.py",
+      "sha256": "d07a4b3dc74cb66ba67f7855356ceed22ada6d1cd83a31383826b07bb41c762b",
+      "preexisting_document": false
+    },
+    {
+      "path": "scripts/serve.py",
+      "sha256": "0dc9728bf10304ece429d7f3be9d6ecea64ab43e8bef8120b262e5dd4307251d",
+      "preexisting_document": false
+    },
+    {
+      "path": "scripts/validate.py",
+      "sha256": "196951204516e255dfc9adff6e8e212781228ed6621d6d26cb4c77ec32e3a603",
+      "preexisting_document": false
+    },
+    {
+      "path": "scripts/verify_deployment.py",
+      "sha256": "1899541b5c5fefaf8070f23f2e25bdd9f8eb383acc170dacfa241829f009f9c5",
+      "preexisting_document": false
+    }
+  ],
+  "evidence_scope": "Generated receipt directory excluded from this self-referential overlay manifest; copied verbatim and inventoried separately in artifact-integrity.json"
+}

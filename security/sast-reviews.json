@@ -1,0 +1,217 @@
+{
+  "review_method": "Technical data-flow review, bound to the complete source-file SHA-256. Raw findings remain in reports; changed source or new rule IDs require a new review.",
+  "reviews": [
+    {
+      "scanner": "bandit", "path": "backend/app/core/safe.py", "rules": ["B506"],
+      "source_sha256": "f30023231b761871b6c991fa4bccfff194430883256ac56edf620fe0cbcaf44e",
+      "status": "False positive",
+      "reason": "UniqueSafeLoader subclasses yaml.SafeLoader and adds duplicate-key rejection and timestamp-as-text only. Unsafe tags, aliases, nesting and byte limits are tested; this is not yaml.UnsafeLoader."
+    },
+    {
+      "scanner": "bandit", "path": "backend/app/integrations/connectors.py", "rules": ["B105"],
+      "source_sha256": "ba03d59c4423a380098ceba2838a1efd0c67f419e5f12c46bb3ea870c633fcfe",
+      "status": "False positive",
+      "reason": "Both matches are empty-string initialization/clearing of the in-memory OAuth cache. Actual access tokens come from the authenticated provider response; no credential is hard-coded."
+    },
+    {
+      "scanner": "bandit", "path": "backend/app/integrations/demo.py", "rules": ["B105"],
+      "source_sha256": "465ee190c5c2b042a71bcf0e79edb165d674777c050fcc1793661829d4dc438e",
+      "status": "False positive",
+      "reason": "The literals are mock-token-not-live and the Bearer protocol label in the explicit loopback mock. They do not authenticate to Microsoft or the private analyst API."
+    },
+    {
+      "scanner": "bandit", "path": "backend/app/integrations/operations.py", "rules": ["B101"],
+      "source_sha256": "e2fd3508baeeaa1f13fe06f20cadfb11531b7385f0cb8f7bfdfad3b317f4d89f",
+      "status": "Not applicable",
+      "reason": "Assertions document already-enforced foreign-key or locked create/read postconditions. Route dependencies and explicit checks enforce authorization and existence before these points; removing assertions does not grant access."
+    },
+    {
+      "scanner": "bandit", "path": "backend/app/integrations/runtime.py", "rules": ["B101", "B105"],
+      "source_sha256": "118088306a746958ebc6b5fdad36baca020dc5edc859692183ecb782b7731c49",
+      "status": "False positive",
+      "reason": "The password match is an environment-reference name used only by the mock adapter. The assertion is a post-poll persisted-row invariant, not an authorization check; the connector was already loaded and connectors have no delete API."
+    },
+    {
+      "scanner": "bandit", "path": "backend/app/integrations/transport.py", "rules": ["B101"],
+      "source_sha256": "2d5f64b1ef5257714cfc92440a201c3af8b5c26a7c7ab7cb4736e85bf313b701",
+      "status": "Not applicable",
+      "reason": "checked_url has already explicitly rejected a missing hostname. The assertion narrows that established invariant; IP/network/TLS/redirect enforcement is not implemented with assert."
+    },
+    {
+      "scanner": "bandit", "path": "backend/app/parsers/windows_xml.py", "rules": ["B405"],
+      "source_sha256": "98833d470222de002b55c56cd1bdfacfbe0926f2a6f1f2e36e2748b2842415ba",
+      "status": "False positive",
+      "reason": "ElementTree is imported for Element type/ParseError only. Actual parsing calls defusedxml.fromstring with DTD/entity/external rejection, followed by depth/node bounds. Encoding-bypass regressions exercise the real parser."
+    },
+    {
+      "scanner": "bandit", "path": "backend/tests/integration/test_public_demo.py", "rules": ["B105", "B106"],
+      "source_sha256": "978aace6621468ebefd0e9a3b74e3c0cb23724fc9c77257a9d7195db99a06c3b",
+      "status": "False positive",
+      "reason": "test-only-public-demo-owner and the empty token are isolated TestClient inputs proving owner/reset and missing-token behavior; neither is a deployed credential."
+    },
+    {
+      "scanner": "bandit", "path": "backend/tests/integration/test_security.py", "rules": ["B106"],
+      "source_sha256": "8a503cad8a3fa9c0074ceddf4b9413f13e4a521fe49f7859ea73fb26b319499b",
+      "status": "False positive",
+      "reason": "test-only-value is a synthetic TestClient credential for a temporary database, never a real service secret."
+    },
+    {
+      "scanner": "bandit", "path": "backend/tests/integrations/test_connectors.py", "rules": ["B105"],
+      "source_sha256": "d412c9b19d51fbb8277e4dfc5be7db85895ed97479bc3538aed49bba95bf1f30",
+      "status": "False positive",
+      "reason": "Reviewed literals are a demo environment-reference name, synthetic-access/synthetic mock tokens, and intentionally empty/newline tokens used to verify rejection. Responses use a test transport, not a live identity service."
+    },
+    {
+      "scanner": "bandit", "path": "backend/tests/integrations/test_integration_security.py", "rules": ["B104", "B105"],
+      "source_sha256": "30912bcd5bac82f12368e669cf81c0cd11ba73c2b6c77cc7980b8bdb7c74cdd0",
+      "status": "False positive",
+      "reason": "0.0.0.0 is a rejected-address test value, not a listener. Token literals are an environment-reference name and an explicitly synthetic redaction marker; no real credential is supplied."
+    },
+    {
+      "scanner": "bandit", "path": "backend/tests/integrations/test_windows.py", "rules": ["B106"],
+      "source_sha256": "e6d1fccd7f32fe6ddb16ef0e1f46fbbadb542eed145794a57d109b405a800254",
+      "status": "False positive",
+      "reason": "SENTINEL_INTEGRATION_COLLECTOR names a test-provided environment variable, not its secret value."
+    },
+    {
+      "scanner": "bandit", "path": "backend/tests/regression/test_malformed_boundaries.py", "rules": ["B106"],
+      "source_sha256": "994aadd408f04dde8cd8e494c9a5a5df52162d2c7912950e1f27acd5c50ef54f",
+      "status": "False positive",
+      "reason": "local-test-token is an isolated authentication-error fixture, not an operational token."
+    },
+    {
+      "scanner": "bandit", "path": "backend/tests/security/test_auth_matrix.py", "rules": ["B105"],
+      "source_sha256": "1b871a0fc39e999d016705095884f605518a24c86e9e25e7e3a970444fc452e8",
+      "status": "False positive",
+      "reason": "The literal is an environment-reference name in a Pydantic expiry/schema test; it contains no authentication value."
+    },
+    {
+      "scanner": "bandit", "path": "backend/tests/security/test_release_gate.py", "rules": ["B404", "B603"],
+      "source_sha256": "7b433c7157d1103721dfa83911058c4aece0e625e99157045a749953adfaabfe",
+      "status": "Not applicable",
+      "reason": "The test invokes fixed local verification scripts with -O to prove disabled assertions fail before mutation. It uses argv lists, no shell and no telemetry-derived commands."
+    },
+    {
+      "scanner": "bandit", "path": "backend/tests/security/test_release_gate.py", "rules": ["B105"],
+      "source_sha256": "7b433c7157d1103721dfa83911058c4aece0e625e99157045a749953adfaabfe",
+      "status": "False positive",
+      "reason": "synthetic-local-probe exists only in a monkeypatched unit-test environment. urlopen is replaced by an in-memory fixture; the literal cannot authenticate to a real API, container or integration. The additional local .env copy contains only a synthetic marker and verifies owner-only artifact permissions."
+    },
+    {
+      "scanner": "bandit", "path": "backend/tests/security/test_transport_boundary.py", "rules": ["B404", "B603"],
+      "source_sha256": "cc62df137faf5e813ac5c23f30bbc1aaa23798fd0eb2bada8f8e95fb0e2f30cf",
+      "status": "Not applicable",
+      "reason": "A fixed OpenSSL argv generates an ephemeral test certificate/key under pytest's temporary directory. No event/HTTP input becomes executable; the key is chmod 0600 and not committed."
+    },
+    {
+      "scanner": "bandit", "path": "backend/tests/unit/test_deployment_config.py", "rules": ["B104"],
+      "source_sha256": "abb8edb23b5aaa7dcfd21d0ef05fde936b204f19c3dd81ef080092f04e9e8ed1",
+      "status": "Not applicable",
+      "reason": "The test asserts the intended container/Render listen configuration using a mocked launcher; it does not bind a public listener."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/benchmark_detection.py", "rules": ["B101"],
+      "source_sha256": "c6daf3543419e73b83dd1f99f766668839e0ff4b8a54203a44c4243bbef537ae",
+      "status": "Not applicable",
+      "reason": "The assertion narrows a metrics value produced by a validated nonempty iteration loop, not an access-control decision."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/container_security_probe.py", "rules": ["B101", "B310"],
+      "source_sha256": "7c7fbd92f2c6c1d6cd14138a6264e0fd7d0095bb874f288dbe88c0cc77daaa99",
+      "status": "Not applicable",
+      "reason": "This verification probe refuses optimized Python and intentionally asserts actual kernel/API results. HTTP targets are constructed in-container loopback URLs with an integer port; the container has no external network."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/dev.py", "rules": ["B404", "B603"],
+      "source_sha256": "fffbfe20d4e0bb3b3b9911b87607f59c21f87b72a2d69521fb08376ca56008b0",
+      "status": "False positive",
+      "reason": "Launches only Python/Uvicorn and locally installed Vite using argv lists. Environment ports are converted to integers and bind-checked. Trusted operator PATH/configuration is not remotely supplied telemetry; no shell interpretation occurs."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/generate_security_data.py", "rules": ["B311"],
+      "source_sha256": "e21dfad3c05d5d8853743e4f0544e1348927a01d28d70f4a6b89489d656c167d",
+      "status": "Not applicable",
+      "reason": "Seed 7341 deliberately reproduces inert fuzz fixture structure. This PRNG never generates credentials, signatures, authentication nonces or identifiers requiring secrecy."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/generate_test_data.py", "rules": ["B101"],
+      "source_sha256": "0812e33c11995883a0271c254a1bb75fc9015b9346562628cb2d9e45331d8d6e",
+      "status": "Not applicable",
+      "reason": "Generator invariant for locally authored deterministic fixture counts. It is not runtime authorization or untrusted code execution."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/manage.py", "rules": ["B404", "B603"],
+      "source_sha256": "8db16bb0a5dabf1a92ab89f7aa5efa23a7bc25aaf0aaf766fc40fdc7a8d625af",
+      "status": "False positive",
+      "reason": "Fixed repository development/test commands are selected by argparse choices and executed as argv without a shell. The Python override is an explicit trusted operator executable choice, not event/API data."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/prepare_public_sample.py", "rules": ["B310"],
+      "source_sha256": "f458d3ec65fb8c41969ffa919f5bd39ac847932f1515406deef2f29565d6d200",
+      "status": "False positive",
+      "reason": "Optional reproduction downloads only fixed HTTPS URLs at a pinned OTRF revision, checks archive bytes/size/hash, reads a named member in memory, and never executes or extracts telemetry."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/replay_events.py", "rules": ["B101", "B310"],
+      "source_sha256": "f2e0c13aad859ef39444d5cc1819ac29f2d7587856929c51761b84768058037e",
+      "status": "False positive",
+      "reason": "The owner-selected CLI API URL is explicitly restricted to HTTP(S), hostname present and no credentials/query/fragment. It is not an inbound SSRF endpoint. The assertion narrows a run after nonempty validated telemetry; no authorization depends on assert."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/security_rehearsal.py", "rules": ["B101", "B105", "B108", "B404", "B603"],
+      "source_sha256": "d05ec72e8e9b9a2193f702d5fb2416cc25cc6d10e1a285ad395fc977b2f959b9",
+      "status": "Not applicable",
+      "reason": "Owned-process verification refuses -O, executes fixed local argv, and generates ephemeral credentials rather than hard-coding them. The token literal is an environment-reference name. /tmp is an isolated, size-bounded container tmpfs, not a shared host temporary file."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/security_release.py", "rules": ["B404", "B603", "B607"],
+      "source_sha256": "59815ee2fbe500c888cbbd0bdf2baf3ef701e3b63290a89dcb6440a16e0cdf6d",
+      "status": "Not applicable",
+      "reason": "Fixed local Git inspection/hash commands bind source/media evidence; argv lists are used without a shell. Git comes from the trusted assessment host PATH, not uploaded telemetry. The gate is operator-run tooling, not an API execution surface."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/security_scan.py", "rules": ["B105", "B404", "B603", "B607"],
+      "source_sha256": "639b0f9a6f531b34cf0505769813d0d04276639a51e242a8c6c243ffd9461791",
+      "status": "Not applicable",
+      "reason": "Local scanner/Git argv never invokes a shell or accepts log commands. Scanners are pinned and locally installed; Git uses trusted operator PATH. Public-key triage restricts the Git object to a hexadecimal commit and eight exact evidence/test paths. The empty Semgrep token disables hosted analysis; no credential is embedded."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/security_tools.py", "rules": ["B310", "B404", "B603"],
+      "source_sha256": "6c4c6770db468b07b4fb8ccc4ecef5cd1384c1d643f6d24fd6dc4d4f81a5c023",
+      "status": "Not applicable",
+      "reason": "The optional installer accepts only approved publisher HTTPS prefixes; native downloads are SHA-256 verified before execution, archives are not extracted wholesale, and Python tools install from a hash lock with fixed argv and no shell."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/serve.py", "rules": ["B104"],
+      "source_sha256": "0dc9728bf10304ece429d7f3be9d6ecea64ab43e8bef8120b262e5dd4307251d",
+      "status": "Not applicable",
+      "reason": "0.0.0.0 is the required container/Render listener, not an authentication bypass. Host/origin/owner/public-mode boundaries remain enforced, proxy-header trust is disabled, and local rehearsal publishes only loopback ports."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/validate.py", "rules": ["B101", "B404", "B603"],
+      "source_sha256": "7b04a83e913068e89bddd8046e1ba5e9df0bc56bc8b1cdb9cf81f01cdf7e8ff7",
+      "status": "Not applicable",
+      "reason": "Fixed repository test/build argv is executed without a shell. The assertion checks stdout=PIPE's postcondition, not authorization. The validator refuses optimized Python and requires real executed, non-skipped tests."
+    },
+    {
+      "scanner": "bandit", "path": "scripts/verify_deployment.py", "rules": ["B101", "B108", "B310", "B404", "B603"],
+      "source_sha256": "c3b1907754ff027c44bd753cb893556be73960b78f9b3a4dc3a2bb41df5cebda",
+      "status": "Not applicable",
+      "reason": "Operator-run rehearsal refuses -O, uses fixed argv and validated numeric ports/labels, and sends HTTP only to constructed loopback URLs. /tmp denotes a bounded in-container tmpfs. Assertions are intentional executable verification, not production permissions; only owned processes/volumes are stopped."
+    },
+    {
+      "scanner": "semgrep", "path": "scripts/dev.py",
+      "rules": ["python.lang.security.audit.dangerous-subprocess-use-tainted-env-args.dangerous-subprocess-use-tainted-env-args"],
+      "source_sha256": "fffbfe20d4e0bb3b3b9911b87607f59c21f87b72a2d69521fb08376ca56008b0",
+      "status": "False positive",
+      "reason": "Trace ends at fixed Uvicorn/Vite argv; environment port strings are parsed as integers and checked by bind. There is no shell or telemetry-to-command flow. Choosing an executable through the local operator's PATH is an explicit development-host trust boundary."
+    },
+    {
+      "scanner": "semgrep", "path": "scripts/verify_deployment.py",
+      "rules": ["python.lang.security.audit.dangerous-subprocess-use-tainted-env-args.dangerous-subprocess-use-tainted-env-args"],
+      "source_sha256": "c3b1907754ff027c44bd753cb893556be73960b78f9b3a4dc3a2bb41df5cebda",
+      "status": "False positive",
+      "reason": "The matched call launches the installed Vite script using argv, an integer port and an operator-controlled environment. No shell interpretation or remote event input reaches the executable/arguments."
+    }
+  ]
+}

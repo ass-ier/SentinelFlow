@@ -13,6 +13,8 @@ import { ReplayPage } from './pages/ReplayPage';
 import { RuleDetailPage, RulesPage } from './pages/RulesPage';
 import { SigmaPage } from './pages/SigmaPage';
 import { TestingPage } from './pages/TestingPage';
+import { IntegrationsPage } from './pages/IntegrationsPage';
+import { NotificationsPage, DeliveryDetailPage } from './pages/NotificationsPage';
 
 class RenderBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false };
@@ -52,9 +54,9 @@ function NotFoundPage() {
   );
 }
 
-function DashboardRedirect() {
+function RouteRedirect({ pathname }: { pathname: string }) {
   const location = useLocation();
-  return <Navigate replace to={{ pathname: '/', search: location.search }} />;
+  return <Navigate replace to={{ pathname, search: location.search }} />;
 }
 
 function RuleDetailRoute() {
@@ -69,7 +71,8 @@ export function App() {
         <Routes>
           <Route element={<Shell />}>
             <Route index element={<DashboardPage />} />
-            <Route path="dashboard" element={<DashboardRedirect />} />
+            <Route path="dashboard" element={<RouteRedirect pathname="/" />} />
+            <Route path="detections" element={<RouteRedirect pathname="/testing" />} />
             <Route path="events" element={<EventsPage />} />
             <Route path="events/:id" element={<EventDetailPage />} />
             <Route path="alerts" element={<AlertsPage />} />
@@ -80,6 +83,9 @@ export function App() {
             <Route path="replay" element={<ReplayPage />} />
             <Route path="sigma" element={<SigmaPage />} />
             <Route path="evidence" element={<EvidencePage />} />
+            <Route path="integrations" element={<IntegrationsPage />} />
+            <Route path="notifications" element={<NotificationsPage />} />
+            <Route path="notifications/:id" element={<DeliveryDetailPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

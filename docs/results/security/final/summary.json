@@ -1,0 +1,2021 @@
+{
+  "status": "PASS",
+  "started_at": "2026-09-28T23:50:01.272128+00:00",
+  "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+  "commit": "b987e6d7526b9a643bf9813fe816ada21c706b55",
+  "worktree_changes": [
+    " M .dockerignore",
+    " M .env.example",
+    " M .gitignore",
+    " M Dockerfile",
+    " M Makefile",
+    " M README.md",
+    " M backend/app/api/routes.py",
+    " M backend/app/core/config.py",
+    " M backend/app/core/evidence.py",
+    " M backend/app/core/safe.py",
+    " M backend/app/core/security.py",
+    " M backend/app/main.py",
+    " M backend/app/parsers/pipeline.py",
+    " M backend/app/parsers/windows.py",
+    " M backend/app/schemas/events.py",
+    " M backend/app/services/datasets.py",
+    " M backend/app/services/platform.py",
+    " M backend/app/storage/database.py",
+    " M backend/tests/regression/test_malformed_boundaries.py",
+    " M docker-compose.yml",
+    " M docs/api.md",
+    " M docs/architecture.md",
+    " M docs/data-model.md",
+    " M docs/demo.md",
+    " M docs/dependency-maintenance.md",
+    " M docs/fresh-clone.md",
+    " M docs/limitations.md",
+    " M docs/security.md",
+    " M docs/testing.md",
+    " M docs/third-party-notices.md",
+    " M frontend/package-lock.json",
+    " M frontend/package.json",
+    " M frontend/src/App.tsx",
+    " M frontend/src/components/EventEvidence.tsx",
+    " M frontend/src/components/IngestForm.tsx",
+    " M frontend/src/components/ProjectReports.tsx",
+    " M frontend/src/components/Shell.tsx",
+    " M frontend/src/components/ValidationReport.tsx",
+    " M frontend/src/components/WorkspaceProvider.tsx",
+    " M frontend/src/hooks/workspace.ts",
+    " M frontend/src/main.tsx",
+    " M frontend/src/pages/AlertDetailPage.tsx",
+    " M frontend/src/pages/DashboardPage.tsx",
+    " M frontend/src/pages/EventsPage.tsx",
+    " M frontend/src/pages/EvidencePage.tsx",
+    " M frontend/src/pages/ReplayPage.tsx",
+    " M frontend/src/pages/RulesPage.tsx",
+    " M frontend/src/pages/SigmaPage.tsx",
+    " M frontend/src/services/api.ts",
+    " M frontend/src/types/index.ts",
+    " M frontend/vite.config.ts",
+    " M pyproject.toml",
+    " M requirements.lock",
+    " M scripts/browser_verify.mjs",
+    " M scripts/browser_workflows.mjs",
+    " M scripts/demo_reset.py",
+    " M scripts/dev.py",
+    " M scripts/manage.py",
+    " M scripts/record_demo.mjs",
+    " M scripts/validate.py",
+    "?? .env.public-demo.example",
+    "?? .github/",
+    "?? .nvmrc",
+    "?? .python-version",
+    "?? .semgrepignore",
+    "?? Dockerfile.backend",
+    "?? backend/app/api/integrations.py",
+    "?? backend/app/core/openapi.py",
+    "?? backend/app/integrations/",
+    "?? backend/app/parsers/wazuh.py",
+    "?? backend/app/parsers/windows_xml.py",
+    "?? backend/app/static/",
+    "?? backend/app/storage/integrations.py",
+    "?? backend/app/storage/migrations.py",
+    "?? backend/tests/integration/test_public_demo.py",
+    "?? backend/tests/integrations/",
+    "?? backend/tests/security/",
+    "?? backend/tests/unit/test_deployment_config.py",
+    "?? collector/",
+    "?? docs/deployment-checklist.md",
+    "?? docs/deployment-readiness.md",
+    "?? docs/deployment.md",
+    "?? docs/implementation-status.md",
+    "?? docs/integrations-implementation-report.md",
+    "?? docs/integrations.md",
+    "?? docs/results/deployment/",
+    "?? docs/results/integrations/",
+    "?? docs/results/security/",
+    "?? docs/security-assessment.md",
+    "?? frontend/src/components/ConnectorForm.tsx",
+    "?? frontend/src/components/CredentialSettings.tsx",
+    "?? frontend/src/components/DeliveryTable.tsx",
+    "?? frontend/src/components/DestinationForm.tsx",
+    "?? frontend/src/components/NotificationPolicies.tsx",
+    "?? frontend/src/pages/IntegrationsPage.tsx",
+    "?? frontend/src/pages/NotificationsPage.tsx",
+    "?? frontend/src/services/apiBase.ts",
+    "?? frontend/src/services/integrations.ts",
+    "?? frontend/src/styles-integrations.css",
+    "?? frontend/src/types/integrations.ts",
+    "?? frontend/tests/deployment.test.tsx",
+    "?? frontend/tests/integrations.test.tsx",
+    "?? frontend/vercel.json",
+    "?? render.yaml",
+    "?? requirements-runtime.lock",
+    "?? scripts/browser_deployment.mjs",
+    "?? scripts/browser_integrations.mjs",
+    "?? scripts/browser_security.mjs",
+    "?? scripts/container_security_probe.py",
+    "?? scripts/generate_integration_data.py",
+    "?? scripts/generate_security_data.py",
+    "?? scripts/security_rehearsal.py",
+    "?? scripts/security_release.py",
+    "?? scripts/security_scan.py",
+    "?? scripts/security_tools.py",
+    "?? scripts/serve.py",
+    "?? scripts/validate_integrations.py",
+    "?? scripts/vendor_swagger.py",
+    "?? scripts/verify_deployment.py",
+    "?? security/",
+    "?? test-data/integrations/",
+    "?? test-data/security/README.md",
+    "?? test-data/security/api-fuzz.json",
+    "?? test-data/security/entity.xml"
+  ],
+  "commands": [
+    {
+      "name": "full-validation",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "scripts/validate.py"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:50:01.381323+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:04.553890+00:00",
+      "duration_seconds": 123.15571170800831,
+      "stdout": "full-validation.log",
+      "stderr": "full-validation.stderr.log",
+      "stdout_sha256": "562113a09a8319afd0d4a02629f276523790fdaea53728ecdd48acd594e52150"
+    },
+    {
+      "name": "swagger-integrity",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "scripts/vendor_swagger.py",
+        "--check"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:04.626820+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:04.667797+00:00",
+      "duration_seconds": 0.04096791602205485,
+      "stdout": "swagger-integrity.log",
+      "stderr": "swagger-integrity.stderr.log",
+      "stdout_sha256": "d938ce053d429b5ad3e2f063e3f4574c1b3278b83047e47c089fc50e3c8deb07"
+    },
+    {
+      "name": "version-retire",
+      "command": [
+        "node",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/node_modules/retire/lib/cli.js",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:04.668459+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:04.745750+00:00",
+      "duration_seconds": 0.07729008398018777,
+      "stdout": "version-retire.log",
+      "stderr": "version-retire.stderr.log",
+      "stdout_sha256": "794a495980132b2741146c50652467ad5e5bf4b0e8f1695b2af12572c35d6008"
+    },
+    {
+      "name": "retire-swagger",
+      "command": [
+        "node",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/node_modules/retire/lib/cli.js",
+        "--path",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger",
+        "--jsrepo",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/retire-advisories.json",
+        "--nocache",
+        "--verbose",
+        "--deep",
+        "--outputformat",
+        "json",
+        "--outputpath",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/retire-swagger.json",
+        "--exitwith",
+        "1"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:08.664107+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:11.053347+00:00",
+      "duration_seconds": 2.3892233340302482,
+      "stdout": "retire-swagger.log",
+      "stderr": "retire-swagger.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "retire-frontend",
+      "command": [
+        "node",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/node_modules/retire/lib/cli.js",
+        "--path",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/dist",
+        "--jsrepo",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/retire-advisories.json",
+        "--nocache",
+        "--verbose",
+        "--deep",
+        "--outputformat",
+        "json",
+        "--outputpath",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/retire-frontend.json",
+        "--exitwith",
+        "1"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:11.054655+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:11.668290+00:00",
+      "duration_seconds": 0.6136288340203464,
+      "stdout": "retire-frontend.log",
+      "stderr": "retire-frontend.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "version-pip-audit",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/pip-audit",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:11.669853+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:12.129732+00:00",
+      "duration_seconds": 0.45987233298365027,
+      "stdout": "version-pip-audit.log",
+      "stderr": "version-pip-audit.stderr.log",
+      "stdout_sha256": "70d9a63a0ea389b4992009be156f8738d7c22f2f5c049084054528ed7f9eee0c"
+    },
+    {
+      "name": "version-bandit",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/bandit",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:12.130631+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:12.260378+00:00",
+      "duration_seconds": 0.12975304096471518,
+      "stdout": "version-bandit.log",
+      "stderr": "version-bandit.stderr.log",
+      "stdout_sha256": "e33c06f624c601fa86d53a424905da5d989564c197438c16d6690a2244bc6754"
+    },
+    {
+      "name": "version-semgrep",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/semgrep",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:12.261264+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:13.637978+00:00",
+      "duration_seconds": 1.3767219580477104,
+      "stdout": "version-semgrep.log",
+      "stderr": "version-semgrep.stderr.log",
+      "stdout_sha256": "05192603e2d208e5cbfa3ec0de34c122510f96bec935dc5f965992e444036d63"
+    },
+    {
+      "name": "version-uv",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/uv",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:13.638848+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:13.721008+00:00",
+      "duration_seconds": 0.08216429210733622,
+      "stdout": "version-uv.log",
+      "stderr": "version-uv.stderr.log",
+      "stdout_sha256": "1e8f5117af90f0ee32b0bbe36a1e6cdca3de2428b4f5b8144f114a7d64ffecbb"
+    },
+    {
+      "name": "version-trivy",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:13.744822+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:14.147380+00:00",
+      "duration_seconds": 0.40254062495660037,
+      "stdout": "version-trivy.log",
+      "stderr": "version-trivy.stderr.log",
+      "stdout_sha256": "41e22ed321a4c139a4fae57e92d8fa971cf7e91a8c1c4444d9a948c52a72c73a"
+    },
+    {
+      "name": "version-gitleaks",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/gitleaks",
+        "version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:14.251028+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:14.545010+00:00",
+      "duration_seconds": 0.2939802089240402,
+      "stdout": "version-gitleaks.log",
+      "stderr": "version-gitleaks.stderr.log",
+      "stdout_sha256": "c9fd9ccb6682c54b5fcb0363757b6c6873564e7c067f70b3b5581b611528b9f4"
+    },
+    {
+      "name": "version-osv-scanner",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/osv-scanner",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:14.563020+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:14.802331+00:00",
+      "duration_seconds": 0.23930762498639524,
+      "stdout": "version-osv-scanner.log",
+      "stderr": "version-osv-scanner.stderr.log",
+      "stdout_sha256": "e0bc7fa9d9b902f5179238abc870bc238c6f119e8c4c0b58b63fd26289fc5ea7"
+    },
+    {
+      "name": "version-syft",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/syft",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:14.845954+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:15.147915+00:00",
+      "duration_seconds": 0.30195087497122586,
+      "stdout": "version-syft.log",
+      "stderr": "version-syft.stderr.log",
+      "stdout_sha256": "93f3e034d586773063db801297f457fbe182478bc9a743855be0126077e7542f"
+    },
+    {
+      "name": "node-version",
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:15.208249+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:15.250878+00:00",
+      "duration_seconds": 0.04261850006878376,
+      "stdout": "node-version.log",
+      "stderr": "node-version.stderr.log",
+      "stdout_sha256": "f2ec568164f99546161909b0189b57bb5be3e80f8e2ccd8a51a4aed8c4055a04"
+    },
+    {
+      "name": "npm-version",
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:15.251863+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:15.435789+00:00",
+      "duration_seconds": 0.18382616597227752,
+      "stdout": "npm-version.log",
+      "stderr": "npm-version.stderr.log",
+      "stdout_sha256": "005206ab803f8881d8227540b7980b37e723b69a8849edb31734a90b7e7964e2"
+    },
+    {
+      "name": "pip-check",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:15.436968+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:15.677349+00:00",
+      "duration_seconds": 0.24037499993573874,
+      "stdout": "pip-check.log",
+      "stderr": "pip-check.stderr.log",
+      "stdout_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    {
+      "name": "python-lock",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/pip-audit",
+        "-r",
+        "requirements.lock",
+        "--disable-pip",
+        "--require-hashes",
+        "--progress-spinner",
+        "off",
+        "-f",
+        "json",
+        "-o",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/python-lock.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:15.680076+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:22.018388+00:00",
+      "duration_seconds": 6.338286124984734,
+      "stdout": "python-lock.log",
+      "stderr": "python-lock.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "python-runtime",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/pip-audit",
+        "-r",
+        "requirements-runtime.lock",
+        "--disable-pip",
+        "--require-hashes",
+        "--progress-spinner",
+        "off",
+        "-f",
+        "json",
+        "-o",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/python-runtime.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:22.020496+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:22.423430+00:00",
+      "duration_seconds": 0.4029373329831287,
+      "stdout": "python-runtime.log",
+      "stderr": "python-runtime.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "python-installed",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/pip-audit",
+        "--path",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/lib/python3.13/site-packages",
+        "--progress-spinner",
+        "off",
+        "-f",
+        "json",
+        "-o",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/python-installed.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:22.425007+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:23.464999+00:00",
+      "duration_seconds": 1.0399846660438925,
+      "stdout": "python-installed.log",
+      "stderr": "python-installed.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "python-scanners",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/pip-audit",
+        "-r",
+        "security/requirements.lock",
+        "--disable-pip",
+        "--require-hashes",
+        "--progress-spinner",
+        "off",
+        "-f",
+        "json",
+        "-o",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/python-scanners.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:23.466424+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:34.523517+00:00",
+      "duration_seconds": 11.057010457967408,
+      "stdout": "python-scanners.log",
+      "stderr": "python-scanners.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "node-all",
+      "command": [
+        "npm",
+        "audit",
+        "--package-lock-only",
+        "--json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend",
+      "started_at": "2026-09-28T23:52:34.525886+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:35.573102+00:00",
+      "duration_seconds": 1.047217500046827,
+      "stdout": "node-all.json",
+      "stderr": "node-all.stderr.log",
+      "stdout_sha256": "51519f830160092fc556da676bc04841b554984ed4c442e3e2a365b92a35348c"
+    },
+    {
+      "name": "node-production",
+      "command": [
+        "npm",
+        "audit",
+        "--package-lock-only",
+        "--json",
+        "--omit=dev"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend",
+      "started_at": "2026-09-28T23:52:35.574121+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:36.346414+00:00",
+      "duration_seconds": 0.772291750065051,
+      "stdout": "node-production.json",
+      "stderr": "node-production.stderr.log",
+      "stdout_sha256": "51519f830160092fc556da676bc04841b554984ed4c442e3e2a365b92a35348c"
+    },
+    {
+      "name": "osv",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/osv-scanner",
+        "scan",
+        "source",
+        "--lockfile=requirements.txt:requirements.lock",
+        "--lockfile=requirements.txt:requirements-runtime.lock",
+        "--lockfile=frontend/package-lock.json",
+        "--all-packages",
+        "--all-vulns",
+        "--format=json",
+        "--output-file=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/osv.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:36.347454+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:52:42.248022+00:00",
+      "duration_seconds": 5.900531208026223,
+      "stdout": "osv.log",
+      "stderr": "osv.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "secrets-history",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/gitleaks",
+        "git",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+        "--log-opts=--all",
+        "--redact=100",
+        "--ignore-gitleaks-allow",
+        "--no-banner",
+        "--report-format=json",
+        "--report-path=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/secrets-history.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:42.593011+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-09-28T23:52:44.518678+00:00",
+      "duration_seconds": 1.9256497499300167,
+      "stdout": "secrets-history.log",
+      "stderr": "secrets-history.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "secrets-working-tree",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/gitleaks",
+        "dir",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source",
+        "--redact=100",
+        "--ignore-gitleaks-allow",
+        "--no-banner",
+        "--report-format=json",
+        "--report-path=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/secrets-working-tree.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:52:44.545101+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-09-28T23:52:45.946420+00:00",
+      "duration_seconds": 1.4013009580085054,
+      "stdout": "secrets-working-tree.log",
+      "stderr": "secrets-working-tree.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "bandit",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/bandit",
+        "-r",
+        "backend",
+        "scripts",
+        "collector",
+        "--ignore-nosec",
+        "-f",
+        "json",
+        "-o",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/bandit.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source",
+      "started_at": "2026-09-28T23:52:45.959639+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-09-28T23:52:47.008335+00:00",
+      "duration_seconds": 1.0486860410310328,
+      "stdout": "bandit.log",
+      "stderr": "bandit.stderr.log",
+      "stdout_sha256": "3becae746696ab5c4207c0f607c00f6f0f376116e74b7c5f7358cbae14278886"
+    },
+    {
+      "name": "semgrep",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/semgrep",
+        "scan",
+        "--metrics=off",
+        "--disable-version-check",
+        "--oss-only",
+        "--no-git-ignore",
+        "--disable-nosem",
+        "--no-rewrite-rule-ids",
+        "--exclude",
+        "backend/app/static/swagger",
+        "--strict",
+        "--error",
+        "--config",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/semgrep-rules/owasp-top-ten.yaml",
+        "--config",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/semgrep-rules/python.yaml",
+        "--config",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/semgrep-rules/react.yaml",
+        "--config",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/semgrep-rules/typescript.yaml",
+        "--config",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/semgrep-rules/secrets.yaml",
+        "--json",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/semgrep.json",
+        "backend",
+        "scripts",
+        "collector",
+        "frontend"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source",
+      "started_at": "2026-09-28T23:52:52.232457+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-09-28T23:53:10.219237+00:00",
+      "duration_seconds": 17.986709624994546,
+      "stdout": "semgrep.log",
+      "stderr": "semgrep.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "filesystem-trivy",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy",
+        "fs",
+        "--quiet",
+        "--cache-dir",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy-cache",
+        "--scanners",
+        "vuln,misconfig",
+        "--include-dev-deps",
+        "--format",
+        "json",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/filesystem-trivy.json",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:10.275987+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:12.145753+00:00",
+      "duration_seconds": 1.8697495410451666,
+      "stdout": "filesystem-trivy.log",
+      "stderr": "filesystem-trivy.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "node-sbom",
+      "command": [
+        "npm",
+        "sbom",
+        "--sbom-format",
+        "cyclonedx",
+        "--package-lock-only"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend",
+      "started_at": "2026-09-28T23:53:12.149012+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:12.767215+00:00",
+      "duration_seconds": 0.6182231249986216,
+      "stdout": "node-sbom.json",
+      "stderr": "node-sbom.stderr.log",
+      "stdout_sha256": "90485bcc38a4250d6234589f1124373bac2923c3766d84f30d1ab1765ac3ad62"
+    },
+    {
+      "name": "python-sbom",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/syft",
+        "scan",
+        "dir:/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/lib/python3.13/site-packages",
+        "--select-catalogers",
+        "python",
+        "-o",
+        "cyclonedx-json=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/python-sbom.cdx.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:12.769217+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:14.902978+00:00",
+      "duration_seconds": 2.1337410419946536,
+      "stdout": "python-sbom.log",
+      "stderr": "python-sbom.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "installed-sbom-trivy",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy",
+        "sbom",
+        "--quiet",
+        "--cache-dir",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy-cache",
+        "--format",
+        "json",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/installed-sbom-trivy.json",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/python-sbom.cdx.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:14.904270+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:15.030385+00:00",
+      "duration_seconds": 0.1261217090068385,
+      "stdout": "installed-sbom-trivy.log",
+      "stderr": "installed-sbom-trivy.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docker-endpoint",
+      "command": [
+        "docker",
+        "context",
+        "inspect",
+        "--format",
+        "{{json .Endpoints.docker.Host}}"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:15.031729+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:15.055529+00:00",
+      "duration_seconds": 0.023819209076464176,
+      "stdout": "docker-endpoint.json",
+      "stderr": "docker-endpoint.stderr.log",
+      "stdout_sha256": "93fb5e66ea179d0a63dda2443acff803a32da581f646b6711e256ac7d2e700d1"
+    },
+    {
+      "name": "build-backend",
+      "command": [
+        "docker",
+        "build",
+        "--platform",
+        "linux/amd64",
+        "-f",
+        "Dockerfile.backend",
+        "--label",
+        "org.opencontainers.image.revision=b987e6d7526b9a643bf9813fe816ada21c706b55",
+        "--label",
+        "org.sentinelflow.source-fingerprint=2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+        "-t",
+        "sentinelflow-security:backend",
+        "."
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:15.056731+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:15.593166+00:00",
+      "duration_seconds": 0.5364811669569463,
+      "stdout": "build-backend.log",
+      "stderr": "build-backend.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "image-backend",
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sentinelflow-security:backend"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:15.594065+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:15.633964+00:00",
+      "duration_seconds": 0.03991900000255555,
+      "stdout": "image-backend.json",
+      "stderr": "image-backend.stderr.log",
+      "stdout_sha256": "bfc70932cb07ee7295c4dd59eb49242fe9e7320ef57419521de35e55b93dea06"
+    },
+    {
+      "name": "scan-backend",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy",
+        "image",
+        "--quiet",
+        "--cache-dir",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy-cache",
+        "--image-src",
+        "docker",
+        "--scanners",
+        "vuln",
+        "--format",
+        "json",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/container-backend.json",
+        "sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:15.634979+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:15.764658+00:00",
+      "duration_seconds": 0.1297032079892233,
+      "stdout": "scan-backend.log",
+      "stderr": "scan-backend.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sbom-backend",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/syft",
+        "scan",
+        "docker:sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9",
+        "-o",
+        "cyclonedx-json=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/container-backend.cdx.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:15.766414+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:17.776508+00:00",
+      "duration_seconds": 2.010111458017491,
+      "stdout": "sbom-backend.log",
+      "stderr": "sbom-backend.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "build-application",
+      "command": [
+        "docker",
+        "build",
+        "--platform",
+        "linux/amd64",
+        "-f",
+        "Dockerfile",
+        "--label",
+        "org.opencontainers.image.revision=b987e6d7526b9a643bf9813fe816ada21c706b55",
+        "--label",
+        "org.sentinelflow.source-fingerprint=2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+        "-t",
+        "sentinelflow-security:application",
+        "."
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:17.777615+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:18.481661+00:00",
+      "duration_seconds": 0.7040590000106022,
+      "stdout": "build-application.log",
+      "stderr": "build-application.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "image-application",
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sentinelflow-security:application"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:18.482740+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:18.523810+00:00",
+      "duration_seconds": 0.04109804204199463,
+      "stdout": "image-application.json",
+      "stderr": "image-application.stderr.log",
+      "stdout_sha256": "33922ce9a158827407410b668c63149506d9523e781e83c74b07681247958686"
+    },
+    {
+      "name": "scan-application",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy",
+        "image",
+        "--quiet",
+        "--cache-dir",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy-cache",
+        "--image-src",
+        "docker",
+        "--scanners",
+        "vuln",
+        "--format",
+        "json",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/container-application.json",
+        "sha256:69b32fc8ceafe8edeb6971df88ee5d16a9bf69769d881977c451c6876c937b00"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:18.525176+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:19.702066+00:00",
+      "duration_seconds": 1.1769005419919267,
+      "stdout": "scan-application.log",
+      "stderr": "scan-application.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sbom-application",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/syft",
+        "scan",
+        "docker:sha256:69b32fc8ceafe8edeb6971df88ee5d16a9bf69769d881977c451c6876c937b00",
+        "-o",
+        "cyclonedx-json=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/container-application.cdx.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:19.704764+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:53:21.933087+00:00",
+      "duration_seconds": 2.2283347910270095,
+      "stdout": "sbom-application.log",
+      "stderr": "sbom-application.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rehearsals",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "scripts/security_rehearsal.py",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/rehearsals",
+        "--backend-image",
+        "sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9",
+        "--application-image",
+        "sha256:69b32fc8ceafe8edeb6971df88ee5d16a9bf69769d881977c451c6876c937b00"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:53:21.963099+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:55:34.391785+00:00",
+      "duration_seconds": 132.42764883406926,
+      "stdout": "rehearsals.log",
+      "stderr": "rehearsals.stderr.log",
+      "stdout_sha256": "98c7fae0d0e3e1940344c4eaefca3ed1f6ec2bf4976209c9a3f27d2f7bde7cd3"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Installed Python environment exactly matches the lock",
+      "passed": true,
+      "details": {
+        "mismatches": {},
+        "extra": []
+      }
+    },
+    {
+      "name": "Runtime lock is a version-consistent subset",
+      "passed": true,
+      "details": {
+        "runtime_packages": 20,
+        "all_packages": 43
+      }
+    },
+    {
+      "name": "npm package artifacts use the reviewed registry",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Pinned Retire.js version",
+      "passed": true,
+      "details": "5.7.0"
+    },
+    {
+      "name": "retire-swagger: zero known bundled JavaScript findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "retire-frontend: zero known bundled JavaScript findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Retire.js identifies the bundled HTML sanitizer",
+      "passed": true,
+      "details": {
+        "identified": 9
+      }
+    },
+    {
+      "name": "Pinned pip-audit version",
+      "passed": true,
+      "details": {
+        "expected": "2.10.1",
+        "output": "pip-audit 2.10.1\n",
+        "binary_sha256": "66c98da65de3e2c3dc28d48d0e77664b01c469d56038747c19a5350468f6506e"
+      }
+    },
+    {
+      "name": "Pinned bandit version",
+      "passed": true,
+      "details": {
+        "expected": "1.9.4",
+        "output": "bandit 1.9.4\n  python version = 3.13.15 (main, Sep 24 2026, 17:46:40) [Clang 22.1.3 ]\n",
+        "binary_sha256": "f28ea855d3e65dc7a0b3e4bae4be0dcafcbeea166430ed964cd6b2d6c708f6a6"
+      }
+    },
+    {
+      "name": "Pinned semgrep version",
+      "passed": true,
+      "details": {
+        "expected": "1.178.0",
+        "output": "1.178.0\n",
+        "binary_sha256": "d48f07a6212f0ea511e002b7a7f7065db7e4cb51a3825445e133c840f8ad1303"
+      }
+    },
+    {
+      "name": "Pinned uv version",
+      "passed": true,
+      "details": {
+        "expected": "0.12.19",
+        "output": "uv 0.12.19 (bea138450 2026-09-24 aarch64-apple-darwin)\n",
+        "binary_sha256": "1bd368f1bdd1fc4067a9f9d5d7394363e83490e47c86b26056760abe1c4155fb"
+      }
+    },
+    {
+      "name": "Pinned trivy version",
+      "passed": true,
+      "details": {
+        "expected": "0.74.0",
+        "output": "Version: 0.74.0\n",
+        "binary_sha256": "0ed07c205ca9ecc1065dc57b9f9f77adc79393bb469d9d1de9ec90c8c94ffc2f"
+      }
+    },
+    {
+      "name": "Pinned gitleaks version",
+      "passed": true,
+      "details": {
+        "expected": "8.30.1",
+        "output": "8.30.1\n",
+        "binary_sha256": "ba52fb1bfabbcde42f032afad3d6e0b19dff8ed105229a16e7caa338bbc0e84f"
+      }
+    },
+    {
+      "name": "Pinned osv-scanner version",
+      "passed": true,
+      "details": {
+        "expected": "2.6.0",
+        "output": "osv-scanner version: 2.6.0\nosv-scalibr version: 0.5.2\ncommit: e840a6e8adb14b7777c78e26cfbf6e2abc1d1fc6\nbuilt at: 2026-09-14T01:44:58Z\n",
+        "binary_sha256": "98c460dcd37de25819babd757d04542045b6243113e209edcd4d89fedb0256b4"
+      }
+    },
+    {
+      "name": "Pinned syft version",
+      "passed": true,
+      "details": {
+        "expected": "1.52.0",
+        "output": "syft 1.52.0\n",
+        "binary_sha256": "17e4215af72264e186a843269d0b797697d643f53841d9598f73614bbcbe9022"
+      }
+    },
+    {
+      "name": "python-lock: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "python-runtime: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "python-installed: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "python-scanners: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "node-all: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "node-production: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "OSV: zero known release dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "secrets-history: no confirmed or unreviewed secret",
+      "passed": true,
+      "details": [
+        {
+          "id": "27d1d39bb5fb6a14baf089f7e91ba727bcd152d7:.env.example:generic-api-key:31",
+          "path": ".env.example",
+          "line": 31,
+          "commit": "27d1d39bb5fb6a14baf089f7e91ba727bcd152d7",
+          "status": "False positive",
+          "reason": "Verified empty secret assignment followed by a numeric poll interval. The generic rule matched across lines; no credential value is present."
+        },
+        {
+          "id": "f658159093bf68572720608e033229ad47186fc8:.env.example:generic-api-key:31",
+          "path": ".env.example",
+          "line": 31,
+          "commit": "f658159093bf68572720608e033229ad47186fc8",
+          "status": "False positive",
+          "reason": "Verified empty secret assignment followed by a numeric poll interval. The generic rule matched across lines; no credential value is present."
+        },
+        {
+          "id": "ae65f0707dc882c05d5ffd99ecff898c35c11269:.env.example:generic-api-key:31",
+          "path": ".env.example",
+          "line": 31,
+          "commit": "ae65f0707dc882c05d5ffd99ecff898c35c11269",
+          "status": "False positive",
+          "reason": "Verified empty secret assignment followed by a numeric poll interval. The generic rule matched across lines; no credential value is present."
+        }
+      ]
+    },
+    {
+      "name": "secrets-working-tree: no confirmed or unreviewed secret",
+      "passed": true,
+      "details": [
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/baseline/image-inspect.json:generic-api-key:28",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/baseline/image-inspect.json",
+          "line": 28,
+          "commit": "",
+          "status": "False positive",
+          "reason": "Published CPython release-signing public-key fingerprint in image metadata or its focused regression fixture, verified against Dockerfile blob 1977444e32bbbda7db8fe9dc960da1be182db7bc. Not a private key or API credential."
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/baseline/image-history.jsonl:generic-api-key:21",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/baseline/image-history.jsonl",
+          "line": 21,
+          "commit": "",
+          "status": "False positive",
+          "reason": "Published CPython release-signing public-key fingerprint in image metadata or its focused regression fixture, verified against Dockerfile blob 1977444e32bbbda7db8fe9dc960da1be182db7bc. Not a private key or API credential."
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/backend/tests/security/test_release_gate.py:generic-api-key:137",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/backend/tests/security/test_release_gate.py",
+          "line": 137,
+          "commit": "",
+          "status": "False positive",
+          "reason": "Published CPython release-signing public-key fingerprint in image metadata or its focused regression fixture, verified against Dockerfile blob 1977444e32bbbda7db8fe9dc960da1be182db7bc. Not a private key or API credential."
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/image-backend.json:generic-api-key:28",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/image-backend.json",
+          "line": 28,
+          "commit": "",
+          "status": "False positive",
+          "reason": "Published CPython release-signing public-key fingerprint in image metadata or its focused regression fixture, verified against Dockerfile blob 1977444e32bbbda7db8fe9dc960da1be182db7bc. Not a private key or API credential."
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/image-application.json:generic-api-key:28",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/image-application.json",
+          "line": 28,
+          "commit": "",
+          "status": "False positive",
+          "reason": "Published CPython release-signing public-key fingerprint in image metadata or its focused regression fixture, verified against Dockerfile blob 1977444e32bbbda7db8fe9dc960da1be182db7bc. Not a private key or API credential."
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/container-backend.json:generic-api-key:67",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/container-backend.json",
+          "line": 67,
+          "commit": "",
+          "status": "False positive",
+          "reason": "Published CPython release-signing public-key fingerprint in image metadata or its focused regression fixture, verified against Dockerfile blob 1977444e32bbbda7db8fe9dc960da1be182db7bc. Not a private key or API credential."
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/container-backend.json:generic-api-key:223",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/container-backend.json",
+          "line": 223,
+          "commit": "",
+          "status": "False positive",
+          "reason": "Published CPython release-signing public-key fingerprint in image metadata or its focused regression fixture, verified against Dockerfile blob 1977444e32bbbda7db8fe9dc960da1be182db7bc. Not a private key or API credential."
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/container-application.json:generic-api-key:69",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/container-application.json",
+          "line": 69,
+          "commit": "",
+          "status": "False positive",
+          "reason": "Published CPython release-signing public-key fingerprint in image metadata or its focused regression fixture, verified against Dockerfile blob 1977444e32bbbda7db8fe9dc960da1be182db7bc. Not a private key or API credential."
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/container-application.json:generic-api-key:237",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/final/container-application.json",
+          "line": 237,
+          "commit": "",
+          "status": "False positive",
+          "reason": "Published CPython release-signing public-key fingerprint in image metadata or its focused regression fixture, verified against Dockerfile blob 1977444e32bbbda7db8fe9dc960da1be182db7bc. Not a private key or API credential."
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/baseline/container-trivy.json:generic-api-key:60",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/baseline/container-trivy.json",
+          "line": 60,
+          "commit": "",
+          "status": "False positive",
+          "reason": "Published CPython release-signing public-key fingerprint in image metadata or its focused regression fixture, verified against Dockerfile blob 1977444e32bbbda7db8fe9dc960da1be182db7bc. Not a private key or API credential."
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/baseline/container-trivy.json:generic-api-key:210",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/source/docs/results/security/baseline/container-trivy.json",
+          "line": 210,
+          "commit": "",
+          "status": "False positive",
+          "reason": "Published CPython release-signing public-key fingerprint in image metadata or its focused regression fixture, verified against Dockerfile blob 1977444e32bbbda7db8fe9dc960da1be182db7bc. Not a private key or API credential."
+        }
+      ]
+    },
+    {
+      "name": "Bandit covers every nonempty first-party Python file",
+      "passed": true,
+      "details": {
+        "expected": 111,
+        "missing": []
+      }
+    },
+    {
+      "name": "Semgrep covers every nonempty first-party code file",
+      "passed": true,
+      "details": {
+        "expected": 174,
+        "scanned": 195,
+        "missing": []
+      }
+    },
+    {
+      "name": "bandit: no confirmed or unreviewed finding",
+      "passed": true,
+      "details": {
+        "raw": 843,
+        "statuses": {
+          "False positive": 32,
+          "Not applicable": 811
+        }
+      }
+    },
+    {
+      "name": "semgrep: no confirmed or unreviewed finding",
+      "passed": true,
+      "details": {
+        "raw": 2,
+        "statuses": {
+          "False positive": 2
+        }
+      }
+    },
+    {
+      "name": "Filesystem dependency scan: zero known findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "No unresolved filesystem misconfiguration",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Installed-package SBOM scan: zero known findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "backend: no known container dependency findings",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "application: no known container dependency findings",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "Trivy advisory database is no older than 48 hours",
+      "passed": true,
+      "details": {
+        "Version": 2,
+        "NextUpdate": "2026-09-29T13:05:44.359328057Z",
+        "UpdatedAt": "2026-09-28T13:05:44.359328237Z",
+        "DownloadedAt": "2026-09-28T19:43:10.083357Z"
+      }
+    },
+    {
+      "name": "Native and Docker/browser/collector rehearsals completed",
+      "passed": true,
+      "details": {
+        "checks": 10
+      }
+    },
+    {
+      "name": "Previously finalized screenshots and recording are byte-identical",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Source unchanged during assessment",
+      "passed": true,
+      "details": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6"
+    }
+  ],
+  "blockers": [],
+  "dependency_findings": [],
+  "live_integrations": "Not tested",
+  "scope": "Full security release",
+  "validation": {
+    "backend": {
+      "total": 801,
+      "passed": 801,
+      "failed": 0,
+      "skipped": 0,
+      "categories": {
+        "detection": {
+          "total": 50,
+          "passed": 50,
+          "failed": 0
+        },
+        "parametrize": {
+          "total": 645,
+          "passed": 645,
+          "failed": 0
+        },
+        "negative": {
+          "total": 17,
+          "passed": 17,
+          "failed": 0
+        },
+        "regression": {
+          "total": 440,
+          "passed": 440,
+          "failed": 0
+        },
+        "": {
+          "total": 3,
+          "passed": 3,
+          "failed": 0
+        },
+        "integration": {
+          "total": 472,
+          "passed": 472,
+          "failed": 0
+        },
+        "security": {
+          "total": 434,
+          "passed": 434,
+          "failed": 0
+        },
+        "replay": {
+          "total": 17,
+          "passed": 17,
+          "failed": 0
+        },
+        "sigma": {
+          "total": 34,
+          "passed": 34,
+          "failed": 0
+        },
+        "connectors": {
+          "total": 103,
+          "passed": 103,
+          "failed": 0
+        },
+        "end_to_end": {
+          "total": 7,
+          "passed": 7,
+          "failed": 0
+        },
+        "notifications": {
+          "total": 42,
+          "passed": 42,
+          "failed": 0
+        },
+        "migration": {
+          "total": 10,
+          "passed": 10,
+          "failed": 0
+        },
+        "parser": {
+          "total": 64,
+          "passed": 64,
+          "failed": 0
+        },
+        "unit": {
+          "total": 128,
+          "passed": 128,
+          "failed": 0
+        },
+        "usefixtures": {
+          "total": 9,
+          "passed": 9,
+          "failed": 0
+        }
+      },
+      "coverage_percent": 88.98457122353786
+    },
+    "frontend": {
+      "total": 145,
+      "passed": 145,
+      "failed": 0,
+      "skipped": 0
+    },
+    "detections": {
+      "passed": 50,
+      "failed": 0,
+      "total": 50,
+      "benign_passed": 14,
+      "benign_total": 14
+    },
+    "sigma": {
+      "rules_imported": 2,
+      "rules_compiled": 2,
+      "rules_tested": 2,
+      "tests_passed": 4,
+      "tests_failed": 0,
+      "expected_detections": 2,
+      "observed_detections": 2,
+      "results": [
+        {
+          "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+          "dataset_id": "sigma-download",
+          "expected_alerts": 1,
+          "observed_alerts": 1,
+          "severity": "high",
+          "author": "Florian Roth (Nextron Systems)",
+          "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+          "status": "passed",
+          "events_processed": 1
+        },
+        {
+          "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+          "dataset_id": "sigma-benign",
+          "expected_alerts": 0,
+          "observed_alerts": 0,
+          "severity": "high",
+          "author": "Florian Roth (Nextron Systems)",
+          "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+          "status": "passed",
+          "events_processed": 1
+        },
+        {
+          "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+          "dataset_id": "sigma-encoded",
+          "expected_alerts": 1,
+          "observed_alerts": 1,
+          "severity": "medium",
+          "author": "frack113",
+          "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+          "status": "passed",
+          "events_processed": 1
+        },
+        {
+          "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+          "dataset_id": "sigma-benign",
+          "expected_alerts": 0,
+          "observed_alerts": 0,
+          "severity": "medium",
+          "author": "frack113",
+          "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+          "status": "passed",
+          "events_processed": 1
+        }
+      ]
+    },
+    "integrations": {
+      "status": "passed",
+      "created_at": "2026-09-28T23:52:02.395049+00:00",
+      "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+      "scenarios": [
+        {
+          "provider": "microsoft_sentinel",
+          "normalized_events": 13,
+          "expected_alerts": {
+            "AUTH-001": 1,
+            "IAM-001": 1
+          },
+          "observed_alerts": {
+            "IAM-001": 1,
+            "AUTH-001": 1
+          },
+          "delivered_to_mock": 2,
+          "duplicate_deliveries": 0,
+          "workflow_seconds": 0.059916,
+          "workflow_events_per_second": 216.97,
+          "live_tested": false
+        },
+        {
+          "provider": "microsoft_graph",
+          "normalized_events": 13,
+          "expected_alerts": {
+            "AUTH-001": 1,
+            "IAM-001": 1
+          },
+          "observed_alerts": {
+            "IAM-001": 1,
+            "AUTH-001": 1
+          },
+          "delivered_to_mock": 2,
+          "duplicate_deliveries": 0,
+          "workflow_seconds": 0.042369,
+          "workflow_events_per_second": 306.83,
+          "live_tested": false
+        },
+        {
+          "provider": "windows_wef",
+          "normalized_events": 36,
+          "expected_alerts": {
+            "AUTH-001": 1,
+            "AUTH-002": 1,
+            "PROC-001": 1,
+            "PROC-002": 1,
+            "IAM-001": 1,
+            "DNS-001": 1,
+            "NET-001": 1
+          },
+          "observed_alerts": {
+            "PROC-002": 1,
+            "PROC-001": 1,
+            "NET-001": 1,
+            "IAM-001": 1,
+            "DNS-001": 1,
+            "AUTH-002": 1,
+            "AUTH-001": 1
+          },
+          "delivered_to_mock": 7,
+          "duplicate_deliveries": 0,
+          "workflow_seconds": 0.052728,
+          "workflow_events_per_second": 682.75,
+          "live_tested": false
+        }
+      ],
+      "total_events": 62,
+      "total_alerts": 11,
+      "workflow_seconds": 0.777776,
+      "measurement": "Application workflow including loopback HTTP, normalization, SQLite, detection and notification; not cloud latency or a scale benchmark",
+      "live_tested": false
+    },
+    "benchmark": {
+      "measured_at": "2026-09-28T23:52:04.387586+00:00",
+      "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+      "scope": "Single-process engine-only; parsing/storage excluded. Not a production capacity claim.",
+      "python": "3.13.15",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "dataset": "mixed/benchmark_5600.jsonl",
+      "dataset_sha256": "b99174b1ee5f7cc972fe14d9a3baf1081270129bab22d6f5b44a3c22d01e6a12",
+      "iterations": 3,
+      "events_processed": 5600,
+      "events_per_second": 13162.840605384665,
+      "detection_seconds": 0.42544008302502334,
+      "sample_seconds": [
+        0.4358808749821037,
+        0.42544008302502334,
+        0.4247549169231206
+      ],
+      "alerts_generated": 700,
+      "rules_evaluated": 39200,
+      "active_rules": 7,
+      "expected_alerts": 700,
+      "rule_alert_counts": {
+        "AUTH-001": 100,
+        "AUTH-002": 100,
+        "PROC-001": 100,
+        "PROC-002": 100,
+        "IAM-001": 100,
+        "DNS-001": 100,
+        "NET-001": 100
+      },
+      "status": "passed"
+    }
+  },
+  "bundled_components": [
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "version": "3.4.13",
+      "component": "DOMPurify",
+      "npmname": "dompurify",
+      "detection": "filecontent",
+      "licenses": [
+        "MPL-2.0 OR Apache-2.0"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "version": "18.3.1",
+      "component": "react-dom",
+      "detection": "filecontent",
+      "licenses": [
+        "MIT"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "version": "10.7.3",
+      "component": "highlightjs",
+      "npmname": "highlight.js",
+      "detection": "filecontent",
+      "licenses": [
+        "BSD-3-Clause"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "component": "DOMPurify",
+      "version": "3.4.13",
+      "npmname": "dompurify",
+      "licenses": [
+        "MPL-2.0 OR Apache-2.0"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "component": "react-dom",
+      "version": "18.3.1-next-f1338f8080-20240426",
+      "licenses": [
+        "MIT"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "component": "react-dom",
+      "version": "18.3.1",
+      "licenses": [
+        "MIT"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/dist/assets/index-IrHnF70a.js",
+      "version": "19.1.1",
+      "component": "react-dom",
+      "detection": "filecontent",
+      "licenses": [
+        "MIT"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/dist/assets/index-IrHnF70a.js",
+      "component": "react",
+      "version": "19.1.1",
+      "licenses": [
+        "MIT"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/dist/assets/index-IrHnF70a.js",
+      "component": "react-dom",
+      "version": "19.1.1",
+      "licenses": [
+        "MIT"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "sentinelflow-security:backend",
+      "id": "sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9",
+      "architecture": "amd64",
+      "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6"
+    },
+    {
+      "name": "sentinelflow-security:application",
+      "id": "sha256:69b32fc8ceafe8edeb6971df88ee5d16a9bf69769d881977c451c6876c937b00",
+      "architecture": "amd64",
+      "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6"
+    }
+  ],
+  "rehearsals": {
+    "status": "passed",
+    "started_at": "2026-09-28T23:53:22.130913+00:00",
+    "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+    "checks": [
+      {
+        "name": "Analyst browser",
+        "status": "passed",
+        "checks": 33,
+        "receipt": "analyst-browser.json"
+      },
+      {
+        "name": "Integration browser",
+        "status": "passed",
+        "checks": 28,
+        "receipt": "integration-browser/browser-results.json"
+      },
+      {
+        "name": "Security browser",
+        "status": "passed",
+        "checks": 12,
+        "receipt": "security-browser/browser.json"
+      },
+      {
+        "name": "Actual collector CLI durably spools all 36 events during a real TCP outage",
+        "status": "passed"
+      },
+      {
+        "name": "Collector restart drains its real spool through scoped HTTP ingestion",
+        "status": "passed",
+        "events": 36,
+        "alerts": 7
+      },
+      {
+        "name": "Repeated bookmark after process restart does not duplicate collector events",
+        "status": "passed"
+      },
+      {
+        "name": "Same alert/destination is idempotent across restart; different destinations remain independent",
+        "status": "passed"
+      },
+      {
+        "name": "native public deployment rehearsal",
+        "status": "passed",
+        "checks": 10,
+        "browser_checks": 27
+      },
+      {
+        "name": "docker public deployment rehearsal",
+        "status": "passed",
+        "checks": 12,
+        "browser_checks": 27
+      },
+      {
+        "name": "Network-isolated image enforces kernel boundaries and exact integration flows",
+        "status": "passed",
+        "image": "sha256:69b32fc8ceafe8edeb6971df88ee5d16a9bf69769d881977c451c6876c937b00",
+        "checks": 9
+      }
+    ],
+    "commands": [
+      {
+        "name": "analyst-browser",
+        "command": [
+          "node",
+          "scripts/browser_verify.mjs",
+          "--no-capture",
+          "--preserve-database"
+        ],
+        "started_at": "2026-09-28T23:53:22.677281+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "integration-browser",
+        "command": [
+          "node",
+          "scripts/browser_integrations.mjs"
+        ],
+        "started_at": "2026-09-28T23:53:33.597831+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "security-browser",
+        "command": [
+          "node",
+          "scripts/browser_security.mjs"
+        ],
+        "started_at": "2026-09-28T23:53:40.498742+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "collector-outage",
+        "command": [
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+          "collector/windows/collect.py",
+          "--once",
+          "--local-test",
+          "--spool",
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/rehearsals/collector.sqlite3",
+          "--fixture",
+          "test-data/integrations/microsoft-windows.json",
+          "--batch-size",
+          "200"
+        ],
+        "started_at": "2026-09-28T23:53:44.164830+00:00",
+        "exit_code": 2,
+        "expected_exit_code": 2
+      },
+      {
+        "name": "collector-recovery",
+        "command": [
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+          "collector/windows/collect.py",
+          "--once",
+          "--local-test",
+          "--spool",
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/rehearsals/collector.sqlite3",
+          "--fixture",
+          "test-data/integrations/microsoft-windows.json",
+          "--batch-size",
+          "200"
+        ],
+        "started_at": "2026-09-28T23:53:47.018496+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "collector-repeat",
+        "command": [
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+          "collector/windows/collect.py",
+          "--once",
+          "--local-test",
+          "--spool",
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-delivery/rehearsals/collector.sqlite3",
+          "--fixture",
+          "test-data/integrations/microsoft-windows.json",
+          "--batch-size",
+          "200"
+        ],
+        "started_at": "2026-09-28T23:53:47.277445+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "deployment-native",
+        "command": [
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+          "scripts/verify_deployment.py",
+          "--label",
+          "security-native-48bc9b7e",
+          "--backend-port",
+          "57027",
+          "--frontend-port",
+          "57028"
+        ],
+        "started_at": "2026-09-28T23:53:49.043490+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "deployment-docker",
+        "command": [
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+          "scripts/verify_deployment.py",
+          "--label",
+          "security-docker-b1193e02",
+          "--backend-port",
+          "57081",
+          "--frontend-port",
+          "57082",
+          "--docker",
+          "--image-id",
+          "sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9"
+        ],
+        "started_at": "2026-09-28T23:54:04.608741+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-volume",
+        "command": [
+          "docker",
+          "volume",
+          "create",
+          "sentinelflow-security-private-97a99206d8f1-data"
+        ],
+        "started_at": "2026-09-28T23:54:29.834412+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-image-start",
+        "command": [
+          "docker",
+          "run",
+          "-d",
+          "--name",
+          "sentinelflow-security-private-97a99206d8f1",
+          "--network",
+          "none",
+          "--platform",
+          "linux/amd64",
+          "--read-only",
+          "--cap-drop",
+          "ALL",
+          "--security-opt",
+          "no-new-privileges",
+          "--memory",
+          "768m",
+          "--cpus",
+          "2",
+          "--pids-limit",
+          "128",
+          "--tmpfs",
+          "/tmp:rw,noexec,nosuid,size=64m",
+          "--mount",
+          "type=volume,source=sentinelflow-security-private-97a99206d8f1-data,target=/srv/sentinelflow/data",
+          "--env",
+          "SENTINEL_API_TOKEN",
+          "--env",
+          "SENTINEL_DATABASE_URL",
+          "--env",
+          "SENTINEL_PUBLIC_DEMO=false",
+          "sha256:69b32fc8ceafe8edeb6971df88ee5d16a9bf69769d881977c451c6876c937b00"
+        ],
+        "started_at": "2026-09-28T23:54:29.856909+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-image-ready",
+        "command": [
+          "docker",
+          "exec",
+          "sentinelflow-security-private-97a99206d8f1",
+          "python",
+          "-c",
+          "import time,urllib.request\nfor attempt in range(60):\n try:\n  urllib.request.urlopen('http://127.0.0.1:8765/health',timeout=1); break\n except OSError:\n  time.sleep(0.5)\nelse: raise SystemExit('container did not become ready')\n"
+        ],
+        "started_at": "2026-09-28T23:54:30.016663+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-image-probe",
+        "command": [
+          "docker",
+          "exec",
+          "sentinelflow-security-private-97a99206d8f1",
+          "python",
+          "scripts/container_security_probe.py"
+        ],
+        "started_at": "2026-09-28T23:54:31.947014+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-image-cleanup",
+        "command": [
+          "docker",
+          "rm",
+          "-f",
+          "sentinelflow-security-private-97a99206d8f1"
+        ],
+        "started_at": "2026-09-28T23:55:34.099448+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-volume-cleanup",
+        "command": [
+          "docker",
+          "volume",
+          "rm",
+          "sentinelflow-security-private-97a99206d8f1-data"
+        ],
+        "started_at": "2026-09-28T23:55:34.196377+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      }
+    ],
+    "private_container": {
+      "status": "passed",
+      "checks": 9,
+      "uid": 10001,
+      "read_only_root": true,
+      "no_new_privileges": true,
+      "effective_capabilities": 0,
+      "development_tools_absent": true,
+      "historical_security_evidence_absent": true,
+      "rate_limit_enforced_and_recovered": true,
+      "retries": {
+        "integration_busy": 0,
+        "integration_rate_limit": 1
+      },
+      "flows": [
+        {
+          "source": "microsoft_sentinel",
+          "events": 13,
+          "alerts": 2,
+          "deliveries": 2
+        },
+        {
+          "source": "microsoft_graph",
+          "events": 13,
+          "alerts": 2,
+          "deliveries": 2
+        },
+        {
+          "source": "windows_wef",
+          "events": 36,
+          "alerts": 7,
+          "deliveries": 7
+        }
+      ],
+      "live_integrations": "Not tested"
+    },
+    "finished_at": "2026-09-28T23:55:34.329810+00:00"
+  },
+  "finished_at": "2026-09-28T23:55:34.609174+00:00",
+  "duration_seconds": 333.31848350004293,
+  "manifest_sha256": "7b8f93319b441048e0856df8cfb0cb2f8bbec0fd751ae4e98b211964eec5603c"
+}

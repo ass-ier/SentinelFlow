@@ -34,6 +34,23 @@ export function EventRecord({
           <Time value={event.event.timestamp} />
         </Fact>
         <Fact term="Source">{event.event.source}</Fact>
+        {typeof event.metadata.provider === 'string' && (
+          <Fact term="Telemetry provider">{event.metadata.provider}</Fact>
+        )}
+        {typeof event.metadata.connector_id === 'string' && (
+          <Fact term="Connector ID">{event.metadata.connector_id}</Fact>
+        )}
+        {typeof event.metadata.source_table === 'string' && (
+          <Fact term="Source table">{event.metadata.source_table}</Fact>
+        )}
+        {typeof event.metadata.source_channel === 'string' && (
+          <Fact term="Source channel">{event.metadata.source_channel}</Fact>
+        )}
+        {typeof event.metadata.ingested_at === 'string' && (
+          <Fact term="Ingested (UTC)">
+            <Time value={event.metadata.ingested_at} />
+          </Fact>
+        )}
         <Fact term="Category / type">
           {event.event.category} / {event.event.type}
         </Fact>
@@ -96,7 +113,7 @@ export function EventRecord({
       )}
       <CodeBlock value={event.raw_event} label={`Raw event ${event.event.id}`} />
       <details className="disclosure">
-        <summary>Complete normalized event & metadata</summary>
+        <summary>Complete normalized event &amp; metadata</summary>
         <CodeBlock value={event} label="Normalized event JSON" />
       </details>
     </div>

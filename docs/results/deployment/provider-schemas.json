@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-09-28T11:02:25.825377+00:00",
+  "method": "Local validation using downloaded official JSON schemas, no provider authentication or mutations",
+  "validator": "4.25.1",
+  "results": [
+    {
+      "provider": "Render",
+      "schema_sha256": "57aa0a1ff9c3b2d0fcb91b790b7b285aef6397adb0c92930e6e601054444cfe5",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "provider": "Vercel",
+      "schema_sha256": "b405f65e3165bd49bb3df5102ffc8edf447c871fdd8366e4192f123dbbb83169",
+      "status": "vendor-schema-invalid",
+      "schema_path": [
+        "properties",
+        "functions",
+        "patternProperties",
+        "^.{1,256}$",
+        "properties",
+        "experimentalTriggers",
+        "items"
+      ],
+      "limitation": "The official Vercel schema has an invalid experimentalTriggers definition. No schema weakening or repair was performed; routing and headers are independently tested in the actual production build."
+    }
+  ]
+}

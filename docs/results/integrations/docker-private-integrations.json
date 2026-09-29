@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "network": "none (loopback mocks only)",
+  "non_root": true,
+  "scenarios": [
+    {
+      "source": "microsoft_sentinel",
+      "events": 13,
+      "alerts": 2,
+      "deliveries": 2
+    },
+    {
+      "source": "microsoft_graph",
+      "events": 13,
+      "alerts": 2,
+      "deliveries": 2
+    },
+    {
+      "source": "windows_wef",
+      "events": 36,
+      "alerts": 7,
+      "deliveries": 7
+    }
+  ],
+  "receiver_receipts": 11,
+  "live_tested": false,
+  "source_fingerprint": "9db953ffd9fa343a3219d36051910f93151d32682381440091614d72823f14a2",
+  "image_id": "sha256:be9836ae219a852c4088f61ac1acfbb33c52d10722de3f384cdaebff66f67b36",
+  "os": "linux",
+  "architecture": "amd64"
+}

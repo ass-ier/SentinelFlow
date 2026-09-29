@@ -154,7 +154,7 @@ export function ComprehensiveReport({ report }: { report: ValidationArtifact }) 
         </details>
       )}
       <details className="disclosure">
-        <summary>Complete executed validation report & source fingerprint</summary>
+        <summary>Complete executed validation report &amp; source fingerprint</summary>
         <p className="form-note">
           {current
             ? 'Source fingerprint matches the current workspace.'

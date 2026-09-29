@@ -1,0 +1,12 @@
+PASS Unauthenticated private configuration is denied without credential disclosure
+PASS Owner token entry is masked and absent from rendered page text
+PASS Reference-only credential creation enforces UTC expiry and the actual read-only scope
+PASS UI revocation takes effect on the next authenticated request
+PASS Expired credentials are visibly distinguished and rejected by the backend
+PASS Malicious destination text remains inert and delivery history contains no server secrets
+PASS Actual stored malicious alert names render as text, never executable markup
+PASS Raw evidence preserves malicious bytes while remaining inert in the real browser
+PASS Credential expiry controls remain usable at 1440px
+PASS Credential expiry controls remain usable at 390px
+PASS Updated offline Swagger renders and declares actual bearer/scoped authorization
+PASS Security workflows completed without browser runtime errors

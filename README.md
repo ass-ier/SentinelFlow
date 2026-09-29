@@ -11,9 +11,11 @@ security platform. It is **not a production SIEM**.
 
 ## Run locally
 
-Requirements: **Python 3.11+**, **Node 20.19.2+**, and npm. Development and validation
+Release baseline: **Python 3.13.15**, **Node 24.21.0 LTS**, and **npm 11.19.0**.
+Use `.python-version` and `.nvmrc`. Development and validation
 were exercised on macOS; the commands also target Linux. Dependencies are pinned
-in `requirements.lock` (including hashes) and `frontend/package-lock.json`.
+in `requirements.lock` (development and runtime), `requirements-runtime.lock`
+(production only), and `frontend/package-lock.json`.
 
 ```sh
 make install
@@ -47,10 +49,15 @@ python3 scripts/manage.py validate
 python3 scripts/manage.py dev
 ```
 
-`manage.py` also accepts `test`, `lint`, and `format`. After installation, the
+`manage.py` also accepts `test`, `lint`, `format`, `security-tools`, and `security`.
+`SENTINELFLOW_PYTHON` can select an existing isolated environment without replacing
+one used by another running process. After installation, the
 core app, tests, datasets, replay, validation, and OpenAPI assets work offline.
 Only the optional public-source reproduction scripts and initial dependency /
-browser installation use the network.
+browser installation and the separate security/advisory gate require the network.
+Explicitly enabled private Microsoft
+and notification integrations also contact the owner's configured services;
+their offline mock mode requires no credentials.
 
 For a single production-build preview process:
 
@@ -63,7 +70,56 @@ Open http://127.0.0.1:8765 with a browser. JSON API clients can use `/api/events
 `/api/alerts`, etc.; the documented unprefixed API routes also accept JSON
 requests. HTML navigation serves the SPA without colliding with `/api`.
 
+## Live Demo Deployment
+
+The split deployment is **Vercel for the React/Vite frontend** and **Render for
+the FastAPI backend**, using a dedicated SQLite database. It is a shared,
+synthetic-data-only portfolio/security-engineering demonstration, **not a
+production SIEM**. Nothing has been pushed or deployed to either provider.
+
+Set `VITE_API_BASE_URL` in Vercel to the actual Render HTTPS origin. Set
+`SENTINEL_PUBLIC_DEMO=true`, `SENTINEL_DATABASE_URL`, and the exact Vercel
+`SENTINEL_ALLOWED_ORIGINS` in Render. The backend reads `PORT`, binds to
+`0.0.0.0`, and serves `/health` and offline `/docs`. The public frontend uses
+real cross-origin API requests, not a development proxy.
+
+First startup loads 56 synthetic events and seven alerts. Public visitors can
+investigate evidence, replay included data, validate detections, and compile/test
+the licensed Sigma samples without credentials. Uploads, rule changes, status
+notes, arbitrary Sigma input, developer endpoints, and visitor reset are
+unavailable; private local functionality is preserved. An optional server-only
+owner token permits reset to the fixed seed. Free Render storage is ephemeral;
+persistent SQLite requires an explicitly chosen paid disk.
+
+Use the [step-by-step deployment runbook](docs/deployment.md),
+[readiness report](docs/deployment-readiness.md),
+[checklist](docs/deployment-checklist.md), and
+[public environment example](.env.public-demo.example). They distinguish actual
+local/container/clone evidence from the hosted checks you must still perform.
+
+```sh
+make validate
+.venv/bin/python scripts/verify_deployment.py \
+  --label my-native-check --backend-port 18865 --frontend-port 18875
+.venv/bin/python scripts/verify_deployment.py \
+  --label my-docker-check --docker --backend-port 18866 --frontend-port 18876
+```
+
+Each label must be new. The verifier uses separate databases and production-build
+outputs, runs real desktop/mobile browser workflows and restart/reset checks,
+and leaves the original live instance and final media alone. It never publishes
+an image or contacts a deployment service. See the runbook for manual equivalents.
+
+| Owner-supplied link | Placeholder |
+|---|---|
+| Public demo | `LIVE_DEMO_URL` |
+| Your GitHub repository | `GITHUB_URL` |
+| Published demonstration video | `DEMO_VIDEO_URL` |
+
 ## What it does
+
+The complete feature list below describes private/local mode. Public-demo
+restrictions are deliberate boundaries, not simulated implementations.
 
 - Normalize JSON, JSONL, CSV, authentication syslog, and Windows-style JSON into
   one nested event model. Preserve original field values and linked raw evidence.
@@ -80,6 +136,74 @@ requests. HTML navigation serves the SPA without colliding with `/api`.
   licensed upstream rules with author attribution on resulting alerts.
 - Inspect actual dashboard metrics, measured benchmark output, validation receipts,
   dataset provenance, and the included repository content.
+- Optionally receive Azure Monitor/Sentinel, Graph/Entra and authenticated
+  Windows/WEF telemetry; investigate its source attribution without replacing
+  the detection engine.
+- Route alerts through a durable outbox to Power Automate or independent
+  webhooks, with scoped credentials, retries, idempotency and attempt history.
+  All external activity is disabled by default; public demo mode forbids it.
+
+## Microsoft and notification integrations
+
+Open **Integrations** in a private installation and run the offline demonstration.
+The included Sentinel/Graph datasets each produce 13 events and two alerts;
+the Windows dataset produces 36 events and seven alerts. Notifications are sent
+to an actual local mock HTTP receiver, with persisted delivery evidence.
+No live tenant, domain, Power Automate flow, Teams channel or external webhook
+has been tested or created.
+
+Use the [integration setup and architecture guide](docs/integrations.md),
+[Windows collector runbook](collector/windows/README.md),
+[fixture manifest](test-data/integrations/README.md), and
+[detailed implementation/validation report](docs/integrations-implementation-report.md).
+
+```sh
+.venv/bin/python scripts/validate_integrations.py
+```
+
+This isolated check is also part of `make validate`. Secret values belong only
+in the backend environment; administration forms accept reference names.
+Existing screenshots and the six-minute recording document the original phase,
+not these new integrations or a live Microsoft connection.
+
+## Security release assessment
+
+The [security assessment](docs/security-assessment.md) records the scanned
+dependency set, confirmed fixes, exact regression results, source/image identities,
+SBOMs and limitations. Historical screenshots/video are preserved, not represented
+as a recording of the security changes.
+
+The final local gate passed on **2026-09-28**: **801 backend tests, 145 frontend
+tests and 127 browser checks**, with zero reported dependency findings in the
+specified scanned set. Raw findings, technical classifications and before/after
+evidence are saved in [the evidence index](docs/results/security/README.md).
+This does not certify the preserved older running processes, live integrations,
+hosted deployment or unscanned host/optional native tooling.
+
+```sh
+# Public advisory/tool downloads; no live integration credentials required.
+make security-tools
+frontend/node_modules/.bin/playwright install chromium
+make security
+```
+
+The full gate executes `make validate`'s equivalent, Python/npm/OSV/Retire.js,
+Gitleaks current-tree/history, Bandit/Semgrep, filesystem and both production-image
+scans, SBOM generation, real browser workflows, collector outage/restart, and
+native/Docker rehearsals. Missing tools, stale evidence, incomplete coverage,
+unreviewed findings or failed phases result in **BLOCKED** and a nonzero exit.
+Use `python3 scripts/manage.py security` without Make. Each execution creates a
+new directory under `artifacts/security/`; do not publish that directory wholesale.
+
+`make validate` remains offline after installation. It is not a substitute for
+current vulnerability databases. The public-mode API schema omits private
+administration, integration, ingestion and developer operations. Scoped credentials
+support optional timezone-aware expiry; blank/legacy expiry remains explicitly
+non-expiring. Original owner tokens are static configuration, not user sessions.
+
+The GitHub Actions workflow adds a daily and pull-request gate, but configuring
+it does not mean hosted CI or a deployment has run. No live Microsoft, Graph,
+Windows domain, Power Automate, Teams or external webhook is verified.
 
 ## Architecture
 
@@ -139,7 +263,7 @@ and the measured benchmark. **Any failed phase makes the command fail.**
 Parser/replay/negative/security categories must have executed tests; empty or
 skipped suites cannot produce a validated receipt.
 
-The included execution evidence records **268 backend tests and 93 frontend
+The original delivery evidence (`b987e6d`) records **268 backend tests and 93 frontend
 tests passed**, **50 exact detection scenarios**, **14/14 controlled benign
 scenarios**, **4 Sigma compatibility cases**, and **33 live browser checks**.
 The latter groups are reported separately, not added to the 361 unique unit /
@@ -147,6 +271,12 @@ integration test cases. Every measured benchmark iteration processed 5,600
 events, evaluated 39,200 event-rule pairs, and produced exactly 700 alerts.
 See [executed results](docs/results/README.md) for measured timings, coverage,
 environment, raw receipts, and their limitations.
+
+Deployment preparation adds access, configuration, public-mode and cross-platform
+lock regressions. Its current counts and separate production-browser,
+container and clone receipts are recorded in the
+[deployment readiness report](docs/deployment-readiness.md). Historical screenshots
+and the final recording have not been regenerated to imply a hosted deployment.
 
 A clean installation exposed npm advisories in the original dependency pins.
 The affected packages were upgraded, eight offline regression guards were
@@ -218,7 +348,8 @@ their own licenses: [notices](docs/third-party-notices.md).
 
 - Loopback-only unauthenticated mode. Optional ASCII bearer token, centralized
   access dependency, origin/Host protections, safe errors, and audit entries.
-  Docker requires an explicit token; do not expose the app directly to a network.
+  The private full-stack Docker option requires a token. Public hosting requires
+  the explicitly restricted synthetic-only mode, not weakened private access.
 - Size/event/rule/concurrency limits, safe YAML/JSON, duplicate-key rejection,
   finite numbers, parameterized queries, and bounded regex evaluation. Log
   commands and uploaded payloads are **never executed**.
@@ -244,7 +375,11 @@ docker compose up --build
 
 Open http://127.0.0.1:8765 and enter that token in the UI's API settings.
 The published port is loopback-only, the container runs as a non-root user, and
-the demo database uses a named volume. Docker is an optional delivery path;
-the documented local installation is the primary validated workflow.
-The Compose configuration was parsed, but a Docker image build and container
-execution were not performed in the implementation environment.
+the demo database uses a named volume. This remains the private full-stack
+option. `Dockerfile.backend` is the separate public API-only image used by the
+deployment verifier; Vercel serves its frontend independently.
+
+The original delivery did not execute Docker. The deployment report records
+the later actual build/run attempts, the Linux hash-lock repair, the final
+container results and their exact scope. Do not confuse a parsed Compose file
+or an older receipt with a completed container test.

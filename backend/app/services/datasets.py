@@ -12,8 +12,9 @@ from app.schemas.events import NormalizedEvent
 
 
 class DatasetStore:
-    def __init__(self, root: Path = ROOT / "test-data") -> None:
+    def __init__(self, root: Path = ROOT / "test-data", *, synthetic_only: bool = False) -> None:
         self.root = root.resolve()
+        self.synthetic_only = synthetic_only
 
     def catalog(self) -> list[dict[str, Any]]:
         manifest = self.root / "manifest.json"
@@ -24,7 +25,7 @@ class DatasetStore:
         value = json_loads(manifest.read_text())
         if not isinstance(value, list):
             raise DomainError("Invalid dataset manifest", 500, "dataset_error")
-        return value
+        return [item for item in value if not self.synthetic_only or item.get("synthetic") is True]
 
     def get(self, dataset_id: str) -> dict[str, Any]:
         for item in self.catalog():
@@ -55,4 +56,5 @@ class DatasetStore:
         value = json_loads((self.root / "expected-results" / "scenarios.json").read_text())
         if not isinstance(value, list):
             raise DomainError("Invalid scenario manifest", 500, "dataset_error")
-        return value
+        allowed = {item["id"] for item in self.catalog()}
+        return [item for item in value if item["dataset_id"] in allowed]

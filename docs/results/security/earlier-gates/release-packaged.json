@@ -1,0 +1,3665 @@
+{
+  "status": "BLOCKED",
+  "started_at": "2026-09-28T23:33:29.747124+00:00",
+  "source_fingerprint": "409158b120e99f8c1a814e26e820a7a15745f3aaecbbbcde01f7878b14ed3875",
+  "commit": "b987e6d7526b9a643bf9813fe816ada21c706b55",
+  "worktree_changes": [
+    " M .dockerignore",
+    " M .env.example",
+    " M .gitignore",
+    " M Dockerfile",
+    " M Makefile",
+    " M README.md",
+    " M backend/app/api/routes.py",
+    " M backend/app/core/config.py",
+    " M backend/app/core/evidence.py",
+    " M backend/app/core/safe.py",
+    " M backend/app/core/security.py",
+    " M backend/app/main.py",
+    " M backend/app/parsers/pipeline.py",
+    " M backend/app/parsers/windows.py",
+    " M backend/app/schemas/events.py",
+    " M backend/app/services/datasets.py",
+    " M backend/app/services/platform.py",
+    " M backend/app/storage/database.py",
+    " M backend/tests/regression/test_malformed_boundaries.py",
+    " M docker-compose.yml",
+    " M docs/api.md",
+    " M docs/architecture.md",
+    " M docs/data-model.md",
+    " M docs/demo.md",
+    " M docs/dependency-maintenance.md",
+    " M docs/fresh-clone.md",
+    " M docs/limitations.md",
+    " M docs/security.md",
+    " M docs/testing.md",
+    " M docs/third-party-notices.md",
+    " M frontend/package-lock.json",
+    " M frontend/package.json",
+    " M frontend/src/App.tsx",
+    " M frontend/src/components/EventEvidence.tsx",
+    " M frontend/src/components/IngestForm.tsx",
+    " M frontend/src/components/ProjectReports.tsx",
+    " M frontend/src/components/Shell.tsx",
+    " M frontend/src/components/ValidationReport.tsx",
+    " M frontend/src/components/WorkspaceProvider.tsx",
+    " M frontend/src/hooks/workspace.ts",
+    " M frontend/src/main.tsx",
+    " M frontend/src/pages/AlertDetailPage.tsx",
+    " M frontend/src/pages/DashboardPage.tsx",
+    " M frontend/src/pages/EventsPage.tsx",
+    " M frontend/src/pages/EvidencePage.tsx",
+    " M frontend/src/pages/ReplayPage.tsx",
+    " M frontend/src/pages/RulesPage.tsx",
+    " M frontend/src/pages/SigmaPage.tsx",
+    " M frontend/src/services/api.ts",
+    " M frontend/src/types/index.ts",
+    " M frontend/vite.config.ts",
+    " M pyproject.toml",
+    " M requirements.lock",
+    " M scripts/browser_verify.mjs",
+    " M scripts/browser_workflows.mjs",
+    " M scripts/demo_reset.py",
+    " M scripts/dev.py",
+    " M scripts/manage.py",
+    " M scripts/record_demo.mjs",
+    " M scripts/validate.py",
+    "?? .env.public-demo.example",
+    "?? .github/",
+    "?? .nvmrc",
+    "?? .python-version",
+    "?? .semgrepignore",
+    "?? Dockerfile.backend",
+    "?? backend/app/api/integrations.py",
+    "?? backend/app/core/openapi.py",
+    "?? backend/app/integrations/",
+    "?? backend/app/parsers/wazuh.py",
+    "?? backend/app/parsers/windows_xml.py",
+    "?? backend/app/static/",
+    "?? backend/app/storage/integrations.py",
+    "?? backend/app/storage/migrations.py",
+    "?? backend/tests/integration/test_public_demo.py",
+    "?? backend/tests/integrations/",
+    "?? backend/tests/security/",
+    "?? backend/tests/unit/test_deployment_config.py",
+    "?? collector/",
+    "?? docs/deployment-checklist.md",
+    "?? docs/deployment-readiness.md",
+    "?? docs/deployment.md",
+    "?? docs/implementation-status.md",
+    "?? docs/integrations-implementation-report.md",
+    "?? docs/integrations.md",
+    "?? docs/results/deployment/",
+    "?? docs/results/integrations/",
+    "?? docs/results/security/",
+    "?? docs/security-assessment.md",
+    "?? frontend/src/components/ConnectorForm.tsx",
+    "?? frontend/src/components/CredentialSettings.tsx",
+    "?? frontend/src/components/DeliveryTable.tsx",
+    "?? frontend/src/components/DestinationForm.tsx",
+    "?? frontend/src/components/NotificationPolicies.tsx",
+    "?? frontend/src/pages/IntegrationsPage.tsx",
+    "?? frontend/src/pages/NotificationsPage.tsx",
+    "?? frontend/src/services/apiBase.ts",
+    "?? frontend/src/services/integrations.ts",
+    "?? frontend/src/styles-integrations.css",
+    "?? frontend/src/types/integrations.ts",
+    "?? frontend/tests/deployment.test.tsx",
+    "?? frontend/tests/integrations.test.tsx",
+    "?? frontend/vercel.json",
+    "?? render.yaml",
+    "?? requirements-runtime.lock",
+    "?? scripts/browser_deployment.mjs",
+    "?? scripts/browser_integrations.mjs",
+    "?? scripts/browser_security.mjs",
+    "?? scripts/container_security_probe.py",
+    "?? scripts/generate_integration_data.py",
+    "?? scripts/generate_security_data.py",
+    "?? scripts/security_rehearsal.py",
+    "?? scripts/security_release.py",
+    "?? scripts/security_scan.py",
+    "?? scripts/security_tools.py",
+    "?? scripts/serve.py",
+    "?? scripts/validate_integrations.py",
+    "?? scripts/vendor_swagger.py",
+    "?? scripts/verify_deployment.py",
+    "?? security/",
+    "?? test-data/integrations/",
+    "?? test-data/security/README.md",
+    "?? test-data/security/api-fuzz.json",
+    "?? test-data/security/entity.xml"
+  ],
+  "commands": [
+    {
+      "name": "full-validation",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "scripts/validate.py"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:33:29.862685+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:17.807767+00:00",
+      "duration_seconds": 108.00501008401625,
+      "stdout": "full-validation.log",
+      "stderr": "full-validation.stderr.log",
+      "stdout_sha256": "c8dd337a7912ca98990f140679b97222967b93d8aa0dd9e8522811e95abe253a"
+    },
+    {
+      "name": "swagger-integrity",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "scripts/vendor_swagger.py",
+        "--check"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:17.876861+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:17.924483+00:00",
+      "duration_seconds": 0.04762358299922198,
+      "stdout": "swagger-integrity.log",
+      "stderr": "swagger-integrity.stderr.log",
+      "stdout_sha256": "d938ce053d429b5ad3e2f063e3f4574c1b3278b83047e47c089fc50e3c8deb07"
+    },
+    {
+      "name": "version-retire",
+      "command": [
+        "node",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/node_modules/retire/lib/cli.js",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:17.925258+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:18.014367+00:00",
+      "duration_seconds": 0.0890987089369446,
+      "stdout": "version-retire.log",
+      "stderr": "version-retire.stderr.log",
+      "stdout_sha256": "794a495980132b2741146c50652467ad5e5bf4b0e8f1695b2af12572c35d6008"
+    },
+    {
+      "name": "retire-swagger",
+      "command": [
+        "node",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/node_modules/retire/lib/cli.js",
+        "--path",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger",
+        "--jsrepo",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/retire-advisories.json",
+        "--nocache",
+        "--verbose",
+        "--deep",
+        "--outputformat",
+        "json",
+        "--outputpath",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/retire-swagger.json",
+        "--exitwith",
+        "1"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:19.788688+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:22.017336+00:00",
+      "duration_seconds": 2.2285986659117043,
+      "stdout": "retire-swagger.log",
+      "stderr": "retire-swagger.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "retire-frontend",
+      "command": [
+        "node",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/node_modules/retire/lib/cli.js",
+        "--path",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/dist",
+        "--jsrepo",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/retire-advisories.json",
+        "--nocache",
+        "--verbose",
+        "--deep",
+        "--outputformat",
+        "json",
+        "--outputpath",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/retire-frontend.json",
+        "--exitwith",
+        "1"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:22.018987+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:22.612496+00:00",
+      "duration_seconds": 0.593506500008516,
+      "stdout": "retire-frontend.log",
+      "stderr": "retire-frontend.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "version-pip-audit",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/pip-audit",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:22.613423+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:23.082276+00:00",
+      "duration_seconds": 0.4688572499435395,
+      "stdout": "version-pip-audit.log",
+      "stderr": "version-pip-audit.stderr.log",
+      "stdout_sha256": "70d9a63a0ea389b4992009be156f8738d7c22f2f5c049084054528ed7f9eee0c"
+    },
+    {
+      "name": "version-bandit",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/bandit",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:23.083221+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:23.217365+00:00",
+      "duration_seconds": 0.13414904207456857,
+      "stdout": "version-bandit.log",
+      "stderr": "version-bandit.stderr.log",
+      "stdout_sha256": "e33c06f624c601fa86d53a424905da5d989564c197438c16d6690a2244bc6754"
+    },
+    {
+      "name": "version-semgrep",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/semgrep",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:23.218239+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:24.605523+00:00",
+      "duration_seconds": 1.3872858330141753,
+      "stdout": "version-semgrep.log",
+      "stderr": "version-semgrep.stderr.log",
+      "stdout_sha256": "05192603e2d208e5cbfa3ec0de34c122510f96bec935dc5f965992e444036d63"
+    },
+    {
+      "name": "version-uv",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/uv",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:24.606776+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:24.690741+00:00",
+      "duration_seconds": 0.08396462502423674,
+      "stdout": "version-uv.log",
+      "stderr": "version-uv.stderr.log",
+      "stdout_sha256": "1e8f5117af90f0ee32b0bbe36a1e6cdca3de2428b4f5b8144f114a7d64ffecbb"
+    },
+    {
+      "name": "version-trivy",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:24.716120+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:25.195007+00:00",
+      "duration_seconds": 0.4788833329221234,
+      "stdout": "version-trivy.log",
+      "stderr": "version-trivy.stderr.log",
+      "stdout_sha256": "41e22ed321a4c139a4fae57e92d8fa971cf7e91a8c1c4444d9a948c52a72c73a"
+    },
+    {
+      "name": "version-gitleaks",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/gitleaks",
+        "version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:25.297466+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:25.607361+00:00",
+      "duration_seconds": 0.30989391705952585,
+      "stdout": "version-gitleaks.log",
+      "stderr": "version-gitleaks.stderr.log",
+      "stdout_sha256": "c9fd9ccb6682c54b5fcb0363757b6c6873564e7c067f70b3b5581b611528b9f4"
+    },
+    {
+      "name": "version-osv-scanner",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/osv-scanner",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:25.624869+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:25.823938+00:00",
+      "duration_seconds": 0.1991207500686869,
+      "stdout": "version-osv-scanner.log",
+      "stderr": "version-osv-scanner.stderr.log",
+      "stdout_sha256": "e0bc7fa9d9b902f5179238abc870bc238c6f119e8c4c0b58b63fd26289fc5ea7"
+    },
+    {
+      "name": "version-syft",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/syft",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:25.865207+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:26.174028+00:00",
+      "duration_seconds": 0.30881512502674013,
+      "stdout": "version-syft.log",
+      "stderr": "version-syft.stderr.log",
+      "stdout_sha256": "93f3e034d586773063db801297f457fbe182478bc9a743855be0126077e7542f"
+    },
+    {
+      "name": "node-version",
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:26.234419+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:26.274252+00:00",
+      "duration_seconds": 0.0398549580713734,
+      "stdout": "node-version.log",
+      "stderr": "node-version.stderr.log",
+      "stdout_sha256": "f2ec568164f99546161909b0189b57bb5be3e80f8e2ccd8a51a4aed8c4055a04"
+    },
+    {
+      "name": "npm-version",
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:26.275096+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:26.414101+00:00",
+      "duration_seconds": 0.13900670793373138,
+      "stdout": "npm-version.log",
+      "stderr": "npm-version.stderr.log",
+      "stdout_sha256": "005206ab803f8881d8227540b7980b37e723b69a8849edb31734a90b7e7964e2"
+    },
+    {
+      "name": "pip-check",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:26.414806+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:26.607370+00:00",
+      "duration_seconds": 0.19257170893251896,
+      "stdout": "pip-check.log",
+      "stderr": "pip-check.stderr.log",
+      "stdout_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    {
+      "name": "python-lock",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/pip-audit",
+        "-r",
+        "requirements.lock",
+        "--disable-pip",
+        "--require-hashes",
+        "--progress-spinner",
+        "off",
+        "-f",
+        "json",
+        "-o",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/python-lock.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:26.610224+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:34.388288+00:00",
+      "duration_seconds": 7.778016166994348,
+      "stdout": "python-lock.log",
+      "stderr": "python-lock.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "python-runtime",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/pip-audit",
+        "-r",
+        "requirements-runtime.lock",
+        "--disable-pip",
+        "--require-hashes",
+        "--progress-spinner",
+        "off",
+        "-f",
+        "json",
+        "-o",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/python-runtime.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:34.390121+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:34.767460+00:00",
+      "duration_seconds": 0.3773385420208797,
+      "stdout": "python-runtime.log",
+      "stderr": "python-runtime.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "python-installed",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/pip-audit",
+        "--path",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/lib/python3.13/site-packages",
+        "--progress-spinner",
+        "off",
+        "-f",
+        "json",
+        "-o",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/python-installed.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:34.768780+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:35.774232+00:00",
+      "duration_seconds": 1.0054549579508603,
+      "stdout": "python-installed.log",
+      "stderr": "python-installed.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "python-scanners",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/pip-audit",
+        "-r",
+        "security/requirements.lock",
+        "--disable-pip",
+        "--require-hashes",
+        "--progress-spinner",
+        "off",
+        "-f",
+        "json",
+        "-o",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/python-scanners.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:35.776023+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:47.184812+00:00",
+      "duration_seconds": 11.408718083053827,
+      "stdout": "python-scanners.log",
+      "stderr": "python-scanners.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "node-all",
+      "command": [
+        "npm",
+        "audit",
+        "--package-lock-only",
+        "--json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend",
+      "started_at": "2026-09-28T23:35:47.187395+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:48.574136+00:00",
+      "duration_seconds": 1.386893416987732,
+      "stdout": "node-all.json",
+      "stderr": "node-all.stderr.log",
+      "stdout_sha256": "51519f830160092fc556da676bc04841b554984ed4c442e3e2a365b92a35348c"
+    },
+    {
+      "name": "node-production",
+      "command": [
+        "npm",
+        "audit",
+        "--package-lock-only",
+        "--json",
+        "--omit=dev"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend",
+      "started_at": "2026-09-28T23:35:48.577479+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:49.335332+00:00",
+      "duration_seconds": 0.7578448749845847,
+      "stdout": "node-production.json",
+      "stderr": "node-production.stderr.log",
+      "stdout_sha256": "51519f830160092fc556da676bc04841b554984ed4c442e3e2a365b92a35348c"
+    },
+    {
+      "name": "osv",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/osv-scanner",
+        "scan",
+        "source",
+        "--lockfile=requirements.txt:requirements.lock",
+        "--lockfile=requirements.txt:requirements-runtime.lock",
+        "--lockfile=frontend/package-lock.json",
+        "--all-packages",
+        "--all-vulns",
+        "--format=json",
+        "--output-file=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/osv.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:49.337312+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:35:52.155791+00:00",
+      "duration_seconds": 2.8184556249761954,
+      "stdout": "osv.log",
+      "stderr": "osv.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "secrets-history",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/gitleaks",
+        "git",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+        "--log-opts=--all",
+        "--redact=100",
+        "--ignore-gitleaks-allow",
+        "--no-banner",
+        "--report-format=json",
+        "--report-path=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/secrets-history.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:52.542888+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-09-28T23:35:54.424504+00:00",
+      "duration_seconds": 1.8816107499878854,
+      "stdout": "secrets-history.log",
+      "stderr": "secrets-history.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "secrets-working-tree",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/gitleaks",
+        "dir",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source",
+        "--redact=100",
+        "--ignore-gitleaks-allow",
+        "--no-banner",
+        "--report-format=json",
+        "--report-path=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/secrets-working-tree.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:35:54.452284+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-09-28T23:35:55.817785+00:00",
+      "duration_seconds": 1.3654889579629526,
+      "stdout": "secrets-working-tree.log",
+      "stderr": "secrets-working-tree.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "bandit",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/bandit",
+        "-r",
+        "backend",
+        "scripts",
+        "collector",
+        "--ignore-nosec",
+        "-f",
+        "json",
+        "-o",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/bandit.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source",
+      "started_at": "2026-09-28T23:35:55.818928+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-09-28T23:35:56.767864+00:00",
+      "duration_seconds": 0.9489375828998163,
+      "stdout": "bandit.log",
+      "stderr": "bandit.stderr.log",
+      "stdout_sha256": "3becae746696ab5c4207c0f607c00f6f0f376116e74b7c5f7358cbae14278886"
+    },
+    {
+      "name": "semgrep",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/python-release/bin/semgrep",
+        "scan",
+        "--metrics=off",
+        "--disable-version-check",
+        "--oss-only",
+        "--no-git-ignore",
+        "--disable-nosem",
+        "--no-rewrite-rule-ids",
+        "--exclude",
+        "backend/app/static/swagger",
+        "--strict",
+        "--error",
+        "--config",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/semgrep-rules/owasp-top-ten.yaml",
+        "--config",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/semgrep-rules/python.yaml",
+        "--config",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/semgrep-rules/react.yaml",
+        "--config",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/semgrep-rules/typescript.yaml",
+        "--config",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/semgrep-rules/secrets.yaml",
+        "--json",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/semgrep.json",
+        "backend",
+        "scripts",
+        "collector",
+        "frontend"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source",
+      "started_at": "2026-09-28T23:36:02.386245+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-09-28T23:36:19.384707+00:00",
+      "duration_seconds": 16.99832804198377,
+      "stdout": "semgrep.log",
+      "stderr": "semgrep.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "filesystem-trivy",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy",
+        "fs",
+        "--quiet",
+        "--cache-dir",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy-cache",
+        "--scanners",
+        "vuln,misconfig",
+        "--include-dev-deps",
+        "--format",
+        "json",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/filesystem-trivy.json",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:19.440789+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:21.191464+00:00",
+      "duration_seconds": 1.7506671249866486,
+      "stdout": "filesystem-trivy.log",
+      "stderr": "filesystem-trivy.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "node-sbom",
+      "command": [
+        "npm",
+        "sbom",
+        "--sbom-format",
+        "cyclonedx",
+        "--package-lock-only"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend",
+      "started_at": "2026-09-28T23:36:21.194299+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:21.784917+00:00",
+      "duration_seconds": 0.590626584016718,
+      "stdout": "node-sbom.json",
+      "stderr": "node-sbom.stderr.log",
+      "stdout_sha256": "34abef6be18c2b91d7cac40ec2896f35135807a38f21691f9b50c71dde286ab1"
+    },
+    {
+      "name": "python-sbom",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/syft",
+        "scan",
+        "dir:/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/lib/python3.13/site-packages",
+        "--select-catalogers",
+        "python",
+        "-o",
+        "cyclonedx-json=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/python-sbom.cdx.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:21.786186+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:23.831685+00:00",
+      "duration_seconds": 2.045490499935113,
+      "stdout": "python-sbom.log",
+      "stderr": "python-sbom.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "installed-sbom-trivy",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy",
+        "sbom",
+        "--quiet",
+        "--cache-dir",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy-cache",
+        "--format",
+        "json",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/installed-sbom-trivy.json",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/python-sbom.cdx.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:23.832586+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:23.968250+00:00",
+      "duration_seconds": 0.13566470798105001,
+      "stdout": "installed-sbom-trivy.log",
+      "stderr": "installed-sbom-trivy.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docker-endpoint",
+      "command": [
+        "docker",
+        "context",
+        "inspect",
+        "--format",
+        "{{json .Endpoints.docker.Host}}"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:23.969386+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:23.991490+00:00",
+      "duration_seconds": 0.022132124984636903,
+      "stdout": "docker-endpoint.json",
+      "stderr": "docker-endpoint.stderr.log",
+      "stdout_sha256": "93fb5e66ea179d0a63dda2443acff803a32da581f646b6711e256ac7d2e700d1"
+    },
+    {
+      "name": "build-backend",
+      "command": [
+        "docker",
+        "build",
+        "--platform",
+        "linux/amd64",
+        "-f",
+        "Dockerfile.backend",
+        "--label",
+        "org.opencontainers.image.revision=b987e6d7526b9a643bf9813fe816ada21c706b55",
+        "--label",
+        "org.sentinelflow.source-fingerprint=409158b120e99f8c1a814e26e820a7a15745f3aaecbbbcde01f7878b14ed3875",
+        "-t",
+        "sentinelflow-security:backend",
+        "."
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:23.992598+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:24.734896+00:00",
+      "duration_seconds": 0.7423476669937372,
+      "stdout": "build-backend.log",
+      "stderr": "build-backend.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "image-backend",
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sentinelflow-security:backend"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:24.736849+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:24.774893+00:00",
+      "duration_seconds": 0.03805154201108962,
+      "stdout": "image-backend.json",
+      "stderr": "image-backend.stderr.log",
+      "stdout_sha256": "3d29accaf97b6aed073fca0f4755fd6679340427ea42eaf875da0e49285ed3ad"
+    },
+    {
+      "name": "scan-backend",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy",
+        "image",
+        "--quiet",
+        "--cache-dir",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy-cache",
+        "--image-src",
+        "docker",
+        "--scanners",
+        "vuln",
+        "--format",
+        "json",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/container-backend.json",
+        "sha256:a4ab6d4fe4fea80ae2ebee6561a379aa45cda37d90f8dd8fdbdb8804025fb009"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:24.776494+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:25.958209+00:00",
+      "duration_seconds": 1.1817099580075592,
+      "stdout": "scan-backend.log",
+      "stderr": "scan-backend.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sbom-backend",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/syft",
+        "scan",
+        "docker:sha256:a4ab6d4fe4fea80ae2ebee6561a379aa45cda37d90f8dd8fdbdb8804025fb009",
+        "-o",
+        "cyclonedx-json=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/container-backend.cdx.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:25.960475+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:27.641609+00:00",
+      "duration_seconds": 1.6811412499519065,
+      "stdout": "sbom-backend.log",
+      "stderr": "sbom-backend.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "build-application",
+      "command": [
+        "docker",
+        "build",
+        "--platform",
+        "linux/amd64",
+        "-f",
+        "Dockerfile",
+        "--label",
+        "org.opencontainers.image.revision=b987e6d7526b9a643bf9813fe816ada21c706b55",
+        "--label",
+        "org.sentinelflow.source-fingerprint=409158b120e99f8c1a814e26e820a7a15745f3aaecbbbcde01f7878b14ed3875",
+        "-t",
+        "sentinelflow-security:application",
+        "."
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:27.642697+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:28.451517+00:00",
+      "duration_seconds": 0.8088335420470685,
+      "stdout": "build-application.log",
+      "stderr": "build-application.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "image-application",
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "sentinelflow-security:application"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:28.453560+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:28.491641+00:00",
+      "duration_seconds": 0.03807095799129456,
+      "stdout": "image-application.json",
+      "stderr": "image-application.stderr.log",
+      "stdout_sha256": "2242e3770f63c603a0ba077a8f081584ce48b949080ce343cb09b44610715a9f"
+    },
+    {
+      "name": "scan-application",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy",
+        "image",
+        "--quiet",
+        "--cache-dir",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/trivy-cache",
+        "--image-src",
+        "docker",
+        "--scanners",
+        "vuln",
+        "--format",
+        "json",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/container-application.json",
+        "sha256:682df70b58b75f053ebda949c3b237db57d33af2917db36a583d8c15042fa495"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:28.493216+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:29.991615+00:00",
+      "duration_seconds": 1.4983932089526206,
+      "stdout": "scan-application.log",
+      "stderr": "scan-application.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sbom-application",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/tools/syft",
+        "scan",
+        "docker:sha256:682df70b58b75f053ebda949c3b237db57d33af2917db36a583d8c15042fa495",
+        "-o",
+        "cyclonedx-json=/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/container-application.cdx.json"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:29.996030+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:36:31.858367+00:00",
+      "duration_seconds": 1.8623479580273852,
+      "stdout": "sbom-application.log",
+      "stderr": "sbom-application.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rehearsals",
+      "command": [
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+        "scripts/security_rehearsal.py",
+        "--output",
+        "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/rehearsals",
+        "--backend-image",
+        "sha256:a4ab6d4fe4fea80ae2ebee6561a379aa45cda37d90f8dd8fdbdb8804025fb009",
+        "--application-image",
+        "sha256:682df70b58b75f053ebda949c3b237db57d33af2917db36a583d8c15042fa495"
+      ],
+      "cwd": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey",
+      "started_at": "2026-09-28T23:36:31.889037+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-28T23:38:43.655368+00:00",
+      "duration_seconds": 131.76552941603586,
+      "stdout": "rehearsals.log",
+      "stderr": "rehearsals.stderr.log",
+      "stdout_sha256": "98c7fae0d0e3e1940344c4eaefca3ed1f6ec2bf4976209c9a3f27d2f7bde7cd3"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Installed Python environment exactly matches the lock",
+      "passed": true,
+      "details": {
+        "mismatches": {},
+        "extra": []
+      }
+    },
+    {
+      "name": "Runtime lock is a version-consistent subset",
+      "passed": true,
+      "details": {
+        "runtime_packages": 20,
+        "all_packages": 43
+      }
+    },
+    {
+      "name": "npm package artifacts use the reviewed registry",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Pinned Retire.js version",
+      "passed": true,
+      "details": "5.7.0"
+    },
+    {
+      "name": "retire-swagger: zero known bundled JavaScript findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "retire-frontend: zero known bundled JavaScript findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Retire.js identifies the bundled HTML sanitizer",
+      "passed": true,
+      "details": {
+        "identified": 9
+      }
+    },
+    {
+      "name": "Pinned pip-audit version",
+      "passed": true,
+      "details": {
+        "expected": "2.10.1",
+        "output": "pip-audit 2.10.1\n",
+        "binary_sha256": "66c98da65de3e2c3dc28d48d0e77664b01c469d56038747c19a5350468f6506e"
+      }
+    },
+    {
+      "name": "Pinned bandit version",
+      "passed": true,
+      "details": {
+        "expected": "1.9.4",
+        "output": "bandit 1.9.4\n  python version = 3.13.15 (main, Sep 24 2026, 17:46:40) [Clang 22.1.3 ]\n",
+        "binary_sha256": "f28ea855d3e65dc7a0b3e4bae4be0dcafcbeea166430ed964cd6b2d6c708f6a6"
+      }
+    },
+    {
+      "name": "Pinned semgrep version",
+      "passed": true,
+      "details": {
+        "expected": "1.178.0",
+        "output": "1.178.0\n",
+        "binary_sha256": "d48f07a6212f0ea511e002b7a7f7065db7e4cb51a3825445e133c840f8ad1303"
+      }
+    },
+    {
+      "name": "Pinned uv version",
+      "passed": true,
+      "details": {
+        "expected": "0.12.19",
+        "output": "uv 0.12.19 (bea138450 2026-09-24 aarch64-apple-darwin)\n",
+        "binary_sha256": "1bd368f1bdd1fc4067a9f9d5d7394363e83490e47c86b26056760abe1c4155fb"
+      }
+    },
+    {
+      "name": "Pinned trivy version",
+      "passed": true,
+      "details": {
+        "expected": "0.74.0",
+        "output": "Version: 0.74.0\n",
+        "binary_sha256": "0ed07c205ca9ecc1065dc57b9f9f77adc79393bb469d9d1de9ec90c8c94ffc2f"
+      }
+    },
+    {
+      "name": "Pinned gitleaks version",
+      "passed": true,
+      "details": {
+        "expected": "8.30.1",
+        "output": "8.30.1\n",
+        "binary_sha256": "ba52fb1bfabbcde42f032afad3d6e0b19dff8ed105229a16e7caa338bbc0e84f"
+      }
+    },
+    {
+      "name": "Pinned osv-scanner version",
+      "passed": true,
+      "details": {
+        "expected": "2.6.0",
+        "output": "osv-scanner version: 2.6.0\nosv-scalibr version: 0.5.2\ncommit: e840a6e8adb14b7777c78e26cfbf6e2abc1d1fc6\nbuilt at: 2026-09-14T01:44:58Z\n",
+        "binary_sha256": "98c460dcd37de25819babd757d04542045b6243113e209edcd4d89fedb0256b4"
+      }
+    },
+    {
+      "name": "Pinned syft version",
+      "passed": true,
+      "details": {
+        "expected": "1.52.0",
+        "output": "syft 1.52.0\n",
+        "binary_sha256": "17e4215af72264e186a843269d0b797697d643f53841d9598f73614bbcbe9022"
+      }
+    },
+    {
+      "name": "python-lock: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "python-runtime: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "python-installed: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "python-scanners: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "node-all: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "node-production: zero known dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "OSV: zero known release dependency findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "secrets-history: no confirmed or unreviewed secret",
+      "passed": true,
+      "details": [
+        {
+          "id": "27d1d39bb5fb6a14baf089f7e91ba727bcd152d7:.env.example:generic-api-key:31",
+          "path": ".env.example",
+          "line": 31,
+          "commit": "27d1d39bb5fb6a14baf089f7e91ba727bcd152d7",
+          "status": "False positive",
+          "reason": "Verified empty secret assignment followed by a numeric poll interval. The generic rule matched across lines; no credential value is present."
+        },
+        {
+          "id": "f658159093bf68572720608e033229ad47186fc8:.env.example:generic-api-key:31",
+          "path": ".env.example",
+          "line": 31,
+          "commit": "f658159093bf68572720608e033229ad47186fc8",
+          "status": "False positive",
+          "reason": "Verified empty secret assignment followed by a numeric poll interval. The generic rule matched across lines; no credential value is present."
+        },
+        {
+          "id": "ae65f0707dc882c05d5ffd99ecff898c35c11269:.env.example:generic-api-key:31",
+          "path": ".env.example",
+          "line": 31,
+          "commit": "ae65f0707dc882c05d5ffd99ecff898c35c11269",
+          "status": "False positive",
+          "reason": "Verified empty secret assignment followed by a numeric poll interval. The generic rule matched across lines; no credential value is present."
+        }
+      ]
+    },
+    {
+      "name": "secrets-working-tree: no confirmed or unreviewed secret",
+      "passed": false,
+      "details": [
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/baseline/image-inspect.json:generic-api-key:28",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/baseline/image-inspect.json",
+          "line": 28,
+          "commit": "",
+          "status": "Release blocker",
+          "reason": "Unreviewed potential credential"
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/baseline/image-history.jsonl:generic-api-key:21",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/baseline/image-history.jsonl",
+          "line": 21,
+          "commit": "",
+          "status": "Release blocker",
+          "reason": "Unreviewed potential credential"
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/image-application.json:generic-api-key:28",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/image-application.json",
+          "line": 28,
+          "commit": "",
+          "status": "Release blocker",
+          "reason": "Unreviewed potential credential"
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/image-backend.json:generic-api-key:28",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/image-backend.json",
+          "line": 28,
+          "commit": "",
+          "status": "Release blocker",
+          "reason": "Unreviewed potential credential"
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/container-backend.json:generic-api-key:67",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/container-backend.json",
+          "line": 67,
+          "commit": "",
+          "status": "Release blocker",
+          "reason": "Unreviewed potential credential"
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/container-backend.json:generic-api-key:223",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/container-backend.json",
+          "line": 223,
+          "commit": "",
+          "status": "Release blocker",
+          "reason": "Unreviewed potential credential"
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/container-application.json:generic-api-key:69",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/container-application.json",
+          "line": 69,
+          "commit": "",
+          "status": "Release blocker",
+          "reason": "Unreviewed potential credential"
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/container-application.json:generic-api-key:237",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/final/container-application.json",
+          "line": 237,
+          "commit": "",
+          "status": "Release blocker",
+          "reason": "Unreviewed potential credential"
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/baseline/container-trivy.json:generic-api-key:60",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/baseline/container-trivy.json",
+          "line": 60,
+          "commit": "",
+          "status": "Release blocker",
+          "reason": "Unreviewed potential credential"
+        },
+        {
+          "id": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/baseline/container-trivy.json:generic-api-key:210",
+          "path": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/source/docs/results/security/baseline/container-trivy.json",
+          "line": 210,
+          "commit": "",
+          "status": "Release blocker",
+          "reason": "Unreviewed potential credential"
+        }
+      ]
+    },
+    {
+      "name": "Bandit covers every nonempty first-party Python file",
+      "passed": true,
+      "details": {
+        "expected": 111,
+        "missing": []
+      }
+    },
+    {
+      "name": "Semgrep covers every nonempty first-party code file",
+      "passed": true,
+      "details": {
+        "expected": 174,
+        "scanned": 195,
+        "missing": []
+      }
+    },
+    {
+      "name": "bandit: no confirmed or unreviewed finding",
+      "passed": true,
+      "details": {
+        "raw": 838,
+        "statuses": {
+          "False positive": 32,
+          "Not applicable": 806
+        }
+      }
+    },
+    {
+      "name": "semgrep: no confirmed or unreviewed finding",
+      "passed": true,
+      "details": {
+        "raw": 2,
+        "statuses": {
+          "False positive": 2
+        }
+      }
+    },
+    {
+      "name": "Filesystem dependency scan: zero known findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "No unresolved filesystem misconfiguration",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Installed-package SBOM scan: zero known findings",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "backend: no known container dependency findings",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "application: no known container dependency findings",
+      "passed": false,
+      "details": {
+        "MEDIUM": 11,
+        "LOW": 5,
+        "HIGH": 7
+      }
+    },
+    {
+      "name": "Trivy advisory database is no older than 48 hours",
+      "passed": true,
+      "details": {
+        "Version": 2,
+        "NextUpdate": "2026-09-29T13:05:44.359328057Z",
+        "UpdatedAt": "2026-09-28T13:05:44.359328237Z",
+        "DownloadedAt": "2026-09-28T19:43:10.083357Z"
+      }
+    },
+    {
+      "name": "Native and Docker/browser/collector rehearsals completed",
+      "passed": true,
+      "details": {
+        "checks": 10
+      }
+    },
+    {
+      "name": "Previously finalized screenshots and recording are byte-identical",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Source unchanged during assessment",
+      "passed": true,
+      "details": "409158b120e99f8c1a814e26e820a7a15745f3aaecbbbcde01f7878b14ed3875"
+    }
+  ],
+  "blockers": [
+    "secrets-working-tree: no confirmed or unreviewed secret",
+    "application: no known container dependency findings"
+  ],
+  "dependency_findings": [
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2025-8869",
+      "VendorIDs": [
+        "GHSA-4xh5-x5gv-qwph"
+      ],
+      "PkgID": "pip@25.2",
+      "PkgName": "pip",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/pip@25.2",
+        "UID": "6615bf4c1b74ce8a",
+        "BOMRef": "pkg:pypi/pip@25.2?package-id=9139a21160399ed1"
+      },
+      "InstalledVersion": "25.2",
+      "FixedVersion": "25.3",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-8869",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:3bad924def1a7aab567baa00dc071bb81437896f508d12c7f846dbc3a568dbbd",
+      "Title": "pip: pip missing checks on symbolic link extraction",
+      "Description": "When extracting a tar archive pip may not check symbolic links point into the extraction directory if the tarfile module doesn't implement PEP 706.\nNote that upgrading pip to a \"fixed\" version for this vulnerability doesn't fix all known vulnerabilities that are remediated by using a Python version that implements PEP 706.\n\nNote that this is a vulnerability in pip's fallback implementation of tar extraction for Python versions that don't implement PEP 706\nand therefore are not secure to all vulnerabilities in the Python 'tarfile' module. If you're using a Python version that implements PEP 706\nthen pip doesn't use the \"vulnerable\" fallback code.\n\nMitigations include upgrading to a version of pip that includes the fix, upgrading to a Python version that implements PEP 706 (Python >=3.9.17, >=3.10.12, >=3.11.4, or >=3.12),\napplying the linked patch, or inspecting source distributions (sdists) before installation as is already a best-practice.",
+      "Severity": "MEDIUM",
+      "VendorSeverity": {
+        "amazon": 2,
+        "azure": 2,
+        "ghsa": 2,
+        "redhat": 2,
+        "ubuntu": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:A/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          "V40Score": 5.9
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N",
+          "V3Score": 5.3
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2025-8869",
+        "https://github.com/pypa/pip",
+        "https://github.com/pypa/pip/commit/f2b92314da012b9fffa36b3f3e67748a37ef464a",
+        "https://github.com/pypa/pip/pull/13550",
+        "https://lists.debian.org/debian-lts-announce/2025/10/msg00028.html",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-8869",
+        "https://pip.pypa.io/en/stable/news/#v25-2",
+        "https://www.cve.org/CVERecord?id=CVE-2025-8869"
+      ],
+      "PublishedDate": "2025-09-24T15:15:41.293Z",
+      "LastModifiedDate": "2026-09-26T00:10:00.127Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-13346",
+      "VendorIDs": [
+        "GHSA-qwm4-qh6w-59xr"
+      ],
+      "PkgID": "pip@25.2",
+      "PkgName": "pip",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/pip@25.2",
+        "UID": "6615bf4c1b74ce8a",
+        "BOMRef": "pkg:pypi/pip@25.2?package-id=9139a21160399ed1"
+      },
+      "InstalledVersion": "25.2",
+      "FixedVersion": "26.2.0",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13346",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:8095355734f89d28403e8ef5437be801e54ce0677ea3b17169842ffd54f12643",
+      "Title": "pip: pip: Arbitrary file installation via malicious package indexes",
+      "Description": "pip would incorrectly handle doubly-encoded package URLs from indexes allowing for files to be installed to arbitrary locations on disk even when installing wheels.\n\n\n\n\nThis vulnerability requires downloading or installing a package from a malicious package index to succeed, malicious packages alone are not able to exploit this vulnerability. Note that this vulnerability only materially impacts users running `pip download` with the `--only-binary` option as installing source distributions from an untrusted index is already an unsafe operation that executes code during install time.",
+      "Severity": "MEDIUM",
+      "CweIDs": [
+        "CWE-36"
+      ],
+      "VendorSeverity": {
+        "azure": 2,
+        "ghsa": 2,
+        "nvd": 2,
+        "photon": 2,
+        "redhat": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V40Vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:H/UI:A/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          "V40Score": 5.6
+        },
+        "nvd": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+          "V3Score": 6.5
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:H/A:L",
+          "V3Score": 5.9
+        }
+      },
+      "References": [
+        "http://www.openwall.com/lists/oss-security/2026/07/29/7",
+        "https://access.redhat.com/security/cve/CVE-2026-13346",
+        "https://github.com/pypa/advisory-database/tree/main/vulns/pip/PYSEC-2026-3721.yaml",
+        "https://github.com/pypa/pip",
+        "https://github.com/pypa/pip/commit/10dfb6b9005484578b386f64b9f36982e3dc6679",
+        "https://github.com/pypa/pip/pull/14110",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/L2BNQGGVQCEV7DROOORQ7WFKKFF2OOQX",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/L2BNQGGVQCEV7DROOORQ7WFKKFF2OOQX/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-13346",
+        "https://www.cve.org/CVERecord?id=CVE-2026-13346"
+      ],
+      "PublishedDate": "2026-07-29T19:16:44.267Z",
+      "LastModifiedDate": "2026-08-20T13:17:44.277Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-3219",
+      "VendorIDs": [
+        "GHSA-58qw-9mgm-455v"
+      ],
+      "PkgID": "pip@25.2",
+      "PkgName": "pip",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/pip@25.2",
+        "UID": "6615bf4c1b74ce8a",
+        "BOMRef": "pkg:pypi/pip@25.2?package-id=9139a21160399ed1"
+      },
+      "InstalledVersion": "25.2",
+      "FixedVersion": "26.1",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3219",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:6351fc6b97354c7d51d0a3df0d6d939663df84ade39facc129c920f62162bdf6",
+      "Title": "pip: pip: Incorrect file installation due to improper archive handling",
+      "Description": "pip handles concatenated tar and ZIP files as ZIP files regardless of filename or whether a file is both a tar and ZIP file. This behavior could result in confusing installation behavior, such as installing \"incorrect\" files according to the filename of the archive. New behavior only proceeds with installation if the file identifies uniquely as a ZIP or tar archive, not as both.",
+      "Severity": "MEDIUM",
+      "CweIDs": [
+        "CWE-434"
+      ],
+      "VendorSeverity": {
+        "amazon": 1,
+        "azure": 2,
+        "ghsa": 2,
+        "photon": 1,
+        "redhat": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:A/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          "V40Score": 4.6
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:N",
+          "V3Score": 5
+        }
+      },
+      "References": [
+        "http://www.openwall.com/lists/oss-security/2026/04/20/8",
+        "https://access.redhat.com/security/cve/CVE-2026-3219",
+        "https://github.com/pypa/pip",
+        "https://github.com/pypa/pip/issues/13867",
+        "https://github.com/pypa/pip/pull/13870",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/QAJ5JIVWWCAJ4EZL2FP5MOOW35JS7LRJ",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/QAJ5JIVWWCAJ4EZL2FP5MOOW35JS7LRJ/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-3219",
+        "https://www.cve.org/CVERecord?id=CVE-2026-3219"
+      ],
+      "PublishedDate": "2026-04-20T16:16:45.43Z",
+      "LastModifiedDate": "2026-06-17T10:43:14.243Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-6357",
+      "VendorIDs": [
+        "GHSA-jp4c-xjxw-mgf9"
+      ],
+      "PkgID": "pip@25.2",
+      "PkgName": "pip",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/pip@25.2",
+        "UID": "6615bf4c1b74ce8a",
+        "BOMRef": "pkg:pypi/pip@25.2?package-id=9139a21160399ed1"
+      },
+      "InstalledVersion": "25.2",
+      "FixedVersion": "26.1",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6357",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:e7f6dd1654318969cf1cdf280c7f438c1fe9fd22cbc329ac539bc46156fe98bd",
+      "Title": "pip: pip: Arbitrary code execution or information disclosure via malicious wheel package installation",
+      "Description": "pip prior to version 26.1 would run self-update check functionality after installing wheel files which required importing well-known Python modules names. These module imports were intentionally deferred to increase startup time of the pip CLI. The patch changes self-update functionality to run before wheels are installed to prevent newly-installed modules from being imported shortly after the installation of a wheel package. Users should still review package contents prior to installation.",
+      "Severity": "MEDIUM",
+      "CweIDs": [
+        "CWE-829"
+      ],
+      "VendorSeverity": {
+        "amazon": 3,
+        "azure": 2,
+        "ghsa": 2,
+        "photon": 2,
+        "redhat": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:A/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          "V40Score": 5.3
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:N",
+          "V3Score": 5.8
+        }
+      },
+      "References": [
+        "http://www.openwall.com/lists/oss-security/2026/04/27/7",
+        "https://access.redhat.com/security/cve/CVE-2026-6357",
+        "https://github.com/pypa/pip",
+        "https://github.com/pypa/pip/commit/b369bfc96cc524e00c267e1693290e6599c36bad",
+        "https://github.com/pypa/pip/pull/13923",
+        "https://ichard26.github.io/blog/2026/04/whats-new-in-pip-26.1/#security-fixes",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-6357",
+        "https://www.cve.org/CVERecord?id=CVE-2026-6357"
+      ],
+      "PublishedDate": "2026-04-27T15:16:20.857Z",
+      "LastModifiedDate": "2026-06-17T11:00:42.947Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-8643",
+      "VendorIDs": [
+        "GHSA-wf93-45jw-7689"
+      ],
+      "PkgID": "pip@25.2",
+      "PkgName": "pip",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/pip@25.2",
+        "UID": "6615bf4c1b74ce8a",
+        "BOMRef": "pkg:pypi/pip@25.2?package-id=9139a21160399ed1"
+      },
+      "InstalledVersion": "25.2",
+      "FixedVersion": "26.1.2",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8643",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:e00805f75eec3bc44d659f9a0b0fe3e176f0cfd0a3be8a86788e46b8c5766e59",
+      "Title": "python-pip: Path traversal via malicious entry point name in pip wheel installation allows arbitrary file overwrite",
+      "Description": "pip would treat console_scripts and gui_scripts as paths instead of file names without sanitizing the resolved absolute path to the installation directory, leading to entry points being installed outside the installation directory.",
+      "Severity": "MEDIUM",
+      "CweIDs": [
+        "CWE-22"
+      ],
+      "VendorSeverity": {
+        "alma": 3,
+        "amazon": 3,
+        "azure": 2,
+        "ghsa": 2,
+        "nvd": 2,
+        "oracle-oval": 3,
+        "redhat": 3,
+        "rocky": 3
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+          "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:A/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          "V3Score": 8,
+          "V40Score": 4.1
+        },
+        "nvd": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+          "V3Score": 5.5
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+          "V3Score": 8
+        }
+      },
+      "References": [
+        "http://www.openwall.com/lists/oss-security/2026/06/01/5",
+        "https://access.redhat.com/errata/RHSA-2026:33313",
+        "https://access.redhat.com/errata/RHSA-2026:34374",
+        "https://access.redhat.com/errata/RHSA-2026:34456",
+        "https://access.redhat.com/errata/RHSA-2026:34739",
+        "https://access.redhat.com/errata/RHSA-2026:34740",
+        "https://access.redhat.com/errata/RHSA-2026:34741",
+        "https://access.redhat.com/errata/RHSA-2026:34748",
+        "https://access.redhat.com/errata/RHSA-2026:34749",
+        "https://access.redhat.com/errata/RHSA-2026:34750",
+        "https://access.redhat.com/errata/RHSA-2026:34752",
+        "https://access.redhat.com/errata/RHSA-2026:34756",
+        "https://access.redhat.com/errata/RHSA-2026:34758",
+        "https://access.redhat.com/errata/RHSA-2026:34760",
+        "https://access.redhat.com/errata/RHSA-2026:34765",
+        "https://access.redhat.com/errata/RHSA-2026:34772",
+        "https://access.redhat.com/errata/RHSA-2026:34773",
+        "https://access.redhat.com/errata/RHSA-2026:34774",
+        "https://access.redhat.com/errata/RHSA-2026:34775",
+        "https://access.redhat.com/errata/RHSA-2026:34776",
+        "https://access.redhat.com/errata/RHSA-2026:34777",
+        "https://access.redhat.com/errata/RHSA-2026:34778",
+        "https://access.redhat.com/errata/RHSA-2026:34780",
+        "https://access.redhat.com/errata/RHSA-2026:34891",
+        "https://access.redhat.com/errata/RHSA-2026:36193",
+        "https://access.redhat.com/errata/RHSA-2026:36315",
+        "https://access.redhat.com/errata/RHSA-2026:37275",
+        "https://access.redhat.com/errata/RHSA-2026:37283",
+        "https://access.redhat.com/errata/RHSA-2026:42078",
+        "https://access.redhat.com/errata/RHSA-2026:42079",
+        "https://access.redhat.com/errata/RHSA-2026:42132",
+        "https://access.redhat.com/errata/RHSA-2026:42144",
+        "https://access.redhat.com/errata/RHSA-2026:42644",
+        "https://access.redhat.com/errata/RHSA-2026:50479",
+        "https://access.redhat.com/errata/RHSA-2026:54760",
+        "https://access.redhat.com/errata/RHSA-2026:56347",
+        "https://access.redhat.com/errata/RHSA-2026:60520",
+        "https://access.redhat.com/security/cve/CVE-2026-8643",
+        "https://bugzilla.redhat.com/2460927",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2460927",
+        "https://creativecommons.org/licenses/by/4.0/",
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8643",
+        "https://errata.almalinux.org/10/ALSA-2026-36193.html",
+        "https://errata.rockylinux.org/RLSA-2026:36315",
+        "https://github.com/pypa/advisory-database/tree/main/vulns/pip/PYSEC-2026-196.yaml",
+        "https://github.com/pypa/pip",
+        "https://github.com/pypa/pip/commit/8eb178480bd1a2b223f509fc430796b265158dfb",
+        "https://github.com/pypa/pip/pull/14000",
+        "https://linux.oracle.com/cve/CVE-2026-8643.html",
+        "https://linux.oracle.com/errata/ELSA-2026-36315.html",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/YV63UET5D3OOJY7O4M5XCVYO2YM4NBYJ",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/YV63UET5D3OOJY7O4M5XCVYO2YM4NBYJ/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-8643",
+        "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-8643.json",
+        "https://www.cve.org/CVERecord?id=CVE-2026-8643"
+      ],
+      "PublishedDate": "2026-06-01T17:17:35.77Z",
+      "LastModifiedDate": "2026-09-16T13:18:08Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-1703",
+      "VendorIDs": [
+        "GHSA-6vgw-5pg2-w6jp"
+      ],
+      "PkgID": "pip@25.2",
+      "PkgName": "pip",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/pip@25.2",
+        "UID": "6615bf4c1b74ce8a",
+        "BOMRef": "pkg:pypi/pip@25.2?package-id=9139a21160399ed1"
+      },
+      "InstalledVersion": "25.2",
+      "FixedVersion": "26.0",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-1703",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:9fef056cfc7e334c45940a37277f9c0ffec00c3c1558701ac784a9494d7f5f14",
+      "Title": "pip: pip: Information disclosure via path traversal when installing crafted wheel archives",
+      "Description": "When pip is installing and extracting a maliciously crafted wheel archive, files may be extracted outside the installation directory. The path traversal is limited to prefixes of the installation directory, thus isn't able to inject or overwrite executable files in typical situations.",
+      "Severity": "LOW",
+      "CweIDs": [
+        "CWE-22"
+      ],
+      "VendorSeverity": {
+        "amazon": 1,
+        "azure": 1,
+        "cbl-mariner": 1,
+        "ghsa": 1,
+        "redhat": 1,
+        "ubuntu": 1
+      },
+      "CVSS": {
+        "ghsa": {
+          "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          "V40Score": 2
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N",
+          "V3Score": 3.9
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-1703",
+        "https://github.com/pypa/pip",
+        "https://github.com/pypa/pip/commit/8e227a9be4faa9594e05d02ca05a413a2a4e7735",
+        "https://github.com/pypa/pip/pull/13777",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/WIEA34D4TABF2UNQJAOMXKCICSPBE2DJ",
+        "https://mail.python.org/archives/list/security-announce@python.org/thread/WIEA34D4TABF2UNQJAOMXKCICSPBE2DJ/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-1703",
+        "https://www.cve.org/CVERecord?id=CVE-2026-1703"
+      ],
+      "PublishedDate": "2026-02-02T15:16:30.51Z",
+      "LastModifiedDate": "2026-06-17T10:16:21.7Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2025-71176",
+      "VendorIDs": [
+        "GHSA-6w46-j5rx-g56g"
+      ],
+      "PkgID": "pytest@8.4.1",
+      "PkgName": "pytest",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/pytest@8.4.1",
+        "UID": "e4ced4fbc69fc499",
+        "BOMRef": "pkg:pypi/pytest@8.4.1?package-id=12c58eaeec0368bb"
+      },
+      "InstalledVersion": "8.4.1",
+      "FixedVersion": "9.0.3",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-71176",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:6d8dc879543ae236db15f7d40b2ba32715a75f6904f581109819783ef506fbbd",
+      "Title": "pytest: pytest: Denial of Service or Privilege Escalation via insecure temporary directory handling",
+      "Description": "pytest through 9.0.2 on UNIX relies on directories with the /tmp/pytest-of-{user} name pattern, which allows local users to cause a denial of service or possibly gain privileges.",
+      "Severity": "MEDIUM",
+      "CweIDs": [
+        "CWE-379"
+      ],
+      "VendorSeverity": {
+        "amazon": 2,
+        "ghsa": 2,
+        "redhat": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L",
+          "V3Score": 6.8
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L",
+          "V3Score": 6.8
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2025-71176",
+        "https://github.com/pytest-dev/pytes",
+        "https://github.com/pytest-dev/pytest/commit/95d8423bd24992deea5b9df32555fa1741679e2c",
+        "https://github.com/pytest-dev/pytest/issues/13669",
+        "https://github.com/pytest-dev/pytest/pull/14343",
+        "https://github.com/pytest-dev/pytest/releases/tag/9.0.3",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-71176",
+        "https://www.cve.org/CVERecord?id=CVE-2025-71176",
+        "https://www.openwall.com/lists/oss-security/2026/01/21/5"
+      ],
+      "PublishedDate": "2026-01-22T05:16:17.577Z",
+      "LastModifiedDate": "2026-06-17T10:03:47.83Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-28684",
+      "VendorIDs": [
+        "GHSA-mf9w-mj56-hr94"
+      ],
+      "PkgID": "python-dotenv@1.1.1",
+      "PkgName": "python-dotenv",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/python-dotenv@1.1.1",
+        "UID": "3603a09870d2f95a",
+        "BOMRef": "pkg:pypi/python-dotenv@1.1.1?package-id=442abd92045f7cc1"
+      },
+      "InstalledVersion": "1.1.1",
+      "FixedVersion": "1.2.2",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-28684",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:052e42710ff4302a30acc5e3d3be3c6bfe5acf12ef6ed0a84420d1e94d349818",
+      "Title": "python-dotenv: python-dotenv: Arbitrary file overwrite via symbolic link following",
+      "Description": "python-dotenv reads key-value pairs from a .env file and can set them as environment variables. Prior to version 1.2.2, `set_key()` and `unset_key()` in python-dotenv follow symbolic links when rewriting `.env` files, allowing a local attacker to overwrite arbitrary files via a crafted symlink when a cross-device rename fallback is triggered. Users should upgrade to v.1.2.2 or, as a workaround, apply the patch manually.",
+      "Severity": "MEDIUM",
+      "CweIDs": [
+        "CWE-59",
+        "CWE-61"
+      ],
+      "VendorSeverity": {
+        "ghsa": 2,
+        "redhat": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:H",
+          "V3Score": 6.6
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+          "V3Score": 7.1
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-28684",
+        "https://github.com/theskumar/python-dotenv",
+        "https://github.com/theskumar/python-dotenv/commit/790c5c02991100aa1bf41ee5330aca75edc51311",
+        "https://github.com/theskumar/python-dotenv/commit/790c5c02991100aa1bf41ee5330aca75edc51311.patch",
+        "https://github.com/theskumar/python-dotenv/releases/tag/v1.2.2",
+        "https://github.com/theskumar/python-dotenv/security/advisories/GHSA-mf9w-mj56-hr94",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-28684",
+        "https://www.cve.org/CVERecord?id=CVE-2026-28684"
+      ],
+      "PublishedDate": "2026-04-20T17:16:33.087Z",
+      "LastModifiedDate": "2026-06-17T10:28:54.243Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-24486",
+      "VendorIDs": [
+        "GHSA-wp53-j4wj-2cfg"
+      ],
+      "PkgID": "python-multipart@0.0.20",
+      "PkgName": "python-multipart",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/python-multipart@0.0.20",
+        "UID": "b8d9ef08daa24760",
+        "BOMRef": "pkg:pypi/python-multipart@0.0.20?package-id=08bccffb9404f4c7"
+      },
+      "InstalledVersion": "0.0.20",
+      "FixedVersion": "0.0.22",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-24486",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:bd941229295e250c01396dfdc387916250dc7cb9433200190666de543bfa1de7",
+      "Title": "python-multipart: Python-Multipart: Arbitrary file write via path traversal vulnerability",
+      "Description": "Python-Multipart is a streaming multipart parser for Python. Prior to version 0.0.22, a Path Traversal vulnerability exists when using non-default configuration options `UPLOAD_DIR` and `UPLOAD_KEEP_FILENAME=True`. An attacker can write uploaded files to arbitrary locations on the filesystem by crafting a malicious filename. Users should upgrade to version 0.0.22 to receive a patch or, as a workaround, avoid using `UPLOAD_KEEP_FILENAME=True` in project configurations.",
+      "Severity": "HIGH",
+      "CweIDs": [
+        "CWE-22"
+      ],
+      "VendorSeverity": {
+        "ghsa": 3,
+        "nvd": 3,
+        "redhat": 3,
+        "ubuntu": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:L",
+          "V3Score": 8.6
+        },
+        "nvd": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          "V3Score": 7.5
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:L",
+          "V3Score": 8.6
+        }
+      },
+      "References": [
+        "https://access.redhat.com/errata/RHSA-2026:10184",
+        "https://access.redhat.com/errata/RHSA-2026:1504",
+        "https://access.redhat.com/errata/RHSA-2026:19712",
+        "https://access.redhat.com/errata/RHSA-2026:3461",
+        "https://access.redhat.com/errata/RHSA-2026:3462",
+        "https://access.redhat.com/errata/RHSA-2026:3713",
+        "https://access.redhat.com/errata/RHSA-2026:3782",
+        "https://access.redhat.com/errata/RHSA-2026:3960",
+        "https://access.redhat.com/errata/RHSA-2026:42644",
+        "https://access.redhat.com/errata/RHSA-2026:44696",
+        "https://access.redhat.com/errata/RHSA-2026:51357",
+        "https://access.redhat.com/security/cve/CVE-2026-24486",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2433132",
+        "https://github.com/Kludex/python-multipart",
+        "https://github.com/Kludex/python-multipart/commit/9433f4bbc9652bdde82bbe380984e32f8cfc89c4",
+        "https://github.com/Kludex/python-multipart/commit/9433f4bbc9652bdde82bbe380984e32f8cfc89c4%20%280.0.22%29",
+        "https://github.com/Kludex/python-multipart/releases/tag/0.0.22",
+        "https://github.com/Kludex/python-multipart/security/advisories/GHSA-wp53-j4wj-2cfg",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-24486",
+        "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-24486.json",
+        "https://ubuntu.com/security/notices/USN-8027-1",
+        "https://www.cve.org/CVERecord?id=CVE-2026-24486"
+      ],
+      "PublishedDate": "2026-01-27T01:16:02.303Z",
+      "LastModifiedDate": "2026-08-07T12:17:21.06Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-42561",
+      "VendorIDs": [
+        "GHSA-pp6c-gr5w-3c5g"
+      ],
+      "PkgID": "python-multipart@0.0.20",
+      "PkgName": "python-multipart",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/python-multipart@0.0.20",
+        "UID": "b8d9ef08daa24760",
+        "BOMRef": "pkg:pypi/python-multipart@0.0.20?package-id=08bccffb9404f4c7"
+      },
+      "InstalledVersion": "0.0.20",
+      "FixedVersion": "0.0.27",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42561",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:31fa85f586349a19c239acd8bd5569adb9da0769e369db2c67f09e4c455dbfd5",
+      "Title": "python-multipart: python-multipart: Denial of Service via excessive multipart part headers",
+      "Description": "Python-Multipart is a streaming multipart parser for Python. Prior to 0.0.27, python-multipart has a denial of service vulnerability in multipart part header parsing. When parsing multipart/form-data, MultipartParser previously had no limit on the number of part headers or the size of an individual part header. An attacker could send a request with either many repeated headers without terminating the header block or a single very large header value, causing excessive CPU work before request rejection or completion. This vulnerability is fixed in 0.0.27.",
+      "Severity": "HIGH",
+      "CweIDs": [
+        "CWE-770",
+        "CWE-606"
+      ],
+      "VendorSeverity": {
+        "ghsa": 3,
+        "redhat": 3
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "V3Score": 7.5
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "V3Score": 7.5
+        }
+      },
+      "References": [
+        "https://access.redhat.com/errata/RHSA-2026:37275",
+        "https://access.redhat.com/errata/RHSA-2026:42132",
+        "https://access.redhat.com/errata/RHSA-2026:42142",
+        "https://access.redhat.com/errata/RHSA-2026:43038",
+        "https://access.redhat.com/errata/RHSA-2026:44696",
+        "https://access.redhat.com/errata/RHSA-2026:51194",
+        "https://access.redhat.com/errata/RHSA-2026:51219",
+        "https://access.redhat.com/errata/RHSA-2026:51357",
+        "https://access.redhat.com/security/cve/CVE-2026-42561",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2477309",
+        "https://github.com/Kludex/python-multipart",
+        "https://github.com/Kludex/python-multipart/security/advisories/GHSA-pp6c-gr5w-3c5g",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42561",
+        "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-42561.json",
+        "https://www.cve.org/CVERecord?id=CVE-2026-42561"
+      ],
+      "PublishedDate": "2026-05-13T21:16:47.07Z",
+      "LastModifiedDate": "2026-08-07T12:17:53.37Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-53539",
+      "VendorIDs": [
+        "GHSA-5rvq-cxj2-64vf"
+      ],
+      "PkgID": "python-multipart@0.0.20",
+      "PkgName": "python-multipart",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/python-multipart@0.0.20",
+        "UID": "b8d9ef08daa24760",
+        "BOMRef": "pkg:pypi/python-multipart@0.0.20?package-id=08bccffb9404f4c7"
+      },
+      "InstalledVersion": "0.0.20",
+      "FixedVersion": "0.0.30",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53539",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:291c2584fde52690b190757d356c11e5eaf68f97683cbf3aa5e56ba288a2e54a",
+      "Title": "python-multipart: Python-Multipart: Denial of Service via crafted form-urlencoded bodies",
+      "Description": "Python-Multipart is a streaming multipart parser for Python. Prior to 0.0.30, when parsing application/x-www-form-urlencoded bodies, QuerystringParser located the field separator with a two step lookup: it first scanned the entire remaining buffer for &, and only when no & existed anywhere ahead did it fall back to scanning for ;. For a body that uses ; as the separator and contains no &, every field iteration performed a full failed & scan over the entire remaining buffer before locating the nearby ;. With N semicolon separated fields in a chunk of size B, this yields O(B^2) byte comparisons per chunk. An attacker can submit a small crafted body of the form a;a;a;... and cause the parser to spend seconds of CPU per request. A handful of concurrent requests can exhaust worker processes. This vulnerability is fixed in 0.0.30.",
+      "Severity": "HIGH",
+      "CweIDs": [
+        "CWE-400",
+        "CWE-407"
+      ],
+      "VendorSeverity": {
+        "ghsa": 3,
+        "redhat": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "V3Score": 7.5
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "V3Score": 5.9
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-53539",
+        "https://github.com/Kludex/python-multipart",
+        "https://github.com/Kludex/python-multipart/security/advisories/GHSA-5rvq-cxj2-64vf",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53539",
+        "https://www.cve.org/CVERecord?id=CVE-2026-53539"
+      ],
+      "PublishedDate": "2026-06-22T18:16:44.36Z",
+      "LastModifiedDate": "2026-06-26T19:50:56.51Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-40347",
+      "VendorIDs": [
+        "GHSA-mj87-hwqh-73pj"
+      ],
+      "PkgID": "python-multipart@0.0.20",
+      "PkgName": "python-multipart",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/python-multipart@0.0.20",
+        "UID": "b8d9ef08daa24760",
+        "BOMRef": "pkg:pypi/python-multipart@0.0.20?package-id=08bccffb9404f4c7"
+      },
+      "InstalledVersion": "0.0.20",
+      "FixedVersion": "0.0.26",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-40347",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:63a3cf4343c5bafc4b9ac7b8b88773429902ab38f6ba8036c2caf4328d990a2f",
+      "Title": "python-multipart: Python-Multipart: Denial of Service via crafted multipart/form-data requests",
+      "Description": "Python-Multipart is a streaming multipart parser for Python. Versions prior to 0.0.26 have a denial of service vulnerability when parsing crafted `multipart/form-data` requests with large preamble or epilogue sections. Upgrade to version 0.0.26 or later, which skips ahead to the next boundary candidate when processing leading CR/LF data and immediately discards epilogue data after the closing boundary.",
+      "Severity": "MEDIUM",
+      "CweIDs": [
+        "CWE-400",
+        "CWE-834"
+      ],
+      "VendorSeverity": {
+        "ghsa": 2,
+        "redhat": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "V3Score": 5.3
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "V3Score": 5.9
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-40347",
+        "https://github.com/Kludex/python-multipart",
+        "https://github.com/Kludex/python-multipart/releases/tag/0.0.26",
+        "https://github.com/Kludex/python-multipart/security/advisories/GHSA-mj87-hwqh-73pj",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-40347",
+        "https://www.cve.org/CVERecord?id=CVE-2026-40347"
+      ],
+      "PublishedDate": "2026-04-18T00:16:38.52Z",
+      "LastModifiedDate": "2026-06-17T10:45:09.547Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-53537",
+      "VendorIDs": [
+        "GHSA-vffw-93wf-4j4q"
+      ],
+      "PkgID": "python-multipart@0.0.20",
+      "PkgName": "python-multipart",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/python-multipart@0.0.20",
+        "UID": "b8d9ef08daa24760",
+        "BOMRef": "pkg:pypi/python-multipart@0.0.20?package-id=08bccffb9404f4c7"
+      },
+      "InstalledVersion": "0.0.20",
+      "FixedVersion": "0.0.30",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53537",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:8e08a5370e66b40c9701f163bdd38acf8cf12abcfd85354f437b15036a14421a",
+      "Title": "multipart: Python-Multipart: Information disclosure via header parsing discrepancy",
+      "Description": "Python-Multipart is a streaming multipart parser for Python. Prior to 0.0.30, parse_options_header parsed Content-Disposition (and Content-Type) headers with email.message.Message, which transparently applies RFC 2231/5987 decoding. The extended parameter syntax (filename*=charset'lang'value, name*=..., and the filename*0/filename*1 continuation form) is decoded and surfaced under the bare filename/name key, and overrides the plain parameter when both are present. RFC 7578 \u00a74.2 explicitly forbids the filename* form in multipart/form-data. Components that follow RFC 7578, or that do not implement RFC 2231/5987 decoding for multipart/form-data (WAFs, proxies, gateways), may interpret such a header differently. An attacker can exploit that difference to smuggle a different field name or filename past an upstream inspector to the backend. This vulnerability is fixed in 0.0.30.",
+      "Severity": "LOW",
+      "CweIDs": [
+        "CWE-20",
+        "CWE-436"
+      ],
+      "VendorSeverity": {
+        "ghsa": 1,
+        "nvd": 2,
+        "redhat": 1
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "V3Score": 3.7
+        },
+        "nvd": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "V3Score": 5.3
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "V3Score": 3.7
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-53537",
+        "https://github.com/Kludex/python-multipart",
+        "https://github.com/Kludex/python-multipart/security/advisories/GHSA-vffw-93wf-4j4q",
+        "https://github.com/advisories/GHSA-vffw-93wf-4j4q",
+        "https://github.com/pypa/advisory-database/blob/main/vulns/python-multipart/PYSEC-2026-3041.yaml",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53537",
+        "https://pypi.org/project/python-multipart",
+        "https://www.cve.org/CVERecord?id=CVE-2026-53537"
+      ],
+      "PublishedDate": "2026-06-22T18:16:44.077Z",
+      "LastModifiedDate": "2026-06-26T19:54:37.68Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-53538",
+      "VendorIDs": [
+        "GHSA-6jv3-5f52-599m"
+      ],
+      "PkgID": "python-multipart@0.0.20",
+      "PkgName": "python-multipart",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/python-multipart@0.0.20",
+        "UID": "b8d9ef08daa24760",
+        "BOMRef": "pkg:pypi/python-multipart@0.0.20?package-id=08bccffb9404f4c7"
+      },
+      "InstalledVersion": "0.0.20",
+      "FixedVersion": "0.0.30",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53538",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:fd38db16081e1c6dc8bec09614dddc827391af15a558d38bca275590e9c4b5b4",
+      "Title": "python-multipart: Python-Multipart: Information disclosure due to parser differential in form data handling",
+      "Description": "Python-Multipart is a streaming multipart parser for Python. Prior to 0.0.30, QuerystringParser treated ; as a field separator in application/x-www-form-urlencoded bodies, in addition to &. The WHATWG URL standard, modern browsers, and Python's urllib.parse (since the CVE-2021-23336 fix) treat only & as a separator. This creates a parser differential: the same bytes are tokenized into different fields than a WHATWG compliant intermediary would produce, allowing an attacker to smuggle extra form fields past an upstream body inspecting component. This vulnerability is fixed in 0.0.30.",
+      "Severity": "LOW",
+      "CweIDs": [
+        "CWE-436",
+        "CWE-444"
+      ],
+      "VendorSeverity": {
+        "ghsa": 1,
+        "redhat": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "V3Score": 3.7
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "V3Score": 4.8
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-53538",
+        "https://github.com/Kludex/python-multipart",
+        "https://github.com/Kludex/python-multipart/security/advisories/GHSA-6jv3-5f52-599m",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53538",
+        "https://www.cve.org/CVERecord?id=CVE-2026-53538"
+      ],
+      "PublishedDate": "2026-06-22T18:16:44.223Z",
+      "LastModifiedDate": "2026-06-26T19:52:35.633Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-53540",
+      "VendorIDs": [
+        "GHSA-v9pg-7xvm-68hf"
+      ],
+      "PkgID": "python-multipart@0.0.20",
+      "PkgName": "python-multipart",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/python-multipart@0.0.20",
+        "UID": "b8d9ef08daa24760",
+        "BOMRef": "pkg:pypi/python-multipart@0.0.20?package-id=08bccffb9404f4c7"
+      },
+      "InstalledVersion": "0.0.20",
+      "FixedVersion": "0.0.31",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53540",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:319711cfc3bde98e02198e0577b9cde1d1c77393271ec7f2c5aa96e81261f313",
+      "Title": "python-multipart: Python-Multipart: Negative Content-Length in parse_form buffers the entire body in memory",
+      "Description": "Python-Multipart is a streaming multipart parser for Python. Prior to 0.0.31, parse_form() did not validate the Content-Length header before using it to bound its chunked read of the request body. A negative Content-Length turned the bounded read into a read-until-EOF, so the entire body was loaded into memory in a single read instead of in fixed-size chunks. This vulnerability is fixed in 0.0.31.",
+      "Severity": "LOW",
+      "CweIDs": [
+        "CWE-1284"
+      ],
+      "VendorSeverity": {
+        "ghsa": 1,
+        "redhat": 1
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "V3Score": 3.7
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "V3Score": 3.7
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-53540",
+        "https://github.com/Kludex/python-multipart",
+        "https://github.com/Kludex/python-multipart/security/advisories/GHSA-v9pg-7xvm-68hf",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53540",
+        "https://www.cve.org/CVERecord?id=CVE-2026-53540"
+      ],
+      "PublishedDate": "2026-06-22T18:16:44.497Z",
+      "LastModifiedDate": "2026-06-26T19:50:18.34Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-59890",
+      "VendorIDs": [
+        "GHSA-h35f-9h28-mq5c"
+      ],
+      "PkgID": "setuptools@80.9.0",
+      "PkgName": "setuptools",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/setuptools@80.9.0",
+        "UID": "b40ac7ac9e249114",
+        "BOMRef": "pkg:pypi/setuptools@80.9.0?package-id=9c9f193437f3524c"
+      },
+      "InstalledVersion": "80.9.0",
+      "FixedVersion": "83.0.0",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-59890",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:1b6ec721552145d68bfc9a75f7465ffd71b78e6d46d46b341e9b2c31f8be245b",
+      "Title": "setuptools: setuptools: MANIFEST.in exclusion bypass in sdist via Unicode normalization collision (NFC/NFD)",
+      "Description": "setuptools is a package that allows users to download, build, install, upgrade, and uninstall Python packages. Prior to 83.0.0, FileList applied MANIFEST.in exclude, global-exclude, recursive-exclude, and prune directives by matching compiled glob patterns against on-disk file names without Unicode normalization, so on macOS APFS or HFS+ an NFD file name could bypass an NFC exclusion rule and be packed into a source distribution. This issue is fixed in version 83.0.0.",
+      "Severity": "MEDIUM",
+      "CweIDs": [
+        "CWE-176",
+        "CWE-697"
+      ],
+      "VendorSeverity": {
+        "azure": 2,
+        "bitnami": 2,
+        "ghsa": 2,
+        "redhat": 2
+      },
+      "CVSS": {
+        "bitnami": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N",
+          "V3Score": 6.1
+        },
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N",
+          "V3Score": 6.1
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N",
+          "V3Score": 6.1
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-59890",
+        "https://github.com/pypa/advisory-database/tree/main/vulns/setuptools/PYSEC-2026-3447.yaml",
+        "https://github.com/pypa/setuptools",
+        "https://github.com/pypa/setuptools/commit/dd9f436a36486b4cb8a4c70a2321548b0be09b8f",
+        "https://github.com/pypa/setuptools/releases/tag/v83.0.0",
+        "https://github.com/pypa/setuptools/security/advisories/GHSA-h35f-9h28-mq5c",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59890",
+        "https://www.cve.org/CVERecord?id=CVE-2026-59890"
+      ],
+      "PublishedDate": "2026-07-08T17:17:27.02Z",
+      "LastModifiedDate": "2026-07-13T17:04:58.427Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2025-62727",
+      "VendorIDs": [
+        "GHSA-7f5h-v6xp-fcq8"
+      ],
+      "PkgID": "starlette@0.47.3",
+      "PkgName": "starlette",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/starlette@0.47.3",
+        "UID": "e7536ac208a9f857",
+        "BOMRef": "pkg:pypi/starlette@0.47.3?package-id=111e1a023b18a702"
+      },
+      "InstalledVersion": "0.47.3",
+      "FixedVersion": "0.49.1",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-62727",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:7e07c461ecb2344847e47eb0ebf8c2f2ddcffeee12fbacf93683d6209ce3443d",
+      "Title": "starlette: Starlette DoS via Range header merging",
+      "Description": "Starlette is a lightweight ASGI framework/toolkit. Starting in version 0.39.0 and prior to version 0.49.1 , an unauthenticated attacker can send a crafted HTTP Range header that triggers quadratic-time processing in Starlette's FileResponse Range parsing/merging logic. This enables CPU exhaustion per request, causing denial\u2011of\u2011service for endpoints serving files (e.g., StaticFiles or any use of FileResponse). This vulnerability is fixed in 0.49.1.",
+      "Severity": "HIGH",
+      "CweIDs": [
+        "CWE-407"
+      ],
+      "VendorSeverity": {
+        "ghsa": 3,
+        "redhat": 3
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "V3Score": 7.5
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "V3Score": 7.5
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2025-62727",
+        "https://github.com/Kludex/starlette",
+        "https://github.com/Kludex/starlette/commit/4ea6e22b489ec388d6004cfbca52dd5b147127c5",
+        "https://github.com/Kludex/starlette/commit/69ed26a85956ef4bd0161807eb27abf49be7cd3c",
+        "https://github.com/Kludex/starlette/releases/tag/0.49.1",
+        "https://github.com/Kludex/starlette/security/advisories/GHSA-7f5h-v6xp-fcq8",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-62727",
+        "https://www.cve.org/CVERecord?id=CVE-2025-62727"
+      ],
+      "PublishedDate": "2025-10-28T21:15:40.447Z",
+      "LastModifiedDate": "2026-06-17T09:52:20.48Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-48818",
+      "VendorIDs": [
+        "GHSA-wqp7-x3pw-xc5r"
+      ],
+      "PkgID": "starlette@0.47.3",
+      "PkgName": "starlette",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/starlette@0.47.3",
+        "UID": "e7536ac208a9f857",
+        "BOMRef": "pkg:pypi/starlette@0.47.3?package-id=111e1a023b18a702"
+      },
+      "InstalledVersion": "0.47.3",
+      "FixedVersion": "1.1.0",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48818",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:e54dcab01df39a189c2b9140eb2924aec53e5f6373901e8dc24d7d689b7aa2ee",
+      "Title": "starlette: Starlette: SSRF and NTLM credential theft via UNC paths in StaticFiles on Windows",
+      "Description": "Starlette is a lightweight ASGI framework/toolkit. In versions 1.0.1 and earlier, StaticFiles on Windows is vulnerable to SSRF. An UNC path such as \\\\attacker.com\\share can cause os.path.realpath to initiate an outbound SMB connection before the path is rejected, exposing the service account\u2019s NTLMv2 credentials for offline cracking or relay even though the HTTP response is only a 404. The issue affects default follow_symlink=False deployments, including frameworks built on Starlette such as FastAPI; POSIX systems and follow_symlink=True are unaffected. The issue is fixed in 1.1.0.",
+      "Severity": "HIGH",
+      "CweIDs": [
+        "CWE-918"
+      ],
+      "VendorSeverity": {
+        "ghsa": 3,
+        "redhat": 3
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          "V3Score": 7.5
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          "V3Score": 7.5
+        }
+      },
+      "References": [
+        "https://access.redhat.com/errata/RHSA-2026:30087",
+        "https://access.redhat.com/errata/RHSA-2026:30088",
+        "https://access.redhat.com/errata/RHSA-2026:30089",
+        "https://access.redhat.com/security/cve/CVE-2026-48818",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2490020",
+        "https://github.com/Kludex/starlette",
+        "https://github.com/Kludex/starlette/commit/fd53168a7767b6b55ba5af787fd88f49e33cabc5",
+        "https://github.com/Kludex/starlette/pull/3287",
+        "https://github.com/Kludex/starlette/releases/tag/1.1.0",
+        "https://github.com/Kludex/starlette/security/advisories/GHSA-wqp7-x3pw-xc5r",
+        "https://github.com/pypa/advisory-database/tree/main/vulns/starlette/PYSEC-2026-2281.yaml",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-48818",
+        "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-48818.json",
+        "https://www.cve.org/CVERecord?id=CVE-2026-48818"
+      ],
+      "PublishedDate": "2026-06-17T19:18:09.807Z",
+      "LastModifiedDate": "2026-08-04T19:16:51.383Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-54283",
+      "VendorIDs": [
+        "GHSA-82w8-qh3p-5jfq"
+      ],
+      "PkgID": "starlette@0.47.3",
+      "PkgName": "starlette",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/starlette@0.47.3",
+        "UID": "e7536ac208a9f857",
+        "BOMRef": "pkg:pypi/starlette@0.47.3?package-id=111e1a023b18a702"
+      },
+      "InstalledVersion": "0.47.3",
+      "FixedVersion": "1.3.1",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54283",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:1d92458087cd32c40e9a43d369e7c2f00af87a8fbad9ba9aa024899b4fc9631b",
+      "Title": "starlette: Starlette: request.form() limits silently ignored for application/x-www-form-urlencoded enable DoS",
+      "Description": "Starlette is a lightweight ASGI framework/toolkit. From 0.4.1 until 1.3.1, request.form() accepts max_fields and max_part_size to bound resource consumption while parsing form data. These limits are enforced for multipart/form-data, but silently ignored for application/x-www-form-urlencoded. An unauthenticated attacker can therefore send a urlencoded body with an arbitrarily large number of fields or an arbitrarily large field, even when the application configured limits it believed would apply. This vulnerability is fixed in 1.3.1.",
+      "Severity": "HIGH",
+      "CweIDs": [
+        "CWE-770"
+      ],
+      "VendorSeverity": {
+        "ghsa": 3,
+        "redhat": 3
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "V3Score": 7.5
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "V3Score": 7.5
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-54283",
+        "https://github.com/Kludex/starlette",
+        "https://github.com/Kludex/starlette/security/advisories/GHSA-82w8-qh3p-5jfq",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54283",
+        "https://www.cve.org/CVERecord?id=CVE-2026-54283"
+      ],
+      "PublishedDate": "2026-06-22T18:16:46.943Z",
+      "LastModifiedDate": "2026-06-26T19:16:55.75Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-48710",
+      "VendorIDs": [
+        "GHSA-86qp-5c8j-p5mr"
+      ],
+      "PkgID": "starlette@0.47.3",
+      "PkgName": "starlette",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/starlette@0.47.3",
+        "UID": "e7536ac208a9f857",
+        "BOMRef": "pkg:pypi/starlette@0.47.3?package-id=111e1a023b18a702"
+      },
+      "InstalledVersion": "0.47.3",
+      "FixedVersion": "1.0.1",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48710",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:f26f3d58cd18ca6fb6a0d15007a4b1f64942cee2468f4dc710cd30c3eb5178bf",
+      "Title": "starlette: Starlette: Security restriction bypass via malformed HTTP Host header",
+      "Description": "Starlette is a lightweight ASGI framework/toolkit. Prior to version 1.0.1, the HTTP `Host` request header was not validated before being used to reconstruct `request.url`. Because the routing algorithm relies on the raw HTTP path while `request.url` is rebuilt from the `Host` header, a malformed header could make `request.url.path` differ from the path that was actually requested. Middleware and endpoints that apply security restrictions based on `request.url` (rather than the raw `scope` path) could therefore be bypassed. Users should upgrade to a version greater than or equal to version 1.0.1, which validates the `Host` header against the grammar of RFC 9112 \u00a73.2 / RFC 3986 \u00a73.2.2 when constructing `request.url` and falls back to `scope[\"server\"]` for malformed values.",
+      "Severity": "MEDIUM",
+      "CweIDs": [
+        "CWE-444",
+        "CWE-1289"
+      ],
+      "VendorSeverity": {
+        "ghsa": 2,
+        "nvd": 2,
+        "redhat": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "V3Score": 6.5
+        },
+        "nvd": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "V3Score": 6.5
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "V3Score": 6.5
+        }
+      },
+      "References": [
+        "https://access.redhat.com/errata/RHSA-2026:22992",
+        "https://access.redhat.com/errata/RHSA-2026:22993",
+        "https://access.redhat.com/errata/RHSA-2026:23346",
+        "https://access.redhat.com/errata/RHSA-2026:24866",
+        "https://access.redhat.com/errata/RHSA-2026:26226",
+        "https://access.redhat.com/errata/RHSA-2026:30088",
+        "https://access.redhat.com/errata/RHSA-2026:30089",
+        "https://access.redhat.com/errata/RHSA-2026:34456",
+        "https://access.redhat.com/errata/RHSA-2026:34526",
+        "https://access.redhat.com/errata/RHSA-2026:34532",
+        "https://access.redhat.com/errata/RHSA-2026:37275",
+        "https://access.redhat.com/errata/RHSA-2026:43038",
+        "https://access.redhat.com/errata/RHSA-2026:44696",
+        "https://access.redhat.com/errata/RHSA-2026:51357",
+        "https://access.redhat.com/errata/RHSA-2026:60520",
+        "https://access.redhat.com/errata/RHSA-2026:63337",
+        "https://access.redhat.com/security/cve/CVE-2026-48710",
+        "https://badhost.org",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2481742",
+        "https://github.com/Kludex/starlette",
+        "https://github.com/Kludex/starlette/commit/764dab0dcfb9033d75442d7a359645c9f94648c6",
+        "https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr",
+        "https://github.com/pypa/advisory-database/tree/main/vulns/starlette/PYSEC-2026-161.yaml",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-48710",
+        "https://ostif.org/disclosing-the-badhost-vulnerability-in-starlette",
+        "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-48710.json",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-48710",
+        "https://www.cve.org/CVERecord?id=CVE-2026-48710",
+        "https://www.secwest.net/starlette",
+        "https://www.wiz.io/blog/ai-infrastructure-honeypot",
+        "https://www.x41-dsec.de/lab/advisories/x41-2026-002-starlette",
+        "https:/www.microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points"
+      ],
+      "PublishedDate": "2026-05-26T22:16:44.02Z",
+      "LastModifiedDate": "2026-09-04T15:59:29.557Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-48817",
+      "VendorIDs": [
+        "GHSA-x746-7m8f-x49c"
+      ],
+      "PkgID": "starlette@0.47.3",
+      "PkgName": "starlette",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/starlette@0.47.3",
+        "UID": "e7536ac208a9f857",
+        "BOMRef": "pkg:pypi/starlette@0.47.3?package-id=111e1a023b18a702"
+      },
+      "InstalledVersion": "0.47.3",
+      "FixedVersion": "1.1.0",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48817",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:894aef4d77bf7322a9a64df1050d0426698bf7f9bea0dc2aea5f51f76f52abc9",
+      "Title": "starlette: Starlette: Information disclosure and unintended method execution via non-standard HTTP methods",
+      "Description": "Starlette is a lightweight ASGI framework/toolkit. In versions 1.0.1 and below, when dispatching a request, HTTPEndpoint selects the handler by lowercasing the HTTP method and looking it up as an attribute with getattr, without restricting the lookup to a known set of HTTP verbs. When an HTTPEndpoint subclass is registered through Route(...) without an explicit methods= argument, the route does not constrain the method and every method reaches the endpoint. If a non-standard HTTP method whose lowercased name matches an attribute on the endpoint subclass reaches the endpoint, that attribute is invoked as if it were a request handler. An attacker can use this to reach methods that were never meant to be HTTP handlers, such as internal helpers, without the authorization checks applied by the intended public handler. An application (including Starlette-based frameworks like FastAPI) is affected if it registers an HTTPEndpoint subclass via Route(...) without explicitly setting methods=, and that subclass includes extra methods named like non-standard HTTP verbs that take one request argument and return a response. This issue has been fixed in version 1.1.0.",
+      "Severity": "MEDIUM",
+      "CweIDs": [
+        "CWE-470"
+      ],
+      "VendorSeverity": {
+        "ghsa": 2,
+        "redhat": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "V3Score": 5.3
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "V3Score": 5.3
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-48817",
+        "https://github.com/Kludex/starlette",
+        "https://github.com/Kludex/starlette/releases/tag/1.1.0",
+        "https://github.com/Kludex/starlette/security/advisories/GHSA-x746-7m8f-x49c",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-48817",
+        "https://www.cve.org/CVERecord?id=CVE-2026-48817"
+      ],
+      "PublishedDate": "2026-06-17T20:17:22.427Z",
+      "LastModifiedDate": "2026-06-26T19:18:13.38Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-54282",
+      "VendorIDs": [
+        "GHSA-jp82-jpqv-5vv3"
+      ],
+      "PkgID": "starlette@0.47.3",
+      "PkgName": "starlette",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/starlette@0.47.3",
+        "UID": "e7536ac208a9f857",
+        "BOMRef": "pkg:pypi/starlette@0.47.3?package-id=111e1a023b18a702"
+      },
+      "InstalledVersion": "0.47.3",
+      "FixedVersion": "1.3.0",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54282",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:d082adf14ce1136f72b61c4ce5c5ccb50688d51b01206b4d658deb9977a6ac71",
+      "Title": "starlette: Starlette: Information disclosure due to improper HTTP request path validation",
+      "Description": "Starlette is a lightweight ASGI framework/toolkit. Prior to 1.3.0, the HTTP request path is not validated before being used to reconstruct request.url. Because request.url is rebuilt by concatenating {scheme}://{host}{path} and re-parsing the result, a path that does not begin with / (for example @google.com) moves the authority boundary during re-parsing, so request.url.hostname and request.url.netloc become attacker-controlled. Code that reads request.url.hostname (rather than the Host header or scope) can therefore be misled into trusting an attacker-supplied host. This vulnerability is fixed in 1.3.0.",
+      "Severity": "LOW",
+      "CweIDs": [
+        "CWE-706"
+      ],
+      "VendorSeverity": {
+        "ghsa": 1,
+        "nvd": 2,
+        "redhat": 1
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "V3Score": 3.7
+        },
+        "nvd": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "V3Score": 5.3
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "V3Score": 4.8
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-54282",
+        "https://github.com/Kludex/starlette",
+        "https://github.com/Kludex/starlette/security/advisories/GHSA-jp82-jpqv-5vv3",
+        "https://github.com/pypa/advisory-database/tree/main/vulns/starlette/PYSEC-2026-248.yaml",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54282",
+        "https://www.cve.org/CVERecord?id=CVE-2026-54282"
+      ],
+      "PublishedDate": "2026-06-22T18:16:46.807Z",
+      "LastModifiedDate": "2026-06-26T19:18:47.063Z"
+    },
+    {
+      "scanner": "container-application",
+      "target": "Python",
+      "class": "lang-pkgs",
+      "VulnerabilityID": "CVE-2026-24049",
+      "VendorIDs": [
+        "GHSA-8rrh-rw8j-w5fx"
+      ],
+      "PkgID": "wheel@0.45.1",
+      "PkgName": "wheel",
+      "PkgIdentifier": {
+        "PURL": "pkg:pypi/wheel@0.45.1",
+        "UID": "2860e3a5356aea8e",
+        "BOMRef": "pkg:pypi/wheel@0.45.1?package-id=a1ba5adbc1d08e46"
+      },
+      "InstalledVersion": "0.45.1",
+      "FixedVersion": "0.46.2",
+      "Status": "fixed",
+      "Layer": {
+        "DiffID": "sha256:1f12cbbad1713ab1857b00ae495160dea22309bdb57616276028ae59037619b3"
+      },
+      "SeveritySource": "ghsa",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-24049",
+      "DataSource": {
+        "ID": "ghsa",
+        "Name": "GitHub Security Advisory pip",
+        "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+      },
+      "Fingerprint": "sha256:8983dc80cff58b066cfa13d38ad0bce5e2fb10ecfe5233482246b7e4de4a75b1",
+      "Title": "wheel: wheel: Privilege Escalation or Arbitrary Code Execution via malicious wheel file unpacking",
+      "Description": "wheel is a command line tool for manipulating Python wheel files, as defined in PEP 427. In versions 0.40.0 through 0.46.1, the unpack function is vulnerable to file permission modification through mishandling of file permissions after extraction. The logic blindly trusts the filename from the archive header for the chmod operation, even though the extraction process itself might have sanitized the path. Attackers can craft a malicious wheel file that, when unpacked, changes the permissions of critical system files (e.g., /etc/passwd, SSH keys, config files), allowing for Privilege Escalation or arbitrary code execution by modifying now-writable scripts. This issue has been fixed in version 0.46.2.",
+      "Severity": "HIGH",
+      "CweIDs": [
+        "CWE-22",
+        "CWE-732"
+      ],
+      "VendorSeverity": {
+        "alma": 3,
+        "amazon": 3,
+        "azure": 2,
+        "cbl-mariner": 2,
+        "ghsa": 3,
+        "nvd": 2,
+        "oracle-oval": 3,
+        "redhat": 3,
+        "rocky": 3,
+        "ubuntu": 2
+      },
+      "CVSS": {
+        "ghsa": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+          "V3Score": 7.1
+        },
+        "nvd": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+          "V3Score": 5.5
+        },
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+          "V3Score": 7.1
+        }
+      },
+      "References": [
+        "https://access.redhat.com/errata/RHSA-2026:10184",
+        "https://access.redhat.com/errata/RHSA-2026:13545",
+        "https://access.redhat.com/errata/RHSA-2026:14020",
+        "https://access.redhat.com/errata/RHSA-2026:1504",
+        "https://access.redhat.com/errata/RHSA-2026:17599",
+        "https://access.redhat.com/errata/RHSA-2026:1902",
+        "https://access.redhat.com/errata/RHSA-2026:1939",
+        "https://access.redhat.com/errata/RHSA-2026:1942",
+        "https://access.redhat.com/errata/RHSA-2026:19712",
+        "https://access.redhat.com/errata/RHSA-2026:20089",
+        "https://access.redhat.com/errata/RHSA-2026:2090",
+        "https://access.redhat.com/errata/RHSA-2026:2106",
+        "https://access.redhat.com/errata/RHSA-2026:2139",
+        "https://access.redhat.com/errata/RHSA-2026:2675",
+        "https://access.redhat.com/errata/RHSA-2026:2681",
+        "https://access.redhat.com/errata/RHSA-2026:2694",
+        "https://access.redhat.com/errata/RHSA-2026:2695",
+        "https://access.redhat.com/errata/RHSA-2026:2710",
+        "https://access.redhat.com/errata/RHSA-2026:2754",
+        "https://access.redhat.com/errata/RHSA-2026:2762",
+        "https://access.redhat.com/errata/RHSA-2026:2823",
+        "https://access.redhat.com/errata/RHSA-2026:2865",
+        "https://access.redhat.com/errata/RHSA-2026:2866",
+        "https://access.redhat.com/errata/RHSA-2026:2900",
+        "https://access.redhat.com/errata/RHSA-2026:2925",
+        "https://access.redhat.com/errata/RHSA-2026:3461",
+        "https://access.redhat.com/errata/RHSA-2026:3462",
+        "https://access.redhat.com/errata/RHSA-2026:3713",
+        "https://access.redhat.com/errata/RHSA-2026:3782",
+        "https://access.redhat.com/errata/RHSA-2026:3958",
+        "https://access.redhat.com/errata/RHSA-2026:3959",
+        "https://access.redhat.com/errata/RHSA-2026:3960",
+        "https://access.redhat.com/errata/RHSA-2026:4185",
+        "https://access.redhat.com/errata/RHSA-2026:4215",
+        "https://access.redhat.com/errata/RHSA-2026:4271",
+        "https://access.redhat.com/errata/RHSA-2026:4942",
+        "https://access.redhat.com/errata/RHSA-2026:5119",
+        "https://access.redhat.com/errata/RHSA-2026:61628",
+        "https://access.redhat.com/errata/RHSA-2026:6192",
+        "https://access.redhat.com/errata/RHSA-2026:62115",
+        "https://access.redhat.com/errata/RHSA-2026:6555",
+        "https://access.redhat.com/errata/RHSA-2026:6562",
+        "https://access.redhat.com/errata/RHSA-2026:6565",
+        "https://access.redhat.com/errata/RHSA-2026:7250",
+        "https://access.redhat.com/security/cve/CVE-2026-24049",
+        "https://bugzilla.redhat.com/2431959",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2431959",
+        "https://creativecommons.org/licenses/by/4.0/",
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-24049",
+        "https://errata.almalinux.org/10/ALSA-2026-1902.html",
+        "https://errata.rockylinux.org/RLSA-2026:1939",
+        "https://github.com/pypa/wheel",
+        "https://github.com/pypa/wheel/commit/7a7d2de96b22a9adf9208afcc9547e1001569fef",
+        "https://github.com/pypa/wheel/commit/934fe177ff912c8e03d5ae951d3805e1fd90ba5e",
+        "https://github.com/pypa/wheel/releases/tag/0.46.2",
+        "https://github.com/pypa/wheel/security/advisories/GHSA-8rrh-rw8j-w5fx",
+        "https://linux.oracle.com/cve/CVE-2026-24049.html",
+        "https://linux.oracle.com/errata/ELSA-2026-2090.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-24049",
+        "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-24049.json",
+        "https://ubuntu.com/security/notices/USN-8221-1",
+        "https://www.cve.org/CVERecord?id=CVE-2026-24049"
+      ],
+      "PublishedDate": "2026-01-22T05:16:23.157Z",
+      "LastModifiedDate": "2026-09-10T13:17:45.017Z"
+    }
+  ],
+  "live_integrations": "Not tested",
+  "scope": "Full security release",
+  "validation": {
+    "backend": {
+      "total": 792,
+      "passed": 792,
+      "failed": 0,
+      "skipped": 0,
+      "categories": {
+        "detection": {
+          "total": 50,
+          "passed": 50,
+          "failed": 0
+        },
+        "parametrize": {
+          "total": 637,
+          "passed": 637,
+          "failed": 0
+        },
+        "negative": {
+          "total": 17,
+          "passed": 17,
+          "failed": 0
+        },
+        "regression": {
+          "total": 431,
+          "passed": 431,
+          "failed": 0
+        },
+        "": {
+          "total": 3,
+          "passed": 3,
+          "failed": 0
+        },
+        "integration": {
+          "total": 472,
+          "passed": 472,
+          "failed": 0
+        },
+        "security": {
+          "total": 425,
+          "passed": 425,
+          "failed": 0
+        },
+        "replay": {
+          "total": 17,
+          "passed": 17,
+          "failed": 0
+        },
+        "sigma": {
+          "total": 34,
+          "passed": 34,
+          "failed": 0
+        },
+        "connectors": {
+          "total": 103,
+          "passed": 103,
+          "failed": 0
+        },
+        "end_to_end": {
+          "total": 7,
+          "passed": 7,
+          "failed": 0
+        },
+        "notifications": {
+          "total": 42,
+          "passed": 42,
+          "failed": 0
+        },
+        "migration": {
+          "total": 10,
+          "passed": 10,
+          "failed": 0
+        },
+        "parser": {
+          "total": 64,
+          "passed": 64,
+          "failed": 0
+        },
+        "unit": {
+          "total": 128,
+          "passed": 128,
+          "failed": 0
+        },
+        "usefixtures": {
+          "total": 9,
+          "passed": 9,
+          "failed": 0
+        }
+      },
+      "coverage_percent": 89.00251166128453
+    },
+    "frontend": {
+      "total": 145,
+      "passed": 145,
+      "failed": 0,
+      "skipped": 0
+    },
+    "detections": {
+      "passed": 50,
+      "failed": 0,
+      "total": 50,
+      "benign_passed": 14,
+      "benign_total": 14
+    },
+    "sigma": {
+      "rules_imported": 2,
+      "rules_compiled": 2,
+      "rules_tested": 2,
+      "tests_passed": 4,
+      "tests_failed": 0,
+      "expected_detections": 2,
+      "observed_detections": 2,
+      "results": [
+        {
+          "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+          "dataset_id": "sigma-download",
+          "expected_alerts": 1,
+          "observed_alerts": 1,
+          "severity": "high",
+          "author": "Florian Roth (Nextron Systems)",
+          "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+          "status": "passed",
+          "events_processed": 1
+        },
+        {
+          "rule_id": "SIGMA-85b0b087-eddf-4a2b-b033-d771fa2b9775",
+          "dataset_id": "sigma-benign",
+          "expected_alerts": 0,
+          "observed_alerts": 0,
+          "severity": "high",
+          "author": "Florian Roth (Nextron Systems)",
+          "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_download_iex.yml",
+          "status": "passed",
+          "events_processed": 1
+        },
+        {
+          "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+          "dataset_id": "sigma-encoded",
+          "expected_alerts": 1,
+          "observed_alerts": 1,
+          "severity": "medium",
+          "author": "frack113",
+          "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+          "status": "passed",
+          "events_processed": 1
+        },
+        {
+          "rule_id": "SIGMA-fb843269-508c-4b76-8b8d-88679db22ce7",
+          "dataset_id": "sigma-benign",
+          "expected_alerts": 0,
+          "observed_alerts": 0,
+          "severity": "medium",
+          "author": "frack113",
+          "source_url": "https://github.com/SigmaHQ/sigma/blob/07ec293a51695cb1131a2e05260247872b31e1e1/rules/windows/process_creation/proc_creation_win_powershell_encode.yml",
+          "status": "passed",
+          "events_processed": 1
+        }
+      ]
+    },
+    "integrations": {
+      "status": "passed",
+      "created_at": "2026-09-28T23:35:15.634778+00:00",
+      "source_fingerprint": "409158b120e99f8c1a814e26e820a7a15745f3aaecbbbcde01f7878b14ed3875",
+      "scenarios": [
+        {
+          "provider": "microsoft_sentinel",
+          "normalized_events": 13,
+          "expected_alerts": {
+            "AUTH-001": 1,
+            "IAM-001": 1
+          },
+          "observed_alerts": {
+            "IAM-001": 1,
+            "AUTH-001": 1
+          },
+          "delivered_to_mock": 2,
+          "duplicate_deliveries": 0,
+          "workflow_seconds": 0.071874,
+          "workflow_events_per_second": 180.87,
+          "live_tested": false
+        },
+        {
+          "provider": "microsoft_graph",
+          "normalized_events": 13,
+          "expected_alerts": {
+            "AUTH-001": 1,
+            "IAM-001": 1
+          },
+          "observed_alerts": {
+            "IAM-001": 1,
+            "AUTH-001": 1
+          },
+          "delivered_to_mock": 2,
+          "duplicate_deliveries": 0,
+          "workflow_seconds": 0.037963,
+          "workflow_events_per_second": 342.44,
+          "live_tested": false
+        },
+        {
+          "provider": "windows_wef",
+          "normalized_events": 36,
+          "expected_alerts": {
+            "AUTH-001": 1,
+            "AUTH-002": 1,
+            "PROC-001": 1,
+            "PROC-002": 1,
+            "IAM-001": 1,
+            "DNS-001": 1,
+            "NET-001": 1
+          },
+          "observed_alerts": {
+            "PROC-002": 1,
+            "PROC-001": 1,
+            "NET-001": 1,
+            "IAM-001": 1,
+            "DNS-001": 1,
+            "AUTH-002": 1,
+            "AUTH-001": 1
+          },
+          "delivered_to_mock": 7,
+          "duplicate_deliveries": 0,
+          "workflow_seconds": 0.044573,
+          "workflow_events_per_second": 807.66,
+          "live_tested": false
+        }
+      ],
+      "total_events": 62,
+      "total_alerts": 11,
+      "workflow_seconds": 0.82331,
+      "measurement": "Application workflow including loopback HTTP, normalization, SQLite, detection and notification; not cloud latency or a scale benchmark",
+      "live_tested": false
+    },
+    "benchmark": {
+      "measured_at": "2026-09-28T23:35:17.623286+00:00",
+      "source_fingerprint": "409158b120e99f8c1a814e26e820a7a15745f3aaecbbbcde01f7878b14ed3875",
+      "scope": "Single-process engine-only; parsing/storage excluded. Not a production capacity claim.",
+      "python": "3.13.15",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "dataset": "mixed/benchmark_5600.jsonl",
+      "dataset_sha256": "b99174b1ee5f7cc972fe14d9a3baf1081270129bab22d6f5b44a3c22d01e6a12",
+      "iterations": 3,
+      "events_processed": 5600,
+      "events_per_second": 12980.924413363835,
+      "detection_seconds": 0.4314022500766441,
+      "sample_seconds": [
+        0.4293503750814125,
+        0.4314022500766441,
+        0.433590208995156
+      ],
+      "alerts_generated": 700,
+      "rules_evaluated": 39200,
+      "active_rules": 7,
+      "expected_alerts": 700,
+      "rule_alert_counts": {
+        "AUTH-001": 100,
+        "AUTH-002": 100,
+        "PROC-001": 100,
+        "PROC-002": 100,
+        "IAM-001": 100,
+        "DNS-001": 100,
+        "NET-001": 100
+      },
+      "status": "passed"
+    }
+  },
+  "bundled_components": [
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "version": "3.4.13",
+      "component": "DOMPurify",
+      "npmname": "dompurify",
+      "detection": "filecontent",
+      "licenses": [
+        "MPL-2.0 OR Apache-2.0"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "version": "18.3.1",
+      "component": "react-dom",
+      "detection": "filecontent",
+      "licenses": [
+        "MIT"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "version": "10.7.3",
+      "component": "highlightjs",
+      "npmname": "highlight.js",
+      "detection": "filecontent",
+      "licenses": [
+        "BSD-3-Clause"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "component": "DOMPurify",
+      "version": "3.4.13",
+      "npmname": "dompurify",
+      "licenses": [
+        "MPL-2.0 OR Apache-2.0"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "component": "react-dom",
+      "version": "18.3.1-next-f1338f8080-20240426",
+      "licenses": [
+        "MIT"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/backend/app/static/swagger/swagger-ui-bundle.js",
+      "component": "react-dom",
+      "version": "18.3.1",
+      "licenses": [
+        "MIT"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/dist/assets/index-IrHnF70a.js",
+      "version": "19.1.1",
+      "component": "react-dom",
+      "detection": "filecontent",
+      "licenses": [
+        "MIT"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/dist/assets/index-IrHnF70a.js",
+      "component": "react",
+      "version": "19.1.1",
+      "licenses": [
+        "MIT"
+      ]
+    },
+    {
+      "file": "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/frontend/dist/assets/index-IrHnF70a.js",
+      "component": "react-dom",
+      "version": "19.1.1",
+      "licenses": [
+        "MIT"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "sentinelflow-security:backend",
+      "id": "sha256:a4ab6d4fe4fea80ae2ebee6561a379aa45cda37d90f8dd8fdbdb8804025fb009",
+      "architecture": "amd64",
+      "source_fingerprint": "409158b120e99f8c1a814e26e820a7a15745f3aaecbbbcde01f7878b14ed3875"
+    },
+    {
+      "name": "sentinelflow-security:application",
+      "id": "sha256:682df70b58b75f053ebda949c3b237db57d33af2917db36a583d8c15042fa495",
+      "architecture": "amd64",
+      "source_fingerprint": "409158b120e99f8c1a814e26e820a7a15745f3aaecbbbcde01f7878b14ed3875"
+    }
+  ],
+  "rehearsals": {
+    "status": "passed",
+    "started_at": "2026-09-28T23:36:32.046777+00:00",
+    "source_fingerprint": "409158b120e99f8c1a814e26e820a7a15745f3aaecbbbcde01f7878b14ed3875",
+    "checks": [
+      {
+        "name": "Analyst browser",
+        "status": "passed",
+        "checks": 33,
+        "receipt": "analyst-browser.json"
+      },
+      {
+        "name": "Integration browser",
+        "status": "passed",
+        "checks": 28,
+        "receipt": "integration-browser/browser-results.json"
+      },
+      {
+        "name": "Security browser",
+        "status": "passed",
+        "checks": 12,
+        "receipt": "security-browser/browser.json"
+      },
+      {
+        "name": "Actual collector CLI durably spools all 36 events during a real TCP outage",
+        "status": "passed"
+      },
+      {
+        "name": "Collector restart drains its real spool through scoped HTTP ingestion",
+        "status": "passed",
+        "events": 36,
+        "alerts": 7
+      },
+      {
+        "name": "Repeated bookmark after process restart does not duplicate collector events",
+        "status": "passed"
+      },
+      {
+        "name": "Same alert/destination is idempotent across restart; different destinations remain independent",
+        "status": "passed"
+      },
+      {
+        "name": "native public deployment rehearsal",
+        "status": "passed",
+        "checks": 10,
+        "browser_checks": 27
+      },
+      {
+        "name": "docker public deployment rehearsal",
+        "status": "passed",
+        "checks": 12,
+        "browser_checks": 27
+      },
+      {
+        "name": "Network-isolated image enforces kernel boundaries and exact integration flows",
+        "status": "passed",
+        "image": "sha256:682df70b58b75f053ebda949c3b237db57d33af2917db36a583d8c15042fa495",
+        "checks": 8
+      }
+    ],
+    "commands": [
+      {
+        "name": "analyst-browser",
+        "command": [
+          "node",
+          "scripts/browser_verify.mjs",
+          "--no-capture",
+          "--preserve-database"
+        ],
+        "started_at": "2026-09-28T23:36:32.601683+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "integration-browser",
+        "command": [
+          "node",
+          "scripts/browser_integrations.mjs"
+        ],
+        "started_at": "2026-09-28T23:36:43.787551+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "security-browser",
+        "command": [
+          "node",
+          "scripts/browser_security.mjs"
+        ],
+        "started_at": "2026-09-28T23:36:50.604678+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "collector-outage",
+        "command": [
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+          "collector/windows/collect.py",
+          "--once",
+          "--local-test",
+          "--spool",
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/rehearsals/collector.sqlite3",
+          "--fixture",
+          "test-data/integrations/microsoft-windows.json",
+          "--batch-size",
+          "200"
+        ],
+        "started_at": "2026-09-28T23:36:54.241898+00:00",
+        "exit_code": 2,
+        "expected_exit_code": 2
+      },
+      {
+        "name": "collector-recovery",
+        "command": [
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+          "collector/windows/collect.py",
+          "--once",
+          "--local-test",
+          "--spool",
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/rehearsals/collector.sqlite3",
+          "--fixture",
+          "test-data/integrations/microsoft-windows.json",
+          "--batch-size",
+          "200"
+        ],
+        "started_at": "2026-09-28T23:36:57.122691+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "collector-repeat",
+        "command": [
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+          "collector/windows/collect.py",
+          "--once",
+          "--local-test",
+          "--spool",
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/security/release-packaged/rehearsals/collector.sqlite3",
+          "--fixture",
+          "test-data/integrations/microsoft-windows.json",
+          "--batch-size",
+          "200"
+        ],
+        "started_at": "2026-09-28T23:36:57.394565+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "deployment-native",
+        "command": [
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+          "scripts/verify_deployment.py",
+          "--label",
+          "security-native-d53f173f",
+          "--backend-port",
+          "55106",
+          "--frontend-port",
+          "55107"
+        ],
+        "started_at": "2026-09-28T23:36:59.067427+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "deployment-docker",
+        "command": [
+          "/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/.runtime/venv/bin/python",
+          "scripts/verify_deployment.py",
+          "--label",
+          "security-docker-6bbf0951",
+          "--backend-port",
+          "55153",
+          "--frontend-port",
+          "55154",
+          "--docker",
+          "--image-id",
+          "sha256:a4ab6d4fe4fea80ae2ebee6561a379aa45cda37d90f8dd8fdbdb8804025fb009"
+        ],
+        "started_at": "2026-09-28T23:37:13.946501+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-volume",
+        "command": [
+          "docker",
+          "volume",
+          "create",
+          "sentinelflow-security-private-04b1a07f6675-data"
+        ],
+        "started_at": "2026-09-28T23:37:38.270694+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-image-start",
+        "command": [
+          "docker",
+          "run",
+          "-d",
+          "--name",
+          "sentinelflow-security-private-04b1a07f6675",
+          "--network",
+          "none",
+          "--platform",
+          "linux/amd64",
+          "--read-only",
+          "--cap-drop",
+          "ALL",
+          "--security-opt",
+          "no-new-privileges",
+          "--memory",
+          "768m",
+          "--cpus",
+          "2",
+          "--pids-limit",
+          "128",
+          "--tmpfs",
+          "/tmp:rw,noexec,nosuid,size=64m",
+          "--mount",
+          "type=volume,source=sentinelflow-security-private-04b1a07f6675-data,target=/srv/sentinelflow/data",
+          "--env",
+          "SENTINEL_API_TOKEN",
+          "--env",
+          "SENTINEL_DATABASE_URL",
+          "--env",
+          "SENTINEL_PUBLIC_DEMO=false",
+          "sha256:682df70b58b75f053ebda949c3b237db57d33af2917db36a583d8c15042fa495"
+        ],
+        "started_at": "2026-09-28T23:37:38.290458+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-image-ready",
+        "command": [
+          "docker",
+          "exec",
+          "sentinelflow-security-private-04b1a07f6675",
+          "python",
+          "-c",
+          "import time,urllib.request\nfor attempt in range(60):\n try:\n  urllib.request.urlopen('http://127.0.0.1:8765/health',timeout=1); break\n except OSError:\n  time.sleep(0.5)\nelse: raise SystemExit('container did not become ready')\n"
+        ],
+        "started_at": "2026-09-28T23:37:38.432833+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-image-probe",
+        "command": [
+          "docker",
+          "exec",
+          "sentinelflow-security-private-04b1a07f6675",
+          "python",
+          "scripts/container_security_probe.py"
+        ],
+        "started_at": "2026-09-28T23:37:40.332529+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-image-cleanup",
+        "command": [
+          "docker",
+          "rm",
+          "-f",
+          "sentinelflow-security-private-04b1a07f6675"
+        ],
+        "started_at": "2026-09-28T23:38:43.380992+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "name": "private-volume-cleanup",
+        "command": [
+          "docker",
+          "volume",
+          "rm",
+          "sentinelflow-security-private-04b1a07f6675-data"
+        ],
+        "started_at": "2026-09-28T23:38:43.450401+00:00",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      }
+    ],
+    "private_container": {
+      "status": "passed",
+      "checks": 8,
+      "uid": 10001,
+      "read_only_root": true,
+      "no_new_privileges": true,
+      "effective_capabilities": 0,
+      "development_tools_absent": true,
+      "rate_limit_enforced_and_recovered": true,
+      "retries": {
+        "integration_busy": 1,
+        "integration_rate_limit": 1
+      },
+      "flows": [
+        {
+          "source": "microsoft_sentinel",
+          "events": 13,
+          "alerts": 2,
+          "deliveries": 2
+        },
+        {
+          "source": "microsoft_graph",
+          "events": 13,
+          "alerts": 2,
+          "deliveries": 2
+        },
+        {
+          "source": "windows_wef",
+          "events": 36,
+          "alerts": 7,
+          "deliveries": 7
+        }
+      ],
+      "live_integrations": "Not tested"
+    },
+    "finished_at": "2026-09-28T23:38:43.569364+00:00"
+  },
+  "finished_at": "2026-09-28T23:38:43.872141+00:00",
+  "duration_seconds": 314.1836004159413,
+  "manifest_sha256": "3bccc567a35a1c93ce399186893a8a34964b117ebb2841b745c0b2e8498b8417"
+}

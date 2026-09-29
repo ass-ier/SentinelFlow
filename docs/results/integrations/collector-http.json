@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "source_fingerprint": "9db953ffd9fa343a3219d36051910f93151d32682381440091614d72823f14a2",
+  "transport": "Actual loopback TCP/HTTP; isolated Uvicorn subprocess and real collector CLI",
+  "checks": [
+    "Actual collector CLI -> scoped HTTP API -> 36 events -> seven alerts -> seven mock deliveries",
+    "Backend outage returns exit 2 and retains all 36 events and bookmark durably",
+    "Restart/recovery acknowledges 36 duplicates without duplicate alerts or notifications",
+    "Repeated invocation resumes its saved bookmark with no resend"
+  ],
+  "events": 36,
+  "alerts": 7,
+  "mock_deliveries": 7,
+  "duplicates_acknowledged_on_recovery": 36,
+  "live_windows_tested": false
+}

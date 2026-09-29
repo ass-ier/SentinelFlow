@@ -59,10 +59,19 @@ const receipt = {
 };
 
 try {
-  const seeded = await api("/admin/demo-reset", {
-    confirmation: "RESET DEMO",
-    seed: true,
-  });
+  const preserve = process.argv.includes("--preserve-database");
+  assert.ok(!preserve || process.argv.includes("--no-capture"),
+    "--preserve-database requires --no-capture; final media needs its original clean reset");
+  const seeded = preserve
+    ? await api("/events", {
+        name: "Browser verification incident",
+        format: "jsonl",
+        content: await readFile(path.join(root, "test-data/mixed/incident_timeline.jsonl"), "utf8"),
+      })
+    : await api("/admin/demo-reset", {
+        confirmation: "RESET DEMO",
+        seed: true,
+      });
   const seed = seeded.run.id;
   await go(page, "/", "Overview", seed);
   await expect(

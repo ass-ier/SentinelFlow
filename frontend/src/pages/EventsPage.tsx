@@ -9,6 +9,7 @@ import {
   ErrorNotice,
   LinkButton,
   LoadingState,
+  Notice,
   PageHeader,
   Pagination,
   Panel,
@@ -50,7 +51,7 @@ const fieldNames: Record<string, string> = {
 };
 
 export function EventsPage() {
-  const { runId, revision } = useWorkspace();
+  const { runId, revision, publicDemo } = useWorkspace();
   const [params, setParams] = useSearchParams();
   const filters = useListFilters(eventFilters);
   const [advanced, setAdvanced] = useState(false);
@@ -72,18 +73,26 @@ export function EventsPage() {
         title="Event explorer"
         description="Search normalized telemetry. Expand any row to inspect its original, untrusted input."
         actions={
-          <Button
-            variant="primary"
-            onClick={() => setImportOpen((value) => !value)}
-            aria-expanded={importOpen}
-            aria-controls="event-import"
-          >
-            <Upload size={15} aria-hidden="true" />
-            Import events
-          </Button>
+          !publicDemo && (
+            <Button
+              variant="primary"
+              onClick={() => setImportOpen((value) => !value)}
+              aria-expanded={importOpen}
+              aria-controls="event-import"
+            >
+              <Upload size={15} aria-hidden="true" />
+              Import events
+            </Button>
+          )
         }
       />
-      {importOpen && (
+      {importOpen && publicDemo && (
+        <Notice>
+          Importing logs is unavailable in the public demo. Replay an included synthetic dataset
+          instead; custom telemetry belongs in a private local installation.
+        </Notice>
+      )}
+      {importOpen && !publicDemo && (
         <div id="event-import">
           <Panel
             title="Import telemetry"
@@ -130,7 +139,15 @@ export function EventsPage() {
               onChange={(event) => set('category', event.target.value)}
             >
               <option value="">All categories</option>
-              {['authentication', 'process', 'network', 'identity', 'file'].map((value) => (
+              {[
+                'authentication',
+                'process',
+                'network',
+                'identity',
+                'file',
+                'system',
+                'application',
+              ].map((value) => (
                 <option key={value} value={value}>
                   {label(value)}
                 </option>

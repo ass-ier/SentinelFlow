@@ -6,7 +6,7 @@ from sqlalchemy import Engine, create_engine, event
 from sqlalchemy.orm import Session, sessionmaker
 from sqlalchemy.pool import StaticPool
 
-from app.storage.models import Base
+from app.storage.migrations import migrate
 
 
 class Database:
@@ -23,7 +23,7 @@ class Database:
         if sqlite:
             event.listen(self.engine, "connect", _configure_sqlite)
         self.sessions = sessionmaker(self.engine, expire_on_commit=False)
-        Base.metadata.create_all(self.engine)
+        migrate(self.engine)
 
     @contextmanager
     def session(self) -> Iterator[Session]:

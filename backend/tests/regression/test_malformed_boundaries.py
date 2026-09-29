@@ -68,10 +68,11 @@ def test_online_reset_restores_fixtures_before_seed(
         return {"status": "reset", "run": None}
 
     monkeypatch.setattr(reset, "generate", generate)
+    monkeypatch.setattr(reset, "generate_integrations", lambda: order.append("integrations"))
     monkeypatch.setattr(reset, "request", request)
     monkeypatch.setattr(sys, "argv", ["demo_reset.py", "--seed"])
     reset.main()
-    assert order == ["generate", "request"]
+    assert order == ["generate", "integrations", "request"]
 
 
 def test_generation_failure_prevents_destructive_reset(monkeypatch: pytest.MonkeyPatch) -> None:

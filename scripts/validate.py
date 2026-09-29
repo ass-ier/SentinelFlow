@@ -6,10 +6,11 @@ import shutil
 import subprocess
 import sys
 import time
-import xml.etree.ElementTree as ET
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, TextIO
+
+from defusedxml.ElementTree import parse
 
 from app.core.config import ROOT
 from app.core.evidence import source_fingerprint
@@ -74,8 +75,7 @@ def execute(name: str, command: list[str], report: dict[str, Any], log: TextIO) 
 
 
 def junit_results(path: Path) -> dict[str, Any]:
-    # Only our local pytest process writes this file; never parse uploaded XML.
-    root = ET.parse(path).getroot()  # noqa: S314
+    root = parse(path, forbid_dtd=True, forbid_entities=True, forbid_external=True).getroot()
     cases = list(root.iter("testcase"))
     categories: dict[str, dict[str, int]] = {}
     failed = skipped = 0
@@ -104,6 +104,10 @@ def junit_results(path: Path) -> dict[str, Any]:
         "sigma",
         "regression",
         "security",
+        "connectors",
+        "notifications",
+        "migration",
+        "end_to_end",
     ):
         if required not in categories or categories[required]["total"] == 0:
             raise RuntimeError(f"Required test category has no executed tests: {required}")
@@ -117,6 +121,8 @@ def junit_results(path: Path) -> dict[str, Any]:
 
 
 def main() -> int:
+    if sys.flags.optimize:
+        raise RuntimeError("Validation requires enabled Python assertions")
     ARTIFACTS.mkdir(exist_ok=True)
     lock = acquire_lock()
     started = time.perf_counter()
@@ -135,6 +141,7 @@ def main() -> int:
         "detection-validation.txt",
         "sigma-validation.json",
         "benchmark.json",
+        "integrations-validation.json",
     ]
     for name in receipts:
         (ARTIFACTS / name).unlink(missing_ok=True)
@@ -142,8 +149,8 @@ def main() -> int:
     try:
         npm = shutil.which("npm")
         node = shutil.which("node")
-        if npm is None or node is None or sys.version_info < (3, 11):
-            raise RuntimeError("Python 3.11+ and Node 20.19+ with npm are required")
+        if npm is None or node is None or sys.version_info < (3, 13, 15):
+            raise RuntimeError("Python 3.13.15+ and Node 24.21+ LTS with npm are required")
         py = sys.executable
         with (ARTIFACTS / "validation.log").open("w", buffering=1) as log:
             commands = [
@@ -153,14 +160,18 @@ def main() -> int:
                         node,
                         "-e",
                         "const [a,b]=process.versions.node.split('.').map(Number);"
-                        "if(a<20||(a===20&&b<19))process.exit(1);console.log(process.version)",
+                        "if(a!==24||b<21)process.exit(1);console.log(process.version)",
                     ],
                 ),
                 ("Pinned Python dependency consistency", [py, "-m", "pip", "check"]),
-                ("Backend static checks", [py, "-m", "ruff", "check", "backend", "scripts"]),
+                ("Offline Swagger asset integrity", [py, "scripts/vendor_swagger.py", "--check"]),
+                (
+                    "Backend static checks",
+                    [py, "-m", "ruff", "check", "backend", "scripts", "collector"],
+                ),
                 (
                     "Backend formatting",
-                    [py, "-m", "ruff", "format", "--check", "backend", "scripts"],
+                    [py, "-m", "ruff", "format", "--check", "backend", "scripts", "collector"],
                 ),
                 ("Backend strict types", [py, "-m", "mypy", "backend/app"]),
                 ("Frontend lint", [npm, "--prefix", "frontend", "run", "lint"]),
@@ -171,8 +182,21 @@ def main() -> int:
                 ),
                 ("Browser workflow syntax", [node, "--check", "scripts/browser_workflows.mjs"]),
                 ("Live verification syntax", [node, "--check", "scripts/browser_verify.mjs"]),
+                ("Deployment browser syntax", [node, "--check", "scripts/browser_deployment.mjs"]),
+                (
+                    "Integration browser syntax",
+                    [node, "--check", "scripts/browser_integrations.mjs"],
+                ),
                 ("Recording workflow syntax", [node, "--check", "scripts/record_demo.mjs"]),
                 ("Saved fixture reproducibility", [py, "scripts/generate_test_data.py", "--check"]),
+                (
+                    "Integration fixture reproducibility",
+                    [py, "scripts/generate_integration_data.py", "--check"],
+                ),
+                (
+                    "Security fixture reproducibility",
+                    [py, "scripts/generate_security_data.py", "--check"],
+                ),
                 (
                     "All backend tests",
                     [
@@ -200,6 +224,10 @@ def main() -> int:
                 ),
                 ("Exact detection validation", [py, "scripts/validate_detections.py"]),
                 ("Licensed Sigma compatibility", [py, "scripts/validate_sigma.py"]),
+                (
+                    "Offline integration end-to-end validation",
+                    [py, "scripts/validate_integrations.py"],
+                ),
                 ("Measured detection benchmark", [py, "scripts/benchmark_detection.py"]),
             ]
             for name, command in commands:
@@ -228,6 +256,11 @@ def main() -> int:
                 for key in ("passed", "failed", "total", "benign_passed", "benign_total")
             }
             report["sigma"] = json.loads((ARTIFACTS / "sigma-validation.json").read_text())
+            report["integrations"] = json.loads(
+                (ARTIFACTS / "integrations-validation.json").read_text()
+            )
+            if report["integrations"]["status"] != "passed":
+                raise RuntimeError("Integration end-to-end validation did not pass")
             if report["sigma"]["tests_failed"]:
                 raise RuntimeError("Sigma compatibility did not pass")
             report["benchmark"] = json.loads((ARTIFACTS / "benchmark.json").read_text())

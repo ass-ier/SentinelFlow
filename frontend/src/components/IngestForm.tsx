@@ -91,6 +91,7 @@ export function IngestForm() {
           <option value="csv">CSV</option>
           <option value="syslog">Syslog-style text</option>
           <option value="windows">Windows event JSON</option>
+          <option value="wazuh">Wazuh alert JSON</option>
         </SelectField>
         <TextField
           label="Import name"

@@ -1,0 +1,12 @@
+PASS Production frontend built with an explicit independent API origin
+PASS Production backend starts on PORT with a credential-free health endpoint
+PASS Runtime schema initialization and exact deterministic seed
+PASS Backend-only Swagger, OpenAPI, and favicon respond
+PASS Explicit cross-origin preflight succeeds; wrong origins and hosts are rejected
+PASS Public validation executes every synthetic scenario in isolation
+PRODUCTION PREVIEW http://127.0.0.1:57028 API http://127.0.0.1:57027
+PASS Real production-build desktop/mobile browser workflows
+PASS Restart preserves events, alerts, run IDs, and exact evidence
+PASS Visitor reset denied; operator reset restores the known demo state
+PASS Live ASGI startup confirms 0.0.0.0 binding on the selected PORT
+{"status": "passed", "report": "artifacts/deployment/security-native-48bc9b7e/report.json"}

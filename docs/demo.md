@@ -4,6 +4,13 @@ The walkthrough uses the running application, saved telemetry, real API
 responses, and the actual comprehensive validation command. No detections,
 progress counters, validation statuses, or terminal output are fabricated.
 
+This original walkthrough and its saved media describe **private/local mode**.
+The Vercel/Render public demo deliberately omits uploads, catalog/status changes,
+arbitrary Sigma input and developer evidence endpoints. Its supported public
+walkthrough and reset policy are in [deployment.md](deployment.md). Deployment
+verification saves separate evidence under `artifacts/deployment/`; it does not
+regenerate the final phase-one media.
+
 ## Start clean
 
 ```sh
@@ -72,6 +79,12 @@ guide above supplies narration. Exact timing and media inspection are recorded
 alongside the finished video.
 
 ```sh
+# Optional, isolated recording tool; the core application does not need it.
+# Use the recorded explicit macOS lock when available, or solve the declared runtime:
+CONDA_PKGS_DIRS="$PWD/.runtime/conda-pkgs" conda env create \
+  --prefix .runtime/recording --file security/recording-runtime.yml
+node scripts/record_demo.mjs --check-encoder
+
 # Browser setup is a one-time optional tooling download, after package installation.
 cd frontend
 npx playwright install chromium
@@ -84,6 +97,17 @@ node scripts/browser_verify.mjs
 # Only after live verification passes:
 node scripts/record_demo.mjs
 ```
+
+The security phase replaces the unmaintained `ffmpeg-static` wrapper's FFmpeg 6.0
+binary with an independently installed FFmpeg 9.0.2 recording tool. Set
+`SENTINEL_FFMPEG` to its absolute executable path when using another installation.
+`--check-encoder` checks its real version and H.264 encoder without resetting a
+database or creating/replacing any media. The historical recording remains
+unchanged; its historical encoder metadata is not rewritten.
+
+Use `node scripts/browser_verify.mjs --no-capture` to rerun the complete private
+browser workflow without replacing saved screenshots. It still resets the API
+instance selected by `SENTINEL_API_URL`; use only an explicitly isolated demo.
 
 The recording script invokes the actual `make validate` while the Project
 evidence page displays its real log. It checks that the completed command output

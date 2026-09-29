@@ -26,6 +26,7 @@ stale green receipts cannot stand in for current execution.
 | Regressions | Every rule family; window expiry, grouping, duplicates/conflicts, late/tied timestamps, status/snapshot persistence |
 | Security | Safe decoding, nonfinite/oversized values, duplicate keys, YAML tags/aliases, regex timeout/rollback, SQL parameters, XSS-text preservation, auth/origin/Host/file limits |
 | Benchmark | Included 5,600 events, 39,200 rule evaluations and exact 700-alert contract, plus actual timings |
+| Optional integrations | OAuth/query/pagination mocks, scoped Windows spool/API harness, checkpoint rollback, late events, retries, receiver receipts and three provider benign scenarios |
 
 Backend categories overlap. The reported **total unique tests** is backend
 test cases plus frontend test cases, not the sum of overlapping categories or
@@ -49,6 +50,9 @@ npm --prefix frontend test
 .venv/bin/python scripts/validate_detections.py --dataset auth-brute-force
 .venv/bin/python scripts/validate_detections.py --dataset auth-normal-failures --rule AUTH-001
 .venv/bin/python scripts/benchmark_detection.py --iterations 3
+.venv/bin/python scripts/validate_integrations.py
+.venv/bin/python -m pytest backend/tests/integrations
+npm --prefix frontend test -- tests/integrations.test.tsx
 ```
 
 All fixture inputs are saved in `test-data/`; parser expected objects and exact
@@ -107,3 +111,70 @@ Python/platform, timestamp, fixture hash, and source fingerprint are saved.
 Parsing, SQL storage, UI updates, and live append re-evaluation are **excluded**.
 No production capacity or timing SLA is implied. See the committed actual
 measurement in `docs/results/benchmark.json`.
+
+## Deployment verification
+
+Deployment regressions preserve the original private health response and
+exercise public initialization, protected reset, state persistence, schema/data
+ownership, synthetic-only catalogs, pinned Sigma sources, resource limits,
+configured hosts/origins, and read-only frontend controls. The frontend also
+tests API-base normalization, hosted configuration rejection, and delayed mode
+discovery without fetching private developer evidence.
+
+An actual Linux/amd64 image build found SQLAlchemy's platform-conditional
+`greenlet` dependency missing from the macOS-generated hash lock. Two offline
+metadata regressions failed before its explicit pin was added. No existing
+package version was upgraded or hash enforcement bypassed. Another real
+container run exposed an early connection reset from Docker's port proxy;
+readiness now retries only transient connection errors with a bounded deadline,
+never treating an exited server as ready.
+
+```sh
+make validate
+.venv/bin/python scripts/verify_deployment.py \
+  --label native-check-1 --backend-port 18865 --frontend-port 18875
+.venv/bin/python scripts/verify_deployment.py \
+  --label docker-check-1 --docker --backend-port 18866 --frontend-port 18876
+```
+
+Use fresh labels and unoccupied ports. The verifier checks the current validation
+fingerprint before starting and rejects source changes during a rehearsal.
+Public browser tests use production assets, no Vite proxy, real cross-origin
+POSTs, and Chromium's complete headers on finished requests (the provisional
+view omits Origin, while cancelled navigation reads may never finish). The
+browser command has a bounded timeout. Tests do not inject an owner token. Desktop/mobile
+screenshots are separate artifacts, never replacements for original media.
+
+The public API validates 49 synthetic scenarios; `make validate` still exercises
+all 50 local scenarios and all 14 benign cases. Public and private browser case
+counts are separate from unique backend/frontend unit and integration tests.
+See [deployment-readiness.md](deployment-readiness.md) for exact executed counts,
+before/after findings, container scope and final-source clone evidence.
+
+## Integration-phase verification
+
+`make validate` also checks the integration fixture and notification-schema
+generator byte-for-byte, runs the real local HTTP end-to-end validator, and
+requires nonempty `connectors`, `notifications`, `migration` and `end_to_end`
+categories. These markers overlap the other backend categories and must not be
+added together as unique test totals. Three additional provider-benign cases
+are tests, not hidden additions to the historical 50 detection scenarios.
+
+For a separately started, isolated private backend on unused ports:
+
+```sh
+SENTINEL_UI_URL=http://127.0.0.1:18881 \
+SENTINEL_API_URL=http://127.0.0.1:18881 \
+node scripts/browser_verify.mjs --no-capture --preserve-database
+SENTINEL_UI_URL=http://127.0.0.1:18881 \
+SENTINEL_API_URL=http://127.0.0.1:18881 \
+node scripts/browser_integrations.mjs
+```
+
+The preservation flag imports a new scoped incident instead of resetting the
+database and requires `--no-capture`. It still creates test runs/status changes;
+use an isolated database, never an unrelated live installation.
+The integration browser workflow records current real API/UI behavior and
+separate new screenshots, never overwriting original `screenshots/` or recordings.
+Results and exact live-testing limitations are recorded in
+[integrations-implementation-report.md](integrations-implementation-report.md).

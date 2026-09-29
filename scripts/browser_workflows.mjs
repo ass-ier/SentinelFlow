@@ -16,7 +16,7 @@ export { assert, expect };
 
 export function fingerprint() {
   return execFileSync(
-    path.join(root, ".venv/bin/python"),
+    process.env.SENTINELFLOW_PYTHON || path.join(root, ".venv/bin/python"),
     [
       "-c",
       "from app.core.evidence import source_fingerprint; print(source_fingerprint())",
@@ -95,7 +95,9 @@ export async function go(page, route, heading, runId) {
     page.getByRole("heading", { level: 1, name: heading }),
   ).toBeVisible();
   await expect(page.locator(".connection-status")).toHaveText(
-    "Local API connected",
+    (await api("/health")).public_demo
+      ? "Demo API connected"
+      : "Local API connected",
   );
 }
 

@@ -8,7 +8,7 @@ from fastapi import APIRouter, Depends, File, Form, Query, UploadFile
 from app.core.config import ROOT
 from app.core.errors import DomainError
 from app.core.evidence import source_fingerprint
-from app.core.security import analyst, get_platform
+from app.core.security import analyst, get_platform, local_features, operator
 from app.detection.rules import load_bundled_rules, load_rule
 from app.detection.sigma import compile_sigma, sigma_samples
 from app.parsers import parse_content
@@ -34,6 +34,7 @@ from app.services.validation import validate_detections
 router = APIRouter(dependencies=[Depends(analyst)])
 Service = Annotated[Platform, Depends(get_platform)]
 Actor = Annotated[str, Depends(analyst)]
+Owner = Annotated[str, Depends(operator)]
 
 
 @router.get("/dashboard", tags=["Analytics"])
@@ -51,7 +52,7 @@ def events(service: Service, filters: Annotated[EventFilters, Query()]) -> dict[
     return service.search_events(values, filters.offset, filters.limit)
 
 
-@router.post("/events", status_code=201, tags=["Events"])
+@router.post("/events", status_code=201, tags=["Events"], dependencies=[Depends(local_features)])
 def ingest(body: IngestRequest, service: Service, actor: Actor) -> dict[str, Any]:
     parsed = parse_content(
         body.content,
@@ -63,7 +64,9 @@ def ingest(body: IngestRequest, service: Service, actor: Actor) -> dict[str, Any
     return service.ingest(parsed, name=body.name, run_id=body.run_id, actor=actor)
 
 
-@router.post("/events/upload", status_code=201, tags=["Events"])
+@router.post(
+    "/events/upload", status_code=201, tags=["Events"], dependencies=[Depends(local_features)]
+)
 async def upload(
     service: Service,
     actor: Actor,
@@ -94,7 +97,7 @@ def rules(service: Service) -> dict[str, Any]:
     return {"items": items, "total": len(items)}
 
 
-@router.post("/rules", status_code=201, tags=["Rules"])
+@router.post("/rules", status_code=201, tags=["Rules"], dependencies=[Depends(local_features)])
 def import_rule(body: RuleImport, service: Service, actor: Actor) -> dict[str, Any]:
     return service.save_rule(load_rule(body.yaml), actor=actor)
 
@@ -104,22 +107,23 @@ def rule_detail(rule_id: str, service: Service) -> dict[str, Any]:
     return service.rule(rule_id)
 
 
-@router.patch("/rules/{rule_id}", tags=["Rules"])
+@router.patch("/rules/{rule_id}", tags=["Rules"], dependencies=[Depends(local_features)])
 def rule_update(rule_id: str, body: RuleUpdate, service: Service, actor: Actor) -> dict[str, Any]:
     return service.toggle_rule(rule_id, body.enabled, actor)
 
 
 @router.post("/rules/{rule_id}/test", tags=["Validation"])
 def rule_test(rule_id: str, body: TestRequest, service: Service) -> dict[str, Any]:
-    return validate_detections(
-        service.datasets,
-        service.definitions(),
-        dataset_id=body.dataset_id,
-        rule_id=rule_id,
-        expected_count=body.expected_alerts,
-        scope="current rule",
-        definition_test=True,
-    )
+    with service.validation_slot():
+        return validate_detections(
+            service.datasets,
+            service.definitions(),
+            dataset_id=body.dataset_id,
+            rule_id=rule_id,
+            expected_count=body.expected_alerts,
+            scope="current rule",
+            definition_test=True,
+        )
 
 
 @router.get("/alerts", tags=["Alerts"])
@@ -132,8 +136,13 @@ def alert_detail(alert_id: str, service: Service) -> dict[str, Any]:
     return service.alert(alert_id)
 
 
-@router.patch("/alerts/{alert_id}/status", tags=["Alerts"])
-@router.post("/alerts/{alert_id}/status", tags=["Alerts"], include_in_schema=False)
+@router.patch("/alerts/{alert_id}/status", tags=["Alerts"], dependencies=[Depends(local_features)])
+@router.post(
+    "/alerts/{alert_id}/status",
+    tags=["Alerts"],
+    include_in_schema=False,
+    dependencies=[Depends(local_features)],
+)
 def alert_status(
     alert_id: str,
     body: StatusUpdate,
@@ -188,13 +197,14 @@ def scenarios(service: Service) -> dict[str, Any]:
 @router.post("/detections/validate", tags=["Validation"])
 def validate(body: ValidationRequest, service: Service) -> dict[str, Any]:
     rules = load_bundled_rules(ROOT / "rules") if body.scope == "bundled" else service.definitions()
-    return validate_detections(
-        service.datasets,
-        rules,
-        dataset_id=body.dataset_id,
-        rule_id=body.rule_id,
-        scope=body.scope,
-    )
+    with service.validation_slot():
+        return validate_detections(
+            service.datasets,
+            rules,
+            dataset_id=body.dataset_id,
+            rule_id=body.rule_id,
+            scope=body.scope,
+        )
 
 
 def sigma_definition(body: SigmaRequest) -> dict[str, Any]:
@@ -207,6 +217,21 @@ def sigma_definition(body: SigmaRequest) -> dict[str, Any]:
     return rule.model_dump(mode="json", by_alias=True)
 
 
+def public_sigma_source(body: SigmaRequest, service: Service) -> None:
+    if not service.settings.public_demo:
+        return
+    fields = ("yaml", "source_url", "license", "license_url")
+    if not any(
+        all(getattr(body, field) == sample.get(field) for field in fields)
+        for sample in sigma_samples()
+    ):
+        raise DomainError(
+            "The public demo accepts only its unchanged bundled, licensed Sigma samples.",
+            403,
+            "public_demo_restricted",
+        )
+
+
 @router.get("/sigma/samples", tags=["Sigma"])
 def samples() -> dict[str, Any]:
     items = sigma_samples()
@@ -214,8 +239,10 @@ def samples() -> dict[str, Any]:
 
 
 @router.post("/sigma/compile", tags=["Sigma"])
-def sigma_compile(body: SigmaRequest) -> dict[str, Any]:
-    definition = sigma_definition(body)
+def sigma_compile(body: SigmaRequest, service: Service) -> dict[str, Any]:
+    with service.validation_slot():
+        public_sigma_source(body, service)
+        definition = sigma_definition(body)
     return {
         "rule": definition,
         "warnings": [
@@ -226,7 +253,9 @@ def sigma_compile(body: SigmaRequest) -> dict[str, Any]:
     }
 
 
-@router.post("/sigma/import", status_code=201, tags=["Sigma"])
+@router.post(
+    "/sigma/import", status_code=201, tags=["Sigma"], dependencies=[Depends(local_features)]
+)
 def sigma_import(body: SigmaImport, service: Service, actor: Actor) -> dict[str, Any]:
     rule = compile_sigma(
         body.yaml,
@@ -240,21 +269,23 @@ def sigma_import(body: SigmaImport, service: Service, actor: Actor) -> dict[str,
 
 @router.post("/sigma/test", tags=["Sigma"])
 def sigma_test(body: SigmaTest, service: Service) -> dict[str, Any]:
-    rule = compile_sigma(
-        body.yaml,
-        source_url=body.source_url,
-        license_name=body.license,
-        license_url=body.license_url,
-    )
-    return validate_detections(
-        service.datasets,
-        [rule],
-        dataset_id=body.dataset_id,
-        rule_id=rule.id,
-        expected_count=body.expected_alerts,
-        scope="Sigma definition",
-        definition_test=True,
-    )
+    with service.validation_slot():
+        public_sigma_source(body, service)
+        rule = compile_sigma(
+            body.yaml,
+            source_url=body.source_url,
+            license_name=body.license,
+            license_url=body.license_url,
+        )
+        return validate_detections(
+            service.datasets,
+            [rule],
+            dataset_id=body.dataset_id,
+            rule_id=rule.id,
+            expected_count=body.expected_alerts,
+            scope="Sigma definition",
+            definition_test=True,
+        )
 
 
 def evidence_files() -> list[dict[str, Any]]:
@@ -276,7 +307,7 @@ def read_report(path: Path) -> Any:
         raise DomainError("Saved validation evidence is unreadable", 500, "report_error") from exc
 
 
-@router.get("/project/evidence", tags=["Evidence"])
+@router.get("/project/evidence", tags=["Evidence"], dependencies=[Depends(local_features)])
 def project_evidence() -> dict[str, Any]:
     artifact = ROOT / "artifacts"
     validation_path = artifact / "validation.json"
@@ -328,7 +359,7 @@ def project_evidence() -> dict[str, Any]:
     }
 
 
-@router.get("/project/document", tags=["Evidence"])
+@router.get("/project/document", tags=["Evidence"], dependencies=[Depends(local_features)])
 def project_document(path: str = Query(max_length=200)) -> dict[str, str]:
     allowed = {"README.md", "test-data/README.md"} | {
         str(file.relative_to(ROOT)) for file in (ROOT / "docs").glob("*.md")
@@ -339,5 +370,5 @@ def project_document(path: str = Query(max_length=200)) -> dict[str, str]:
 
 
 @router.post("/admin/demo-reset", tags=["Demo"])
-def demo_reset(body: ResetRequest, service: Service, actor: Actor) -> dict[str, Any]:
+def demo_reset(body: ResetRequest, service: Service, actor: Owner) -> dict[str, Any]:
     return service.reset_demo(actor, seed=body.seed)

@@ -1,6 +1,6 @@
-.PHONY: install dev test lint format validate demo reset benchmark
+.PHONY: install dev test lint format validate security security-tools demo reset benchmark serve
 
-install dev test lint format validate:
+install dev test lint format validate security security-tools:
 	python3 scripts/manage.py $@
 
 demo:
@@ -11,3 +11,6 @@ reset:
 
 benchmark:
 	.venv/bin/python scripts/benchmark_detection.py
+
+serve:
+	.venv/bin/python scripts/serve.py

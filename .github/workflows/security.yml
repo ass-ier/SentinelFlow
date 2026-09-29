@@ -1,0 +1,49 @@
+name: Security release gate
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  security:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      SCARF_ANALYTICS: "false"
+      SEMGREP_SEND_METRICS: "off"
+      DO_NOT_TRACK: "1"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.13.15"
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: make install
+      - run: make security-tools
+      - run: frontend/node_modules/.bin/playwright install --with-deps chromium
+      - run: make security
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        if: always()
+        with:
+          name: security-evidence
+          path: |
+            artifacts/security/*/*.json
+            artifacts/security/*/*.log
+            artifacts/security/*/*.xml
+            artifacts/security/*/rehearsals/**/*.json
+            artifacts/security/*/rehearsals/**/*.log
+            artifacts/security/*/rehearsals/**/*.png
+          retention-days: 14
+          if-no-files-found: error

@@ -19,11 +19,14 @@ import { number } from '../services/format';
 import type { ProjectEvidence } from '../types';
 
 export function EvidencePage() {
-  const { revision } = useWorkspace();
-  const evidence = useResource<ProjectEvidence>('/project/evidence', {
-    refreshKey: revision,
-    pollMs: 1500,
-  });
+  const { revision, publicDemo, health } = useWorkspace();
+  const evidence = useResource<ProjectEvidence>(
+    health.data && !publicDemo ? '/project/evidence' : null,
+    {
+      refreshKey: revision,
+      pollMs: 1500,
+    },
+  );
   const [selectedPath, setSelectedPath] = useState('');
   const [fileQuery, setFileQuery] = useState('');
   const [follow, setFollow] = useState(true);
@@ -43,6 +46,47 @@ export function EvidencePage() {
     if (follow && logRef.current) logRef.current.scrollTop = logRef.current.scrollHeight;
   }, [follow, data?.validation_log]);
 
+  if (publicDemo)
+    return (
+      <>
+        <PageHeader
+          title="Demo data & limits"
+          description="A shared portfolio demonstration, not a production SIEM or a private investigation workspace."
+        />
+        <Panel title="Synthetic telemetry, real detection execution">
+          <p className="reading-text">
+            Events and alert evidence come only from the bundled synthetic catalog. Replays run the
+            real YAML engine; validation uses isolated state and exact expected results. The local
+            OTRF interoperability sample is not exposed in this public mode. Licensed Sigma sources
+            retain their authors, source URLs, and license in the Sigma workbench.
+          </p>
+        </Panel>
+        <Panel title="Shared state and bounded history">
+          <p className="reading-text">
+            All visitors share one SQLite demo. The seed contains 56 synthetic events and seven
+            alerts. At most {health.data?.public_demo_run_limit ?? 20} runs are retained, including
+            the protected seed; the oldest finished replays are removed as new ones start. Visitors
+            can cancel active replays. Two replays and one validation may run at a time.
+          </p>
+          <p className="reading-text">
+            Uploads, custom rules, catalog changes, investigation notes, developer logs, and visitor
+            resets are unavailable. An operator can restore the seed. With ephemeral hosting,
+            history may disappear on restart or redeploy; a persistent disk is an operator choice.
+            Do not enter personal, company, or production security data.
+          </p>
+        </Panel>
+        <Panel title="What the results do not prove">
+          <p className="reading-text">
+            Indicators are not proof of compromise. Controlled benign fixtures do not measure an
+            enterprise false-positive rate. Sigma support is a documented subset; full EVTX, PCAP,
+            multi-tenancy, enterprise authentication, and production SIEM scale are not implemented.
+            Full local functionality, validation receipts, and data provenance ship with the
+            repository.
+          </p>
+        </Panel>
+      </>
+    );
+
   return (
     <>
       <PageHeader
@@ -50,11 +94,13 @@ export function EvidencePage() {
         description="Executed validation, measured performance, and the files included with this project. No simulated results."
       />
       <ErrorNotice
-        error={evidence.error}
+        error={health.error || evidence.error}
         onRetry={evidence.reload}
         title="Project artifacts could not be loaded"
       />
-      {evidence.loading && <LoadingState label="Loading recorded project evidence" />}
+      {(health.loading || evidence.loading) && (
+        <LoadingState label="Loading recorded project evidence" />
+      )}
       {data && (
         <>
           <Panel

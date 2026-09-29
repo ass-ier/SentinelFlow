@@ -3,9 +3,10 @@ import io
 from typing import Any
 
 from app.core.errors import DomainError
-from app.core.safe import json_loads
+from app.core.safe import json_loads, utf8_bytes
 from app.parsers.normalize import normalize_record
 from app.parsers.syslog import parse_syslog
+from app.parsers.wazuh import parse_wazuh
 from app.parsers.windows import parse_windows
 from app.schemas.events import LogFormat, NormalizedEvent
 
@@ -18,13 +19,13 @@ def parse_content(
     max_events: int = 10_000,
     syslog_year: int = 2026,
 ) -> list[NormalizedEvent]:
-    if len(content.encode("utf-8")) > max_bytes:
+    if len(utf8_bytes(content)) > max_bytes:
         raise DomainError("Upload exceeds the configured file size limit", 413, "size_limit")
     content = content.lstrip("\ufeff")
     if not content.strip():
         raise DomainError("Input contains no events")
     records: list[Any]
-    if log_format in ("json", "windows"):
+    if log_format in ("json", "windows", "wazuh"):
         parsed = json_loads(content)
         records = parsed if isinstance(parsed, list) else [parsed]
     elif log_format == "jsonl":
@@ -61,6 +62,11 @@ def parse_content(
         if not isinstance(record, dict):
             raise DomainError(f"Record {index} must be an object")
         try:
+            if log_format == "wazuh" or (
+                isinstance(record.get("data"), dict) and isinstance(record["data"].get("win"), dict)
+            ):
+                events.append(parse_wazuh(record))
+                continue
             windows = log_format == "windows" or "EventID" in record or "System" in record
             windows = windows or ("Event" in record and isinstance(record["Event"], dict))
             events.append(

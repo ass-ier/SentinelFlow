@@ -2,6 +2,7 @@ import argparse
 import sys
 import urllib.error
 
+from generate_integration_data import generate as generate_integrations
 from generate_test_data import generate
 from replay_events import request
 
@@ -30,13 +31,15 @@ def main() -> None:
         else:
             raise DomainError("The server is running; omit --offline to reset through its API")
         generate()
-        service = Platform(Settings())
+        generate_integrations()
+        service = Platform(Settings.from_env())
         try:
             result = service.reset_demo("demo-reset-cli", seed=args.seed)
         finally:
             service.close()
     else:
         generate()
+        generate_integrations()
         result = request(
             args.api, "/admin/demo-reset", {"confirmation": "RESET DEMO", "seed": args.seed}
         )

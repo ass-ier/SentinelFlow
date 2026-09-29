@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools==80.9.0"]
+requires = ["setuptools==84.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,34 +8,41 @@ version = "0.1.0"
 description = "Local, evidence-first security analytics and detection engineering"
 requires-python = ">=3.11"
 dependencies = [
-  "fastapi==0.116.1",
+  "fastapi==0.141.1",
+  "starlette==1.7.0",
   "uvicorn==0.35.0",
   "pydantic==2.11.7",
   "SQLAlchemy==2.0.43",
+  # Pin SQLAlchemy's platform-conditional dependency in macOS-generated deployment locks.
+  "greenlet==3.5.6",
   "PyYAML==6.0.2",
   "regex==2025.7.34",
-  "python-multipart==0.0.20",
-  "python-dotenv==1.1.1",
-  "swagger-ui-bundle==1.1.0",
+  "python-multipart==0.0.32",
+  "python-dotenv==1.2.3",
+  "defusedxml==0.7.1",
 ]
 
 [project.optional-dependencies]
 dev = [
   "httpx==0.28.1",
-  "pytest==8.4.1",
+  "pytest==9.1.1",
   "pytest-cov==6.2.1",
   "ruff==0.12.10",
   "mypy==1.17.1",
   "types-PyYAML==6.0.12.20250822",
   "types-regex==2025.7.34.20250809",
-  "pip-tools==7.5.0",
-  "pip==25.2",
-  "setuptools==80.9.0",
+  "types-defusedxml==0.7.0.20260504",
+  "pip-tools==7.6.1",
+  "pip==26.2.1",
+  "setuptools==84.0.0",
 ]
 
 [tool.setuptools.packages.find]
 where = ["backend"]
 include = ["app*"]
+
+[tool.setuptools.package-data]
+app = ["static/swagger/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["backend/tests"]
@@ -50,6 +57,10 @@ markers = [
   "security: untrusted input and access boundaries",
   "regression: behavioral regression contracts",
   "integration: API and persistence integration",
+  "connectors: Microsoft and Windows telemetry adapters",
+  "notifications: durable outbound notification delivery",
+  "migration: additive schema upgrades and persistent state",
+  "end_to_end: complete telemetry-to-notification workflows",
 ]
 
 [tool.ruff]

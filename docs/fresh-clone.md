@@ -1,5 +1,12 @@
 # Fresh-clone verification
 
+**Historical original-delivery receipt.** The account below describes the
+original committed implementation and is preserved unchanged as evidence.
+Deployment preparation is uncommitted; its separate clone uses the same base
+commit plus an explicitly recorded final-source overlay, not a fictitious new
+commit. See [deployment-readiness.md](deployment-readiness.md) for that later
+installation, production-build, Docker, browser and persistence verification.
+
 The patched implementation was cloned locally into a new directory, not tested
 only in the original development environment. `make install` created that
 clone's own `.venv` and `frontend/node_modules` from the committed hash-locked

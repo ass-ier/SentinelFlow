@@ -7,9 +7,11 @@ from typing import Any, Literal
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 Severity = Literal["informational", "low", "medium", "high", "critical"]
-Category = Literal["authentication", "process", "network", "identity", "file"]
+Category = Literal[
+    "authentication", "process", "network", "identity", "file", "system", "application"
+]
 Outcome = Literal["success", "failure", "unknown"]
-LogFormat = Literal["json", "jsonl", "csv", "syslog", "windows"]
+LogFormat = Literal["json", "jsonl", "csv", "syslog", "windows", "wazuh"]
 
 
 class StrictModel(BaseModel):

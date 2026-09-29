@@ -1,0 +1,93 @@
+{
+  "checked_at": "2026-09-29T00:01:24.253326+00:00",
+  "head": "b987e6d7526b9a643bf9813fe816ada21c706b55",
+  "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+  "media": [
+    {
+      "path": "recordings/sentinelflow-final-demo.mp4",
+      "bytes": 9730783,
+      "sha256": "aa444d5de6e407cd1977cd41690fc972e3e92f6fa13ec854942f91af01366df5",
+      "git_blob": "78867fad6b9e6c45b84909cd666e08006dd86292",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/alert-details.png",
+      "bytes": 590839,
+      "sha256": "806653482bc2b9d93ef2b7e075a802cd8103de8965dfb3c89ed80f2920b12e81",
+      "git_blob": "5dcaf89f1a08917bccf431d498e5477b943b38b6",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/dashboard.png",
+      "bytes": 266989,
+      "sha256": "32f522ab79185dc33fd8705dc77edcc7c657b272a72675cdb3a2cb8abbc1665b",
+      "git_blob": "e85c56fae2f36e4586db1a15bd2490a795996c7a",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/detection-rules.png",
+      "bytes": 160125,
+      "sha256": "c908b0e999ba272aa4a124cf7da84cb2d3b37674856e9d63b67de79420c7873a",
+      "git_blob": "66c7314b83599388c1f059d9d136e1abf7e0e012",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/detection-validation.png",
+      "bytes": 188451,
+      "sha256": "0dd55aa856ed4eb301e16d6902d359c7687376529711c1e26e3db2b0e5059b80",
+      "git_blob": "9233bb795e3c7d3cd8b74b2bbbec15f8a09912f9",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/events.png",
+      "bytes": 176811,
+      "sha256": "42464333c4a0aeacf1463c73d0130ff88876ea9dcec1975dc29197efb1509243",
+      "git_blob": "5d1790b1d0ecf1f343137fd77c6a2a303751066a",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/mobile-dashboard.png",
+      "bytes": 183213,
+      "sha256": "1570e4e58981a3d3f03351ed758d14e27bd71f6c4fbac6a9a9d2820444f43525",
+      "git_blob": "c9a4bd23d3b4a37ccd4913747e64ae6b9b9c35e9",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/replay.png",
+      "bytes": 461488,
+      "sha256": "9958973a18d8df689f66dee46c06e41716a48797d84520113251921fcd72f5c2",
+      "git_blob": "cf88113ddcc7c7c5b7759548bba3adaf49c0d830",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/sigma-validation.png",
+      "bytes": 432713,
+      "sha256": "8496274456f5121ed149197825b9cb3d7d833a3974d622622b890295cb9215f4",
+      "git_blob": "29e4e5e2dd94ea68b4d0d9682db03c41cfe63a22",
+      "unchanged": true
+    }
+  ],
+  "preserved_services": [
+    {
+      "url": "http://127.0.0.1:8765/health",
+      "http_status": 200,
+      "response": {
+        "status": "ok",
+        "version": "0.1.0",
+        "auth_required": false
+      },
+      "scope": "Preserved legacy process, not a hardened-runtime receipt"
+    },
+    {
+      "url": "http://127.0.0.1:18881/health",
+      "http_status": 200,
+      "response": {
+        "status": "ok",
+        "version": "0.1.0",
+        "auth_required": false
+      },
+      "scope": "Preserved legacy process, not a hardened-runtime receipt"
+    }
+  ],
+  "published_or_deployed": false
+}

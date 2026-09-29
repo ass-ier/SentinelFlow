@@ -8,7 +8,7 @@ present in normalized API responses; unknown top-level/schema keys are rejected.
 | `event.id` | Source ID or deterministic 128-bit SHA-256 prefix of parser name and canonical original record |
 | `event.timestamp` | Timezone-aware event time, normalized to UTC |
 | `event.source` | Telemetry provider/source label, independent of source IP |
-| `event.category` | `authentication`, `process`, `network`, `identity`, `file` |
+| `event.category` | `authentication`, `process`, `network`, `identity`, `file`, `system`, `application` |
 | `event.type` | Source event type, e.g. `info` or `start` |
 | `event.action` | Normalized action such as `login`, `process_created`, `dns_query` |
 | `event.outcome` | `success`, `failure`, `unknown` |
@@ -47,9 +47,16 @@ cryptographic source authentication.
   `syslog_year` for other inputs; no current-year guessing occurs.
 - **Windows JSON:** `System`/`EventData` envelopes or documented compact exports.
   Event IDs 4624, 4625, 4634, 4723, 4740, 4688, 4104, 4728/4729,
-  4732/4733, 4756/4757, 4720, and 4672 are mapped. Sysmon IDs 1, 3, and 22
+  4732/4733, 4756/4757, 4720, 4722, 4725, 4726, and 4672 are mapped. Sysmon IDs 1, 3, and 22
   require an explicit Sysmon provider to avoid ambiguous numeric event IDs.
   `Image` and `ParentImage` retain full paths as well as basenames.
+- **Wazuh:** explicit `wazuh` input supports EventChannel
+  `data.win.system`/`eventdata` and recognized authentication `full_log` messages.
+  Raw alert JSON is preserved. This is a narrow file adapter, not a Wazuh API
+  connector or every decoder's schema.
+- **Windows collector XML:** the optional native collector converts XML to the
+  same Windows envelope and also retains the original XML. Generic System and
+  Application channel events are retained with distinct categories.
 
 This is not a general RFC5424 or vendor syslog parser and does not parse binary
 EVTX. Unsupported messages/IDs fail explicitly, not as silently dropped rows.
@@ -80,3 +87,10 @@ stored event observations using foreign keys.
 Statuses are `new`, `investigating`, `resolved`, `false_positive`, `suppressed`.
 They are analyst workflow states, not engine enable/disable switches.
 The event count equals the number of linked distinct evidence records.
+
+Optional connectors add provider, connector ID, table/channel, source host,
+original UTC timestamp, ingestion timestamp and supplied identity/authentication
+details to bounded `metadata`. No cloud application name is invented as a host.
+Alert `telemetry_sources` is distinct from rule-author `provenance`.
+`notifications` contains independently persisted delivery states. See
+[integration normalization and queue contracts](integrations.md).

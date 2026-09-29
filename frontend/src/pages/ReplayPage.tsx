@@ -226,7 +226,7 @@ export function ReplayPage() {
               )}
               <ErrorNotice error={cancelError} title="Cancellation not confirmed" />
               <details className="disclosure">
-                <summary>Recorded run & performance metrics</summary>
+                <summary>Recorded run &amp; performance metrics</summary>
                 <CodeBlock
                   value={{
                     created_at: run.created_at,

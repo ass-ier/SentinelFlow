@@ -1,0 +1,9 @@
+sentinelflow-probe-dc635a7b335a-data
+3d308e654e0e471c69633d1c884554831edc9b2e9fccd13b22a0f97de7995a28
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8765 (Press CTRL+C to quit)
+sentinelflow-probe-dc635a7b335a
+sentinelflow-probe-dc635a7b335a-data
+{"status": "passed", "checks": 8, "uid": 10001, "read_only_root": true, "no_new_privileges": true, "effective_capabilities": 0, "development_tools_absent": true, "rate_limit_enforced_and_recovered": true, "retries": {"integration_busy": 2, "integration_rate_limit": 1}, "flows": [{"source": "microsoft_sentinel", "events": 13, "alerts": 2, "deliveries": 2}, {"source": "microsoft_graph", "events": 13, "alerts": 2, "deliveries": 2}, {"source": "windows_wef", "events": 36, "alerts": 7, "deliveries": 7}], "live_integrations": "Not tested"}

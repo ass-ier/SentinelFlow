@@ -14,6 +14,13 @@ MAX_TEXT = 16_384
 MAX_DEPTH = 12
 
 
+def utf8_bytes(text: str) -> bytes:
+    try:
+        return text.encode("utf-8")
+    except UnicodeError as exc:
+        raise DomainError("Text must contain valid Unicode scalar values") from exc
+
+
 def unique_pairs(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
     result: dict[str, Any] = {}
     for key, value in pairs:
@@ -36,12 +43,15 @@ def check_tree(value: Any, depth: int = 0) -> None:
                 raise DomainError("Object keys must be strings")
             if len(key) > 256:
                 raise DomainError("Object key exceeds 256 characters")
+            utf8_bytes(key)
             check_tree(child, depth + 1)
     elif isinstance(value, list):
         for child in value:
             check_tree(child, depth + 1)
-    elif isinstance(value, str) and len(value) > MAX_TEXT:
-        raise DomainError(f"Individual text field exceeds {MAX_TEXT} characters")
+    elif isinstance(value, str):
+        if len(value) > MAX_TEXT:
+            raise DomainError(f"Individual text field exceeds {MAX_TEXT} characters")
+        utf8_bytes(value)
     elif isinstance(value, float) and not math.isfinite(value):
         raise DomainError("Non-finite numbers are not supported")
     elif not isinstance(value, str | int | float | bool | type(None)):
@@ -76,7 +86,7 @@ UniqueSafeLoader.add_constructor("tag:yaml.org,2002:timestamp", _timestamp_as_te
 
 
 def yaml_loads(text: str) -> dict[str, Any]:
-    if len(text.encode("utf-8")) > MAX_RULE_BYTES:
+    if len(utf8_bytes(text)) > MAX_RULE_BYTES:
         raise DomainError("Rule exceeds 64 KiB", 413, "size_limit")
     try:
         for token in yaml.scan(text):

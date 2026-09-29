@@ -1,0 +1,20 @@
+[
+  {
+    "case": "https",
+    "status": "passed",
+    "exit_code": 0,
+    "expected": "build succeeds"
+  },
+  {
+    "case": "missing",
+    "status": "passed",
+    "exit_code": 1,
+    "expected": "build rejected"
+  },
+  {
+    "case": "loopback",
+    "status": "passed",
+    "exit_code": 1,
+    "expected": "build rejected"
+  }
+]

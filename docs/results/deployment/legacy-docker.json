@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "scope": "Final private full-stack Docker image: auth, compiled SPA, seed, replay, evidence and status APIs",
+  "source_fingerprint": "d618438a4506636078d672bc8b4fcf444d0685970d2d06f3d7515b089c957595",
+  "checks": [
+    "Private token boundary and deterministic 56-event/seven-alert seed",
+    "Compiled SPA and main direct routes",
+    "Real replay, exact 25-event evidence and analyst status update"
+  ],
+  "image_id": "sha256:fae8980809a6d1ba215ef407b546d1ce68613f137ab3e40902408de41b374612"
+}

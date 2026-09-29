@@ -1,0 +1,75 @@
+$ npm --prefix frontend run build -- --outDir /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/deployment/security-docker-b1193e02/frontend
+
+> sentinelflow-frontend@0.1.0 build
+> tsc --noEmit && vite build --outDir /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/deployment/security-docker-b1193e02/frontend
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 1629 modules transformed.
+
+(!) outDir /Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/deployment/security-docker-b1193e02/frontend is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../artifacts/deployment/security-docker-b1193e02/frontend/index.html                   1.79 kB │ gzip:   0.96 kB
+../artifacts/deployment/security-docker-b1193e02/frontend/assets/index-DdSLY-h7.css   38.76 kB │ gzip:   8.71 kB
+../artifacts/deployment/security-docker-b1193e02/frontend/assets/index-rrgvkHRg.js   371.41 kB │ gzip: 111.91 kB
+✓ built in 1.27s
+$ docker context inspect --format {{json .Endpoints.docker.Host}}
+"unix:///Users/triplea/.docker/run/docker.sock"
+$ docker image inspect sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9 --format {{index .Config.Labels "org.sentinelflow.source-fingerprint"}}
+2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6
+$ docker image inspect sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9 --format {{.Id}}
+sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9
+$ docker volume create --label sentinelflow.local-verification=true sentinelflow-check-d477574f8e2f-data
+sentinelflow-check-d477574f8e2f-data
+$ node scripts/browser_deployment.mjs
+PASS Public dashboard shows the real 56-event, seven-alert seed without credentials
+PASS Production assets, exact API-origin CSP, security headers, and no preview API proxy
+PASS Direct navigation and refresh: /events
+PASS Direct navigation and refresh: /alerts
+PASS Direct navigation and refresh: /rules
+PASS Direct navigation and refresh: /testing
+PASS Direct navigation and refresh: /detections
+PASS Direct navigation and refresh: /replay
+PASS Direct navigation and refresh: /sigma
+PASS Direct navigation and refresh: /evidence
+PASS Event search filters real results and expands inert raw evidence
+PASS 10x replay processes 25 real authentication events
+PASS AUTH-001 preserves 25 linked events, MITRE, snapshot, and read-only investigation
+PASS Read-only rule detail still executes real isolated definition tests
+PASS Positive and benign validation return exact results without operational alerts
+PASS PowerShell and DNS replay preserve actual heuristic evidence
+PASS Licensed pinned Sigma compilation and positive/benign tests work without import
+PASS Mobile layout: /
+PASS Mobile layout: /events
+PASS Mobile layout: /alerts
+PASS Mobile layout: /rules
+PASS Mobile layout: /replay
+PASS Mobile layout: /sigma
+PASS Mobile layout: /evidence
+PASS Mobile navigation opens and closes by keyboard
+PASS All completed browser API requests use the configured backend without credentials
+PASS No critical console errors or unexpected failed requests
+{"status":"passed","checks":27,"output":"/Users/triplea/Documents/CyberProjects/copilot-worktrees/sentinelflow/mk23rd-urban-journey/artifacts/deployment/security-docker-b1193e02"}
+$ docker stop --time 15 sentinelflow-check-d477574f8e2f
+sentinelflow-check-d477574f8e2f
+$ docker exec sentinelflow-check-d477574f8e2f id -u
+10001
+$ docker inspect sentinelflow-check-d477574f8e2f --format {{json .HostConfig}}
+{"Binds":["sentinelflow-check-d477574f8e2f-data:/srv/sentinelflow/data"],"ContainerIDFile":"","LogConfig":{"Type":"json-file","Config":{}},"NetworkMode":"bridge","PortBindings":{"57081/tcp":[{"HostIp":"127.0.0.1","HostPort":"57081"}]},"RestartPolicy":{"Name":"no","MaximumRetryCount":0},"AutoRemove":true,"VolumeDriver":"","VolumesFrom":null,"ConsoleSize":[0,0],"CapAdd":null,"CapDrop":["ALL"],"CgroupnsMode":"private","Dns":[],"DnsOptions":[],"DnsSearch":[],"ExtraHosts":null,"GroupAdd":null,"IpcMode":"private","Cgroup":"","Links":null,"OomScoreAdj":0,"PidMode":"","Privileged":false,"PublishAllPorts":false,"ReadonlyRootfs":true,"SecurityOpt":["no-new-privileges"],"Tmpfs":{"/srv/sentinelflow/artifacts":"rw,noexec,nosuid,uid=10001,gid=10001,size=32m","/tmp":"rw,noexec,nosuid,size=64m"},"UTSMode":"","UsernsMode":"","ShmSize":67108864,"Runtime":"runc","Isolation":"","CpuShares":0,"Memory":805306368,"NanoCpus":2000000000,"CgroupParent":"","BlkioWeight":0,"BlkioWeightDevice":[],"BlkioDeviceReadBps":[],"BlkioDeviceWriteBps":[],"BlkioDeviceReadIOps":[],"BlkioDeviceWriteIOps":[],"CpuPeriod":0,"CpuQuota":0,"CpuRealtimePeriod":0,"CpuRealtimeRuntime":0,"CpusetCpus":"","CpusetMems":"","Devices":[],"DeviceCgroupRules":null,"DeviceRequests":null,"MemoryReservation":0,"MemorySwap":1610612736,"MemorySwappiness":null,"OomKillDisable":null,"PidsLimit":128,"Ulimits":[],"CpuCount":0,"CpuPercent":0,"IOMaximumIOps":0,"IOMaximumBandwidth":0,"MaskedPaths":["/proc/asound","/proc/acpi","/proc/kcore","/proc/keys","/proc/latency_stats","/proc/timer_list","/proc/timer_stats","/proc/sched_debug","/proc/scsi","/sys/firmware","/sys/devices/virtual/powercap"],"ReadonlyPaths":["/proc/bus","/proc/fs","/proc/irq","/proc/sys","/proc/sysrq-trigger"]}
+$ docker inspect sentinelflow-check-d477574f8e2f --format {{.State.Health.Status}}
+starting
+$ docker inspect sentinelflow-check-d477574f8e2f --format {{.State.Health.Status}}
+starting
+$ docker inspect sentinelflow-check-d477574f8e2f --format {{.State.Health.Status}}
+starting
+$ docker inspect sentinelflow-check-d477574f8e2f --format {{.State.Health.Status}}
+starting
+$ docker inspect sentinelflow-check-d477574f8e2f --format {{.State.Health.Status}}
+healthy
+$ docker stop --time 15 sentinelflow-check-d477574f8e2f
+sentinelflow-check-d477574f8e2f
+$ docker volume rm sentinelflow-check-d477574f8e2f-data
+sentinelflow-check-d477574f8e2f-data

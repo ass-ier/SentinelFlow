@@ -1,0 +1,99 @@
+[
+    {
+        "Id": "sha256:69b32fc8ceafe8edeb6971df88ee5d16a9bf69769d881977c451c6876c937b00",
+        "RepoTags": [
+            "sentinelflow-security:application"
+        ],
+        "RepoDigests": [],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-09-28T23:53:18.355675501Z",
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "sentinel",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8765/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.13.15",
+                "PYTHON_SHA256=1e66a7945a48390ee4c2a4268a0e4185884059a13c4aab6d148aa208deea4a76",
+                "PORT=8765",
+                "PYTHONPATH=/opt/python:/srv/sentinelflow/backend",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": [
+                "python",
+                "scripts/serve.py"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "python -c \"import json,os,urllib.request; r=json.load(urllib.request.urlopen('http://127.0.0.1:'+str(int(os.getenv('PORT','8765')))+'/health',timeout=3)); assert r['status']=='ok'\""
+                ],
+                "Interval": 15000000000,
+                "Timeout": 5000000000,
+                "StartPeriod": 10000000000,
+                "Retries": 3
+            },
+            "ArgsEscaped": true,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/srv/sentinelflow",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "org.opencontainers.image.revision": "b987e6d7526b9a643bf9813fe816ada21c706b55",
+                "org.sentinelflow.source-fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 111895395,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/8hwerclcf9eamopmoqsfyotgy/diff:/var/lib/docker/overlay2/pzylb3ztud6p9h8bn7a52pv26/diff:/var/lib/docker/overlay2/6ufqnciagz2ckb1c4bhn5quxc/diff:/var/lib/docker/overlay2/7pc2vh0a29scghfvdxfhdtmm8/diff:/var/lib/docker/overlay2/t9muo5rsmhv2mmyvwilzxbppz/diff:/var/lib/docker/overlay2/va3ylbce5s08vyhuho2kxb9kx/diff:/var/lib/docker/overlay2/m0wu2rml1pqayd9wu0v9m8b9y/diff:/var/lib/docker/overlay2/f9cq0ecdg25tf1aqk1vinzhzd/diff:/var/lib/docker/overlay2/8974n1pl48j4hg5xpv6v1kw7n/diff:/var/lib/docker/overlay2/ad61s8vn5e6b1leos5lqfcvfn/diff:/var/lib/docker/overlay2/g3muticdyrnkuuij1gavrd4ux/diff:/var/lib/docker/overlay2/r1tccugqx51c4fzgnizff6tsh/diff:/var/lib/docker/overlay2/d93026e1a399c30b37972f9c670095689238fc4c5f91b9bbc53c726710ebeaab/diff:/var/lib/docker/overlay2/e5d5a34af74834359e352b28c029c16a13ee324c833d670dc266812d762d92d5/diff:/var/lib/docker/overlay2/443fd4dc85b996054fd8d32af33cbdb2f1025061b050021e58b5e7739dd0c503/diff:/var/lib/docker/overlay2/89f39b563a2187f19412e8d13afbc92d1ce4ecd1db8f378e3b525e8ceafd533d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/oiidf56c7u8n8bdu7b4ha5iq3/merged",
+                "UpperDir": "/var/lib/docker/overlay2/oiidf56c7u8n8bdu7b4ha5iq3/diff",
+                "WorkDir": "/var/lib/docker/overlay2/oiidf56c7u8n8bdu7b4ha5iq3/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:74d97c428c51a828f9051a7a40a53ff1fc99e54fc30323ce36760701b0b7f711",
+                "sha256:f45404aff741b373238ea1b1ebffcef210d0b247a9b3579114c91bd4fa5a551b",
+                "sha256:3585d42e3fb07a9e08ffd1799a539443f4a3096ddc0a872645182562e2fe0f17",
+                "sha256:e3ef92325bef7adf7a7f86d41a1c379c2b8435c80b0b26d37ce5305d0d195519",
+                "sha256:42c53163f29ed34a1134e9378caf1c4992e26e37311947fb574bbce81b008350",
+                "sha256:9aa98a244d9bdfba122de11dda5ea8964a81e07b34b4b68225580e0e079f4da8",
+                "sha256:63693db17568a0130ed8ef91ce34bdc40fa0ff692b640f169de87a79b58e1102",
+                "sha256:2950c5340ee920dbb48622eedf424ba2e4c178a0188e7c1baf760096f53b9fae",
+                "sha256:6a409d242bfc8c4245551e2b8f472c22ac09ef339f6a7871699ebc900d9a9700",
+                "sha256:e749797ee5c6f215967695d994d42155cd8c053d49c7ab9f7798261a901ab58a",
+                "sha256:28596068c16c360e8df1b828a5aad52388bbfc156d157d353769bc428fb66639",
+                "sha256:9f474e248688ef4179acccdde9748488eaf032deb454fddb2bd4070347f00815",
+                "sha256:a6d4d0718913286c036d488889c4e94136cfd45c3c92fd9b7a2c7c610ae86e7d",
+                "sha256:38cd9a625e96285b73f695c698facd0c5e8d699cc5cec7215e1ce44332b01acb",
+                "sha256:8788584261ae6220fbcd3d72a4c7b6ab472abd9e3a969e72efdc10d5bd1690b8",
+                "sha256:254f5efb666068655f8cab75fc6ae5afd4e3343a6fd7ddb722d24a5e75488031",
+                "sha256:6196e5db2a55f0b3f735b5b1a4d962e79404be024af9cbba665a5c20820ea245"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-09-28T23:53:18.40548821Z"
+        }
+    }
+]

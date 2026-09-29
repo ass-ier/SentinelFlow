@@ -1,0 +1,293 @@
+{
+  "video": "recordings/sentinelflow-linkedin-demo.mp4",
+  "sha256": "183447c7d90c2e8a48fbf26f7bae02e8a78098c0cf04631da6acbe887f813114",
+  "bytes": 17596333,
+  "duration_seconds": 100.7,
+  "width": 1920,
+  "height": 1080,
+  "frame_rate": "30/1",
+  "codec": "H.264",
+  "pixel_format": "yuv420p",
+  "audio": "Silent; on-screen text designed for muted autoplay",
+  "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6",
+  "editing": "Real browser video only; navigation/setup trimmed, 300 ms cross-dissolves, caption overlays. No fabricated UI, results, terminal capture or slideshow frames.",
+  "chapters": [
+    {
+      "start_seconds": 0.0,
+      "end_seconds": 6.0,
+      "title": "SENTINELFLOW",
+      "feature": "Detection Engineering & Security Analytics Platform",
+      "proof": {}
+    },
+    {
+      "start_seconds": 5.7,
+      "end_seconds": 15.7,
+      "title": "SECURITY TELEMETRY",
+      "feature": "Ingest and normalize security events.",
+      "proof": {
+        "run_id": "62f9aa09db2144ae86caf417fc18feb7",
+        "events": 25
+      }
+    },
+    {
+      "start_seconds": 15.4,
+      "end_seconds": 25.4,
+      "title": "DETECTION ENGINEERING",
+      "feature": "YAML-driven rules identify suspicious activity.",
+      "proof": {
+        "rule_id": "AUTH-001",
+        "severity": "high",
+        "threshold": {
+          "count": 10,
+          "window_seconds": 300
+        },
+        "mitre": [
+          "T1110"
+        ]
+      }
+    },
+    {
+      "start_seconds": 25.1,
+      "end_seconds": 37.1,
+      "title": "DETECTION IN ACTION",
+      "feature": "Telemetry is evaluated against active detection rules.",
+      "proof": {
+        "run_id": "632357c6e317463db00bb793695b3834",
+        "alert_id": "c61408e8eed420cdd159aa5f2a2fc3fb",
+        "events": 25,
+        "alerts": 1,
+        "rule_id": "AUTH-001"
+      }
+    },
+    {
+      "start_seconds": 36.8,
+      "end_seconds": 46.8,
+      "title": "ALERT INVESTIGATION",
+      "feature": "Move from detection to actionable security context.",
+      "proof": {
+        "alert_id": "c61408e8eed420cdd159aa5f2a2fc3fb",
+        "status": "investigating",
+        "source": {
+          "ips": [
+            "10.10.20.15"
+          ]
+        },
+        "affected": {
+          "hosts": [
+            "gateway-01"
+          ],
+          "users": [
+            "analyst01"
+          ],
+          "destination_ips": []
+        }
+      }
+    },
+    {
+      "start_seconds": 46.5,
+      "end_seconds": 56.5,
+      "title": "EVIDENCE",
+      "feature": "Investigate the telemetry behind every detection.",
+      "proof": {
+        "alert_id": "c61408e8eed420cdd159aa5f2a2fc3fb",
+        "event_id": "auth-brute-000",
+        "expanded_records": 1
+      }
+    },
+    {
+      "start_seconds": 56.2,
+      "end_seconds": 63.2,
+      "title": "MITRE ATT&CK",
+      "feature": "Map detections to adversary techniques.",
+      "proof": {
+        "alert_id": "c61408e8eed420cdd159aa5f2a2fc3fb",
+        "technique": "T1110",
+        "name": "Brute Force",
+        "external_navigation": false
+      }
+    },
+    {
+      "start_seconds": 62.9,
+      "end_seconds": 70.9,
+      "title": "SECURITY INVESTIGATION",
+      "feature": "Search security telemetry during an investigation.",
+      "proof": {
+        "run_id": "632357c6e317463db00bb793695b3834",
+        "query": "gateway-01",
+        "results": 25
+      }
+    },
+    {
+      "start_seconds": 70.6,
+      "end_seconds": 79.6,
+      "title": "MICROSOFT SECURITY INTEGRATION",
+      "feature": "Graph / Entra connector implemented. Live tenant not tested.",
+      "proof": {
+        "connector": "graph-default",
+        "mode": "demo",
+        "enabled": false,
+        "credentials_visible": false,
+        "live_tested": false
+      }
+    },
+    {
+      "start_seconds": 79.3,
+      "end_seconds": 88.3,
+      "title": "SECURITY NOTIFICATIONS",
+      "feature": "Power Automate-compatible routing. No external delivery performed.",
+      "proof": {
+        "destination_id": "fbcea4281eca40b09475b825838ed0be",
+        "mode": "demo",
+        "enabled": false,
+        "deliveries": 0,
+        "live_tested": false
+      }
+    },
+    {
+      "start_seconds": 88.0,
+      "end_seconds": 96.0,
+      "title": "SECURITY ENGINEERING",
+      "feature": "Hardened and tested against common application-security threats.",
+      "proof": {
+        "automated_tests": 946,
+        "detection_scenarios": 50,
+        "browser_checks": 127,
+        "live_log_shown": false,
+        "source_fingerprint": "2485344225394ffafaaa9feba73eac583d02e704e3d26747d38fe9abcbe22ea6"
+      }
+    },
+    {
+      "start_seconds": 95.7,
+      "end_seconds": 100.7,
+      "title": "DETECT \u2192 INVESTIGATE \u2192 RESPOND",
+      "feature": "SentinelFlow",
+      "proof": {
+        "stack": "FastAPI / React / TypeScript",
+        "mapping": "MITRE ATT&CK"
+      }
+    }
+  ],
+  "decoded_successfully": true,
+  "ffmpeg_version": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffmpeg_sha256": "56204ee9e35d8f193619ee9d5630db11aed505170774c73d7df02d52f5efe1e6",
+  "privacy": {
+    "credentials_configured": false,
+    "external_browser_requests": [],
+    "live_integrations_tested": false,
+    "notifications_sent": 0,
+    "synthetic_fixture": "test-data/authentication/brute_force.jsonl",
+    "visible_text_checks_passed": true,
+    "credentials_or_secrets_exposed": false,
+    "real_private_infrastructure_exposed": false,
+    "rule_configuration_and_telemetry_not_application_source": true
+  },
+  "status": "verified",
+  "verified_at": "2026-09-29T11:43:25.259305+00:00",
+  "browser": "153.0.8010.12",
+  "capture_receipt": "artifacts/linkedin-trailer/final-capture/capture.json",
+  "capture_receipt_sha256": "96e302a0c2a4b1c4a671b676eb0c83119979afd42e5e2e5f2f9d7fdf68d6abc5",
+  "render_receipt": "artifacts/linkedin-trailer/final-capture/render/render.json",
+  "render_receipt_sha256": "4f8226aceacb4bbb59ac3b85bcc03c1e4b39ac8c1dd16d915079468a612d5c5d",
+  "reproduction_scripts": {
+    "recordings/linkedin-demo/capture.mjs": "4e50eb866bc79484fc1bc8f0e697ce07ee87b6968d7bc16c99cc5cfa416eeb10",
+    "recordings/linkedin-demo/render.py": "b4898fda043e8aed74f396887b8a21483e434895896d1da051ef59c6c3894a96"
+  },
+  "story": {
+    "fixture": "test-data/authentication/brute_force.jsonl",
+    "imported_run_id": "62f9aa09db2144ae86caf417fc18feb7",
+    "replay_run_id": "632357c6e317463db00bb793695b3834",
+    "alert_id": "c61408e8eed420cdd159aa5f2a2fc3fb",
+    "rule_id": "AUTH-001",
+    "host": "gateway-01",
+    "technique": "T1110",
+    "evidence_count": 25
+  },
+  "scene_count": 12,
+  "browser_errors": [],
+  "failed_http_responses": [],
+  "visible_text_audit": "Paint-aware visibility and clipping checks passed for all scenes; final title/proof frames and key full-resolution frames visually inspected.",
+  "rendered_frames_reviewed": 27,
+  "original_media": [
+    {
+      "path": "recordings/sentinelflow-final-demo.mp4",
+      "sha256": "aa444d5de6e407cd1977cd41690fc972e3e92f6fa13ec854942f91af01366df5",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/alert-details.png",
+      "sha256": "806653482bc2b9d93ef2b7e075a802cd8103de8965dfb3c89ed80f2920b12e81",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/dashboard.png",
+      "sha256": "32f522ab79185dc33fd8705dc77edcc7c657b272a72675cdb3a2cb8abbc1665b",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/detection-rules.png",
+      "sha256": "c908b0e999ba272aa4a124cf7da84cb2d3b37674856e9d63b67de79420c7873a",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/detection-validation.png",
+      "sha256": "0dd55aa856ed4eb301e16d6902d359c7687376529711c1e26e3db2b0e5059b80",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/events.png",
+      "sha256": "42464333c4a0aeacf1463c73d0130ff88876ea9dcec1975dc29197efb1509243",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/mobile-dashboard.png",
+      "sha256": "1570e4e58981a3d3f03351ed758d14e27bd71f6c4fbac6a9a9d2820444f43525",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/replay.png",
+      "sha256": "9958973a18d8df689f66dee46c06e41716a48797d84520113251921fcd72f5c2",
+      "unchanged": true
+    },
+    {
+      "path": "screenshots/sigma-validation.png",
+      "sha256": "8496274456f5121ed149197825b9cb3d7d833a3974d622622b890295cb9215f4",
+      "unchanged": true
+    }
+  ],
+  "legacy_service_observations": [
+    {
+      "url": "http://127.0.0.1:8765/health",
+      "status": "unreachable",
+      "error": "[Errno 61] Connection refused",
+      "not_reconfigured_or_restarted": true,
+      "scope": "Legacy endpoint; not used for recording and not restarted by this task"
+    },
+    {
+      "url": "http://127.0.0.1:18881/health",
+      "status": 200,
+      "not_reconfigured_or_restarted": true
+    }
+  ],
+  "existing_security_evidence_manifest_sha256": "706fd3ee06f7bbe2ca87d395df469e421694b799f2c4eaefa64e5d45bcfc0d32",
+  "existing_security_evidence_files_verified": 227,
+  "owned_capture_server_stopped": true,
+  "app_source_changed": false,
+  "published_externally": false,
+  "browser_playback": {
+    "verified_at": "2026-09-29T11:48:02.545248+00:00",
+    "duration_seconds": 100.7,
+    "width": 1920,
+    "height": 1080,
+    "playback_advanced_seconds": 0.722863,
+    "media_error": null,
+    "ready_state": 4,
+    "preview_url": "http://127.0.0.1:64458/sentinelflow-linkedin-demo.mp4",
+    "server_scope": "Loopback-only; only this MP4 is served; session-attached"
+  },
+  "guide_sha256": "e5883df507f42bf27573546fdb636caca078813423cdfd10c398f2c63abcc43c",
+  "media_file_secret_scan": {
+    "scanner": "Gitleaks 8.30.1",
+    "receipt": "artifacts/linkedin-trailer/final-capture/media-gitleaks.json",
+    "findings": 0
+  }
+}

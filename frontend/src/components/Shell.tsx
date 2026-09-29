@@ -15,10 +15,11 @@ import {
   Siren,
   SlidersHorizontal,
   X,
+  Plug,
+  Bell,
 } from 'lucide-react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useWorkspace } from '../hooks/workspace';
-import { useResource } from '../hooks/useResource';
 import {
   getToken,
   MAX_TOKEN_LENGTH,
@@ -28,8 +29,7 @@ import {
   TOKEN_REQUIREMENTS,
 } from '../services/api';
 import { label } from '../services/format';
-import type { Health } from '../types';
-import { Button, ErrorNotice, IconButton, SelectField, TextField } from './ui';
+import { Button, ErrorNotice, IconButton, Notice, SelectField, TextField } from './ui';
 
 const navigation = [
   {
@@ -47,6 +47,13 @@ const navigation = [
       { path: '/testing', name: 'Detection testing', icon: FlaskConical },
       { path: '/replay', name: 'Replay', icon: Play },
       { path: '/sigma', name: 'Sigma', icon: Braces },
+    ],
+  },
+  {
+    group: 'Connect',
+    links: [
+      { path: '/integrations', name: 'Integrations', icon: Plug },
+      { path: '/notifications', name: 'Notifications', icon: Bell },
     ],
   },
   {
@@ -126,11 +133,11 @@ function ConnectionSettings({ authRequired }: { authRequired: boolean }) {
 }
 
 export function Shell() {
-  const { runId, runs, runsLoading, runsError, setRunId, refresh, revision } = useWorkspace();
+  const { runId, runs, runsLoading, runsError, setRunId, refresh, health, publicDemo } =
+    useWorkspace();
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const previousPath = useRef(location.pathname);
-  const health = useResource<Health>('/health', { refreshKey: revision, pollMs: 15000 });
   const selectedRun = runs.find((run) => run.id === runId);
 
   useEffect(() => {
@@ -199,14 +206,16 @@ export function Shell() {
             : health.error
               ? 'API unavailable'
               : health.data?.status === 'ok'
-                ? 'Local API connected'
+                ? publicDemo
+                  ? 'Demo API connected'
+                  : 'Local API connected'
                 : 'Check API'}
         </div>
         <div className="topbar-actions">
           <IconButton label="Refresh workspace data" onClick={refresh}>
             <RefreshCw size={17} aria-hidden="true" />
           </IconButton>
-          <ConnectionSettings authRequired={health.data?.auth_required ?? false} />
+          {!publicDemo && <ConnectionSettings authRequired={health.data?.auth_required ?? false} />}
         </div>
       </header>
       <aside id="workspace-navigation" className={`sidebar ${menuOpen ? 'mobile-open' : ''}`}>
@@ -214,7 +223,7 @@ export function Shell() {
           <ShieldCheck size={30} strokeWidth={1.5} aria-hidden="true" />
           <span>
             <strong>SentinelFlow</strong>
-            <small>Detection & evidence</small>
+            <small>Detection &amp; evidence</small>
           </span>
         </Link>
         <nav aria-label="Workspace navigation">
@@ -229,7 +238,7 @@ export function Shell() {
                   onClick={() => setMenuOpen(false)}
                 >
                   <Icon size={17} strokeWidth={1.7} aria-hidden="true" />
-                  <span>{name}</span>
+                  <span>{publicDemo && path === '/evidence' ? 'Demo data & limits' : name}</span>
                 </NavLink>
               ))}
             </div>
@@ -238,7 +247,7 @@ export function Shell() {
         <div className="sidebar-foot">
           <div>
             <Activity size={15} aria-hidden="true" />
-            <strong>Local workspace</strong>
+            <strong>{publicDemo ? 'Shared demo workspace' : 'Local workspace'}</strong>
           </div>
           <p>
             Inspect evidence.
@@ -251,6 +260,13 @@ export function Shell() {
         </div>
       </aside>
       <main id="main-content" className="main-content" tabIndex={-1}>
+        {publicDemo && (
+          <Notice>
+            <strong>Shared synthetic demo.</strong> Explore evidence, replay fixtures, and test
+            detections. No uploads or personal data.{' '}
+            <Link to={route('/evidence', runId)}>Demo limits</Link>
+          </Notice>
+        )}
         {!!runsError && (
           <ErrorNotice error={runsError} onRetry={refresh} title="Run list could not be loaded" />
         )}
@@ -261,7 +277,7 @@ export function Shell() {
           <CircleHelp size={13} aria-hidden="true" />
           Indicators support investigation; they do not prove compromise.
         </span>
-        <Link to={route('/evidence', runId)}>Data provenance & limitations</Link>
+        <Link to={route('/evidence', runId)}>Data provenance &amp; limitations</Link>
       </footer>
     </div>
   );

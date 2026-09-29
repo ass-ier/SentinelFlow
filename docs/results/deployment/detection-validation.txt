@@ -1,0 +1,59 @@
+SENTINELFLOW DETECTION VALIDATION
+Scope: bundled
+Each scenario uses fresh event-time correlation state.
+
+PASSED   auth-brute-force                     events=  25 alerts= 1 duplicates=0
+PASSED   auth-normal-failures                 events=   3 alerts= 0 duplicates=0
+PASSED   auth-success                         events=   8 alerts= 0 duplicates=0
+PASSED   auth-lifecycle                       events=   2 alerts= 0 duplicates=0
+PASSED   auth-distributed                     events=  12 alerts= 0 duplicates=0
+PASSED   auth-multiple-users                  events=  12 alerts= 1 duplicates=0
+PASSED   auth-lockout                         events=   4 alerts= 1 duplicates=0
+PASSED   auth-normal-lockout                  events=   2 alerts= 0 duplicates=0
+PASSED   auth-below-threshold                 events=   9 alerts= 0 duplicates=0
+PASSED   auth-window-boundary                 events=  10 alerts= 1 duplicates=0
+PASSED   auth-window-outside                  events=  10 alerts= 0 duplicates=0
+PASSED   auth-group-separation                events=  20 alerts= 2 duplicates=0
+PASSED   auth-duplicates                      events=  25 alerts= 1 duplicates=25
+PASSED   auth-shuffled                        events=  25 alerts= 1 duplicates=0
+PASSED   auth-suppression-boundary            events=  25 alerts= 2 duplicates=0
+PASSED   auth-missing-source                  events=  10 alerts= 0 duplicates=0
+PASSED   powershell-indicators                events=   5 alerts= 1 duplicates=0
+PASSED   powershell-encoded                   events=   1 alerts= 1 duplicates=0
+PASSED   powershell-admin                     events=   4 alerts= 0 duplicates=0
+PASSED   powershell-legitimate-download       events=   1 alerts= 1 duplicates=0
+PASSED   process-suspicious                   events=   3 alerts= 1 duplicates=0
+PASSED   process-benign                       events=   2 alerts= 0 duplicates=0
+PASSED   iam-privileged-group                 events=   2 alerts= 1 duplicates=0
+PASSED   iam-normal-group                     events=   2 alerts= 0 duplicates=0
+PASSED   iam-approved-maintenance             events=   2 alerts= 0 duplicates=0
+PASSED   iam-maintenance-wrong-host           events=   2 alerts= 1 duplicates=0
+PASSED   iam-privilege-actions                events=   2 alerts= 1 duplicates=0
+PASSED   iam-service-activity                 events=   2 alerts= 0 duplicates=0
+PASSED   dns-normal                           events=  10 alerts= 0 duplicates=0
+PASSED   dns-long-label                       events=   3 alerts= 1 duplicates=0
+PASSED   dns-entropy                          events=   3 alerts= 1 duplicates=0
+PASSED   dns-frequency                        events=  25 alerts= 1 duplicates=0
+PASSED   dns-subdomain-pattern                events=  22 alerts= 1 duplicates=0
+PASSED   dns-below-frequency                  events=  19 alerts= 0 duplicates=0
+PASSED   net-unusual                          events=   6 alerts= 1 duplicates=0
+PASSED   net-normal                           events=   8 alerts= 0 duplicates=0
+PASSED   net-below-threshold                  events=   2 alerts= 0 duplicates=0
+PASSED   net-allowlisted                      events=   6 alerts= 0 duplicates=0
+PASSED   net-private                          events=   6 alerts= 0 duplicates=0
+PASSED   mixed-incident                       events=  56 alerts= 7 duplicates=0
+PASSED   benign-baseline                      events=1000 alerts= 0 duplicates=0
+PASSED   parser-csv                           events=   1 alerts= 0 duplicates=0
+PASSED   parser-syslog                        events=   5 alerts= 0 duplicates=0
+PASSED   parser-windows                       events=   5 alerts= 0 duplicates=0
+PASSED   parser-json                          events=   2 alerts= 0 duplicates=0
+PASSED   sigma-download                       events=   1 alerts= 1 duplicates=0
+PASSED   sigma-encoded                        events=   1 alerts= 0 duplicates=0
+PASSED   sigma-benign                         events=   1 alerts= 0 duplicates=0
+PASSED   sigma-azure                          events=   1 alerts= 0 duplicates=0
+PASSED   public-otrf-adapted                  events=   6 alerts= 0 duplicates=0
+
+Scenarios: 50 passed, 0 failed, 50 total
+Controlled benign scenarios: 14 / 14 passed
+Duration: 0.248652s
+STATUS: PASSED

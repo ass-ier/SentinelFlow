@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "started_at": "2026-09-28T11:55:34.626460+00:00",
+  "source_fingerprint": "d618438a4506636078d672bc8b4fcf444d0685970d2d06f3d7515b089c957595",
+  "engine": "docker",
+  "ui": "http://127.0.0.1:18882",
+  "api": "http://127.0.0.1:18872",
+  "checks": [
+    {
+      "name": "Production frontend built with an explicit independent API origin",
+      "status": "passed"
+    },
+    {
+      "name": "Backend Docker image actually built",
+      "status": "passed",
+      "image_id": "sha256:0d94abb0c761be537082ac87b395c67f708d438a9620404f8830dc47720fc366",
+      "platform": "linux/amd64"
+    },
+    {
+      "name": "Production backend starts on PORT with a credential-free health endpoint",
+      "status": "passed",
+      "health": {
+        "status": "ok",
+        "version": "0.1.0",
+        "auth_required": false,
+        "public_demo": true,
+        "public_demo_run_limit": 20
+      }
+    },
+    {
+      "name": "Runtime schema initialization and exact deterministic seed",
+      "status": "passed",
+      "events": 56,
+      "alerts": 7
+    },
+    {
+      "name": "Backend-only Swagger, OpenAPI, and favicon respond",
+      "status": "passed"
+    },
+    {
+      "name": "Explicit cross-origin preflight succeeds; wrong origins and hosts are rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Public validation executes every synthetic scenario in isolation",
+      "status": "passed",
+      "scenarios": 49,
+      "benign": 14
+    },
+    {
+      "name": "Real production-build desktop/mobile browser workflows",
+      "status": "passed",
+      "checks": 27
+    },
+    {
+      "name": "Restart preserves events, alerts, run IDs, and exact evidence",
+      "status": "passed",
+      "events": 89,
+      "alerts": 10,
+      "runs": 4
+    },
+    {
+      "name": "Visitor reset denied; operator reset restores the known demo state",
+      "status": "passed",
+      "events": 56,
+      "alerts": 7
+    },
+    {
+      "name": "Container runs non-root and passes its actual Docker healthcheck",
+      "status": "passed",
+      "uid": "10001"
+    }
+  ],
+  "external_deployment": "Not attempted or verified",
+  "image_id": "sha256:0d94abb0c761be537082ac87b395c67f708d438a9620404f8830dc47720fc366",
+  "completed_at": "2026-09-28T11:56:03.854625+00:00"
+}

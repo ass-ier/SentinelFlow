@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-09-28T12:02:15.199971+00:00",
+  "source_fingerprint": "d618438a4506636078d672bc8b4fcf444d0685970d2d06f3d7515b089c957595",
+  "base_commit": "b987e6d7526b9a643bf9813fe816ada21c706b55",
+  "media_unchanged_in_worktree_and_clone": true,
+  "video": {
+    "path": "recordings/sentinelflow-final-demo.mp4",
+    "bytes": 9730783,
+    "sha256": "aa444d5de6e407cd1977cd41690fc972e3e92f6fa13ec854942f91af01366df5"
+  },
+  "screenshots": [
+    {
+      "path": "screenshots/alert-details.png",
+      "bytes": 590839,
+      "sha256": "806653482bc2b9d93ef2b7e075a802cd8103de8965dfb3c89ed80f2920b12e81"
+    },
+    {
+      "path": "screenshots/dashboard.png",
+      "bytes": 266989,
+      "sha256": "32f522ab79185dc33fd8705dc77edcc7c657b272a72675cdb3a2cb8abbc1665b"
+    },
+    {
+      "path": "screenshots/detection-rules.png",
+      "bytes": 160125,
+      "sha256": "c908b0e999ba272aa4a124cf7da84cb2d3b37674856e9d63b67de79420c7873a"
+    },
+    {
+      "path": "screenshots/detection-validation.png",
+      "bytes": 188451,
+      "sha256": "0dd55aa856ed4eb301e16d6902d359c7687376529711c1e26e3db2b0e5059b80"
+    },
+    {
+      "path": "screenshots/events.png",
+      "bytes": 176811,
+      "sha256": "42464333c4a0aeacf1463c73d0130ff88876ea9dcec1975dc29197efb1509243"
+    },
+    {
+      "path": "screenshots/mobile-dashboard.png",
+      "bytes": 183213,
+      "sha256": "1570e4e58981a3d3f03351ed758d14e27bd71f6c4fbac6a9a9d2820444f43525"
+    },
+    {
+      "path": "screenshots/replay.png",
+      "bytes": 461488,
+      "sha256": "9958973a18d8df689f66dee46c06e41716a48797d84520113251921fcd72f5c2"
+    },
+    {
+      "path": "screenshots/sigma-validation.png",
+      "bytes": 432713,
+      "sha256": "8496274456f5121ed149197825b9cb3d7d833a3974d622622b890295cb9215f4"
+    }
+  ]
+}

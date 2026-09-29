@@ -1,0 +1,64 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.backend
+#1 transferring dockerfile: 1.73kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.13.15-alpine3.24@sha256:79e7a9b9ff1cbceff819f856fb374477792a5967759d94df266de7b7b4120e6f
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 421B done
+#3 DONE 0.0s
+
+#4 [dependencies 1/3] FROM docker.io/library/python:3.13.15-alpine3.24@sha256:79e7a9b9ff1cbceff819f856fb374477792a5967759d94df266de7b7b4120e6f
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 15.85kB 0.0s done
+#5 DONE 0.0s
+
+#6 [stage-1  7/12] COPY scripts/serve.py ./scripts/serve.py
+#6 CACHED
+
+#7 [stage-1  9/12] COPY test-data ./test-data
+#7 CACHED
+
+#8 [stage-1  2/12] WORKDIR /srv/sentinelflow
+#8 CACHED
+
+#9 [dependencies 2/3] COPY requirements-runtime.lock /build/requirements-runtime.lock
+#9 CACHED
+
+#10 [stage-1  8/12] COPY rules ./rules
+#10 CACHED
+
+#11 [stage-1  5/12] COPY requirements-runtime.lock pyproject.toml ./
+#11 CACHED
+
+#12 [dependencies 3/3] RUN python -m pip install --no-cache-dir --require-hashes --target /opt/python -r /build/requirements-runtime.lock
+#12 CACHED
+
+#13 [stage-1 10/12] COPY frontend/public/favicon.svg ./frontend/public/favicon.svg
+#13 CACHED
+
+#14 [stage-1  3/12] RUN python -m pip uninstall --yes pip     && rm -rf /usr/local/lib/python3.13/ensurepip     && addgroup -g 10001 sentinel     && adduser -D -u 10001 -G sentinel sentinel
+#14 CACHED
+
+#15 [stage-1 11/12] COPY README.md LICENSE ./
+#15 CACHED
+
+#16 [stage-1  4/12] COPY --from=dependencies /opt/python /opt/python
+#16 CACHED
+
+#17 [stage-1  6/12] COPY backend/app ./backend/app
+#17 CACHED
+
+#18 [stage-1 12/12] RUN mkdir -p data artifacts && chown sentinel:sentinel data artifacts
+#18 CACHED
+
+#19 exporting to image
+#19 exporting layers done
+#19 writing image sha256:4a3af9297da770e8e3d24f1beb14f05850686d489ee4b2dfa161d3d365db41d9 done
+#19 naming to docker.io/library/sentinelflow-security:backend done
+#19 DONE 0.0s

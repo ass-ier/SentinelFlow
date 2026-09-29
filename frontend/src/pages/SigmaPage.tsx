@@ -38,7 +38,7 @@ interface SigmaSource {
 }
 
 export function SigmaPage() {
-  const { runId, revision, refresh } = useWorkspace();
+  const { runId, revision, refresh, publicDemo } = useWorkspace();
   const samples = useResource<{ items: SigmaSample[] }>('/sigma/samples', { refreshKey: revision });
   const datasets = useResource<Collection<Dataset>>('/datasets', { refreshKey: revision });
   const [sampleId, setSampleId] = useState('');
@@ -153,7 +153,11 @@ export function SigmaPage() {
       </Notice>
       <Panel
         title="Sigma source"
-        description="Load a pinned, redistributable sample or provide your own rule and provenance."
+        description={
+          publicDemo
+            ? 'Load a pinned, licensed sample. Public compilation and testing accept only the unchanged bundled sources.'
+            : 'Load a pinned, redistributable sample or provide your own rule and provenance.'
+        }
       >
         <ErrorNotice
           error={samples.error}
@@ -179,14 +183,16 @@ export function SigmaPage() {
             <Download size={14} aria-hidden="true" />
             Load sample
           </Button>
-          <TextField
-            label="Upload Sigma YAML"
-            type="file"
-            accept=".yml,.yaml"
-            onChange={(event) => void readFile(event.target.files?.[0])}
-            disabled={!!pending}
-            hint="Maximum 64 KiB. YAML is sent to the safe backend compiler."
-          />
+          {!publicDemo && (
+            <TextField
+              label="Upload Sigma YAML"
+              type="file"
+              accept=".yml,.yaml"
+              onChange={(event) => void readFile(event.target.files?.[0])}
+              disabled={!!pending}
+              hint="Maximum 64 KiB. YAML is sent to the safe backend compiler."
+            />
+          )}
         </div>
         {loadedSample && (
           <p className="sample-attribution">
@@ -196,14 +202,23 @@ export function SigmaPage() {
         )}
         <TextareaField
           label="Sigma YAML"
-          hint="Maximum 64 KiB of UTF-8 source, for pasted or uploaded YAML."
+          hint={
+            publicDemo
+              ? 'Read-only pinned source. Its attribution and license are preserved.'
+              : 'Maximum 64 KiB of UTF-8 source, for pasted or uploaded YAML.'
+          }
           value={source.yaml}
           onChange={(event) => edit('yaml', event.target.value)}
           rows={17}
           className="code-input sigma-editor"
           spellCheck={false}
           disabled={!!pending}
-          placeholder="Paste a supported Sigma rule, or load a pinned sample above."
+          readOnly={publicDemo}
+          placeholder={
+            publicDemo
+              ? 'Load a pinned sample above.'
+              : 'Paste a supported Sigma rule, or load a pinned sample above.'
+          }
         />
         <div className="form-grid sigma-provenance-fields">
           <TextField
@@ -212,6 +227,7 @@ export function SigmaPage() {
             value={source.source_url}
             onChange={(event) => edit('source_url', event.target.value)}
             disabled={!!pending}
+            readOnly={publicDemo}
             placeholder="https://…"
           />
           <TextField
@@ -219,6 +235,7 @@ export function SigmaPage() {
             value={source.license}
             onChange={(event) => edit('license', event.target.value)}
             disabled={!!pending}
+            readOnly={publicDemo}
             placeholder="Preserve the original license"
           />
           <TextField
@@ -227,6 +244,7 @@ export function SigmaPage() {
             value={source.license_url}
             onChange={(event) => edit('license_url', event.target.value)}
             disabled={!!pending}
+            readOnly={publicDemo}
             placeholder="https://…"
           />
         </div>
@@ -239,30 +257,35 @@ export function SigmaPage() {
             <Braces size={15} aria-hidden="true" />
             {pending === 'compile' ? 'Compiling…' : 'Compile rule'}
           </Button>
-          <Button
-            disabled={!!pending || !source.yaml.trim()}
-            onClick={() => void execute('import')}
-          >
-            <Upload size={15} aria-hidden="true" />
-            {pending === 'import'
-              ? 'Importing…'
-              : enabled
-                ? 'Import enabled rule'
-                : 'Import disabled rule'}
-          </Button>
-          <label className="checkbox-field">
-            <input
-              type="checkbox"
-              checked={enabled}
-              onChange={(event) => setEnabled(event.target.checked)}
-              disabled={!!pending}
-            />
-            Enable for future runs on import
-          </label>
+          {!publicDemo && (
+            <Button
+              disabled={!!pending || !source.yaml.trim()}
+              onClick={() => void execute('import')}
+            >
+              <Upload size={15} aria-hidden="true" />
+              {pending === 'import'
+                ? 'Importing…'
+                : enabled
+                  ? 'Import enabled rule'
+                  : 'Import disabled rule'}
+            </Button>
+          )}
+          {!publicDemo && (
+            <label className="checkbox-field">
+              <input
+                type="checkbox"
+                checked={enabled}
+                onChange={(event) => setEnabled(event.target.checked)}
+                disabled={!!pending}
+              />
+              Enable for future runs on import
+            </label>
+          )}
         </div>
         <p className="form-note">
-          Imported rules are disabled unless you explicitly enable them. Compilation alone does not
-          add a rule to the catalog.
+          {publicDemo
+            ? 'Compilation and tests are isolated. Importing or editing rules is unavailable in this shared demo.'
+            : 'Imported rules are disabled unless you explicitly enable them. Compilation alone does not add a rule to the catalog.'}
         </p>
         <ErrorNotice error={error} title="Sigma operation not completed" />
         {pending && (
@@ -413,7 +436,7 @@ export function SigmaPage() {
           translation.
         </p>
         <details className="disclosure">
-          <summary>Supported fields & explicit limitations</summary>
+          <summary>Supported fields &amp; explicit limitations</summary>
           <p>
             <code>Image</code> and <code>ParentImage</code> match the preserved full paths in{' '}
             <code>process.executable</code> and <code>process.parent.executable</code>. Basename

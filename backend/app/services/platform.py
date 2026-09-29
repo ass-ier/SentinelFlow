@@ -7,21 +7,27 @@ import threading
 import time
 import uuid
 from collections import Counter
+from collections.abc import Iterator
 from concurrent.futures import Future, ThreadPoolExecutor
+from contextlib import contextmanager, nullcontext
 from datetime import UTC, datetime, timedelta
 from typing import Any, TypedDict
 
 import yaml
-from sqlalchemy import delete, func, or_, select
+from sqlalchemy import delete, func, inspect, or_, select
 from sqlalchemy.orm import Session
 
-from app.core.config import DEMO_DB, ROOT, Settings
+from app.core.config import DEMO_DB, PUBLIC_DEMO_RUN_LIMIT, ROOT, Settings
 from app.core.errors import DomainError
 from app.detection.engine import evaluate, unique_chronological
 from app.detection.rules import MITRE_NAMES, Rule, load_bundled_rules
+from app.integrations.correlation import retain_alert_identity, telemetry_sources
+from app.integrations.outbox import delivery_response, enqueue_alert
+from app.integrations.runtime import IntegrationRuntime
 from app.schemas.events import NormalizedEvent
 from app.services.datasets import DatasetStore
 from app.storage.database import Database
+from app.storage.integrations import INTEGRATION_MODELS, DeliveryRecord, SchemaRevision
 from app.storage.models import (
     AlertRecord,
     AuditRecord,
@@ -33,6 +39,7 @@ from app.storage.models import (
 )
 
 logger = logging.getLogger("sentinelflow")
+PUBLIC_MARKER = "public_demo_initialized"
 
 
 class TimelineBin(TypedDict):
@@ -79,26 +86,136 @@ class Platform:
     def __init__(self, settings: Settings, datasets: DatasetStore | None = None) -> None:
         self.settings = settings
         self.db = Database(settings.database_url)
-        self.datasets = datasets or DatasetStore()
+        self.datasets = (
+            DatasetStore(datasets.root if datasets else ROOT / "test-data", synthetic_only=True)
+            if settings.public_demo
+            else datasets or DatasetStore()
+        )
         self.lock = threading.RLock()
         self.shutdown = threading.Event()
         self.executor = ThreadPoolExecutor(max_workers=settings.max_replay_jobs)
         self.jobs: dict[str, tuple[Future[None], threading.Event]] = {}
-        self.seed_rules()
+        self.validation_semaphore = threading.BoundedSemaphore(1)
+        self._integrations: IntegrationRuntime | None = None
+        initialized = False
+        try:
+            seed_public = self._claim_public_database() if settings.public_demo else False
+            self.seed_rules()
+            with self.db.session() as session:
+                for run in session.scalars(
+                    select(RunRecord).where(
+                        RunRecord.kind == "replay", RunRecord.status.in_(["running", "pending"])
+                    )
+                ):
+                    run.status = "failed"
+                    run.error = (
+                        "Server restarted before replay completed; start a new isolated replay"
+                    )
+                    run.completed_at = utcnow()
+            if seed_public:
+                self.reset_demo("public-demo", seed=True)
+            self._integrations = IntegrationRuntime(self)
+            self._integrations.resume()
+            initialized = True
+        finally:
+            if not initialized:
+                self.close()
+
+    def _claim_public_database(self) -> bool:
+        models = (RuleRecord, RunRecord, EventRecord, AlertRecord, EvidenceRecord, AuditRecord)
+        if set(inspect(self.db.engine).get_table_names()) != {
+            model.__tablename__ for model in (*models, *INTEGRATION_MODELS, SchemaRevision)
+        }:
+            raise DomainError(
+                "Public demo refuses a database containing unrelated tables",
+                503,
+                "public_demo_database",
+            )
         with self.db.session() as session:
-            for run in session.scalars(
-                select(RunRecord).where(
-                    RunRecord.kind == "replay", RunRecord.status.in_(["running", "pending"])
+            markers = list(
+                session.scalars(select(AuditRecord).where(AuditRecord.action == PUBLIC_MARKER))
+            )
+            if not markers:
+                if any(
+                    session.scalar(select(func.count()).select_from(model))
+                    for model in (*models, *INTEGRATION_MODELS)
+                ):
+                    raise DomainError(
+                        "Public demo refuses an existing unmarked database. "
+                        "Configure a new empty dedicated public-demo database.",
+                        503,
+                        "public_demo_database",
+                    )
+                session.add(
+                    AuditRecord(
+                        actor="public-demo",
+                        action=PUBLIC_MARKER,
+                        target="public-demo",
+                        details={"version": 1, "seed_state": "initializing"},
+                    )
                 )
+                return True
+            if any(
+                session.scalar(select(func.count()).select_from(model))
+                for model in INTEGRATION_MODELS
             ):
-                run.status = "failed"
-                run.error = "Server restarted before replay completed; start a new isolated replay"
-                run.completed_at = utcnow()
+                raise DomainError(
+                    "Public demo refuses configured private integrations",
+                    503,
+                    "public_demo_database",
+                )
+            marker = markers[0]
+            if (
+                len(markers) != 1
+                or marker.details.get("version") != 1
+                or marker.details.get("seed_state") not in {"initializing", "ready"}
+            ):
+                raise DomainError(
+                    "Invalid public demo ownership marker", 503, "public_demo_database"
+                )
+            if marker.details["seed_state"] == "initializing":
+                return True
+            allowed = {item["id"] for item in self.datasets.catalog()}
+            for run in session.scalars(select(RunRecord)):
+                if run.kind not in {"demo", "replay"} or run.dataset_id not in allowed:
+                    raise DomainError(
+                        "Public demo contains a run outside its synthetic catalog",
+                        503,
+                        "public_demo_database",
+                    )
+            bundled = {rule.id for rule in load_bundled_rules(ROOT / "rules")}
+            if any(row.id not in bundled for row in session.scalars(select(RuleRecord))):
+                raise DomainError(
+                    "Public demo contains a non-bundled rule", 503, "public_demo_database"
+                )
+            return False
+
+    @contextmanager
+    def validation_slot(self) -> Iterator[None]:
+        if not self.settings.public_demo:
+            yield
+            return
+        if not self.validation_semaphore.acquire(blocking=False):
+            raise DomainError(
+                "Another public validation is running; retry shortly", 429, "validation_limit"
+            )
+        try:
+            yield
+        finally:
+            self.validation_semaphore.release()
 
     def close(self) -> None:
         self.shutdown.set()
+        if self._integrations is not None:
+            self._integrations.close()
         self.executor.shutdown(wait=True, cancel_futures=False)
         self.db.close()
+
+    @property
+    def integrations(self) -> IntegrationRuntime:
+        if self._integrations is None:
+            raise DomainError("Integrations are not initialized", 503, "not_ready")
+        return self._integrations
 
     def seed_rules(self, *, restore: bool = False) -> None:
         with self.lock, self.db.session() as session:
@@ -212,16 +329,25 @@ class Platform:
         run_id: str | None = None,
         actor: str = "local-analyst",
         replay_worker: bool = False,
+        connector_worker: bool = False,
+        transaction: Session | None = None,
     ) -> dict[str, Any]:
         ordered, input_duplicates = unique_chronological(events)
         if not ordered:
             raise DomainError("Input contains no events")
-        with self.lock, self.db.session() as session:
+        with (
+            self.lock,
+            self.db.session() if transaction is None else nullcontext(transaction) as session,
+        ):
             run = session.get(RunRecord, run_id) if run_id else self._new_run(session, name=name)
             if run is None:
                 raise DomainError("Run not found", 404, "not_found")
             if run.kind == "replay" and not replay_worker:
                 raise DomainError("Replay runs cannot be appended manually", 409, "run_immutable")
+            if run.kind == "connector" and not connector_worker:
+                raise DomainError(
+                    "Connector runs cannot be appended manually", 409, "run_immutable"
+                )
             if run.status in {"cancelled", "failed"}:
                 raise DomainError("Cannot append to a failed or cancelled run", 409, "run_closed")
             stored = list(session.scalars(select(EventRecord).where(EventRecord.run_id == run.id)))
@@ -237,9 +363,14 @@ class Platform:
                         )
                     duplicates += 1
                     continue
-                if run.watermark is not None and (event.event.timestamp, event.event.id) < (
-                    datetime.fromisoformat(run.watermark),
-                    run.watermark_event_id or "",
+                if (
+                    not connector_worker
+                    and run.watermark is not None
+                    and (event.event.timestamp, event.event.id)
+                    < (
+                        datetime.fromisoformat(run.watermark),
+                        run.watermark_event_id or "",
+                    )
                 ):
                     raise DomainError(
                         "Late event precedes this run's (timestamp, ID) watermark. "
@@ -253,6 +384,18 @@ class Platform:
                     "Run exceeds its event limit; create another run", 413, "event_limit"
                 )
             before_alerts = run.alerts_created
+            previous_alerts = (
+                list(
+                    session.scalars(
+                        select(AlertRecord)
+                        .where(AlertRecord.run_id == run.id)
+                        .order_by(AlertRecord.created_at, AlertRecord.id)
+                    )
+                )
+                if connector_worker
+                else []
+            )
+            used_alerts: set[str] = set()
             for event in new_events:
                 storage_id = hashlib.sha256(f"{run.id}:{event.event.id}".encode()).hexdigest()[:32]
                 session.add(
@@ -281,8 +424,13 @@ class Platform:
                 run.id,
             )
             for detection in detections:
+                if connector_worker:
+                    detection.id = retain_alert_identity(detection, previous_alerts, used_alerts)
+                    used_alerts.add(detection.id)
                 payload = detection.to_dict()
+                payload["telemetry_sources"] = telemetry_sources(detection.events)
                 row = session.get(AlertRecord, detection.id)
+                is_new = row is None
                 if row is None:
                     row = AlertRecord(
                         id=detection.id,
@@ -297,6 +445,7 @@ class Platform:
                     )
                     session.add(row)
                 else:
+                    row.first_seen = payload["first_seen"]
                     row.last_seen = payload["last_seen"]
                     row.event_count = len(detection.events)
                     row.payload = payload
@@ -307,9 +456,23 @@ class Platform:
                         f"{run.id}:{evidence.event.id}".encode()
                     ).hexdigest()[:32]
                     session.add(EvidenceRecord(alert_id=row.id, event_storage_id=storage_id))
+                if is_new and not self.settings.public_demo:
+                    enqueue_alert(session, row, run, self.settings.integrations)
             run.processed_events += len(events)
             run.duplicate_events += duplicates
-            run.alerts_created = len(detections)
+            session.flush()
+            run.alerts_created = (
+                (
+                    session.scalar(
+                        select(func.count())
+                        .select_from(AlertRecord)
+                        .where(AlertRecord.run_id == run.id)
+                    )
+                    or 0
+                )
+                if connector_worker
+                else len(detections)
+            )
             cumulative_seconds = run.metrics.get("cumulative_detection_seconds", 0.0)
             run.metrics = {
                 **metrics.to_dict(),
@@ -317,8 +480,12 @@ class Platform:
                 "cumulative_detection_seconds": cumulative_seconds + metrics.detection_seconds,
             }
             if new_events:
-                run.watermark = new_events[-1].event.timestamp.isoformat()
-                run.watermark_event_id = new_events[-1].event.id
+                latest = max(
+                    [*existing.values(), *new_events],
+                    key=lambda event: (event.event.timestamp, event.event.id),
+                )
+                run.watermark = latest.event.timestamp.isoformat()
+                run.watermark_event_id = latest.event.id
             if not replay_worker:
                 run.total_events = run.processed_events
                 run.status = "completed"
@@ -339,8 +506,8 @@ class Platform:
                 "events_processed": len(events),
                 "events_stored": len(new_events),
                 "duplicates_ignored": duplicates,
-                "detections_triggered": len(detections) - before_alerts,
-                "alerts_created": len(detections) - before_alerts,
+                "detections_triggered": run.alerts_created - before_alerts,
+                "alerts_created": run.alerts_created - before_alerts,
             }
 
     def runs(self) -> list[dict[str, Any]]:
@@ -378,6 +545,8 @@ class Platform:
                     "Replay capacity reached; wait or cancel a run", 429, "replay_limit"
                 )
             with self.db.session() as session:
+                if self.settings.public_demo:
+                    self._prune_public_replays(session)
                 run = self._new_run(
                     session,
                     name=dataset["name"],
@@ -392,6 +561,32 @@ class Platform:
             future = self.executor.submit(self._replay, run.id, events, speed, cancel)
             self.jobs[run.id] = (future, cancel)
             return response
+
+    @staticmethod
+    def _prune_public_replays(session: Session) -> None:
+        count = session.scalar(select(func.count()).select_from(RunRecord)) or 0
+        remove = count - PUBLIC_DEMO_RUN_LIMIT + 1
+        if remove <= 0:
+            return
+        old = list(
+            session.scalars(
+                select(RunRecord.id)
+                .where(
+                    RunRecord.kind == "replay",
+                    RunRecord.status.in_(["completed", "cancelled", "failed"]),
+                )
+                .order_by(RunRecord.created_at, RunRecord.id)
+                .limit(remove)
+            )
+        )
+        if len(old) != remove:
+            raise DomainError(
+                "Public demo history is busy; retry after active replays finish",
+                429,
+                "replay_limit",
+            )
+        session.execute(delete(AuditRecord).where(AuditRecord.target.in_(old)))
+        session.execute(delete(RunRecord).where(RunRecord.id.in_(old)))
 
     def _replay(
         self,
@@ -561,6 +756,14 @@ class Platform:
                 **alert_response(row),
                 "rule_snapshot": row.rule_snapshot,
                 "evidence": [event_response(event) for event in events],
+                "notifications": [
+                    delivery_response(delivery)
+                    for delivery in session.scalars(
+                        select(DeliveryRecord)
+                        .where(DeliveryRecord.alert_id == alert_id)
+                        .order_by(DeliveryRecord.created_at)
+                    )
+                ],
             }
 
     def change_status(
@@ -574,6 +777,10 @@ class Platform:
                 raise DomainError("Alert not found", 404, "not_found")
             before = row.status
             row.status = status
+            if not self.settings.public_demo:
+                run = session.get(RunRecord, row.run_id)
+                if run is not None:
+                    enqueue_alert(session, row, run, self.settings.integrations)
             session.add(
                 AuditRecord(
                     actor=actor,
@@ -664,7 +871,8 @@ class Platform:
             }
 
     def reset_demo(self, actor: str, *, seed: bool = False) -> dict[str, Any]:
-        if self.settings.database_url != f"sqlite:///{DEMO_DB}":
+        public = self.settings.public_demo
+        if not public and self.settings.database_url != f"sqlite:///{DEMO_DB}":
             raise DomainError(
                 "Reset is restricted to the default named demo database", 403, "reset_scope"
             )
@@ -673,16 +881,90 @@ class Platform:
                 raise DomainError(
                     "Cancel active replays before resetting the demo", 409, "active_replay"
                 )
+            if public and not seed:
+                raise DomainError("Public demo reset requires seed=true", 422, "demo_seed_required")
+            events = self.datasets.events("mixed-incident") if seed else []
             with self.db.session() as session:
+                if public and not session.scalar(
+                    select(AuditRecord).where(AuditRecord.action == PUBLIC_MARKER)
+                ):
+                    raise DomainError(
+                        "Reset requires an owned public demo database", 403, "reset_scope"
+                    )
+                from app.storage.integrations import (
+                    CheckpointRecord,
+                    ConnectorEventRecord,
+                    ConnectorRecord,
+                    DeliveryAttemptRecord,
+                    DeliveryRecord,
+                    DestinationRecord,
+                )
+
+                if any(
+                    definition["enabled"]
+                    for model in (ConnectorRecord, DestinationRecord)
+                    for definition in session.scalars(select(model.definition))
+                ) or session.scalar(
+                    select(DeliveryRecord.id).where(DeliveryRecord.status == "processing").limit(1)
+                ):
+                    raise DomainError(
+                        "Disable connectors and destinations and wait for active deliveries "
+                        "before reset",
+                        409,
+                        "active_integration",
+                    )
+                session.execute(delete(DeliveryAttemptRecord))
+                session.execute(delete(DeliveryRecord))
+                session.execute(delete(ConnectorEventRecord))
+                session.execute(delete(CheckpointRecord))
+                for connector in session.scalars(select(ConnectorRecord)):
+                    connector.run_id = None
+                    connector.events_received = connector.events_processed = (
+                        connector.events_failed
+                    ) = 0
+                    connector.duplicate_events = connector.retry_count = 0
+                    connector.last_success = connector.last_failure = connector.last_error = None
+                    connector.last_event_time = None
+                    connector.status = "disabled"
                 session.execute(delete(EvidenceRecord))
                 session.execute(delete(AlertRecord))
                 session.execute(delete(EventRecord))
                 session.execute(delete(RunRecord))
                 session.execute(delete(AuditRecord))
+                if public:
+                    session.add(
+                        AuditRecord(
+                            actor=actor,
+                            action=PUBLIC_MARKER,
+                            target="public-demo",
+                            details={"version": 1, "seed_state": "initializing"},
+                        )
+                    )
             self.seed_rules(restore=True)
+            if public:
+                with self.db.session() as session:
+                    seed_run = self._new_run(
+                        session,
+                        name="Included incident timeline",
+                        kind="demo",
+                        dataset_id="mixed-incident",
+                        total=len(events),
+                    )
+                    run_id = seed_run.id
+                self.ingest(events, run_id=run_id, actor=actor, replay_worker=True)
+                with self.db.session() as session:
+                    row = session.get(RunRecord, run_id)
+                    marker = session.scalar(
+                        select(AuditRecord).where(AuditRecord.action == PUBLIC_MARKER)
+                    )
+                    if row is None or marker is None:
+                        raise DomainError("Demo initialization did not complete", 500, "demo_error")
+                    row.status, row.completed_at = "completed", utcnow()
+                    marker.details = {"version": 1, "seed_state": "ready"}
+                    return {"status": "reset", "run": run_response(row)}
             if seed:
                 result = self.ingest(
-                    self.datasets.events("mixed-incident"),
+                    events,
                     name="Included incident timeline",
                     actor=actor,
                 )

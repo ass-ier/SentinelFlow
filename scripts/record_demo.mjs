@@ -9,7 +9,6 @@ import {
   writeFile,
 } from "node:fs/promises";
 import path from "node:path";
-import ffmpeg from "../frontend/node_modules/ffmpeg-static/index.js";
 import {
   api,
   assert,
@@ -28,6 +27,19 @@ import {
   testSigma,
   uiResponse,
 } from "./browser_workflows.mjs";
+
+const ffmpeg = process.env.SENTINEL_FFMPEG || path.join(root, ".runtime/recording/bin/ffmpeg");
+await access(ffmpeg).catch(() => {
+  throw new Error("Install the pinned recording runtime or set SENTINEL_FFMPEG; see docs/demo.md.");
+});
+const encoderVersion = execFileSync(ffmpeg, ["-version"], { encoding: "utf8" }).split("\n")[0];
+assert.match(encoderVersion, /^ffmpeg version 9\.0\.2(?:\s|$)/, "Use the assessed FFmpeg 9.0.2 encoder");
+if (process.argv.includes("--check-encoder")) {
+  execFileSync(ffmpeg, ["-v", "error", "-f", "lavfi", "-i", "color=s=16x16:r=1",
+    "-frames:v", "1", "-c:v", "libx264", "-f", "null", "-"], { stdio: "pipe" });
+  console.log(encoderVersion + ": H.264 encoder smoke check passed; no recording created");
+  process.exit(0);
+}
 
 const validated = await requireValidation();
 const browserReceipt = JSON.parse(
@@ -56,8 +68,6 @@ for (const name of [
     (await stat(path.join(root, `screenshots/${name}.png`))).size > 1000,
   );
 }
-assert.ok(ffmpeg, "The pinned ffmpeg-static encoder is missing");
-await access(ffmpeg);
 const destination = path.join(root, "recordings");
 await mkdir(destination, { recursive: true });
 await api("/admin/demo-reset", { confirmation: "RESET DEMO", seed: true });
